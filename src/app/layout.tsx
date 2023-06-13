@@ -1,7 +1,8 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '@/Components/Navbar/Navbar'
+import '../Styles/Styles.css'
+import Footer from '@/Components/Footer/Footer'
+import Contexts from '@/context/Contexts'
+import Sidebar from '@/Components/Sidebar/Sidebar'
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap" rel="stylesheet"/>
+      </head>
+
+      <body>
+        <Navbar/>
+        <Sidebar cates={undefined}/>
+        <Contexts>
+          {children}
+        </Contexts>
+        {/* {children} */}
+        <Footer/>
+        </body>
     </html>
   )
 }
