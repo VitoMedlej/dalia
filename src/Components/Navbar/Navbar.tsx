@@ -48,24 +48,27 @@ export default function Navbar() {
     
     return (
         <Box 
-     
+        className='bg'
         sx={{
             flexWrap:'wrap',
-            background: '#2581fd',
+           
 border:'none',
             flexGrow: 1
         }}>
             <AppBar
+             className='bg'
                 sx={{
 
                     maxWidth:'lg',
                     margin:'0 auto',
-                    background: '#2581fd',
+                
 
                 boxShadow: 'none'
             }}position="static">
-                <Toolbar sx={{
- background: '#2581fd',
+                <Toolbar
+                 className='bg'
+                sx={{
+
                     position: 'relative',
                     flexWrap:'wrap',
                 }}>

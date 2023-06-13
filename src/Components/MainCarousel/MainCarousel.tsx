@@ -13,7 +13,7 @@ const MainCarousel = () => {
         <Box
             sx={{
             // py: {xs:'.75em',sm:'2em',md:'3em'},
-            width: {xs:'98%',md:'70%',lg:'80%'},
+            width: {xs:'98%',md:'74%',lg:'80%'},
            
             maxWidth: 'lg',
             maxHeight:'450px',
@@ -25,7 +25,8 @@ const MainCarousel = () => {
             height: '100%'
         }}>
             <Swiper
-                navigation={true}
+            
+                navigation={false}
                 slidesPerView={1}
                 spaceBetween={0}
                 loop={true}
@@ -33,7 +34,7 @@ const MainCarousel = () => {
                 delay: 2000,
                 disableOnInteraction: true
             }}
-                modules={[Autoplay, Navigation]}
+                modules={[Autoplay]}
                 className="mySwiper swiper">
 
                 {[{img:`https://ucarecdn.com/96f3a42e-18bd-4871-92a5-4cb0ca861560/Capture.JPG`}

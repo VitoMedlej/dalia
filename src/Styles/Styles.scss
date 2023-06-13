@@ -9,8 +9,52 @@ body {
 * ,h1,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
     font-family: 'Montserrat', sans-serif !important;
 }
+$color : #2581fd !important;
 .img {
     object-fit: cover;
     width:100%;
     height: 100%;
+}
+.flex {
+    display: flex;
+}
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.hover-shadow {
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+}
+.trans {
+    transition: all .1s ease-in;
+}
+.cursor {
+    cursor: pointer;
+}
+.bg {
+    background: $color ;
+}
+.white {
+ color: white !important;
+}
+.wrap {
+    flex-wrap: wrap ;
+}
+.gap1 {
+    gap:.25em;
+}
+.justify-center {
+    justify-content: center
+}
+.cap {
+    text-transform: uppercase;
+}
+.text-center {
+    text-align: center;
+}
+.clr {
+    color: $color;
 }
