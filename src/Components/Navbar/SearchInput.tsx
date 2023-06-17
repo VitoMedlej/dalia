@@ -17,8 +17,9 @@ export default function CustomizedInputBase({sx,mobile,onSubmit,value,setValue}:
       className='searchinput '
       sx={{
         py:'.25em',
-        my:'.25em',
+        mt:'.25em',
         px:'.5em',
+        mb:'.5em',
         flex:1,
         flexBasis:'100%',
         boxShadow:'none',
