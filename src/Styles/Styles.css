@@ -78,4 +78,8 @@ body {
 
 .decor-none {
   text-decoration: none;
+}
+
+.relative {
+  position: relative;
 }/*# sourceMappingURL=Styles.css.map */

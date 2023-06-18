@@ -3,6 +3,7 @@ import '../Styles/Styles.css'
 import Footer from '@/Components/Footer/Footer'
 import Contexts from '@/context/Contexts'
 import Sidebar from '@/Components/Sidebar/Sidebar'
+import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
 
 export const metadata = {
   title: 'Create Next App',
@@ -22,9 +23,10 @@ export default function RootLayout({
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap" rel="stylesheet"/>
       </head>
 
-      <body>
+      <body className='relative'>
         <Navbar/>
         <Sidebar cates={undefined}/>
+        <ScrollToTop/>
         <Contexts>
           {children}
         </Contexts>
