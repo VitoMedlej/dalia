@@ -1,8 +1,10 @@
 "use client"
 
 import HomeCategoryList from "@/Components/HomeCateogryList/HomeCategoryList"
+import HomeProductCollection from "@/Components/HomeProductCollection/HomeProductCollection"
 import HomeProductsCarousel from "@/Components/HomeProductsCarousel/HomeProductsCarousel"
 import HomeRectangularPoster from "@/Components/HomeRectangularPoster/HomeRectangularPoster"
+import HomeSquareAd from "@/Components/HomeSquareAd/HomeSquareAd"
 import MainCarousel from "@/Components/MainCarousel/MainCarousel"
 import ProductCard from "@/Components/ProductCard/ProductCard"
 import { Box, Button, Container, Typography } from "@mui/material"
@@ -45,37 +47,20 @@ export default function Home() {
             {[1,2,3,4,5,6,7,8].map(i=>{
                 return <Box className='cursor' sx={{width:{xs:'23%'}}}>
                         <img src="https://www.ishtari.com/image/data/system_banner/10000/2400/2208/appliances.png" alt="" className="img" />
-                 
+          
                 </Box>
             })}
           </Box>
-            <Box sx={{my:4}}>
-            <Typography
-                className='sectionTitle box'
-                sx={{
-                  pb:'.5em',
-                fontSize: {
-                    xs: '1.2em',
-                    sm: '1.4em'
-                },
-                fontWeight: '600'
-            }}>
-                Explore Different Categories
-            </Typography>
-              <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
-                  {[1,2,3,4,5,6,6,7].map(i=>{
-                      return <ProductCard title={"ITEM NAME"} price={124} _id={"FASF"} 
-                       images={['https://itaouielectronics.com/wp-content/uploads/2021/08/iphone-dock-2.jpg']}
-                       category={"category"}/>
-                  })}
-              </Box>
-            </Box>
-
+            <HomeProductCollection/>
+            
             <HomeCategoryList/>
             <HomeProductsCarousel Collectiontitle={"fooer"} delay={3000} data={[{title:'foo',price:12,_id:'4124',description:'',attributes:[],
             category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},
             {title:'Wooden single drawer',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']}, {title:'Wooden single drawer',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']}]}/>
-            <HomeRectangularPoster/>
+            <HomeSquareAd/>
+
+            <HomeProductCollection/>
+
         </Container>
       </Box>
   )

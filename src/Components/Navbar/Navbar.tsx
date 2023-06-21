@@ -19,6 +19,7 @@ import {useRouter} from 'next/navigation';
 import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
 import {CartContext, DrawerContext} from '@/context/Contexts';
 import SearchInput from './SearchInput';
+import NavButtom from './NavButtom';
 
 export default function Navbar() {
     const {open, setOpen} = useContext(DrawerContext);
@@ -162,37 +163,10 @@ export default function Navbar() {
                     setValue={undefined}/>
             </Toolbar>
         </AppBar>
-    </Box> < Divider color = 'white' />
-    
-     <Box
-        className='flex bg  space-evenly'
-
-        sx={{
-        width: '100%',
-      
-        mx: 0
-    }}
-        >
-            <Container 
-
-        className='flex   space-evenly'
-            
-            sx={{  maxWidth: 'lg',}}>
-
-        {[1, 2, 3, 4].map(i => {
-            return <Link className='white decor-none' key={i} href='/'>
-                <Typography >
-                    nameer
-                </Typography>
-            </Link>
-        })}
-        </Container>
-    </Box>
-
-
-
-    
-    </>
+    </Box> 
+   <NavButtom/>
+    < Divider color = 'white' />
+     </>
     
     );
 }

@@ -36,14 +36,13 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
                     xs: '1.2em',
                     sm: '1.4em'
                 },
+                padding:.5,
                 fontWeight: '600'
             }}>
               {Collectiontitle}
             </Typography>
             <Divider  light />
 
-         
-             
             
             <Box
                 sx={{
@@ -54,6 +53,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             }}>
                 <SwiperCarousel
                 delay={delay}
+                
                 data={data && data.length > 0 && data?.slice(0,25) || []}/>
             </Box>
             <Divider  light />
