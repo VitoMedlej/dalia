@@ -25,7 +25,7 @@ export default function Home() {
              
               </Box>
             {[1,2,3,4].map(i=>{
-              return <Box className='flex shadow cursor' sx={{
+              return <Box key={i} className='flex shadow cursor' sx={{
                 px:1,
                 py:2,width:'100%',background:'white'}}>
                 <Box sx={{height:'20px',width:'20px'}}>
@@ -45,7 +45,7 @@ export default function Home() {
               Browse Collections
             </Typography>
             {[1,2,3,4,5,6,7,8].map(i=>{
-                return <Box className='cursor' sx={{width:{xs:'23%'}}}>
+                return <Box key={i} className='cursor' sx={{width:{xs:'23%'}}}>
                         <img src="https://www.ishtari.com/image/data/system_banner/10000/2400/2208/appliances.png" alt="" className="img" />
           
                 </Box>

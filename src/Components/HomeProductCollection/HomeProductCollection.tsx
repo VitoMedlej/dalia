@@ -19,7 +19,8 @@ const HomeProductCollection = () => {
             </Typography>
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
                   {[1,2,3,4,5,6,6,7].map(i=>{
-                      return <ProductCard title={"ITEM NAME"} price={124} _id={"FASF"} 
+
+                      return <ProductCard key={i} title={"ITEM NAME"} price={124} _id={"FASF"} 
                        images={['https://itaouielectronics.com/wp-content/uploads/2021/08/iphone-dock-2.jpg']}
                        category={"category"}/>
                   })}

@@ -17,11 +17,12 @@ const NavButtom = () => {
             maxWidth: 'lg',
             overflow:'hidden',
             py:1,
+
         }}>
 
             {[1, 2, 3, 4].map(i => {
                 return <Link className='clr decor-none uppercase' key={i} href='/'>
-                    <Typography component='p' sx={{fontWeight:600}}>
+                    <Typography component='p' sx={{fontWeight:600,fontSize:'.85em'}}>
                         nameer
                     </Typography>
                 </Link>

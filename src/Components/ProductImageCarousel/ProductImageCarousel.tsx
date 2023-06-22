@@ -18,7 +18,6 @@ export default function App() {
   return (
     <>
       <Swiper
-
         spaceBetween={30}
         effect={"fade"}
         autoplay={

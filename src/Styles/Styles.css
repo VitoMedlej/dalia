@@ -64,6 +64,10 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .cap {
   text-transform: uppercase;
 }
