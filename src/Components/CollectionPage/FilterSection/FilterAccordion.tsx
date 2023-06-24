@@ -57,24 +57,24 @@ export default function SimpleAccordion({options,setOptions}:any) {
         <Box className='flex justify-between'>
             {filters.map(filter => {
 
-                return <>
+                 
                 
-                <Box
+return  <Box
                     key={filter.title}
                     sx={{
                     boxShadow: 'none'
                 }}>
                 
                         <Typography>{filter.title}</Typography>
-                    </Box>
+                  
                     <Box
                         sx={{
                         padding: 0
                     }}>
                         {filter.comp}
                     </Box>
-                </> 
-
+               
+                    </Box>
               
             })}
         </Box>
