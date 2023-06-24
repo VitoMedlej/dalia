@@ -5,7 +5,6 @@ import { Typography } from '@mui/material';
 
 function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
   event.preventDefault();
-  console.info('You clicked a breadcrumb.');
 }
 
 export default function ActiveLastBreadcrumb() {

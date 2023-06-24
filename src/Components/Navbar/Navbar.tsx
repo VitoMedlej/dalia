@@ -17,24 +17,24 @@ import {Badge, Container, Divider, Typography} from '@mui/material';
 import {useRouter} from 'next/navigation';
 // import SideBar from '../Drawer/SideBar';
 import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
-import {CartContext, DrawerContext} from '@/context/Contexts';
 import SearchInput from './SearchInput';
 import NavButtom from './NavButtom';
+import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 export default function Navbar() {
-    const {open, setOpen} = useContext(DrawerContext);
+    const {open, setOpen} = useDrawerContext();
     const [openModal,
         setOpenModal] = useState(false);
     const [localCart,
         setLocalCart] = useState([]);
     const [q,
         setQ] = useState('')
-    const {cartOpen, setCartOpen} = useContext(CartContext);
+    const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('usercart2') || []
+        // const cart = loadState('cart-items') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -107,6 +107,7 @@ export default function Navbar() {
                         justifyContent: 'end'
                     }}
                         className='flex right'>
+    <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex' rel='noopener'>
 
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
@@ -117,7 +118,7 @@ export default function Navbar() {
                                 sx={{
                                 px: '.1em',
                                 color: 'white',
-                                display: {
+                                display : {
                                     xs: 'none',
                                     lg: 'flex'
                                 }
@@ -127,6 +128,8 @@ export default function Navbar() {
                             <AiOutlinePhone color='white'/>
 
                         </IconButton>
+    </a>
+
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{

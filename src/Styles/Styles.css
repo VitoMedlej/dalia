@@ -68,6 +68,19 @@ body {
   justify-content: center;
 }
 
+.items-center {
+  align-items: center;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.56;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: gray !important;
+}
+
 .justify-between {
   justify-content: space-between;
 }

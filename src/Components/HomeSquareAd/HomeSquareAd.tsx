@@ -11,7 +11,7 @@ const HomeSquareAd = ({center,reversed,fullscreen,img,title,description,btnTitle
     const router = useRouter()
   
     return (
-    <Grid maxWidth={fullscreen? 'none':'lg'}  sx={{background:'#f2f2f2',flexDirection:{xs:'column',sm:'row'}}} className={reversed ? 'row ' : 'row-reversed '} container>
+    <Grid maxWidth={fullscreen? 'none':'lg'}  sx={{background:'#f2f2f2',flexDirection:{xs:'row',sm:'row'}}} className={reversed ? 'row ' : 'row-reversed '} container>
         <Grid  item xs={12} sm={6}>
             <Box sx={{textAlign:center?'center':'left',px:{xs:1,sm:2},color:'black',height:{xs:'500px',sm:'100%',md:'600px'}}} className={`flex  ${center ? 'text-center' : ''} bg2 center col auto`}>
           

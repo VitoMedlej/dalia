@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 
 // import required modules
-import { EffectFade, Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import { Box } from "@mui/material";
 
 export default function App() {
@@ -23,11 +23,11 @@ export default function App() {
         autoplay={
           {delay:2000}
         }
-        navigation={false}
+        navigation={true}
         pagination={{
           clickable: true,
         }}
-        modules={[EffectFade,Autoplay, Pagination]}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>

@@ -1,5 +1,6 @@
 "use client"
 
+import ContactSection from "@/Components/ContactSection/ContactSection"
 import HomeCategoryList from "@/Components/HomeCateogryList/HomeCategoryList"
 import HomeProductCollection from "@/Components/HomeProductCollection/HomeProductCollection"
 import HomeProductsCarousel from "@/Components/HomeProductsCarousel/HomeProductsCarousel"
@@ -62,6 +63,7 @@ export default function Home() {
 
         </Container>
             <HomeSquareAd fullscreen  img={"https://cdn.shopify.com/s/files/1/0736/4571/9865/files/ABOUT_US_2.jpg?v=1678880362&width=1540"}/>
+            <ContactSection/>
       </Box>
   )
 }

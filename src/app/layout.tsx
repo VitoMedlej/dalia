@@ -1,9 +1,11 @@
 import Navbar from '@/Components/Navbar/Navbar'
 import '../Styles/Styles.css'
 import Footer from '@/Components/Footer/Footer'
-import Contexts from '@/context/Contexts'
+
 import Sidebar from '@/Components/Sidebar/Sidebar'
 import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
+import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
+import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
   title: 'damn broo',
@@ -25,13 +27,14 @@ export default function RootLayout({
       </head>
 
       <body className='relative'>
+        <ContextWrapper>
         <Navbar/>
         <Sidebar cates={undefined}/>
+        <QuickCart/>
         <ScrollToTop/>
-        <Contexts>
           {children}
-        </Contexts>
         {/* {children} */}
+        </ContextWrapper>
         <Footer/>
         </body>
     </html>

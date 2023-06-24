@@ -13,3 +13,14 @@ export interface IProduct {
     category : string;
     isFeatured?: boolean;
 }
+export interface ICartItem {
+    title: string;
+    _id: string;
+    price: number;
+    img : string;
+    qty : number;
+    onChange ?: () => void;
+    category ?: string;
+    remove: (id:string) => void;
+    shortdesc ?: string;
+}

@@ -1,11 +1,12 @@
 "use client";
 import {useContext} from 'react';
-import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box} from '@mui/material';
-import {MdPrecisionManufacturing,MdOutlineCancel} from 'react-icons/md';
+import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography} from '@mui/material';
+import {MdPrecisionManufacturing} from 'react-icons/md';
 import { IconButton } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import {BiCategoryAlt} from 'react-icons/bi';
 import { DrawerContext } from '@/context/Contexts';
+import {GrFormClose} from 'react-icons/gr'
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -28,22 +29,27 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   const Lista = () => (
     <Box
-      sx={{ width:  'auto' }}
+      sx={{ width:  'auto',py:1 }}
       role="presentation"
       onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
     >
-      <Box className='flex'
+      <Box className='flex justify-between items-center '
       sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
       
       >
+        <Box>
+          <Typography sx={{fontWeight:600}}>
+            Menu
+          </Typography>
+        </Box>
 
               <IconButton 
         
         onClick={toggleDrawer(false)}>
-                            <MdOutlineCancel
-                                  color= 'red'
-                              />
+                        <GrFormClose
+                                color='red'
+                                />
                         </IconButton>
                      
 
