@@ -30,13 +30,14 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
             },
             background: 'white',
       
-            flexDirection: 'row',
-         
+            flexDirection: 'column',
+            pt:2,
+            px:1,
             display: 'flex',
             ...sx,
            
         }}>
-           <Typography sx={{py:'.5em',fontWeight:'600',fontSize:'1.2em'}}>Filter By</Typography>
+           <Typography sx={{py:'.5em',fontWeight:'400',fontSize:'1em'}}>Filter Options</Typography>
          
           
      

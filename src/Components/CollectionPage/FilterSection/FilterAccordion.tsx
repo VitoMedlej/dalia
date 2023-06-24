@@ -22,7 +22,6 @@ export default function SimpleAccordion({options,setOptions}:any) {
     }
     const handleSort = (val:string) => {
         setOptions({...options,sort:val})
-
     }
     const filters = [
         // {
@@ -34,18 +33,30 @@ export default function SimpleAccordion({options,setOptions}:any) {
         //             my: '1em'
         //         }}/>
         // },
-         {
-            title: 'Category',
-            comp: <RadioGroupForm
-            value={options.category}
-            setValue={
-                handleChange
-                }
-            />
-        },
-         {
+        //  {
+        //     title: 'Category',
+        //     comp: <RadioGroupForm
+        //     value={options.category}
+        //     setValue={
+        //         handleChange
+        //         }
+        //     />
+        // },
+        {
             title: 'Sort By',
             comp: <SelectOneForm
+            value={options.sort}
+            setValue={handleSort}
+            sx={{
+                    // my: '1em'
+                }}/>
+        },
+        {
+            title: 'Sort By',
+
+            comp: <SelectOneForm
+            
+            placeholder='Sort Options'
             value={options.sort}
             setValue={handleSort}
             sx={{
@@ -54,25 +65,20 @@ export default function SimpleAccordion({options,setOptions}:any) {
         }
     ]
     return (
-        <Box className='flex justify-between'>
+        <Box sx={{justifyContent:'start',gap:2}} className='flex '>
             {filters.map(filter => {
-
                  
                 
 return  <Box
+className='flex center items-center'
                     key={filter.title}
                     sx={{
+                  
                     boxShadow: 'none'
                 }}>
                 
-                        <Typography>{filter.title}</Typography>
-                  
-                    <Box
-                        sx={{
-                        padding: 0
-                    }}>
+                 
                         {filter.comp}
-                    </Box>
                
                     </Box>
               

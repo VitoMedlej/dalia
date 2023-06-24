@@ -10,8 +10,8 @@ export default function SelectSmall({value,setValue,sx}:any) {
 
 
   return (
-    <FormControl   variant="outlined" sx={{ my:0.5,  width : '100%',...sx }} size="small">
-      <InputLabel id="demo-select-small">Sort by</InputLabel>
+    <FormControl   variant="outlined" sx={{ width:'200px', my:0.25  ,...sx }} size="small">
+      <InputLabel id="demo-select-small">Sort Options</InputLabel>
       <Select
        
         labelId="demo-select-small"
