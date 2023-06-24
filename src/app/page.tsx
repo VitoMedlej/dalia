@@ -46,22 +46,22 @@ export default function Home() {
             </Typography>
             {[1,2,3,4,5,6,7,8].map(i=>{
                 return <Box key={i} className='cursor' sx={{width:{xs:'23%'}}}>
-                        <img src="https://www.ishtari.com/image/data/system_banner/10000/2400/2208/appliances.png" alt="" className="img" />
+                        <img src="https://cdn.shopify.com/s/files/1/0736/4571/9865/products/335960041594900903.png?crop=center&height=240&v=1678468381&width=240" alt="" className="img" />
           
                 </Box>
             })}
           </Box>
             <HomeProductCollection/>
+            <HomeSquareAd  center img={"https://cdn.shopify.com/s/files/1/0736/4571/9865/files/ABOUT_US_2.jpg?v=1678880362&width=1540"}/>
             
-            <HomeCategoryList/>
+            {/* <HomeCategoryList/> */}
             <HomeProductsCarousel Collectiontitle={"fooer"} delay={3000} data={[{title:'foo',price:12,_id:'4124',description:'',attributes:[],
             category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},
             {title:'Wooden single drawer',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']}, {title:'Wooden single drawer',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']},{title:'foo',price:12,_id:'4124',description:'',attributes:[],category:'ffoo',images:['https://itaouielectronics.com/wp-content/uploads/2021/08/wooden-single-drawer-2.jpg']}]}/>
-            <HomeSquareAd/>
 
-            <HomeProductCollection/>
 
         </Container>
+            <HomeSquareAd fullscreen  img={"https://cdn.shopify.com/s/files/1/0736/4571/9865/files/ABOUT_US_2.jpg?v=1678880362&width=1540"}/>
       </Box>
   )
 }

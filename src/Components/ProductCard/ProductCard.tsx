@@ -12,7 +12,9 @@ const ProductCard = ({
     width ,
 }:{_id:string,title :string,price:number | string,images : string[],category:string, width ?: string | number}) => {
   return (
-    <Box className='hover-shadow cursor trans' sx={{py:1,margin:'0 auto',minWidth:'150px',width:width ? width : {xs:'49%',sm:'24%'}}}>
+    <Box className='hover-shadow cursor trans' sx={{py:1,margin:'.25em auto',
+    boxShadow: `rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px`
+    ,minWidth:'150px',width:width ? width : {xs:'49%',sm:'24%'}}}>
     <Box>
       <img src={images ? images[0] :'' } alt="" className="img" />
     </Box>

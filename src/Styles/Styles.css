@@ -44,6 +44,10 @@ body {
   cursor: pointer;
 }
 
+.row {
+  flex-direction: row;
+}
+
 .bg {
   background: #2581fd !important;
 }

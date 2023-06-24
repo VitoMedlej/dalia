@@ -21,7 +21,7 @@ const HomeProductCollection = () => {
                   {[1,2,3,4,5,6,6,7].map(i=>{
 
                       return <ProductCard key={i} title={"ITEM NAME"} price={124} _id={"FASF"} 
-                       images={['https://itaouielectronics.com/wp-content/uploads/2021/08/iphone-dock-2.jpg']}
+                       images={['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/335960041594900903.png?crop=center&height=240&v=1678468381&width=240']}
                        category={"category"}/>
                   })}
               </Box>

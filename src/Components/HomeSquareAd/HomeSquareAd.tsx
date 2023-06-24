@@ -1,32 +1,39 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
 import Btn from '../Btn/Btn'
+import { useRouter } from 'next/navigation'
 
-const HomeSquareAd = () => {
-  return (
-    <Grid  maxWidth='lg' sx={{my:4}} container>
+const HomeSquareAd = ({center,reversed,fullscreen,img,title,description,btnTitle}:{
+    fullscreen?:boolean,
+    center?:boolean,
+ 
+    btnTitle?:string,title?:string,description?:string,img:string,reversed?:boolean}) => {
+    const router = useRouter()
+  
+    return (
+    <Grid maxWidth={fullscreen? 'none':'lg'}  sx={{background:'#f2f2f2',flexDirection:{xs:'column',sm:'row'}}} className={reversed ? 'row ' : 'row-reversed '} container>
         <Grid  item xs={12} sm={6}>
-            <Box sx={{px:1,color:'white',py:2,height:{xs:'400px',sm:'600px'}}} className='flex text-center bg center col auto'>
-
-            <Box sx={{width:'170px',}} className='auto'>
-                <img  src="https://fontmeme.com/temporary/ce8c208b388646c2b7075ed958b9bf7b.png" alt="" className="img contain" />
-            </Box>
-            <Typography sx={{fontSize:'4em',fontWeight:'bold'}} component='h1'>
-                ARRIVALS
+            <Box sx={{textAlign:center?'center':'left',px:{xs:1,sm:2},color:'black',height:{xs:'500px',sm:'100%',md:'600px'}}} className={`flex  ${center ? 'text-center' : ''} bg2 center col auto`}>
+          
+            <Typography className='black'  sx={{py:.25,fontSize:{xs:'3.5em',sm:'4em'},fontWeight:'500'}} component='h2'>
+               {title || 'A Cascade of Purity'}
             </Typography>
-            <Typography component='p'>
-            These luxurious new bags pack a lot of punch!
+            <Typography sx={{maxWidth:'sm'}} className='black' component='p'>
+           {description || 'Our premium olive oil flows like a waterfall, cascading with the purest essence of nature. Sourced from the finest olives and crafted with care, our olive oil brings the beauty and abundance of nature to you. '}
             </Typography>
           
 
-            <Btn sx={{margin:'2em auto',width:'200px',background:'transparent',borderRadius:1,border:'1px solid'}} >
-                Shop Now
+            <Btn
+                            onClick={() => router.push('/product/Organic-Extra-Virgin-Olive-Oil')}
+            
+            sx={{color:'black',margin:center ? '2em auto':'2em 0',width:'200px',background:'transparent',borderRadius:1,border:'1px solid'}} >
+            {btnTitle || 'Discover the Cascade'} 
             </Btn>
             </Box>
         </Grid>
         <Grid item xs={12} sm={6}>
-            <Box sx={{height:{xs:'400px',sm:'600px'}}}>
-                <img style={{}} src="https://cdn.shortpixel.ai/spai/q_glossy+w_614+to_webp+ret_img/https://www.powproductphotography.com/wp-content/uploads/2023/03/Beauty_Product_Photography_08.jpg" alt="" className="img" />
+            <Box sx={{height:{xs:'500px',sm:'100%',md:'600px'}}}>
+                <img style={{}} src={img} alt="" className="img" />
             </Box>
         </Grid>
     </Grid>

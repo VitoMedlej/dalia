@@ -39,6 +39,9 @@ $color : #2581fd !important;
 .cursor {
     cursor: pointer;
 }
+.row {
+    flex-direction: row;
+}
 .bg {
     background: $color ;
 }

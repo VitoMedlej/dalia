@@ -51,10 +51,10 @@ const SwiperCarousel = ({data, delay} : {
                     slidesPerView: 3
                 },
                 1024: {
-                    slidesPerView: 5
+                    slidesPerView: 4
                 },
                 1240: {
-                    slidesPerView: 5
+                    slidesPerView: 4
                 }
             }}>
 
