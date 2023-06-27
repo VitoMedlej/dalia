@@ -13,17 +13,29 @@ const NavButtom = () => {
         <Container
             className='flex   '
             sx={{
-                gap:7,
+                gap:4,
             maxWidth: 'lg',
             overflow:'hidden',
             py:1,
 
         }}>
 
-            {[1, 2, 3, 4].map(i => {
+            {[
+'fresh food',
+'prepared food',
+'packaged food',
+'beverages',
+'organic food',
+'gluten-free food',
+'vegan food',
+'snacks',
+'desserts',
+'other'
+
+    ].slice(0,6).map(i => {
                 return <Link className='clr decor-none uppercase' key={i} href='/'>
-                    <Typography component='p' sx={{fontWeight:600,fontSize:'.85em'}}>
-                        nameer
+                    <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:'.85em'}}>
+                    {i}
                     </Typography>
                 </Link>
             })}

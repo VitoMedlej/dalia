@@ -5,7 +5,7 @@ import FilterSection from "@/Components/CollectionPage/FilterSection/FilterSecti
 import ProductCard from "@/Components/ProductCard/ProductCard"
 import { IProduct } from "@/Types/Types"
 import { server } from "@/Utils/Server"
-import {Box, Container,  Pagination} from "@mui/material"
+import {Box, Container,  Pagination, Typography} from "@mui/material"
 import { useParams, useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 
@@ -14,7 +14,8 @@ import { useState, useEffect } from "react"
 const Page = () => {
   const [pageNB,setPageNB] = useState(0)
   const router = useRouter()
-  const {category} = useParams()
+  const {category} = useParams() 
+
 
 
     const [data,setData] = useState< {
@@ -29,7 +30,7 @@ const Page = () => {
        const InitialFetch = async () => {
         try {
       
-          const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category}`)
+          const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ category.replace(/-/g, ' ')}`)
           const res = await req.json()
         
           if (res?.success && res?.data) {
@@ -67,7 +68,7 @@ const Page = () => {
             <Box className='flex wrap' sx={{
                 px: 1
             }}>
-                {data?.products && data?.products.map(i => {
+                {data?.products && data?.products?.length > 0 ? data?.products.map(i => {
                     return <ProductCard
                     key={i?._id}
                         _id={i._id}
@@ -76,7 +77,9 @@ const Page = () => {
                         images={i.images}
                         category={i.category}/>
                 })
-}
+: <Typography>
+  No products found, try a different category...
+  </Typography>}
             </Box>
             <Pagination
                 onChange={(e, val) => {

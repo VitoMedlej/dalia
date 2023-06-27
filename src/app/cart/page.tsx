@@ -58,7 +58,11 @@ const EmptyCartAlert = () => {
 }
 
 const totalCal = (cartItems: ICartItem[])=> {
-    return 0
+    let totalPrice = 0;
+    for (const item of cartItems) {
+        totalPrice += item.qty * item.price;
+    }
+    return totalPrice;
 }
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
@@ -89,7 +93,7 @@ const Cart = () => {
             margin:'0 auto',
             px: 1
         }}>
-      {false &&      <Typography
+      {cartItems?.length >0 &&      <Typography
                 sx={{
                 fontSize: '1.5em',
                 padding: 1,
@@ -160,7 +164,7 @@ const Cart = () => {
                     sx={{width:'100%',bordeRadius:1,mt:2.5}}>Checkout Now</Btn>
                     </Link>
 
-                    <Link href='/category/products' className='decor-none'>
+                    <Link href='/collection/products' className='decor-none'>
 
                     <Btn
                     

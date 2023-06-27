@@ -56,14 +56,22 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
                                 </Box>
       <List>
    
-       { ['electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
-       ,'heaters'
- ,      'fans'
-,       'tools'
-      ].map((text, index) => {
+       {[
+'fresh food',
+'prepared food',
+'packaged food',
+'beverages',
+'organic food',
+'gluten-free food',
+'vegan food',
+'snacks',
+'desserts',
+'other'
+
+    ].map((text, index) => {
           if (!text) return;
           return <ListItem
-          onClick={()=>router.push(`/category/${text}`)}
+          onClick={()=>router.push(`/collection/${text}`)}
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>

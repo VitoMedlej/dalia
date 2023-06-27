@@ -1,5 +1,6 @@
 "use client"
 import { createContext, useContext, useState } from "react";
+import NextNProgress from 'nextjs-progressbar';
 
 
 export const DrawerContext = createContext < any > ({});
@@ -20,12 +21,14 @@ export const Categories = createContext < any > ([]);
             const [cates,
                 setCates] = useState([]);
             return (
+                
                 <DrawerContext.Provider value={{open,setOpen}}>
         <Categories.Provider value={{cates, setCates}}>
         <CartContext.Provider value={{cartOpen, setCartOpen}}>
         {/* <SideBar cates={cates}/> */}
                 {/* <NextNProgress/> */}
             {/* <QuickCart/> */}
+            <NextNProgress />
             {children}
    
         </CartContext.Provider>

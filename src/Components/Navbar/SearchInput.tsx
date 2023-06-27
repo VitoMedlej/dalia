@@ -41,7 +41,7 @@ export default function CustomizedInputBase({sx,mobile,onSubmit,value,setValue}:
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
-        onClick={()=>        router.push(`/category/products?limit=80&search=${value}`)
+        onClick={()=>        router.push(`/collection/products?limit=80&search=${value}`)
       }
       type="submit" className='searchIcon   trans' sx={{borderRadius:0,p: '5px' }} aria-label="search">
         <IoIosSearch />

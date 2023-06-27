@@ -51,7 +51,7 @@ const MainCarousel = () => {
             ].map((item) => {
 
                     return <SwiperSlide 
-                        onClick={() => router.push('/category/products')}
+                        onClick={() => router.push('/collection/products')}
                     className='ztop pointer ' key={item.img}>
                         <Box
                             sx={{

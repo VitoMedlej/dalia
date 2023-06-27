@@ -58,7 +58,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Box>
             <Divider  light />
 
-            <Link  href='/category/products' className="decor-none">
+            <Link  href='/collection/products' className="decor-none">
 
                 <Btn sx={{margin:'1em auto'}}>
                     All Products

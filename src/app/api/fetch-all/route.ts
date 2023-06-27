@@ -11,7 +11,7 @@ export async function GET(req : Request, res : NextApiResponse) {
         let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : category
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : category.toLocaleLowerCase()
     const ProductsCollection = await client
         .db("F&B")
         .collection("Products");
@@ -26,6 +26,7 @@ export async function GET(req : Request, res : NextApiResponse) {
 
     await ProductsQuery.forEach((doc : any) => {
 
+        console.log('doc: ', doc);
         products.push(doc)
 
     });

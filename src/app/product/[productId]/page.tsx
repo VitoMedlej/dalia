@@ -20,7 +20,7 @@ const Index = () => {
  
     const {addToCart}= useCart()
     const [data,setData] = useState<{
-      product: IProduct | null;
+      product: IProduct | any ;
       moreProducts: IProduct[] | never[];
     }>
     ({
@@ -58,7 +58,7 @@ const Index = () => {
     
       <>
       <BreadCrumb />
-   <Grid sx={{maxWidth:'lg',mx:1}} className='auto' container>
+{data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1}} className='auto' container>
        <Grid  item xs={12} sm={6} md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
    
@@ -81,21 +81,24 @@ const Index = () => {
          </Box>
          <Divider></Divider>
    
-         <Box sx={{py:2}}>
+       { data?.product?.size && <Box sx={{py:2}}>
              <Box >
                  <Typography >
-                 <strong>Color:</strong> White/White
+                 <strong>Size:</strong>{' '}{data.product.size}
                  </Typography>
              </Box>
-             <Box>
+             {/* <Box>
                 <ProductOptionSelect/>
-             </Box>
-         </Box>
+             </Box> */}
+         </Box>}
          
              <Box sx={{my:2,position:'relative'}}>
-             <Btn  className='bg' sx={{gap:.5,border:'1px solid #0000003d',width:'100%',borderRadius:1}}>
+             <Btn 
+                     onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price},true)}
+             
+             className='bg' sx={{gap:.5,border:'1px solid #0000003d',width:'100%',borderRadius:1}}>
                  <Typography 
-                 // onClick={()=>addToCart(_id,{title,})}
+
                  sx={{fontWeight:500}}>
                  Add To Cart
                  </Typography>
@@ -117,9 +120,9 @@ const Index = () => {
              </Typography>
          </Box>
        </Grid>
-         <ProductReview/> 
+         {/* <ProductReview/>  */}
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
-   </Grid> 
+   </Grid> }
    </>
     
   )

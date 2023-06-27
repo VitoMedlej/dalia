@@ -7,12 +7,12 @@ import IconButton from '@mui/material/IconButton';
 import {IoIosMenu} from 'react-icons/io'
 import {HiOutlineShoppingBag} from 'react-icons/hi'
 
-import {FormEvent, useContext, useEffect, useState} from 'react';
+import {FormEvent,  useEffect, useState} from 'react';
 // import { CartContext, DrawerContext } from '../../../pages/_app'; import
 // SearchModal from './SearchModal';
 import Link from 'next/link';
 // import SearchInput from './SearchInput';
-import {Badge, Container, Divider, Typography} from '@mui/material';
+import {Badge, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
 // import SideBar from '../Drawer/SideBar';
@@ -44,27 +44,27 @@ export default function Navbar() {
     const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
         e.preventDefault()
         if (q.length > 2) {
-            router.push(`/category/products?limit=80&search=${q}`)
+            router.push(`/collection/products?limit=80&search=${q}`)
         }
     }
 
     return ( <> <Box
-        className='bg'
         sx={{
         flexWrap: 'wrap',
-        border: 'none',
+                background:'white',
+                border: 'none',
         flexGrow: 1
     }}>
         <AppBar
-            className='bg'
             sx={{
+                background:'white',
             maxWidth: 'lg',
             margin: '0 auto',
             boxShadow: 'none'
         }}position="static">
             <Toolbar
-                className='bg'
                 sx={{
+                background:'white',
                 position: 'relative',
                 flexWrap: 'wrap'
             }}>
@@ -79,7 +79,7 @@ export default function Navbar() {
                     }}>
                         <img
                             className='img'
-                            src={`https://www.ishtari.com/static/media/logo.966a1527.png`}
+                            src={`https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg`}
                             alt="Teen Tops electronics eshop logo"/>
                     </Box>
                 </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
                         justifyContent: 'end'
                     }}
                         className='flex right'>
-    <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex' rel='noopener'>
+    <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
 
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
@@ -116,16 +116,17 @@ export default function Navbar() {
                         }}>
                             <Typography
                                 sx={{
+                                
                                 px: '.1em',
-                                color: 'white',
+                                color: 'black',
                                 display : {
                                     xs: 'none',
                                     lg: 'flex'
                                 }
                             }}>
-                                +961 81826445
+                                +961 78871373
                             </Typography>
-                            <AiOutlinePhone color='white'/>
+                            <AiOutlinePhone color='black'/>
 
                         </IconButton>
     </a>
@@ -137,7 +138,7 @@ export default function Navbar() {
                         }}>
                             <Badge color='primary' badgeContent={`${localCart.length || '0'}`}>
 
-                                <HiOutlineShoppingBag color='white'/>
+                                <HiOutlineShoppingBag color='black'/>
                             </Badge>
 
                         </IconButton>
@@ -154,7 +155,7 @@ export default function Navbar() {
                                 md: 'none'
                             }
                         }}>
-                            <IoIosMenu color='white'/>
+                            <IoIosMenu color='black'/>
                         </IconButton>
                     </Box>
 
@@ -168,7 +169,7 @@ export default function Navbar() {
         </AppBar>
     </Box> 
    <NavButtom/>
-    < Divider color = 'white' />
+    < Divider sx={{color : '#00000017'}} />
      </>
     
     );

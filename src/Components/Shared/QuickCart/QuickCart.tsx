@@ -39,11 +39,12 @@ export default function TemporaryDrawer() {
     }
     return (
         <div>
-            <Drawer anchor={'right'} open={cartOpen} onClose={toggleDrawer(false)}>
+            <Drawer  anchor={'right'} open={cartOpen} onClose={toggleDrawer(false)}>
                 <Box
                     sx={{
-                    maxWidth: 'lg',
+                    maxWidth: '500px',
                     width: '100%',
+
                     margin: '0 auto'
                 }}>
                     <Box
@@ -110,7 +111,7 @@ export default function TemporaryDrawer() {
                         sx={{
                             width:'100%',borderRadius:1,
                             ':hover':{background:'#1a4671',color:'white'}}}
-                        onClick={()=>{setCartOpen(false),router.push('/category/products')}}
+                        onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
                         v2={true} >
                         Continue Shopping
                         </Btn>

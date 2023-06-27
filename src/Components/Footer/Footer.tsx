@@ -17,11 +17,11 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/6e360177-750f-4671-8b74-edbc38f20c90/337875439_610147264297606_3941855933110310434_nremovebgpreview.pngF' alt="Teentops-lb Logo" />
+            <img className='img ' src='https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg' alt="Teentops-lb Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
-            We are Teen Tops. Best electronics supplier based in Lebanon, we sell various products of any house product you can think of, we deliver to all lebanon.
+          At Namliieh, we are proud to be part of Lebanon’s rich culinary heritage and are excited to share our passion for food with the world. Join us on our journey and discover the delicious possibilities of artisanal food.
           </Typography>
           {/* <SMicons/> */}
 
@@ -41,7 +41,7 @@ const Footer = () => (
           <ul className=' ul-white'>
             <li className='link-title'>Site links</li>
             <li><Link  href="/">Home</Link></li>
-            <li><Link href="/category/products">All Products</Link></li> 
+            <li><Link href="/collection/products">All Products</Link></li> 
             <li><Link href="/cart">Cart</Link></li>
             <li><Link href="/checkout">checkout</Link></li>
             <li><Link href="https://wa.me/76600541">Contact Us</Link></li>
@@ -53,8 +53,8 @@ const Footer = () => (
             
             <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li>
 
-            <li><a href="https://www.instagram.com/teen__tops___electronic/" target="_blank" rel="noreferrer" >@teen__tops___electronic</a></li>
-            <li><a href={'https://wa.me/76600541'} rel="noreferrer" target='_blank' >{` +961 76600541`}</a></li>
+            <li><a href="https://www.instagram.com/namliiehshop/?hl=en" target="_blank" rel="noreferrer" >@namliiehshop</a></li>
+            <li><a href={'https://wa.me/+96178871373'} rel="noreferrer" target='_blank' >{` +961 78871373`}</a></li>
           </ul>
         </div>
       </div>

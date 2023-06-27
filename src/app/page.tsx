@@ -37,7 +37,7 @@ export default async function Home() {
 //     InitialFetch()
 
 //   }, [])
-const req = await fetch(`${server}/api/get-data`,{ next: { revalidate: 400 } })
+      const req = await fetch(`${server}/api/get-data`,{ next: { revalidate: 400 } })
       const res = await req.json()
   return (
    <PreLoader data={res?.data}/>
