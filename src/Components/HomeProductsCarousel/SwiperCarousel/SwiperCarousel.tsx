@@ -29,6 +29,7 @@ const SwiperCarousel = ({data, delay} : {
             pagination={{
                 clickable: true,
               }}
+             
               autoplay={{
                 delay:  delay || 1000,
                 disableOnInteraction: true,
@@ -49,8 +50,8 @@ const SwiperCarousel = ({data, delay} : {
                   1024: {
                     slidesPerView: 3,
                   },
-                  1240: {
-                    slidesPerView: 4,
+                  1640: {
+                    slidesPerView: 3,
                   },
                 
                
@@ -67,6 +68,7 @@ const SwiperCarousel = ({data, delay} : {
                     }}
                         key={item._id}>
                         <ProductCard
+                            height={'400px'}
                             width='100%'
                             title={item.title}
                             images={item.images}

@@ -51,18 +51,18 @@ export default function SimpleAccordion({options,setOptions}:any) {
                     // my: '1em'
                 }}/>
         },
-        {
-            title: 'Sort By',
+        // {
+        //     title: 'Sort By',
 
-            comp: <SelectOneForm
+        //     comp: <SelectOneForm
             
-            placeholder='Sort Options'
-            value={options.sort}
-            setValue={handleSort}
-            sx={{
-                    // my: '1em'
-                }}/>
-        }
+        //     placeholder='Sort Options'
+        //     value={options.sort}
+        //     setValue={handleSort}
+        //     sx={{
+        //             // my: '1em'
+        //         }}/>
+        // }
     ]
     return (
         <Box sx={{justifyContent:'start',gap:2}} className='flex '>

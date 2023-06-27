@@ -26,7 +26,6 @@ export async function GET(req : Request, res : NextApiResponse) {
 
     await ProductsQuery.forEach((doc : any) => {
 
-        console.log('doc: ', doc);
         products.push(doc)
 
     });

@@ -28,7 +28,6 @@ const Index = () => {
       moreProducts : []
     })
     
-    console.log('data: ', data);
     
        const InitialFetch = async () => {
         try {

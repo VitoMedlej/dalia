@@ -71,7 +71,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     ].map((text, index) => {
           if (!text) return;
           return <ListItem
-          onClick={()=>router.push(`/collection/${text}`)}
+          onClick={()=>router.push(`/${text}/products`)}
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>

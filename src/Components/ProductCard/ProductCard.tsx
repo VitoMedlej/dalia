@@ -11,7 +11,8 @@ const ProductCard = ({
     images,
     category,
     _id,
-    width
+    width,
+    height
 } : {
     _id: string,
     title: string,
@@ -19,6 +20,7 @@ const ProductCard = ({
     images: string[],
     category: string,
     width?: string | number
+    height?: string | number
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
@@ -34,14 +36,14 @@ const ProductCard = ({
             width: width
                 ? width
                 : {
-                    xs: '49%',
-                    sm: '24%'
+                    xs: '47%',
+                    sm: '23%'
                 }
         }}>
             <Box 
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
-                height: {xs:'180px',sm:'300px',md:'350px'}
+                height: height || {xs:'180px',sm:'300px',md:'350px'}
             }}>
                 <img
                     src={images

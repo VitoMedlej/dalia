@@ -33,7 +33,7 @@ const NavButtom = () => {
 'other'
 
     ].slice(0,6).map(i => {
-                return <Link className='clr decor-none uppercase' key={i} href='/'>
+                return <Link className='clr decor-none uppercase' key={i} href={`${i.replace(/ /g, '-')}/products`}>
                     <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:'.85em'}}>
                     {i}
                     </Typography>
