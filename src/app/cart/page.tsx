@@ -9,6 +9,7 @@ import Btn from '@/Components/Btn/Btn';
 import CartProduct from '@/Components/Shared/CartProduct/CartProduct';
 import { ICartItem } from '@/Types/Types';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
+import totalCal from '@/Utils/totalCal';
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -57,13 +58,7 @@ const EmptyCartAlert = () => {
     )
 }
 
-export function totalCal(cartItems: ICartItem[]) {
-    let totalPrice = 0;
-    for (const item of cartItems) {
-        totalPrice += item.qty * item.price;
-    }
-    return totalPrice;
-}
+
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 

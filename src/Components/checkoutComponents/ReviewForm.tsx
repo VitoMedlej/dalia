@@ -6,7 +6,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 import { Divider } from '@mui/material';
 import { loadState } from '@/Utils/LocalstorageFn';
-import { totalCal } from '@/app/cart/page';
+import totalCal from '@/Utils/totalCal';
+
 
 // const products = [
 //   {
@@ -31,7 +32,6 @@ import { totalCal } from '@/app/cart/page';
 //   },
 //   { name: 'Shipping', desc: '', price: '3.99$' },
 // ];
-const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 
 
 
