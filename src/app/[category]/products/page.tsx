@@ -1,100 +1,56 @@
-"use client"
+// "use client"
 
-import BreadCrumb from "@/Components/BreadCrumb/BreadCrumb"
-import FilterSection from "@/Components/CollectionPage/FilterSection/FilterSection"
-import ProductCard from "@/Components/ProductCard/ProductCard"
-import { IProduct } from "@/Types/Types"
+import Preloader2 from "@/Components/Preloader2"
 import { server } from "@/Utils/Server"
-import {Box, Container,  Pagination, Typography} from "@mui/material"
-import { useParams, useRouter, useSearchParams } from "next/navigation"
-import { useState, useEffect } from "react"
 
 
 
-const Page = () => {
-  const [pageNB,setPageNB] = useState(0)
-  const router = useRouter()
-  const {category} = useParams() 
+
+const Page = async (ctx:any) => {
+  const pageNB = 1;
+  const {category} = ctx.params;
+  console.log('ctx.params: ', ctx.params);
+  // const [pageNB,setPageNB] = useState(0)
+  // const router = useRouter()
+  // const {category} = useParams() 
 
 
 
-    const [data,setData] = useState< {
-        products: IProduct[] | never[] ; 
+    // const [data,setData] = useState< {
+    //     products: IProduct[] | never[] ; 
        
-    }>({
-        products : [],
+    // }>({
+    //     products : [],
        
-      })
-    
-    
-       const InitialFetch = async () => {
-        try {
+    //   })
+  
+    const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ category.replace(/-/g, ' ')}`)
+    const res = await req.json() 
+      //  const InitialFetch = async () => {
+      //   try {
       
-          const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ category.replace(/-/g, ' ')}`)
-          const res = await req.json()
+      //     const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ category.replace(/-/g, ' ')}`)
+      //     const res = await req.json()
         
-          if (res?.success && res?.data) {
-            setData(res?.data)
-          }
-          return null
-        }
-        catch(er) {
-          console.log('er getAll: ', er);
+      //     if (res?.success && res?.data) {
+      //       setData(res?.data)
+      //     }
+      //     return null
+      //   }
+      //   catch(er) {
+      //     console.log('er getAll: ', er);
       
-        }
-      }
-      useEffect(() => {
+      //   }
+      // }
+      // useEffect(() => {
         
-        InitialFetch()
+      //   InitialFetch()
     
-      }, [])
+      // }, [])
       
-    const counted = 1;
-    const handlePagination = async (val:number) => {
 
-    }
     return (
-        <Container disableGutters maxWidth='lg'>
-            <Box
-                sx={{
-                width: '100%',
-                minHeight: '100px'
-            }}>
-                <FilterSection/>
-            </Box>
-            <BreadCrumb></BreadCrumb>
-           
-
-            <Box className='flex wrap' sx={{
-                px: 1
-            }}>
-                {data?.products && data?.products?.length > 0 ? data?.products.map(i => {
-                    return <ProductCard
-                    key={i?._id}
-                        _id={i._id}
-                        title={i.title}
-                        price={i.price}
-                        images={i.images}
-                        category={i.category}/>
-                })
-: <Typography>
-  No products found, try a different category...
-  </Typography>}
-            </Box>
-            <Pagination
-                onChange={(e, val) => {
-                handlePagination(val)
-            }}
-                sx={{
-                my: 3
-            }}
-                count={counted > 1
-                ? counted
-                : 1}
-                className='flex center '/>
-     
-
-        </Container>
+        <Preloader2 data={res?.data}/>
     )
 }
 

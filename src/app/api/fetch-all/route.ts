@@ -44,7 +44,7 @@ export async function GET(req : Request, res : NextApiResponse) {
     });
 }
 catch (e) {
-    console.log('e: ', e);
+    console.log('e fetch-all: ', e);
     return NextResponse.json({
         success: true,
         data: {

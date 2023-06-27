@@ -24,7 +24,7 @@ const HomeSquareAd = ({center,reversed,fullscreen,img,title,description,btnTitle
           
 
             <Btn
-                            onClick={() => router.push('/product/Organic-Extra-Virgin-Olive-Oil')}
+                            onClick={() => router.push('/collection/products')}
             
             sx={{color:'black',margin:center ? '2em auto':'2em 0',width:'200px',background:'transparent',borderRadius:1,border:'1px solid'}} >
             {btnTitle || 'Discover the Cascade'} 

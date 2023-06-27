@@ -37,9 +37,17 @@ export default async function Home() {
 //     InitialFetch()
 
 //   }, [])
-      const req = await fetch(`${server}/api/get-data`,{ next: { revalidate: 400 } })
+try {
+
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 400 } })
       const res = await req.json()
   return (
    <PreLoader data={res?.data}/>
   )
+}
+
+catch (e) {
+  console.log('e home: ', e);
+
+}
 }

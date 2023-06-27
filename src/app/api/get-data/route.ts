@@ -5,6 +5,7 @@ import {NextResponse} from 'next/server'
 import {type NextRequest} from 'next/server'
 
 export async function GET(req : NextRequest, res : NextApiResponse) {
+try {
 
     const ProductsCollection = await client
         .db("F&B")
@@ -45,5 +46,10 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
             featuredProducts
         }
     });
+}
 
+catch (error) {
+    console.log('error get-data: ', error);
+
+}
 }

@@ -32,7 +32,7 @@ export const loadState = (key:string) => {
         }
     }
     catch(e) {
-        console.log('e: ', e);
+        console.log('e  localstrg: ', e);
 
     }
   }
