@@ -33,7 +33,7 @@ const useCart = () => {
             //if we do not have the item in cart, insert it
         pushState('cart-items',
         {qty:1,img:product.img,
-            category:product?.category || '',
+            category:product?.category || 'Collection',
             title:product.title
         ,_id:product._id,price:product.price})
         if(open) {

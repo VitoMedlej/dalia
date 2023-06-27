@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 import { Box } from "@mui/material";
 
-export default function App() {
+export default function App({images}:{images:string[] | []| undefined}) {
   return (
     <>
       <Swiper
@@ -30,21 +30,16 @@ export default function App() {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Box sx={{height:'700px'}}>
+{
+          images && images.map(img=>{
+            return    <SwiperSlide key={img}>
+              <Box sx={{height:{xs:'100%',md:'600px'}}}>
 
-          <img className='img' src="https://swiperjs.com/demos/images/nature-1.jpg" />
-          </Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
+            <img className='img' src={`${img}`} alt={'Product Image'} />
+              </Box>
+          </SwiperSlide>
+          })
+        }
       </Swiper>
     </>
   );

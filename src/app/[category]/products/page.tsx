@@ -3,88 +3,52 @@
 import BreadCrumb from "@/Components/BreadCrumb/BreadCrumb"
 import FilterSection from "@/Components/CollectionPage/FilterSection/FilterSection"
 import ProductCard from "@/Components/ProductCard/ProductCard"
+import { IProduct } from "@/Types/Types"
+import { server } from "@/Utils/Server"
 import {Box, Container,  Pagination} from "@mui/material"
-import { useRouter } from "next/navigation"
+import { useParams, useRouter, useSearchParams } from "next/navigation"
+import { useState, useEffect } from "react"
 
 
-const products = [
-    {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }, {
-        title: 'FOoer',
-        _id: '124124',
-        price: 25.99,
-        image: ['https://cdn.shopify.com/s/files/1/0736/4571/9865/products/350830061597051530.png' +
-                '?crop=center&height=240&v=1678468445&width=240'],
-        category: 'fooer'
-    }
-]
-const page = () => {
+
+const Page = () => {
+  const [pageNB,setPageNB] = useState(0)
+  const router = useRouter()
+  const {category} = useParams()
+
+
+    const [data,setData] = useState< {
+        products: IProduct[] | never[] ; 
+       
+    }>({
+        products : [],
+       
+      })
     
-    const router= useRouter()
+    
+       const InitialFetch = async () => {
+        try {
+      
+          const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category}`)
+          const res = await req.json()
+        
+          if (res?.success && res?.data) {
+            setData(res?.data)
+          }
+          return null
+        }
+        catch(er) {
+          console.log('er getAll: ', er);
+      
+        }
+      }
+      useEffect(() => {
+        
+        InitialFetch()
+    
+      }, [])
+      
     const counted = 1;
-    const page = 1
     const handlePagination = async (val:number) => {
 
     }
@@ -103,12 +67,13 @@ const page = () => {
             <Box className='flex wrap' sx={{
                 px: 1
             }}>
-                {products && products.map(i => {
+                {data?.products && data?.products.map(i => {
                     return <ProductCard
+                    key={i?._id}
                         _id={i._id}
                         title={i.title}
                         price={i.price}
-                        images={i.image}
+                        images={i.images}
                         category={i.category}/>
                 })
 }
@@ -130,4 +95,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

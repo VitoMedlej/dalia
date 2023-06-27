@@ -25,38 +25,38 @@ const SwiperCarousel = ({data, delay} : {
             },
             height: '100%'
         }}>
-
-            <Swiper
-                pagination={{
-                clickable: true
-            }}
-                autoplay={{
-                delay: delay || 1000,
-                disableOnInteraction: true
-            }}
-                navigation={false}
-                spaceBetween={10}
-                slidesPerView={2}
-                slidesPerGroup={1}
-                modules={[FreeMode, Autoplay, Pagination]}
-                breakpoints={{
-                200: {
-                    slidesPerView: 2
+  <Swiper
+            pagination={{
+                clickable: true,
+              }}
+              autoplay={{
+                delay:  delay || 1000,
+                disableOnInteraction: true,
+              }}
+              navigation={false}
+            spaceBetween={10}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            modules={[FreeMode,Autoplay, Pagination]}
+            breakpoints={{
+                200 : {
+                    slidesPerView:1,
                 },
                 540: {
-                    slidesPerView: 2
-                },
-                860: {
-
-                    slidesPerView: 3
-                },
-                1024: {
-                    slidesPerView: 4
-                },
-                1240: {
-                    slidesPerView: 4
-                }
-            }}>
+                    slidesPerView: 2,
+                  },
+                  
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                  1240: {
+                    slidesPerView: 4,
+                  },
+                
+               
+        }}
+        
+        >
 
                 {data && data.length > 0 && data.map((item : any) => {
                     if (!item._id) 

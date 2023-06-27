@@ -25,9 +25,7 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
     return (
         <Box
             sx={{
-            width: {
-                xs: '100%',
-            },
+           
             background: 'white',
       
             flexDirection: 'column',
