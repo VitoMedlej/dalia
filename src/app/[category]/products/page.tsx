@@ -24,7 +24,7 @@ const Page = async (ctx:any) => {
        
     //   })
   
-    const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ category.replace(/-/g, ' ')}`)
+    const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ 'collection'.replace(/-/g, ' ')}`)
     const res = await req.json() 
       //  const InitialFetch = async () => {
       //   try {

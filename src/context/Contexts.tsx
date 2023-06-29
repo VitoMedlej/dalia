@@ -13,7 +13,7 @@ export const Categories = createContext < any > ([]);
         children: React.ReactNode;
       }
       ) => {
-
+            const a = 421412;
         const [open,
             setOpen] = useState(false);
         const [cartOpen,

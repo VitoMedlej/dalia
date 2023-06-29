@@ -14,7 +14,7 @@ const cates = [{img:'https://mysobol.com/wp-content/uploads/2022/09/Food-and-Bev
 {img:'https://img.freepik.com/free-photo/croissants-wooden-cutting-board_1150-28480.jpg?size=626&ext=jpg',category:'snacks'}  
 ]
 const PreLoader = ({data}:any) => {
-    const router= useRouter()
+    const router= useRouter();
   return (
     <Box>
     <Container disableGutters className='wrap' sx={{px:1,maxWidth:'xl',display:'flex'}}>
@@ -23,7 +23,7 @@ const PreLoader = ({data}:any) => {
             px:1,
             py:2,width:'100%',background:'white'}}>
           
-            <Typography sx={{fontWeight:'500',px:1}}>
+            <Typography  sx={{fontWeight:'500',px:1}}>
               All Categories
             </Typography>
          

@@ -1,17 +1,37 @@
 import client from '@/database/mongodb';
-import type { NextApiResponse}
+import type { NextApiRequest, NextApiResponse}
 from 'next';
-import {NextResponse} from 'next/server'
+import {NextResponse ,NextRequest} from 'next/server'
 
-export async function GET(req : Request, res : NextApiResponse) {
-    try {
+export async function GET(req :NextRequest , res : NextApiResponse) {
+    // try{
+    // const url = req.nextUrl
+    // const { searchParams } = new URL(req.nextUrl);
+    // const page = searchParams.get('page')
+    // let category=  searchParams.get('category') || null
 
-        const { searchParams } = new URL(req.url);
-        let category=  searchParams.get('category') || null
-        let page=  searchParams.get('page') || 0
+    // console.log('page: ', page);
+    // return NextResponse.json({success: false});
+    
+        // const { page,category } = req;
+        // let category=  searchParams.get('category') || null
+        // let page=  searchParams.get('page') || 0
+    // }
+    // catch(err){
+    //     console.log('err: ', err);
+
+    // }
+
+        try {
+            const { searchParams } = new URL(req.nextUrl);
+            const page = searchParams.get('page')
+            let category=  searchParams.get('category') || null
+        // const { searchParams } = new URL(req.url);
+        // let category=  searchParams.get('category') || null
+        // let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : category.toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
         .db("F&B")
         .collection("Products");
