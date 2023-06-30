@@ -38,6 +38,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     let products : any = []
 
 
+    console.log('filterByCate: ', filterByCate);
     const ProductsQuery = await ProductsCollection
         .find({filterByCate})
         .sort({_id: -1})
@@ -45,6 +46,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         .limit(12)
 
     await ProductsQuery.forEach((doc : any) => {
+        console.log('doc: ', doc);
 
         products.push(doc)
 

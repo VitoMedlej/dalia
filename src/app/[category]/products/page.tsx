@@ -7,12 +7,11 @@ import { server } from "@/Utils/Server"
 
 
 const Page = async (ctx:any) => {
-  const pageNB = 1;
+  const pageNB = 0;
   const {category} = ctx.params;
   console.log('ctx.params: ', ctx.params);
   // const [pageNB,setPageNB] = useState(0)
   // const router = useRouter()
-  // const {category} = useParams() 
 
 
 
@@ -24,7 +23,7 @@ const Page = async (ctx:any) => {
        
     //   })
   
-    const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${ 'collection'.replace(/-/g, ' ')}`)
+    const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${`${category}`.replace(/-/g, ' ')}`)
     const res = await req.json() 
       //  const InitialFetch = async () => {
       //   try {
