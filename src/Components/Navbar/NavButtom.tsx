@@ -8,7 +8,8 @@ const NavButtom = () => {
         className='flex   space-evenly'
         sx={{
         width: '100%',
-        mx: 0
+        mx: 0,
+        display : {xs:'none',sm:'flex'}
     }}>
         <Container
             className='flex   '

@@ -9,7 +9,6 @@ const Perks = () => {
         <Box
             className='flexed bg'
             sx={{
-                px:1.25,
                 mt: '5em',
                 flexWrap: 'wrap',
                 // background:'#f0f0f0',
@@ -21,7 +20,8 @@ const Perks = () => {
             <Box
                 className='flex'
                 sx={{
-                    pb:2,
+                    padding:2,
+
                     textAlign: 'center',
                     alignItems: 'center',
                     flexDirection: 'column',

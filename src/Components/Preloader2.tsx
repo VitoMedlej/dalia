@@ -9,7 +9,7 @@ import { IProduct } from '@/Types/Types'
 import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
-const Preloader2 = (data:any) => {
+const Preloader2 = ({data}:any) => {
     const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
     const {category} = useParams() 

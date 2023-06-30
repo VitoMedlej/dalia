@@ -27,7 +27,7 @@ const ProductCard = ({
 
     return (
         <Box
-            className='hover-shadow cursor trans'
+            className='hover-shadow  trans'
             sx={{
             py: 1,
             margin: '.25em auto',
@@ -41,6 +41,7 @@ const ProductCard = ({
                 }
         }}>
             <Box 
+            className='cursor'
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 height: height || {xs:'180px',sm:'300px',md:'350px'}
@@ -66,7 +67,7 @@ const ProductCard = ({
                     {price}$
                 </Typography>
                 <Typography
-            className='limited'
+            className='limited cursor '
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
@@ -83,9 +84,10 @@ const ProductCard = ({
                     {category}
                 </Typography>
                 <Btn
+            className='cursor gap1'
+                
                      onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
                     v2
-                    className='gap1'
                     sx={{
                     color: 'black',
                     borderColor: 'black',
