@@ -25,12 +25,15 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     // }
 
         try {
-            // const { searchParams } = new URL(req.nextUrl);
-            // const page = searchParams.get('page') || 0
-            // let category=  searchParams.get('category') || null
+            const { searchParams } = new URL(req.nextUrl);
+          
+            const page = searchParams.get('page') || 0
+          
+            let category=  searchParams.get('category') || null
+          
 
-            let page = 0;
-            let category = null
+            // let page = 0;
+            // let category = null
         // const { searchParams } = new URL(req.url);
         // let category=  searchParams.get('category') || null
         // let page=  searchParams.get('page') || 0
@@ -43,15 +46,14 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     let products : any = []
 
 
-    console.log('filterByCate: ', filterByCate);
+   
     const ProductsQuery = await ProductsCollection
-        .find({category : filterByCate})
+        .find(filterByCate && filterByCate !== 'null' && filterByCate !== null ? { category: filterByCate } : {})
         .sort({_id: -1})
         .skip(Number(page || 0) * 12)
         .limit(12)
 
     await ProductsQuery.forEach((doc : any) => {
-        console.log('doc: ', doc);
 
         products.push(doc)
 
