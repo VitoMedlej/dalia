@@ -25,9 +25,12 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     // }
 
         try {
-            const { searchParams } = new URL(req.nextUrl);
-            const page = searchParams.get('page') || 0
-            let category=  searchParams.get('category') || null
+            // const { searchParams } = new URL(req.nextUrl);
+            // const page = searchParams.get('page') || 0
+            // let category=  searchParams.get('category') || null
+
+            let page = 0;
+            let category = null
         // const { searchParams } = new URL(req.url);
         // let category=  searchParams.get('category') || null
         // let page=  searchParams.get('page') || 0
@@ -56,7 +59,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
 
 
-    if ( !products || products.length < 0) {
+    if ( !products || products.length < 1) {
         return NextResponse.json({success: false});
     }
     return NextResponse.json({
