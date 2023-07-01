@@ -1,7 +1,9 @@
 import client from '@/database/mongodb';
-import type { NextApiRequest, NextApiResponse}
+import type {  NextApiResponse}
 from 'next';
-import {NextResponse ,NextRequest} from 'next/server'
+import {NextResponse } from 'next/server';
+import {type NextRequest} from 'next/server';
+
 
 export async function GET(req :NextRequest , res : NextApiResponse) {
     // try{
@@ -24,7 +26,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
         try {
             const { searchParams } = new URL(req.nextUrl);
-            const page = searchParams.get('page')
+            const page = searchParams.get('page') || 0
             let category=  searchParams.get('category') || null
         // const { searchParams } = new URL(req.url);
         // let category=  searchParams.get('category') || null
@@ -40,7 +42,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
     console.log('filterByCate: ', filterByCate);
     const ProductsQuery = await ProductsCollection
-        .find({filterByCate})
+        .find({category : filterByCate})
         .sort({_id: -1})
         .skip(Number(page || 0) * 12)
         .limit(12)
@@ -68,7 +70,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 catch (e) {
     console.log('e fetch-all: ', e);
     return NextResponse.json({
-        success: true,
+        success: false,
         data: {
             products : null
            
