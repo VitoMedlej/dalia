@@ -8,7 +8,7 @@ const Page = async(ctx : any) => {
 
     const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category
         ? `${category}`.replace(/-/g, ' ')
-        : 'collection'}`,{cache: 'no-cache'})
+        : 'collection'}`, { cache: 'no-store' })
     const res = await req.json()
     console.log('res: ', res);
 
