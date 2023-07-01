@@ -25,13 +25,16 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     // }
 
         try {
-            const { searchParams } = new URL(req.nextUrl);
+            // const { searchParams } = new URL(req.nextUrl);
           
-            const page = searchParams.get('page') || 0
+            // const page = searchParams.get('page') || 0
           
-            let category=  searchParams.get('category') || null
+            // let category=  searchParams.get('category') || null
           
 
+            const { nextUrl } = req;
+    const category = nextUrl.searchParams.get('category');
+    const page = nextUrl.searchParams.get('page');
             // let page = 0;
             // let category = null
         // const { searchParams } = new URL(req.url);
