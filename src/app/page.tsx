@@ -39,7 +39,7 @@ export default async function Home() {
 //   }, [])
 try {
 
-      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 400 } })
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
       const res = await req.json()
   return (
   

@@ -13,7 +13,8 @@ const cates = [{img:'https://mysobol.com/wp-content/uploads/2022/09/Food-and-Bev
 {img:'https://img.freepik.com/free-photo/top-view-assortment-vegetables-paper-bag_23-2148853335.jpg?w=740&t=st=1687871138~exp=1687871738~hmac=53277d31e1853600b5d725111040d826887ce5e049a9e96b2a71481782eb0327',category:'dessrts'},
 {img:'https://img.freepik.com/free-photo/croissants-wooden-cutting-board_1150-28480.jpg?size=626&ext=jpg',category:'snacks'}  
 ]
-const PreLoader = ({data}:any) => {
+const 
+PreLoader = ({data}:any) => {
     const router= useRouter();
   return (
     <Box>
