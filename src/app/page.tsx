@@ -39,7 +39,8 @@ export default async function Home() {
 //   }, [])
 try {
 
-      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
+      // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
+      const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store' })
       let res = await req.json()
       return (
         <PreLoader data={res?.data}/>
