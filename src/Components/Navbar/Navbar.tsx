@@ -124,7 +124,7 @@ export default function Navbar() {
                                     lg: 'flex'
                                 }
                             }}>
-                                +961 78871373
+                               {process.env.NEXT_PUBLIC_WA}
                             </Typography>
                             <AiOutlinePhone color='black'/>
 

@@ -18,7 +18,7 @@ PreLoader = ({data}:any) => {
     const router= useRouter();
   return (
     <Box>
-    <Container disableGutters className='wrap' sx={{px:1,maxWidth:'xl',display:'flex'}}>
+    <Container disableGutters className='wrap' sx={{px:{sm:1},maxWidth:'xl',display:'flex'}}>
     <Box sx={{mt:'2em',mr:'.1em',width:{sm:'25%',lg:'19%'},flexDirection:'column',display:{xs:'none',md:'flex'}}}>
     <Box className='bg white' sx={{
             px:1,
@@ -85,14 +85,17 @@ PreLoader = ({data}:any) => {
 
       <Box/>
         <HomeProductCollection products={ data?.products }/>
-        <HomeSquareAd  center img={"https://cdn.shopify.com/s/files/1/0736/4571/9865/files/ABOUT_US_2.jpg?v=1678880362&width=1540"}/>
+        <HomeSquareAd title={'Oreo-filled Croissant 🥐'}
+        description='Indulge in our delicious croissant filled with crunchy Oreo pieces and topped with a generous drizzle of chocolate. Every bite is a delightful combination of textures and flavors that will leave you wanting more.'
+        btnTitle='Try it now'
+        center img={"https://ucarecdn.com/5feda36b-ca93-4bb8-9948-a39c7b286dd2/330288941_1384485138982953_8571653182770578518_n.jpg"}/>
         
         {/* <HomeCategoryList/> */}
         <HomeProductsCarousel Collectiontitle={"Featured Products"} delay={3000} data={data?.featuredProducts}/>
 
 
     </Container>
-        <HomeSquareAd fullscreen  img={"https://cdn.shopify.com/s/files/1/0736/4571/9865/files/ABOUT_US_2.jpg?v=1678880362&width=1540"}/>
+        <HomeSquareAd fullscreen  img={"https://ucarecdn.com/f4cd5f55-d141-4a16-9bc8-eb938a646a93/330160118_581160533941344_2956572324948803477_n.jpg"}/>
         <ContactSection/>
   </Box>
   )

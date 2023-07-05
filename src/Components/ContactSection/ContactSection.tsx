@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-import {AiOutlineWhatsApp,AiFillFacebook} from 'react-icons/ai'
+import {AiOutlineWhatsApp,AiOutlineInstagram,AiFillFacebook} from 'react-icons/ai'
 const Perks = () => {
     return (
         <Box
@@ -43,15 +43,16 @@ const Perks = () => {
                     return 
                 })} */}
 
-                {/* <Box
+                <Box
 
                     sx={{
                         display: 'flex',
                         gap: '.5em',
+                        alignItems: 'center',
                         flexDirection: 'row'
                     }}>
                     <Box className='flexed'>
-                        <InstagramIcon sx={{ color: '#fff' }} />
+                        <AiOutlineInstagram  color= '#fff' />
                     </Box>
                     <Box
                         sx={{
@@ -59,7 +60,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/powerhouse_european"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/namliiehshop/?hl=en"}>
 
 
                             <Typography
@@ -71,7 +72,7 @@ const Perks = () => {
                         }
                     </Box>
 
-                </Box> */}
+                </Box>
 
 {/* 
                 <Box
@@ -105,7 +106,7 @@ sx={{
                             justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
-                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/profile.php?id=100088170621504"}>
+                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/namliieh/"}>
 
 
                             <Typography

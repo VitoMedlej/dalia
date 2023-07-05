@@ -79,7 +79,7 @@ export default function Checkout() {
       if (products && info && total) {
 
         // saveState('order',{info,products,total})
-        const rawResponse = await fetch(`${server}/api`, {
+        const rawResponse = await fetch(`${server}/api/save-order`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

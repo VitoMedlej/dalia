@@ -37,10 +37,10 @@ const MainCarousel = () => {
                 modules={[Autoplay]}
                 className="mySwiper swiper">
 
-                {[{img:`https://nfcihospitality.com/wp-content/uploads/2022/05/Future-of-food-industry-blog.jpg.webp`}
+                {[{img:`https://ucarecdn.com/3deded50-1400-44e0-b3ee-27f323b0fed7/nam.jpg`}
                 ,
-                  {img:`https://www.dreamgrow.com/wp-content/uploads/2012/01/food-beverage-facebook-examples.jpg`},
-                  {img:`https://media.licdn.com/dms/image/C511BAQFRhnt6XP4thg/company-background_10000/0/1558258941628?e=1688727600&v=beta&t=c3Uy6_jbnjK6XybEo5Ybq1y_laYn76OGIKxwOFkpNfg`},
+                  {img:`https://ucarecdn.com/4face378-6379-489a-99b8-313ba1a8787e/218830818_153289383562061_8080673696620219664_n.jpg`},
+                  {img:`https://ucarecdn.com/ae35e87f-2e40-4a10-807b-ac300cc8f675/Capture.JPG`},
                
                 
             ].map((item) => {
@@ -58,7 +58,7 @@ const MainCarousel = () => {
 
                             <img
             
-                                className={`img pointer 
+                                className={`img pointer contain 
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}

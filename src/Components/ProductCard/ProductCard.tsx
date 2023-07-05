@@ -32,7 +32,7 @@ const ProductCard = ({
             py: 1,
             margin: '.25em auto',
             boxShadow: `rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px`,
-            minWidth: {xs:'130px',sm:'180px',md:'300px'},
+            minWidth: {xs:'130px',sm:'32%',md:'283px'},
             width: width
                 ? width
                 : {

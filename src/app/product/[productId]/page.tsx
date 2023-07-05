@@ -14,7 +14,13 @@ import { useEffect, useState } from 'react'
 import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
-
+export const metadata = {
+  title: 'Namliieh - Organic Artisan Food from Lebanon | Shop Now',
+  description: 'Discover Namliieh, a Lebanese lifestyle brand crafting artisan food inspired by the landscape. Our focus on locality, seasonality, and traceability ensures organic, bespoke products',
+  icons: {
+    icon: 'https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg',
+},
+}
 const Index = () => {
     const {productId} = useParams()
  
@@ -56,6 +62,11 @@ const Index = () => {
      
     
       <>
+      <Head>
+        <title>
+          hello world
+        </title>
+      </Head>
       <BreadCrumb />
 {data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1}} className='auto' container>
        <Grid  item xs={12} sm={6} md={7} >

@@ -22,7 +22,7 @@ const ScrollUp = () => {
     </Btn>
     <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
 
-    <Btn sx={{padding:0,':hover':{background:'transparent'},background:'none'}}>
+    <Btn sx={{border:'1px solid transparent',padding:0,':hover':{background:'transparent'},background:'none'}}>
       <Box sx={{width:'30px'}}>
 
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="" className="img" />

@@ -57,7 +57,7 @@ body {
 }
 
 .bg {
-  background: #2581fd !important;
+  background: #000000 !important;
 }
 
 .white {
@@ -102,7 +102,7 @@ button[disabled] {
 }
 
 .clr {
-  color: #2581fd !important;
+  color: #000000 !important;
 }
 
 .auto {

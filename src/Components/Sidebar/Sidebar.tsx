@@ -2,9 +2,12 @@
 import {useContext} from 'react';
 import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography} from '@mui/material';
 import {MdPrecisionManufacturing} from 'react-icons/md';
+import {IoFastFoodOutline} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
+
 import { useRouter } from 'next/navigation';
-import {BiCategoryAlt} from 'react-icons/bi';
+import {MdFastfood} from 'react-icons/md';
+
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 
@@ -55,7 +58,21 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
                                 </Box>
       <List>
-   
+      <ListItem
+          onClick={()=>router.push(`/collection/products`)}
+           disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <MdFastfood />
+              </ListItemIcon>
+              <ListItemText
+              sx={{
+                color:'black',
+                textTransform: 'capitalize'
+              }}
+              primary={'All Categories'} />
+            </ListItemButton>
+          </ListItem>
        {[
 'fresh food',
 'prepared food',
@@ -75,10 +92,12 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <BiCategoryAlt /> : <MdPrecisionManufacturing />}
+                {index % 2 === 0 ? <MdFastfood /> : <IoFastFoodOutline />}
               </ListItemIcon>
               <ListItemText
               sx={{
+                color:'black',
+
                 textTransform: 'capitalize'
               }}
               primary={text} />
