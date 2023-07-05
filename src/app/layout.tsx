@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Namliieh - Organic Artisan Food from Lebanon | Shop Now',
   description: 'Discover Namliieh, a Lebanese lifestyle brand crafting artisan food inspired by the landscape. Our focus on locality, seasonality, and traceability ensures organic, bespoke products',
   icons: {
-    icon: 'https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg',
+    icon: 'https://ucarecdn.com/324ea34f-ef49-4d5a-b3ac-a462e85c34aa/namliiehlogo.jpeg',
 },
 }
 
