@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
@@ -8,11 +9,21 @@ import {IoIosSearch} from 'react-icons/io'
 import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 
-export default function CustomizedInputBase({sx,mobile,onSubmit,value,setValue}:{mobile?:boolean,onSubmit:(e: React.FormEvent<HTMLFormElement> )=>void,value:string,setValue:any,sx?:any}) {
+export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
   const router = useRouter()
+  const [value,
+    setValue] = React.useState('fff');
+    const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
+        e.preventDefault()
+        console.log('q: ', value);
+        if (value.length > 2) {
+            router.push(`/collection/products?limit=80&search=${value}`)
+        }
+    }
+
   return (
     <Paper
-    onSubmit={(e)=>onSubmit(e)}
+    onSubmit={(e)=>handleSearch(e)}
       component="form"
       className='searchinput '
       sx={{
@@ -32,8 +43,11 @@ export default function CustomizedInputBase({sx,mobile,onSubmit,value,setValue}:
     >
    
       <InputBase
-      value={value}
-      onChange={(e)=>setValue(`${e.target.value}`)}
+      value={`${value}`}
+      onChange={(e)=>{ 
+      console.log('e.target.value: ', e.target.value);
+        
+        setValue && setValue(`${e.target.value as string}`)}}
         sx={{
           display: 'flex',
           ml: 1,w:'100%', flex: 1 }}
@@ -41,8 +55,7 @@ export default function CustomizedInputBase({sx,mobile,onSubmit,value,setValue}:
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
-        onClick={()=>        router.push(`/collection/products?limit=80&search=${value}`)
-      }
+       
       type="submit" className='searchIcon   trans' sx={{borderRadius:0,p: '5px' }} aria-label="search">
         <IoIosSearch />
       </IconButton>

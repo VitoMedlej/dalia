@@ -11,7 +11,8 @@ import {type NextRequest} from 'next/server';
 const Page = async(ctx : any) => {
     const page = 0;
     const {category} = ctx.params;
-    console.log('category: ', category);
+    const {search } = ctx?.searchParams;
+   
 
     // const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category
     //     ? `${category}`.replace(/-/g, ' ')
@@ -38,7 +39,17 @@ const Page = async(ctx : any) => {
 
 
    
-    const ProductsQuery = await ProductsCollection
+    const ProductsQuery =
+    
+    search && search?.length > 1 ?      await ProductsCollection.find({
+      $or: [
+          { title: { $regex: search, $options: 'i' } },
+          { description: { $regex: search, $options: 'i' } },
+          { category: { $regex: search, $options: 'i' } }
+      ]
+  }) :
+    
+    await ProductsCollection
     .find(
         filterByCate && filterByCate !== 'null' && filterByCate !== null
           ? {
@@ -58,12 +69,11 @@ const Page = async(ctx : any) => {
     await ProductsQuery.forEach((doc : any) => {
 
         products.push(doc)
-        console.log('doc: ', doc);
 
     });
     
 
-    console.log('products: ', products);
+ 
 
     return (<Preloader2 data={products || null}/>)
 }

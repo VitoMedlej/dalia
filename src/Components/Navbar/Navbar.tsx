@@ -23,12 +23,12 @@ import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
-    const [openModal,
-        setOpenModal] = useState(false);
+    // const [openModal,
+    //     setOpenModal] = useState(false);
+    
     const [localCart,
         setLocalCart] = useState([]);
-    const [q,
-        setQ] = useState('')
+
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
     // const localCart = [1]
@@ -41,18 +41,12 @@ export default function Navbar() {
         }
     }, [cartOpen])
 
-    const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
-        e.preventDefault()
-        if (q.length > 2) {
-            router.push(`/collection/products?limit=80&search=${q}`)
-        }
-    }
 
     return ( <> <Box
         sx={{
         flexWrap: 'wrap',
-                background:'white',
-                border: 'none',
+        background:'white',
+        border: 'none',
         flexGrow: 1
     }}>
         <AppBar
@@ -85,9 +79,10 @@ export default function Navbar() {
                 </Link>
 
                 <SearchInput
-                    onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}
-                    value={''}
-                    setValue={undefined}/>
+                    // onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}
+                    // value={''}
+                    // setValue={undefined}
+                    />
                 <Box
                     sx={{
                     flex: 1,
@@ -162,9 +157,12 @@ export default function Navbar() {
                 </Box>
                 <SearchInput
                     mobile
-                    onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}
-                    value={''}
-                    setValue={undefined}/>
+                    // onSubmit={handleSearch}
+                    // value={value}
+                    // setValue={setValue}
+                    
+                    
+                    />
             </Toolbar>
         </AppBar>
     </Box> 
