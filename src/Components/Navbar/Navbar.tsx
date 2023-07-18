@@ -50,6 +50,23 @@ export default function Navbar() {
         border: 'none',
         flexGrow: 1
     }}>
+        <Box className='flex bg white gap1 align-center items-center w100 center' sx={{py:.45}} >
+            <Typography sx={{}}>
+                hello world
+            </Typography>
+                   <Typography
+                                sx={{
+                                
+                                px: '.1em',
+                                // color: 'black',
+                                display : {
+                                    xs: 'none',
+                                    lg: 'flex'
+                                }
+                            }}>
+                               +{process.env.NEXT_PUBLIC_WA}
+                            </Typography>
+        </Box>
         <AppBar
     className='center auto flex'
 
@@ -60,11 +77,12 @@ export default function Navbar() {
             boxShadow: 'none'
         }}position="static">
             <Toolbar
-    className='center auto flex w100'
+    className='center  flex w100 '
 
                 sx={{
                 background:'white',
                 position: 'relative',
+                px:'0 !important',
                 flexWrap: 'wrap'
             }}> 
                     <Box
@@ -86,30 +104,21 @@ export default function Navbar() {
                         justifyContent: 'end'
                     }}
                         className='flex right'>
-    <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
-
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
+ 
+    <IconButton
+                            onClick={() => setOpen(!open)}
+                            size="large"
+                            edge="start"
+                            aria-label="menu"
                             sx={{
-                            color: 'black'
+                            color: 'black',
+                            // margin: '0.1em',
+                            display: {
+                                md: 'none'
+                            }
                         }}>
-                            <Typography
-                                sx={{
-                                
-                                px: '.1em',
-                                color: 'black',
-                                display : {
-                                    xs: 'none',
-                                    lg: 'flex'
-                                }
-                            }}>
-                               {process.env.NEXT_PUBLIC_WA}
-                            </Typography>
-                            <AiOutlinePhone color='black'/>
-
+                            <IoIosMenu color='black'/>
                         </IconButton>
-    </a>
-
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
@@ -121,25 +130,23 @@ export default function Navbar() {
                             </Badge>
 
                         </IconButton>
+   <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
 
                         <IconButton
-                            onClick={() => setOpen(!open)}
-                            size="large"
-                            edge="start"
-                            aria-label="menu"
+                            onClick={() => setCartOpen(!cartOpen)}
                             sx={{
-                            color: 'black',
-                            margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
+                            color: 'black'
                         }}>
-                            <IoIosMenu color='black'/>
+                     
+                            <AiOutlinePhone color='black'/>
+
                         </IconButton>
+    </a>
+                    
                     </Box>
 
                 </Box>
-                <Link style={{flex:1,display:'flex'}} href='/' color='inherit'>
+                <Link className='flex center aling-center items-center auto' style={{flex:1}} href='/' color='inherit'>
 
                     <Box
                         sx={{

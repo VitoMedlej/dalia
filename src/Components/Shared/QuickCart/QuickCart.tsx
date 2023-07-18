@@ -39,10 +39,10 @@ export default function TemporaryDrawer() {
     }
     return (
         <div>
-            <Drawer  anchor={'right'} open={cartOpen} onClose={toggleDrawer(false)}>
+            <Drawer  anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
                 <Box
                     sx={{
-                    maxWidth: '500px',
+                    // maxWidth: '500px',
                     width: '100%',
 
                     margin: '0 auto'
@@ -96,10 +96,10 @@ export default function TemporaryDrawer() {
                     <Divider></Divider>
                     <Box
                         sx={{
-                        my: 2,
-                        mx: 1,
+                        margin: '1em auto !important',
                        flexWrap:'wrap',
-                        display:'flex'
+                        display:'flex',
+                        width:'300px'
                     }}>
                        <Btn 
                        sx={{width:'100%',borderRadius:1}}
