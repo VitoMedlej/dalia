@@ -18,8 +18,10 @@ PreLoader = ({data}:any) => {
     const router= useRouter();
   return (
     <Box>
+      <MainCarousel/>
+
     <Container disableGutters className='wrap' sx={{px:{sm:1},maxWidth:'xl',display:'flex'}}>
-    <Box sx={{mt:'2em',mr:'.1em',width:{sm:'25%',lg:'19%'},flexDirection:'column',display:{xs:'none',md:'flex'}}}>
+    {/* <Box sx={{mt:'2em',mr:'.1em',width:{sm:'25%',lg:'19%'},flexDirection:'column',display:{xs:'none',md:'flex'}}}>
     <Box className='bg white' sx={{
             px:1,
             py:2,width:'100%',background:'white'}}>
@@ -44,8 +46,7 @@ PreLoader = ({data}:any) => {
          
           </Box>
         })}
-      </Box>
-      <MainCarousel/>
+      </Box> */}
 
      <Box>
 

@@ -9,6 +9,10 @@ body {
   font-family: "Montserrat", sans-serif !important;
 }
 
+.w100 {
+  width: 100%;
+}
+
 .img {
   -o-object-fit: cover;
      object-fit: cover;

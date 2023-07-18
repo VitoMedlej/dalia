@@ -43,6 +43,7 @@ export default function Navbar() {
 
 
     return ( <> <Box
+    className='center auto flex'
         sx={{
         flexWrap: 'wrap',
         background:'white',
@@ -50,6 +51,8 @@ export default function Navbar() {
         flexGrow: 1
     }}>
         <AppBar
+    className='center auto flex'
+
             sx={{
                 background:'white',
             maxWidth: 'lg',
@@ -57,33 +60,14 @@ export default function Navbar() {
             boxShadow: 'none'
         }}position="static">
             <Toolbar
+    className='center auto flex w100'
+
                 sx={{
                 background:'white',
                 position: 'relative',
                 flexWrap: 'wrap'
-            }}>
-                <Link href='/' color='inherit'>
-
+            }}> 
                     <Box
-                        sx={{
-                        mx: {
-                            sm: '1em'
-                        },
-                        width: '100px'
-                    }}>
-                        <img
-                            className='img'
-                            src={`https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg`}
-                            alt="Teen Tops electronics eshop logo"/>
-                    </Box>
-                </Link>
-
-                <SearchInput
-                    // onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}
-                    // value={''}
-                    // setValue={undefined}
-                    />
-                <Box
                     sx={{
                     flex: 1,
                     flexWrap: 'wrap',
@@ -155,6 +139,29 @@ export default function Navbar() {
                     </Box>
 
                 </Box>
+                <Link style={{flex:1,display:'flex'}} href='/' color='inherit'>
+
+                    <Box
+                        sx={{
+                        mx: {
+                            sm: '1em'
+                        },
+                        width: '100px'
+                    }}>
+                        <img
+                            className='img'
+                            src={`https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg`}
+                            alt="Teen Tops electronics eshop logo"/>
+                    </Box>
+                </Link>
+
+             
+             
+                <SearchInput
+                    // onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}
+                    // value={''}
+                    // setValue={undefined}
+                    />
                 <SearchInput
                     mobile
                     // onSubmit={handleSearch}

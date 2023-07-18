@@ -13,9 +13,9 @@ const MainCarousel = () => {
         <Box
             sx={{
             // py: {xs:'.75em',sm:'2em',md:'3em'},
-            width: {xs:'98%',md:'74%',lg:'80%'},
-           
-            maxWidth: 'lg',
+            // width: {xs:'98%',md:'74%',lg:'80%'},
+            width:'100%',
+            // maxWidth: 'lg',
             maxHeight:'450px',
              
             margin: '2em auto',
@@ -37,10 +37,7 @@ const MainCarousel = () => {
                 modules={[Autoplay]}
                 className="mySwiper swiper">
 
-                {[{img:`https://ucarecdn.com/3deded50-1400-44e0-b3ee-27f323b0fed7/nam.jpg`}
-                ,
-                  {img:`https://ucarecdn.com/4face378-6379-489a-99b8-313ba1a8787e/218830818_153289383562061_8080673696620219664_n.jpg`},
-                  {img:`https://ucarecdn.com/ae35e87f-2e40-4a10-807b-ac300cc8f675/Capture.JPG`},
+                {[{img:`https://storagecdn2.myecomz.com//assets/original-marines/Theme/9b9390a84d754d6d844999a19e4d3cd4-Optimal.jpg`},
                
                 
             ].map((item) => {
@@ -58,7 +55,7 @@ const MainCarousel = () => {
 
                             <img
             
-                                className={`img pointer contain 
+                                className={`img pointer  
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}
