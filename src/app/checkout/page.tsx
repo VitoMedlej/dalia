@@ -58,7 +58,7 @@ export default function Checkout() {
 
     const handleNext = () => {
       if (info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
-        saveState('ordr-inf',info)
+        saveState('bag-order',info)
         setActiveStep(activeStep + 1);
       
       } 
@@ -72,7 +72,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('cart-items')
+      const products = loadState('bag-list')
  
 
       const total = 10

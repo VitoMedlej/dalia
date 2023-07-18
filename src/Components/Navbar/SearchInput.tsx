@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
   const router = useRouter()
   const [value,
-    setValue] = React.useState('fff');
+    setValue] = React.useState('');
     const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
         e.preventDefault()
         console.log('q: ', value);
@@ -28,6 +28,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
       className='searchinput '
       sx={{
         py:'.25em',
+        mx:2,
         mt:'.25em',
         px:'.5em',
         mb:'.5em',
@@ -37,7 +38,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
         border:'1px solid #00000036',
         borderRadius:'20px',
         
-         display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'}, alignItems: 'center',width:'100%',maxWidth: {xs:'100%',md:'300px',lg:'400px'} 
+         display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'}, alignItems: 'center',width:'100%',maxWidth: {xs:'99%',md:'300px',lg:'400px'} 
          ,...sx
         }}
     >

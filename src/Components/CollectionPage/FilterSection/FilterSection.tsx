@@ -1,26 +1,32 @@
 import {Box, Button,  TextField, Typography} from '@mui/material'
-import React, { useState } from 'react'
-import {AiOutlineSearch} from 'react-icons/ai';
+import React, { FormEvent, useState } from 'react'
+// import {AiOutlineSearch} from 'react-icons/ai';
 import Btn from '@/Components/Btn/Btn';
 import { server } from '@/Utils/Server';
 import FilterAccordion from './FilterAccordion';
+// import SearchInput from '@/Components/Navbar/SearchInput';
 
 const FilterSection = ({handleReset,sx,setProducts}:any) => {
     const [options,setOptions] = useState({
         price : [1,100000],
-        sort : 'products',
-        // category : 'products',
+        sort : 'latest',
+        category : 'collection',
         // query : '',
         
     })
+   
     const handleSubmit = async () => {
-        const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&order=${options.sort}`  ;
-        const req = await fetch(`${server}${url}`)
+        const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options.category}`  ;
+        console.log('url: ', url);
+        const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
-        if (res) [
+        console.log('res: ', res);
+        console.log('res?.data?.products: ', res?.data?.products);
+        if (res && res?.data?.products) {
 
-            setProducts(res)
-        ]
+            
+            setProducts(res?.data?.products)
+        }
     }
     return (
         <Box
@@ -40,6 +46,7 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
           
      
                 <FilterAccordion
+                handleSubmit={handleSubmit}
                 options={options}
                 setOptions={setOptions}
                 />

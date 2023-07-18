@@ -17,7 +17,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg' alt="Teentops-lb Logo" />
+            <img className='img ' src='https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/324270893_997679804539366_7128257675794065283_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ryoujbfkkaEAX9Oqz0G&_nc_ht=scontent.fbey22-1.fna&oh=00_AfDI-OTo_0hP_zEi3lOfQNccScLfnkX2BupUzpqR6ImEMw&oe=64BB784F' alt="Teentops-lb Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>

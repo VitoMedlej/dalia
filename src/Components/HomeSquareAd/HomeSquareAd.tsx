@@ -16,10 +16,10 @@ const HomeSquareAd = ({center,reversed,fullscreen,img,title,description,btnTitle
             <Box sx={{textAlign:center?'center':'left',px:{xs:1,sm:2},color:'black',height:{xs:'500px',sm:'100%',md:'600px'}}} className={`flex  ${center ? 'text-center' : ''} bg2 center col auto`}>
           
             <Typography className='black'  sx={{py:.25,fontSize:{xs:'3.5em',sm:'4em'},fontWeight:'500'}} component='h2'>
-               {title || 'Iced Coffee ☕️'}
+               {title || 'Cute Baby Clothes💖'}
             </Typography>
             <Typography sx={{maxWidth:'sm'}} className='black' component='p'>
-           {description || 'Start your day off right with our refreshing iced coffee. Made with freshly brewed coffee and served over ice, it’s the perfect pick-me-up to help you tackle the day ahead.'}
+           {description || ``}
             </Typography>
           
 

@@ -34,27 +34,65 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
             const { nextUrl } = req;
     const category = nextUrl.searchParams.get('category');
-    const page = nextUrl.searchParams.get('page');
+    const search = nextUrl.searchParams.get('search') ;
+    const sort = nextUrl.searchParams.get('sort') || 'latest';
+   
             // let page = 0;
             // let category = null
         // const { searchParams } = new URL(req.url);
         // let category=  searchParams.get('category') || null
         // let page=  searchParams.get('page') || 0
 
-        
+        // let filterBySort = !latest || sort === 'latest' || sort === ''  ? null : -1
+        let sortCriteria;
+        switch (sort) {
+          case 'latest':
+            sortCriteria = { _id: -1 };
+            break;
+          case 'highestPrice':
+            sortCriteria = { convertedPrice: -1 };
+            break;
+          case 'lowestPrice':
+            sortCriteria = { convertedPrice: 1 };
+            break;
+          default:
+            sortCriteria = {_id : -1};
+        }
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
-        .db("BABYWEAR")
+        .db("Zayton")
         .collection("Products");
     let products : any = []
 
 
    
-    const ProductsQuery = await ProductsCollection
-        .find(filterByCate && filterByCate !== 'null' && filterByCate !== null ? { category: filterByCate } : {})
-        .sort({_id: -1})
-        .skip(Number(page || 0) * 12)
-        .limit(12)
+    const ProductsQuery = 
+    
+    search && search?.length > 1 ?      await ProductsCollection.find({
+      $or: [
+          { title: { $regex: search, $options: 'i' } },
+          { description: { $regex: search, $options: 'i' } },
+          { category: { $regex: search, $options: 'i' } }
+      ]
+  }) :
+    await ProductsCollection.aggregate([
+        {
+          $match: filterByCate && filterByCate !== 'null' && filterByCate !== null
+            ? { category: filterByCate }
+            : {}
+        },
+        {
+          $addFields: {
+            convertedPrice: { $toDouble: '$price' }
+          }
+        },
+        {
+          $sort: sortCriteria
+        },
+        {
+          $limit: 12
+        }
+      ]);
 
     await ProductsQuery.forEach((doc : any) => {
 
@@ -76,7 +114,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     });
 }
 catch (e) {
-    console.log('e fetch-all: ', e);
+    console.log('e sort function: ', e);
     return NextResponse.json({
         success: false,
         data: {
@@ -88,3 +126,4 @@ catch (e) {
  
 
 }
+export const dynamic = 'force-dynamic'

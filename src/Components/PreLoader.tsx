@@ -7,6 +7,7 @@ import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import HomeSquareAd from './HomeSquareAd/HomeSquareAd'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
+import Perks from './Perks/Perks'
 
 
 const cates = [{img:'https://mysobol.com/wp-content/uploads/2022/09/Food-and-Beverage-Industry-Overview-Categories.jpg',category:'food and beverages'},
@@ -48,32 +49,33 @@ PreLoader = ({data}:any) => {
         })}
       </Box> */}
 
-     <Box>
+     <Box sx={{mx:1,width:'100%'}}>
 
         
          <Typography
                 className='sectionTitle box'
                 sx={{
                   pb:'.5em',
-                  display:{xs:'flex',sm:'none'},
+                  display:'flex',
                 fontSize: {
                     xs: '1.2em',
                     sm: '1.4em'
                 },
+                flex:1,
                 fontWeight: '600'
             }}>
                Browse Collections
             </Typography>
          
 
-            <Box className='wrap gap1 space-evenly' sx={{width:'95vw',my:3,display:{xs:'flex',sm:'none'}}}>
+            <Box className='wrap gap1  space-evenly' sx={{width:'100%',my:3,display:{xs:'flex'}}}>
 
         {cates.map(i=>{
             return <Box
 
             onClick={()=>router.push(`${i?.category.replace(/ /g, '-') || 'collection'}/products`)}
-            key={i?.img} className='cursor' sx={{borderRadius:'50%',height:'90px',my:2,width:{xs:'90px'}}}>
-                    <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'50%',}} className="img" />
+            key={i?.img} className='cursor' sx={{borderRadius:'2%',height:{xs:'200px',sm:'250px'},my:2,width:{xs:'48%',sm:'250px'}}}>
+                    <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'2%',}} className="img" />
                     <Typography sx={{fontWeight:'500',fontSize:'.65em',textAlign: 'center',px:1}}>
              {i?.category}
             </Typography>
@@ -86,17 +88,20 @@ PreLoader = ({data}:any) => {
 
       <Box/>
         <HomeProductCollection products={ data?.products }/>
-        <HomeSquareAd title={'Oreo-filled Croissant 🥐'}
-        description='Indulge in our delicious croissant filled with crunchy Oreo pieces and topped with a generous drizzle of chocolate. Every bite is a delightful combination of textures and flavors that will leave you wanting more.'
-        btnTitle='Try it now'
-        center img={"https://ucarecdn.com/5feda36b-ca93-4bb8-9948-a39c7b286dd2/330288941_1384485138982953_8571653182770578518_n.jpg"}/>
+
+        <Perks/>
+        <HomeSquareAd title={'Cute Baby Clothes💖'}
+        description={`Our collection of baby clothes is sure to have something cute and comfortable for your little one. Whether you're looking for an adorable dress or a cozy romper, our clothes are made with soft and breathable fabric.`}
+        btnTitle='Shop Now'
+        center img={"https://cdn.shopify.com/s/files/1/0295/1187/6744/collections/003_892x.jpg?v=1660183177"}/>
         
         {/* <HomeCategoryList/> */}
         <HomeProductsCarousel Collectiontitle={"Featured Products"} delay={3000} data={data?.featuredProducts}/>
 
+        
 
     </Container>
-        <HomeSquareAd fullscreen  img={"https://ucarecdn.com/f4cd5f55-d141-4a16-9bc8-eb938a646a93/330160118_581160533941344_2956572324948803477_n.jpg"}/>
+        <HomeSquareAd fullscreen  img={"https://cdn.shopify.com/s/files/1/2192/5961/files/gender-neutral-kids-clothes-orbasics_1024x1024.jpg?v=1610114014"}/>
         <ContactSection/>
   </Box>
   )

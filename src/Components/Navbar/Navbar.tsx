@@ -34,7 +34,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('cart-items') || []
+        // const cart = loadState('bag-list') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -68,7 +68,7 @@ export default function Navbar() {
                             </Typography>
         </Box>
         <AppBar
-    className='center auto flex'
+    className='center  flex'
 
             sx={{
                 background:'white',
@@ -83,25 +83,31 @@ export default function Navbar() {
                 background:'white',
                 position: 'relative',
                 px:'0 !important',
+             
                 flexWrap: 'wrap'
             }}> 
+              
+
                     <Box
                     sx={{
+                    px:1,
+                    display:{xs:'none',md:'flex'},
+
                     flex: 1,
                     flexWrap: 'wrap',
-                    justifyContent: {
-                        xs: 'right',
-                        sm: 'end'
-                    },
-                    display: 'flex'
+                    // justifyContent: {
+                    //     xs: 'right',
+                    //     sm: 'end'
+                    // },
+                 
                 }}>
-
+ 
                     <Box
                         sx={{
                         display: {
                             xs: 'flex'
                         },
-                        justifyContent: 'end'
+                        // justifyContent: 'end'
                     }}
                         className='flex right'>
  
@@ -153,16 +159,80 @@ export default function Navbar() {
                         mx: {
                             sm: '1em'
                         },
-                        width: '100px'
+                        width: '150px'
                     }}>
                         <img
                             className='img'
-                            src={`https://ucarecdn.com/ea97c4e8-1111-4d33-a2ec-e4edad0f0ab8/WhatsAppImage20230627at170849.jpeg`}
+                            src={`https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/324270893_997679804539366_7128257675794065283_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ryoujbfkkaEAX9Oqz0G&_nc_ht=scontent.fbey22-1.fna&oh=00_AfDI-OTo_0hP_zEi3lOfQNccScLfnkX2BupUzpqR6ImEMw&oe=64BB784F`}
                             alt="Teen Tops electronics eshop logo"/>
                     </Box>
                 </Link>
+                    
+               
 
-             
+                <Box
+                    sx={{
+                    px:1,
+                    display:{xs:'flex',md:'none'},
+
+                    flex: 1,
+                    flexWrap: 'wrap',
+                    justifyContent: {
+                        xs: 'right',
+                    },
+                 
+                }}>
+ 
+                    <Box
+                        sx={{
+                        display: {
+                            xs: 'flex'
+                        },
+                        // justifyContent: 'end'
+                    }}
+                        className='flex right'>
+ 
+    <IconButton
+                            onClick={() => setOpen(!open)}
+                            size="large"
+                            edge="start"
+                            aria-label="menu"
+                            sx={{
+                            color: 'black',
+                            // margin: '0.1em',
+                            display: {
+                                md: 'none'
+                            }
+                        }}>
+                            <IoIosMenu color='black'/>
+                        </IconButton>
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+                            sx={{
+                            color: 'black'
+                        }}>
+                            <Badge color='primary' badgeContent={`${localCart.length || '0'}`}>
+
+                                <HiOutlineShoppingBag color='black'/>
+                            </Badge>
+
+                        </IconButton>
+   <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
+
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+                            sx={{
+                            color: 'black'
+                        }}>
+                     
+                            <AiOutlinePhone color='black'/>
+
+                        </IconButton>
+    </a>
+                    
+                    </Box>
+
+                </Box>
              
                 <SearchInput
                     // onSubmit={function (e : FormEvent < HTMLFormElement >) : void {throw new Error('Function not implemented.');}}

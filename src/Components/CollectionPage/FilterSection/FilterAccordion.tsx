@@ -8,8 +8,10 @@ import {MdOutlineExpandMore} from 'react-icons/md';
 import RadioGroupForm from './Forms/RadioGroupForm';
 import SelectOneForm from './Forms/SelectOneForm';
 import { Box } from '@mui/material';
+import Btn from '@/Components/Btn/Btn';
+import SearchInput from '@/Components/Navbar/SearchInput';
 
-export default function SimpleAccordion({options,setOptions}:any) {
+export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
    
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         // setValue(();
@@ -66,6 +68,7 @@ export default function SimpleAccordion({options,setOptions}:any) {
     ]
     return (
         <Box sx={{justifyContent:'start',gap:2}} className='flex '>
+           
             {filters.map(filter => {
                  
                 
@@ -81,8 +84,13 @@ className='flex center items-center'
                         {filter.comp}
                
                     </Box>
+                 
               
             })}
+               <Btn onClick={()=>handleSubmit()}>
+                        Submit
+                    </Btn>
         </Box>
     );
+
 }

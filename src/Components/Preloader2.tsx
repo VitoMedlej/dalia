@@ -10,13 +10,14 @@ import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
 const Preloader2 = ({data}:any) => {
-    console.log('data: ', data);
+    // console.log('data: ', data);
     const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
+    const [products,setProducts] = useState(data)
     const {category} = useParams() 
     const counted = 1;
     const handlePagination = async (val:number) => {
-
+        router.push(`${server}/${category ?category : 'collection'}/products?page=${val ? val : 0}`)
     }
     // const [data,setData] = useState< {
     //     products: IProduct[] | never[] ; 
@@ -32,7 +33,7 @@ const Preloader2 = ({data}:any) => {
         width: '100%',
         minHeight: '100px'
     }}>
-        <FilterSection/>
+<FilterSection setProducts={setProducts}/>
     </Box>
     <BreadCrumb></BreadCrumb>
    

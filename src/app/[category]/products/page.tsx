@@ -33,7 +33,7 @@ const Page = async(ctx : any) => {
         
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
-        .db("F&B")
+        .db("BABYWEAR")
         .collection("Products");
     let products : any = []
 

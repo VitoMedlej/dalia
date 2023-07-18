@@ -20,12 +20,12 @@ export default function SelectSmall({value,setValue,sx}:any) {
         label="Size"
         onChange={(e)=>setValue(e.target.value)}
       >
-        <MenuItem value="products">
+        <MenuItem value="latest">
           <em>All</em>
         </MenuItem>
-        <MenuItem value={'newest'}>Newest</MenuItem>
-        <MenuItem value={'highest'}>High to low</MenuItem>
-        <MenuItem value={'lowest'}>Low to high</MenuItem>
+        <MenuItem value={'latest'}>Newest</MenuItem>
+        <MenuItem value={'highestPrice'}>High to low</MenuItem>
+        <MenuItem value={'lowestPrice'}>Low to high</MenuItem>
       </Select>
     </FormControl>
   );
