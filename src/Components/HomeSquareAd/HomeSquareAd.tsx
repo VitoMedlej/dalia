@@ -19,14 +19,14 @@ const HomeSquareAd = ({center,reversed,fullscreen,img,title,description,btnTitle
                {title || 'Cute Baby Clothes💖'}
             </Typography>
             <Typography sx={{maxWidth:'sm'}} className='black' component='p'>
-           {description || ``}
+           {description || `Our collection of baby clothes is sure to have something cute and comfortable for your little one. Whether you're looking for an adorable dress or a cozy romper, our clothes are made with soft and breathable fabric.`}
             </Typography>
           
 
             <Btn
                             onClick={() => router.push('/collection/products')}
             
-            sx={{color:'black',margin:center ? '2em auto':'2em 0',width:'200px',background:'transparent',borderRadius:1,border:'1px solid'}} >
+            sx={{color:'#1888d7',margin:center ? '2em auto':'2em 0',width:'200px',background:'transparent',borderRadius:1,border:'1px solid #1888d7'}} >
             {btnTitle || 'Try it Now'} 
             </Btn>
             </Box>

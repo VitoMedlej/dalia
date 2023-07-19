@@ -156,7 +156,7 @@ const Cart = () => {
 
                     <Btn
                     className='bg'
-                    sx={{width:'100%',bordeRadius:1,mt:2.5}}>Checkout Now</Btn>
+                    sx={{width:'100%',':hover':{color:'white !important'},bordeRadius:1,mt:2.5}}>Checkout Now</Btn>
                     </Link>
 
                     <Link href='/collection/products' className='decor-none'>
@@ -165,7 +165,20 @@ const Cart = () => {
                     
                     v2={true} sx={{bordeRadius:1,mx:0,':hover':{background:'white',color:'black'},width:'100%',mt:1}}>Continue Shopping</Btn>
                     </Link>
+                    <Box className='flex wrap'> 
+                        <Typography sx={{width:'100%',fontWeight:500,pb:.5}}>
+                            We Also Accept:
+                        </Typography>
+                        <Box sx={{width:'80px'}}>
+                        <img src="https://whish.money/app/logos/whish_v2.png" alt="Whish Money Payment method logo" className="img contain" />
+                        </Box>
+                        <Box sx={{width:'80px',ml:2}}>
+
+<img src="https://www.omt.com.lb/storage/services/X0OGLcDfG3zrQ68JDEomA65t9.jpg" alt="Western Union Money Payment method logo" className="img contain" />
+</Box>
+                    </Box>
                 </Box>
+                
             </Box>
         </Box>
     )

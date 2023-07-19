@@ -3,13 +3,13 @@ import React from 'react'
 
 let style1 = {
     color: 'white !important',
-    background: 'black',
-    border:'1px solid black',
+    background: '#1888d7',
+    border:'1px solid #1888d7',
     
     ':hover': {
         background: 'white',
-        color:'black !important',
-    border:'1px solid black'
+        color:'#1888d7 !important',
+    border:'1px solid #1888d7'
 
     },
     display: 'flex',
@@ -20,7 +20,7 @@ let style1 = {
     fontSize: '12px'
 }
 let style2 = {
-    color: '#1a4671',
+    color: '#1888d7',
   
     display: 'flex',
     fontWeight:'700',
@@ -28,10 +28,10 @@ let style2 = {
     my:1,
     py: .9,
     px: 2,
-    ':hover':{  borderColor: ' black'},
+    ':hover':{  borderColor: ' white'},
     fontSize: '10px',
     
-    border:'1.1px solid black'
+    border:'1.1px solid #1888d7'
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {
