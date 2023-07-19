@@ -1,8 +1,7 @@
 "use client";
 import {useContext} from 'react';
 import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography} from '@mui/material';
-import {MdPrecisionManufacturing} from 'react-icons/md';
-import {IoFastFoodOutline} from 'react-icons/io5';
+import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
 
 import { useRouter } from 'next/navigation';
@@ -74,16 +73,13 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
             </ListItemButton>
           </ListItem>
        {[
-'fresh food',
-'prepared food',
-'packaged food',
-'beverages',
-'organic food',
-'gluten-free food',
-'vegan food',
-'snacks',
-'desserts',
-'other'
+'girl',
+'boy',
+'baby girl',
+'baby boy',
+'adult matching outfits',
+'other',
+
 
     ].map((text, index) => {
           if (!text) return;
@@ -92,7 +88,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <MdFastfood /> : <IoFastFoodOutline />}
+                {index % 2 === 0 ? <IoShirtOutline /> : <IoShirtSharp />}
               </ListItemIcon>
               <ListItemText
               sx={{

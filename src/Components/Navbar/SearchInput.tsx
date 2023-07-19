@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import {IoIosSearch} from 'react-icons/io'
 import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
-
+// sale boys girls bg bb adult matchin daddy
 export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
   const router = useRouter()
   const [value,
@@ -36,7 +36,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
         flexBasis:'100%',
         boxShadow:'none',
         border:'1px solid #00000036',
-        borderRadius:'20px',
+        borderRadius:'4px',
         
          display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'}, alignItems: 'center',width:'100%',maxWidth: {xs:'99%',md:'300px',lg:'400px'} 
          ,...sx

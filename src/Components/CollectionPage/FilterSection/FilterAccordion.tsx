@@ -1,15 +1,17 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import {MdOutlineExpandMore} from 'react-icons/md';
+"use client"
 
-import RadioGroupForm from './Forms/RadioGroupForm';
+import * as React from 'react';
+// import Accordion from '@mui/material/Accordion';
+// import AccordionSummary from '@mui/material/AccordionSummary';
+// import AccordionDetails from '@mui/material/AccordionDetails';
+// import Typography from '@mui/material/Typography';
+// import {MdOutlineExpandMore} from 'react-icons/md';
+
+// import RadioGroupForm from './Forms/RadioGroupForm';
 import SelectOneForm from './Forms/SelectOneForm';
-import { Box } from '@mui/material';
+import { Box, MenuItem } from '@mui/material';
 import Btn from '@/Components/Btn/Btn';
-import SearchInput from '@/Components/Navbar/SearchInput';
+// import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
    
@@ -35,23 +37,41 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         //             my: '1em'
         //         }}/>
         // },
-        //  {
-        //     title: 'Category',
-        //     comp: <RadioGroupForm
-        //     value={options.category}
-        //     setValue={
-        //         handleChange
-        //         }
-        //     />
-        // },
+         {
+            title: 'Category',
+            comp: <SelectOneForm
+            Options={<Box>
+              <MenuItem value="collection">
+          <em>All</em>
+        </MenuItem>
+        <MenuItem value={'collection'}>All</MenuItem>
+        <MenuItem value={'boy'}>Boy</MenuItem>
+        <MenuItem value={'girl'}>Girl</MenuItem>
+        <MenuItem value={'baby girl'}>Baby Girl</MenuItem>
+        <MenuItem value={'baby boy'}>Baby Boy</MenuItem>
+        <MenuItem value={'adult matching outfits'}>Matching Outfits</MenuItem>
+            </Box>}
+            value={options.category}
+            setValue={
+                handleChange
+                }
+            />
+        },
+
         {
             title: 'Sort By',
             comp: <SelectOneForm
+            Options={<Box>
+                <MenuItem value="latest">
+            <em>All</em>
+          </MenuItem>
+          <MenuItem value={'latest'}>Newest</MenuItem>
+          <MenuItem value={'highestPrice'}>High to low</MenuItem>
+          <MenuItem value={'lowestPrice'}>Low to high</MenuItem>
+              </Box>}
             value={options.sort}
             setValue={handleSort}
-            sx={{
-                    // my: '1em'
-                }}/>
+           />
         },
         // {
         //     title: 'Sort By',

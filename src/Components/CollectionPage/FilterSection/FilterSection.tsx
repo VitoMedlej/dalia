@@ -1,3 +1,5 @@
+"use client"
+
 import {Box, Button,  TextField, Typography} from '@mui/material'
 import React, { FormEvent, useState } from 'react'
 // import {AiOutlineSearch} from 'react-icons/ai';
@@ -17,11 +19,8 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
    
     const handleSubmit = async () => {
         const url =  `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options.category}`  ;
-        console.log('url: ', url);
         const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
-        console.log('res: ', res);
-        console.log('res?.data?.products: ', res?.data?.products);
         if (res && res?.data?.products) {
 
             

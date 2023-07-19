@@ -10,9 +10,12 @@ import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
 
 
-const cates = [{img:'https://mysobol.com/wp-content/uploads/2022/09/Food-and-Beverage-Industry-Overview-Categories.jpg',category:'food and beverages'},
-{img:'https://img.freepik.com/free-photo/top-view-assortment-vegetables-paper-bag_23-2148853335.jpg?w=740&t=st=1687871138~exp=1687871738~hmac=53277d31e1853600b5d725111040d826887ce5e049a9e96b2a71481782eb0327',category:'dessrts'},
-{img:'https://img.freepik.com/free-photo/croissants-wooden-cutting-board_1150-28480.jpg?size=626&ext=jpg',category:'snacks'}  
+const cates = [{img:'https://img-lcwaikiki.mncdn.com/mnresize/1200/1600/pim/productimages/20221/5617444/l_20221-s27945z1-ffj_5.jpg',category:'boy'},
+{img:'https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20231/6260226/v1/l_20231-s37717z4-h45-130-23_5.jpg',category:'girl'},
+{img:'https://i5.walmartimages.com/asr/0f952351-de35-4ab4-a1c5-538a8c7dbda5.bc4ee3a5867d729d05938182f7694161.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF',category:'baby girl'} ,
+{img:'https://www.next.co.uk/nxtcms/resource/blob/5680092/95dfcabd3467afc357e7c1767559de7e/04-07-23-baby-by-gender-image-2-data.jpg',category:'baby boy'}  ,
+{img:'https://ae01.alicdn.com/kf/HTB1_SYMPVzqK1RjSZFoq6zfcXXab/Mommy-and-Me-Clothes-2019-Tshirt-Family-Matching-Clothes-Mother-Daughter-T-Shirt-Mother-and-Daughter.jpg_640x640.jpg',category:'adult matching outfits'}  ,
+
 ]
 const 
 PreLoader = ({data}:any) => {
@@ -74,7 +77,8 @@ PreLoader = ({data}:any) => {
             return <Box
 
             onClick={()=>router.push(`${i?.category.replace(/ /g, '-') || 'collection'}/products`)}
-            key={i?.img} className='cursor' sx={{borderRadius:'2%',height:{xs:'200px',sm:'250px'},my:2,width:{xs:'48%',sm:'250px'}}}>
+            key={i?.img} className='cursor'
+             sx={{borderRadius:'2%',height:{xs:'48vw',sm:'32vw',md:'24vw',lg:'16vw'},my:2,width:{xs:'48%',sm:'32%',md:'24%',lg:'16%'}}}>
                     <img src={i?.img} alt={`${i?.category ,'image'}`} style={{borderRadius:'2%',}} className="img" />
                     <Typography sx={{fontWeight:'500',fontSize:'.65em',textAlign: 'center',px:1}}>
              {i?.category}
