@@ -40,7 +40,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
          {
             title: 'Category',
             comp: <SelectOneForm
-            Options={<Box>
+            List={<Box>
               <MenuItem value="collection">
           <em>All</em>
         </MenuItem>
@@ -61,7 +61,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         {
             title: 'Sort By',
             comp: <SelectOneForm
-            Options={<Box>
+            List={<Box>
                 <MenuItem value="latest">
             <em>All</em>
           </MenuItem>

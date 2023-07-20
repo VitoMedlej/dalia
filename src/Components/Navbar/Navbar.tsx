@@ -51,8 +51,8 @@ export default function Navbar() {
         flexGrow: 1
     }}>
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{py:.45}} >
-            <Typography sx={{}}>
-                hello world
+            <Typography>
+              Delivery All Over Lebanon |  whatsapp📲: 78871373
             </Typography>
                    <Typography
                                 sx={{

@@ -21,7 +21,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
-          At Namliieh, we are proud to be part of Lebanon’s rich culinary heritage and are excited to share our passion for food with the world. Join us on our journey and discover the delicious possibilities of artisanal food.
+          Mini Chic Baby Wear is the ultimate online destination for baby and kids clothing in Lebanon. Our collection features the latest styles and trends for children aged 0-12 years. From adorable outfits to stylish accessories, we have everything you need to keep your little ones looking their best. Shop now and discover our high-quality, fashionable clothing for babies and kids.
           </Typography>
           {/* <SMicons/> */}
 
@@ -53,7 +53,7 @@ const Footer = () => (
             
             <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li>
 
-            <li><a href="https://www.instagram.com/namliiehshop/?hl=en" target="_blank" rel="noreferrer" >@namliiehshop</a></li>
+            <li><a href="https://www.instagram.com/minichicbabywear/?hl=en" target="_blank" rel="noreferrer" >@minichicbabywear</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>

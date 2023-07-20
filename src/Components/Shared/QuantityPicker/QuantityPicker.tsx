@@ -1,5 +1,4 @@
 import React,{ useState, useEffect}  from 'react';
-// import './index.css'
 // import './smooth.css'
 export const  QuantityPicker = (props:any) => {
 

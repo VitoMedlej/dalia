@@ -1,5 +1,6 @@
 import Navbar from '@/Components/Navbar/Navbar'
 import '../Styles/Styles.css'
+import '../Styles/qty.css'
 import Footer from '@/Components/Footer/Footer'
 import Sidebar from '@/Components/Sidebar/Sidebar'
 import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
@@ -7,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-  title: 'Namliieh - Organic Artisan Food from Lebanon | Shop Now',
-  description: 'Discover Namliieh, a Lebanese lifestyle brand crafting artisan food inspired by the landscape. Our focus on locality, seasonality, and traceability ensures organic, bespoke products',
+  title: 'Mini Chic Baby Wear - Baby & Kids Clothing in Lebanon',
+  description: 'Shop the latest baby & kids clothing at Mini Chic Baby Wear. Our online store in Lebanon offers high-quality outfits & accessories for children 0-12 years. Discover our collection now!',
   icons: {
-    icon: 'https://ucarecdn.com/324ea34f-ef49-4d5a-b3ac-a462e85c34aa/namliiehlogo.jpeg',
+    icon: 'https://ucarecdn.com/3147a5e9-9b0f-47e9-b9da-c81db92429e5/324270893_997679804539366_7128257675794065283_n.jpg',
 },
 }
 

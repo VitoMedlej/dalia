@@ -56,11 +56,7 @@ const Index = () => {
      
     
       <>
-      <Head>
-        <title>
-          hello world
-        </title>
-      </Head>
+ 
       <BreadCrumb />
 {data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1}} className='auto' container>
        <Grid  item xs={12} sm={6} md={7} >
