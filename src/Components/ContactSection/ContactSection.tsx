@@ -60,7 +60,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/minichicbabywear/?hl=en"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/mini_chic_baby_wears/"}>
 
 
                             <Typography
@@ -89,7 +89,7 @@ sx={{
 </Box> */}
 
 
-                <Box
+                {/* <Box
 
                     sx={{
                         display: 'flex',
@@ -118,7 +118,7 @@ sx={{
                         }
                     </Box>
 
-                </Box>
+                </Box> */}
 
 
                 <Box

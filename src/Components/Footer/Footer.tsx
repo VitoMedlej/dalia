@@ -17,7 +17,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/324270893_997679804539366_7128257675794065283_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ryoujbfkkaEAX9Oqz0G&_nc_ht=scontent.fbey22-1.fna&oh=00_AfDI-OTo_0hP_zEi3lOfQNccScLfnkX2BupUzpqR6ImEMw&oe=64BB784F' alt="Teentops-lb Logo" />
+            <img className='img ' src='https://ucarecdn.com/92989d57-0dd8-40f7-9b2b-7ab889e5cd11/343109195_759962312285830_7168937497940647871_n.jpg' alt="mini chic baby wear Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
@@ -51,10 +51,10 @@ const Footer = () => (
             <li className='link-title'>Contact</li>
             <li><Link href="#"> Lebanon/Beirut Online</Link></li>
             
-            <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li>
+            {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/minichicbabywear/?hl=en" target="_blank" rel="noreferrer" >@minichicbabywear</a></li>
-            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >{process.env.NEXT_PUBLIC_WA}</a></li>
+            <li><a href="https://www.instagram.com/mini_chic_baby_wears/" target="_blank" rel="noreferrer" >@mini_chic_baby_wears</a></li>
+            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>
       </div>

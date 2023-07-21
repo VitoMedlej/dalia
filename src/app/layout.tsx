@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Mini Chic Baby Wear - Baby & Kids Clothing in Lebanon',
   description: 'Shop the latest baby & kids clothing at Mini Chic Baby Wear. Our online store in Lebanon offers high-quality outfits & accessories for children 0-12 years. Discover our collection now!',
   icons: {
-    icon: 'https://ucarecdn.com/3147a5e9-9b0f-47e9-b9da-c81db92429e5/324270893_997679804539366_7128257675794065283_n.jpg',
+    icon: 'https://ucarecdn.com/92989d57-0dd8-40f7-9b2b-7ab889e5cd11/343109195_759962312285830_7168937497940647871_n.jpg',
 },
 }
 

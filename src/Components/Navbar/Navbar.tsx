@@ -162,8 +162,8 @@ export default function Navbar() {
                     }}>
                         <img
                             className='img'
-                            src={`https://scontent.fbey22-1.fna.fbcdn.net/v/t39.30808-6/324270893_997679804539366_7128257675794065283_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ryoujbfkkaEAX9Oqz0G&_nc_ht=scontent.fbey22-1.fna&oh=00_AfDI-OTo_0hP_zEi3lOfQNccScLfnkX2BupUzpqR6ImEMw&oe=64BB784F`}
-                            alt="Teen Tops electronics eshop logo"/>
+                            src={`https://ucarecdn.com/92989d57-0dd8-40f7-9b2b-7ab889e5cd11/343109195_759962312285830_7168937497940647871_n.jpg`}
+                            alt="mini chic baby wear logo"/>
                     </Box>
                 </Link>
                     
