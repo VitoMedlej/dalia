@@ -54,7 +54,7 @@ export default function Checkout() {
       })
     }
 
-
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     const handleNext = () => {
       if (info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
@@ -139,6 +139,7 @@ export default function Checkout() {
                 )}
                 <Button
                     type='submit'
+                    disabled={!info?.email.match(regex) || !info.email || info.phone?.length < 6 || info.email?.length < 5 || !info?.firstName || info?.firstName.length < 2 || !info.phone }
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}

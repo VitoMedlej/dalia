@@ -4,16 +4,16 @@ import React from 'react'
 const Perks = () => {
     const items = [
         {
-            title: 'Best tradional food',
-            icon : 'https://cdn-icons-png.flaticon.com/512/2515/2515183.png'
+            title: 'World Wide Shipping',
+            icon : 'https://www.svgrepo.com/show/282152/worldwide-shipping-and-delivery.svg'
         },
         {
-            title: 'Happiness to your doorstep',
-            icon : 'https://cdn-icons-png.flaticon.com/512/6581/6581537.png'
+            title: 'Best Quality',
+            icon : 'https://www.svgrepo.com/show/467238/quality-3.svg'
         },
         {
-            title: 'Super healthy',
-            icon : 'https://cdn-icons-png.flaticon.com/512/3022/3022781.png'
+            title: 'Super Comfortable',
+            icon : 'https://www.svgrepo.com/show/513311/heart.svg'
         },
         {
             title: 'Delivery all over 🇱🇧',

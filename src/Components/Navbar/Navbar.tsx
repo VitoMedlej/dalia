@@ -52,9 +52,9 @@ export default function Navbar() {
     }}>
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{py:.45}} >
             <Typography>
-              Delivery All Over Lebanon |  whatsapp📲: 78871373
+              Delivery All Over Lebanon |  whatsapp📲: +961 76069567
             </Typography>
-                   <Typography
+                   {/* <Typography
                                 sx={{
                                 
                                 px: '.1em',
@@ -65,7 +65,7 @@ export default function Navbar() {
                                 }
                             }}>
                                +{process.env.NEXT_PUBLIC_WA}
-                            </Typography>
+                            </Typography> */}
         </Box>
         <AppBar
     className='center  flex'

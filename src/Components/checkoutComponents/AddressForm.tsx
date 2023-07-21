@@ -87,7 +87,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             value={info.address2}
           onChange={handleChange}
             name="address2"
-            label="Any extra information (Include Quantity)"
+            label="Any extra information"
             fullWidth
             rows={4}
             autoComplete="shipping address-line2"
