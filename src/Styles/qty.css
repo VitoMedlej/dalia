@@ -3,6 +3,7 @@
     border:1px solid #dfdfdf;
     border-radius: 3px;
     vertical-align:middle;
+    transform: scale(.75);
   }
   .quantity-input:focus {
     background: red;

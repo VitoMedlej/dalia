@@ -5,7 +5,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function SelectSmall({value,setValue,List,sx}:{value:string,setValue:any,sx?:any,List:any}) {
+export default function SelectSmall({value,setValue,List,sx}:{value:string,setValue:any,sx?:any,List:string[]}) {
+  console.log('setValue: ', setValue);
+  console.log('value: ', value);
 
   // const [value, setValue] = React.useState('');
 
@@ -21,9 +23,17 @@ export default function SelectSmall({value,setValue,List,sx}:{value:string,setVa
         value={value}
         label="Size"
         onChange={(e)=>setValue(e.target.value)}
+        
       >
        {/* <List/> */}
-       {List}
+       {/* {List} */}
+      {List.map(item=>{
+
+       return <MenuItem key={item} sx={{textTransform:'capitalize'}} value={item}>
+              {item}
+        </MenuItem>
+      })
+       }
       </Select>
     </FormControl>
   );

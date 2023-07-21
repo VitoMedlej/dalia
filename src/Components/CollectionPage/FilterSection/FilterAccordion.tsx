@@ -14,8 +14,10 @@ import Btn from '@/Components/Btn/Btn';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
+    console.log('options: folter acc ', options);
    
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: any) => {
+        console.log('event: ', event);
         // setValue(();
         let val = (event.target as HTMLInputElement).value;
         setOptions({...options,category:val})
@@ -40,17 +42,12 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
          {
             title: 'Category',
             comp: <SelectOneForm
-            List={<Box>
-              <MenuItem value="collection">
-          <em>All</em>
-        </MenuItem>
-        <MenuItem value={'collection'}>All</MenuItem>
-        <MenuItem value={'boy'}>Boy</MenuItem>
-        <MenuItem value={'girl'}>Girl</MenuItem>
-        <MenuItem value={'baby girl'}>Baby Girl</MenuItem>
-        <MenuItem value={'baby boy'}>Baby Boy</MenuItem>
-        <MenuItem value={'adult matching outfits'}>Matching Outfits</MenuItem>
-            </Box>}
+            List={
+            
+            ['collection','boy','girl','baby girl','baby boy','adult matching outfits','sale']
+           
+             
+           }
             value={options.category}
             setValue={
                 handleChange
@@ -61,14 +58,13 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         {
             title: 'Sort By',
             comp: <SelectOneForm
-            List={<Box>
-                <MenuItem value="latest">
-            <em>All</em>
-          </MenuItem>
-          <MenuItem value={'latest'}>Newest</MenuItem>
-          <MenuItem value={'highestPrice'}>High to low</MenuItem>
-          <MenuItem value={'lowestPrice'}>Low to high</MenuItem>
-              </Box>}
+            List={[
+                'latest',
+                'highestPrice',
+                'lowestPrice'
+            ]
+
+             }
             value={options.sort}
             setValue={handleSort}
            />
@@ -87,13 +83,13 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         // }
     ]
     return (
-        <Box sx={{justifyContent:'start',gap:2}} className='flex '>
+        <Box sx={{justifyContent:'start',gap:2}} className='flex wrap'>
            
             {filters.map(filter => {
                  
                 
 return  <Box
-className='flex center items-center'
+className='flex  center items-center'
                     key={filter.title}
                     sx={{
                   

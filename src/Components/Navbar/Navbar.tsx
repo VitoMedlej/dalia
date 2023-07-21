@@ -51,7 +51,7 @@ export default function Navbar() {
         flexGrow: 1
     }}>
         <Box className='flex bg white gap1 align-center items-center w100 center' sx={{py:.45}} >
-            <Typography>
+            <Typography className='center text-center'>
               Delivery All Over Lebanon |  whatsapp📲: +961 76069567
             </Typography>
                    {/* <Typography
@@ -113,7 +113,6 @@ export default function Navbar() {
  
     <IconButton
                             onClick={() => setOpen(!open)}
-                            size="large"
                             edge="start"
                             aria-label="menu"
                             sx={{
@@ -198,6 +197,7 @@ export default function Navbar() {
                             edge="start"
                             aria-label="menu"
                             sx={{
+                            padding : '8px',
                             color: 'black',
                             // margin: '0.1em',
                             display: {
