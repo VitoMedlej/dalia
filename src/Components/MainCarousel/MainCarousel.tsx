@@ -1,74 +1,42 @@
-"use client"
-import {Box} from '@mui/material';
-import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from "swiper";
-import {Navigation} from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import { useRouter } from 'next/navigation';
+// "use client"
 
-const MainCarousel = () => {
-    const router = useRouter()
+import Preloader3 from '../Preloader3';
+
+const MainCarousel = async () => {
+
+
+
+    try {
+
+        // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
+        const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
+        let res : any = await  req.json() ;
+        console.log('res: ', res);
+        // let res = {data:null}
+        return (
+          <Preloader3 res={res}/>
+         )
+  }
+  catch (e) {
+    console.log('e home: ', e);
     return (
-        <Box
-            sx={{
-            // py: {xs:'.75em',sm:'2em',md:'3em'},
-            // width: {xs:'98%',md:'74%',lg:'80%'},
-            width:'100%',
-            // maxWidth: 'lg',
-            maxHeight:'450px',
-             
-            margin: '2em auto',
-            display: {
-                xs: 'flex'
-            },
-            height: '100%'
-        }}>
-            <Swiper
-            
-                navigation={false}
-                slidesPerView={1}
-                spaceBetween={0}
-                loop={true}
-                autoplay={{
-                delay: 2000,
-                disableOnInteraction: true
-            }}
-                modules={[Autoplay]}
-                className="mySwiper swiper">
+      <Preloader3 res={null}/>
+     )
+  
+  }
 
-                {[{img:`https://storagecdn2.myecomz.com//assets/original-marines/Theme/9b9390a84d754d6d844999a19e4d3cd4-Optimal.jpg`},
-               
-                
-            ].map((item) => {
 
-                    return <SwiperSlide 
-                        onClick={() => router.push('/collection/products')}
-                    className='ztop pointer ' key={item.img}>
-                        <Box
-                            sx={{
-         
-                        
-                                height: '100%',
-                            width:'100%'
-                        }}>
-
-                            <img
-            
-                                className={`img pointer  
-                                `}
-                                // ${item?.className}
-                                src={`${item.img}`}
-                                alt="Main Carousel Image"/>
-                        </Box>
-                    </SwiperSlide>
-                })
-}
-
-            </Swiper>
-
-        </Box>
-    )
+   
+//      const fetcher = async () => {
+//     const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
+//     let res : any = await  req.json() ;
+//     console.log('res: ', res);
+//     if (res && res?.MainCarousel) {
+//       setImgs(res?.MainCarousel)
+//     }
+//   }
+//   fetcher()
+   
 }
 
 export default MainCarousel

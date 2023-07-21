@@ -46,7 +46,6 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
       <InputBase
       value={`${value}`}
       onChange={(e)=>{ 
-      console.log('e.target.value: ', e.target.value);
         
         setValue && setValue(`${e.target.value as string}`)}}
         sx={{

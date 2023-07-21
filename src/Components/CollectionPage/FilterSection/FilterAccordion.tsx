@@ -14,10 +14,8 @@ import Btn from '@/Components/Btn/Btn';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
-    console.log('options: folter acc ', options);
    
     const handleChange = (event: any) => {
-        console.log('event: ', event);
         // setValue(();
         let val = (event.target as HTMLInputElement).value;
         setOptions({...options,category:val})
