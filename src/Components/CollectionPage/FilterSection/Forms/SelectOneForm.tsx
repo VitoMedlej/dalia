@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function SelectSmall({value,setValue,List,sx}:{value:string,setValue:any,sx?:any,List:string[]}) {
+export default function SelectSmall({value,setValue,title,List,sx}:{title:string,value:string,setValue:any,sx?:any,List:string[]}) {
 
   // const [value, setValue] = React.useState('');
 
@@ -13,7 +13,7 @@ export default function SelectSmall({value,setValue,List,sx}:{value:string,setVa
 
   return (
     <FormControl   variant="outlined" sx={{ width:'200px', my:0.25  ,...sx }} size="small">
-      <InputLabel id="demo-select-small">Sort Options</InputLabel>
+      <InputLabel id="demo-select-small">{title}</InputLabel>
       <Select
        
         labelId="demo-select-small"

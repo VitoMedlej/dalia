@@ -15,9 +15,9 @@ import Btn from '@/Components/Btn/Btn';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
    
-    const handleChange = (event: any) => {
+    const handleChange = (val: string) => {
         // setValue(();
-        let val = (event.target as HTMLInputElement).value;
+        // let val = (event.target as HTMLInputElement).value;
         setOptions({...options,category:val})
       };
     const handlePrice = (value:number[]) => {
@@ -38,8 +38,8 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         //         }}/>
         // },
          {
-            title: 'Category',
-            comp: <SelectOneForm
+             comp: <SelectOneForm
+             title= 'Category'
             List={
             
             ['collection','boy','girl','baby girl','baby boy','adult matching outfits','sale']
@@ -54,8 +54,8 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         },
 
         {
-            title: 'Sort By',
             comp: <SelectOneForm
+            title= 'Sort By'
             List={[
                 'latest',
                 'highestPrice',
@@ -83,12 +83,12 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
     return (
         <Box sx={{justifyContent:'start',gap:2}} className='flex wrap'>
            
-            {filters.map(filter => {
+            {filters.map((filter,index) => {
                  
                 
 return  <Box
 className='flex  center items-center'
-                    key={filter.title}
+                    key={index}
                     sx={{
                   
                     boxShadow: 'none'
