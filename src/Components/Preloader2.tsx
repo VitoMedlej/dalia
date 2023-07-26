@@ -41,7 +41,7 @@ const Preloader2 = ({data}:any) => {
     <Box className='flex wrap' sx={{
         px: 1
     }}>
-        {data && data?.length > 0 ? data.map((i:IProduct) => {
+        {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
             key={i?._id}
                 _id={i._id}
