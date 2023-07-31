@@ -35,11 +35,14 @@ PreLoader = ({data}:any) => {
       }
     </Box>
 
-     <Box sx={{mx:1,width:'100%'}}>
+     <Box
+                className=' text-center auto center box'
+     
+     sx={{mx:1,width:'100%'}}>
 
         
          <Typography
-                className='sectionTitle text-center box'
+                className='sectionTitle text-center auto center box'
                 sx={{
                   pb:'.5em',
                   pt:5,

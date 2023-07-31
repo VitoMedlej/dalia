@@ -5,13 +5,13 @@ import { IProduct } from '@/Types/Types'
 
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
   return (
-    <Box sx={{my:4}}>
+    <Box sx={{my:4}} className='center auto'>
             <Typography
                 className='sectionTitle text-center center auto box'
                 sx={{
                   pb:'.5em',
                 px:1,
-
+                  textAlign:'center !important',
                 fontSize: {
                     xs: '1.2em',
                     sm: '1.4em'

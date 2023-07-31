@@ -9,9 +9,9 @@ const MainCarousel = async () => {
     try {
 
         // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-        // const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
-        // let res : any = await  req.json() ;
-        let res = {data:null}
+        const req = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
+        let res : any = await  req.json() ;
+        // let res = {data:null}
         return (
           <Preloader3 res={res}/>
          )

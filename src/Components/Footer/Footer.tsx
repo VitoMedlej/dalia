@@ -54,7 +54,7 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/mini_chic_baby_wears/" target="_blank" rel="noreferrer" >@mini_chic_baby_wears</a></li>
+            <li><a href="https://www.instagram.com/mini_chic_baby_wears/" target="_blank" rel="noreferrer" >@thecraftroom</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>
