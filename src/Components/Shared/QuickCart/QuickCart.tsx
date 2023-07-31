@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('bag-list') || []
+            let localCart : ICartItem[] = loadState('list-bag') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,12 +34,12 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('bag-list', state);
+        saveState('list-bag', state);
         setCartItems(state);
     }
     return (
         <div>
-            <Drawer  anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
+            <Drawer  anchor={'right'} open={cartOpen} onClose={toggleDrawer(false)}>
                 <Box
                     sx={{
                     // maxWidth: '500px',
@@ -73,6 +73,7 @@ export default function TemporaryDrawer() {
                         sx={{
                         maxHeight: '350px',
                         overflowY: 'scroll'
+                        
                     }}>
                         {
                            cartItems && cartItems.length > 0 ? cartItems.map((item:ICartItem, index) =>{
@@ -84,10 +85,10 @@ export default function TemporaryDrawer() {
                         : <Box className='auto center col flex items-center ' sx={{py:5}}>
 
                         <Box sx={{width:'60px'}}>
-                            <img src="https://www.pngitem.com/pimgs/m/480-4803503_your-cart-is-currently-empty-empty-cart-icon.png" alt="Empty Cart Image" className="img" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReJ1L9fmcCrMGqF0D0_kpEBDUzAr71C5Bw0fnXCzOvN_-rK5SOiLapcMwXo--Wd63pzw4&usqp=CAU" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
-                      You Cart is Empty, Add Some Products!
+                            No Products Have Been Added.
                         </Typography>
                         </Box> 
                         }
@@ -99,17 +100,18 @@ export default function TemporaryDrawer() {
                         margin: '1em auto !important',
                        flexWrap:'wrap',
                         display:'flex',
-                        width:'300px'
+                        width:{xs:'100%',sm:'340px'},
                     }}>
                        <Btn 
-                       sx={{width:'100%',borderRadius:1}}
+                       sx={{width:'100%',mx:1}}
                        onClick={()=>{setCartOpen(false),router.push('/checkout')}}
                        disabled={cartItems.length < 1}>
                             Checkout
                        </Btn>
                         <Btn 
                         sx={{
-                            width:'100%',borderRadius:1,
+                            width:'100%',
+                            mx:1,
                             ':hover':{background:'#1a4671',color:'white'}}}
                         onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
                         v2={true} >
@@ -117,7 +119,7 @@ export default function TemporaryDrawer() {
                         </Btn>
                         <Btn
                         className='text-center auto'
-                        sx={{color:'#1a4671',border:'none',':hover':{background:'white',color:'#1a4671'}}} 
+                        sx={{color:'#1a4671',mx:1,border:'none',':hover':{background:'white',color:'#1a4671'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
                         View Cart Page

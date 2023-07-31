@@ -62,7 +62,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('bag-list') || []
+    let localCart : ICartItem[] = loadState('list-bag') || []
     useEffect(() => {
         if (localCart) {
             
@@ -73,12 +73,12 @@ const Cart = () => {
     const refetchState = () => {
         // let localCart : ICartItem[] = loadState('userbag') || []
 
-        setCartItems(loadState('bag-list'))
+        setCartItems(loadState('list-bag'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('bag-list', state);
+         saveState('list-bag', state);
          setCartItems(state);
      }
     return (

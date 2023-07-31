@@ -7,14 +7,16 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{my:4}}>
             <Typography
-                className='sectionTitle box'
+                className='sectionTitle text-center center auto box'
                 sx={{
                   pb:'.5em',
+                px:1,
+
                 fontSize: {
                     xs: '1.2em',
                     sm: '1.4em'
                 },
-                fontWeight: '600'
+                fontWeight: '300'
             }}>
                 Explore Different Categories
             </Typography>

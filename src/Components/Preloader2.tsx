@@ -27,7 +27,7 @@ const Preloader2 = ({data}:any) => {
        
     //   })
   return (
-    <Container disableGutters maxWidth='lg'>
+    <Container sx={{mt:15}} disableGutters maxWidth='lg'>
     <Box
         sx={{
         width: '100%',

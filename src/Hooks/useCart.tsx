@@ -6,7 +6,7 @@ import { useCartContext } from "@/context/Contexts";
 const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
     const incrementQty = (_id:string,newValue ?: number) => {
-        const state = loadState('bag-list') || [];
+        const state = loadState('list-bag') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         if (foundIndex !== -1 && selectedItem) {
@@ -17,7 +17,7 @@ const useCart = () => {
 
             state[foundIndex] = selectedItem
 
-           saveState('bag-list', state)           
+           saveState('list-bag', state)           
            return true
        }
        return false;
@@ -31,7 +31,7 @@ const useCart = () => {
         }
         
             //if we do not have the item in cart, insert it
-        pushState('bag-list',
+        pushState('list-bag',
         {qty:1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import {Typography } from '@mui/material'
 import './style.css'
+import SMicons from '../SMicons/SMicons';
 // import SMicons from './SMicons';
 // // import Logo from '../../assets/icons/logo';
 
@@ -17,13 +18,13 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/92989d57-0dd8-40f7-9b2b-7ab889e5cd11/343109195_759962312285830_7168937497940647871_n.jpg' alt="mini chic baby wear Logo" />
+            <img className='img ' src='/icon.png' alt="the craft room Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
-          Mini Chic Baby Wear is the ultimate online destination for baby and kids clothing in Lebanon. Our collection features the latest styles and trends for children aged 0-12 years. From adorable outfits to stylish accessories, we have everything you need to keep your little ones looking their best. Shop now and discover our high-quality, fashionable clothing for babies and kids.
+          Welcome to The Craft Room, where creativity becomes reality. Located in Lebanon, we offer a wide selection of arts and crafts supplies, including Cricut products, to help you unleash your creativity. Whether you’re a professional artist or just starting out, we have everything you need to bring your ideas to life. Shop now and discover the endless possibilities of crafting.
           </Typography>
-          {/* <SMicons/> */}
+          <SMicons/>
 
           {/* <ul className="site-footer__social-networks">
           <li><a href="https://www.facebook.com/profile.php?id=100063581229923" rel="noreferrer" target='_blank'><i className="icon-facebook"></i></a></li>

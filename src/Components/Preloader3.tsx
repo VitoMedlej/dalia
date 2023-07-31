@@ -12,7 +12,8 @@ import { useRouter } from 'next/navigation';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        { img : 'https://storagecdn2.myecomz.com//assets/original-marines/Theme/9b9390a84d754d6d844999a19e4d3cd4-Optimal.jpg'}
+        { img : 'https://www.crafterscompanion.co.uk/page//content/uploads/2022/02/IMG_7879-1-1024x683.jpg'},
+     
      ])
     useEffect(() => {
     if (res && res?.MainCarousel) {
@@ -31,10 +32,12 @@ const Preloader3 = ({res}:{res:any}) => {
             // maxWidth: 'lg',
             maxHeight:'450px',
              
-            margin: '2em auto',
+            margin: '0 auto',
             display: {
                 xs: 'flex'
             },
+            mt:20,
+            mb:2,
             height: '100%'
         }}>
             <Swiper

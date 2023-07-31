@@ -3,35 +3,35 @@ import React from 'react'
 
 let style1 = {
     color: 'white !important',
-    background: '#1888d7',
-    border:'1px solid #1888d7',
+    background: 'black',
+    border:'1px solid black',
     
     ':hover': {
         background: 'white',
-        color:'#1888d7 !important',
-    border:'1px solid #1888d7'
+        color:'black !important',
+    border:'1px solid black'
 
     },
     display: 'flex',
-    bordeRadius:1,
+    bordeRadius:25,
 
-    py: 1.2,
-    px: 2.2,
+    py: 1.22,
+    px: 2.52,
     fontSize: '12px'
 }
 let style2 = {
-    color: '#1888d7',
+    color: 'black',
   
     display: 'flex',
     fontWeight:'700',
-    bordeRadius:1,
+    bordeRadius:25,
     my:1,
-    py: .9,
-    px: 2,
-    ':hover':{  borderColor: ' white'},
+    py: .99,
+    px: 2.2,
+    ':hover':{  borderColor: 'black'},
     fontSize: '10px',
     
-    border:'1.1px solid #1888d7'
+    border:'1.1px solid black'
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {

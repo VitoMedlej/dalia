@@ -9,6 +9,7 @@ import {MdFastfood} from 'react-icons/md';
 
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
+import SMicons from '../SMicons/SMicons';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -102,6 +103,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
         })
         
         }
+        <SMicons/>
       </List>
       <Divider />
       

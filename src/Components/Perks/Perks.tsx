@@ -3,21 +3,18 @@ import React from 'react'
 
 const Perks = () => {
     const items = [
+     
         {
-            title: 'World Wide Shipping',
-            icon : 'https://www.svgrepo.com/show/282152/worldwide-shipping-and-delivery.svg'
+            title: 'Best Arts & Crafts Supplies',
+            icon : 'https://www.svgrepo.com/show/454415/draw-mypaint-software.svg'
         },
         {
-            title: 'Best Quality',
-            icon : 'https://www.svgrepo.com/show/467238/quality-3.svg'
+            title: 'Sign Up For Our News Letter',
+            icon : 'https://www.svgrepo.com/show/477054/email-download.svg'
         },
         {
-            title: 'Super Comfortable',
-            icon : 'https://www.svgrepo.com/show/513311/heart.svg'
-        },
-        {
-            title: 'Delivery all over 🇱🇧',
-            icon : 'https://cdn-icons-png.flaticon.com/512/9198/9198208.png'
+            title: 'Delivery All Over Lebanon',
+            icon : 'https://www.svgrepo.com/show/401385/delivery-truck.svg'
         },
 
     ]
@@ -25,7 +22,7 @@ const Perks = () => {
     <Box className='w100' sx={{px:1,py:8}}>
         <Box>
         <Typography
-                className='sectionTitle box'
+                className='sectionTitle center auto text-center box'
                 sx={{
                   pt:'.5em',
                   mx:1,
@@ -35,7 +32,7 @@ const Perks = () => {
                     xs: '1.2em',
                     sm: '1.4em'
                 },
-                fontWeight: '600'
+                fontWeight: '300'
             }}>
 Advantages
             </Typography>
@@ -46,11 +43,11 @@ Advantages
            items.map(i=>{
                 return <Box key={i.title} className='center items-center auto flex col' sx={{
                     py:2,
-                    width:{xs:'49%',sm:'24%'}}}>
+                    width:{xs:'49%',sm:'32%'}}}>
                     <Box sx={{width:'100px'}}>
                         <img src={i.icon} alt="" className="img contain" />
                     </Box>
-                    <Typography className='text-center' sx={{fontSize:'1.15em'}}  component={'h1'}>{i.title}</Typography>
+                    <Typography className='text-center' sx={{fontSize:'1.05em'}}  component={'h1'}>{i.title}</Typography>
                     {/* <Typography sx={{fontSize:'.9em'}} component={'p'}>Fooer Name</Typography> */}
                 </Box>
             })

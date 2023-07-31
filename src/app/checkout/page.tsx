@@ -58,7 +58,7 @@ export default function Checkout() {
 
     const handleNext = () => {
       if (info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
-        saveState('bag-order',info)
+        saveState('order-bag',info)
         setActiveStep(activeStep + 1);
       
       } 
@@ -72,7 +72,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('bag-list')
+      const products = loadState('list-bag')
  
 
       const total = 10
@@ -107,7 +107,7 @@ export default function Checkout() {
   <ThemeProvider theme={theme}>
       <CssBaseline />
   
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+      <Container component="main" maxWidth="sm" sx={{ mt:20, mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout

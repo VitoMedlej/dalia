@@ -4,6 +4,7 @@ import React from 'react'
 
 
 import {AiOutlineWhatsApp,AiOutlineInstagram,AiFillFacebook} from 'react-icons/ai'
+import EmailInput from './EmailInput'
 const Perks = () => {
     return (
         <Box
@@ -30,8 +31,9 @@ const Perks = () => {
                     fontWeight: '600',
                     fontSize: '1.7em'
                 }}>
-                    We are Always Here To Help
+                 Sign Up For Our News Letter
                 </Typography>
+                <EmailInput/>
                 <Typography
                     className='white'
                     sx={{

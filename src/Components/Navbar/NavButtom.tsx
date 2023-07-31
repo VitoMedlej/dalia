@@ -5,23 +5,24 @@ import React from 'react'
 const NavButtom = () => {
   return (
     <Box
-        className='flex wrap  space-evenly'
+        className=' wrap  space-evenly'
         sx={{
-        width: '100%',
+            flex:1,
+        // width: '100%',
         mx: 0,
         display : {xs:'none',sm:'flex'}
     }}>
         <Container
             className='flex   '
             sx={{
-                gap:{xs:1.5,sm:3,md:4},
+                gap:{xs:1.5,sm:2,md:2.5},
             maxWidth: 'lg',
             overflow:'hidden',
-            py:1,
+            py:1.5,
 
         }}>
-<Link className='clr decor-none uppercase' href={`/collection/products`}>
-                    <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:{xs:'.7em',sm:'.85em'}}}>
+<Link className=' decor-none uppercase' href={`/collection/products`}>
+                    <Typography  component='p' sx={{width:'max-content',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
                     Sale
                     </Typography>
                 </Link>
@@ -35,7 +36,7 @@ const NavButtom = () => {
 
     ].slice(0,6).map(i => {
                 return <Link className='clr decor-none uppercase' key={i} href={`/${i.replace(/ /g, '-')}/products`}>
-                    <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:{xs:'.7em',sm:'.85em'}}}>
+                    <Typography  component='p' sx={{width:'max-content',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
                     {i}
                     </Typography>
                 </Link>

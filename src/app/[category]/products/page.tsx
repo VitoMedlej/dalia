@@ -1,14 +1,17 @@
 import Preloader2 from "@/Components/Preloader2"
 import {server} from "@/Utils/Server"
 import client from '@/database/mongodb';
-import type {  NextApiResponse}
-from 'next';
-import {NextResponse } from 'next/server';
-import {type NextRequest} from 'next/server';
+// import type {  NextApiResponse}
+// from 'next';
+// import {NextResponse } from 'next/server';
+// import {type NextRequest} from 'next/server';
 
 
 
 const Page = async(ctx : any) => {
+
+  try {
+
     const page = 0;
     const {category} = ctx.params;
     const {search } = ctx?.searchParams;
@@ -33,7 +36,7 @@ const Page = async(ctx : any) => {
         
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
-        .db("BABYWEAR")
+        .db("CRAFT")
         .collection("Products");
     let products : any = []
 
@@ -76,6 +79,13 @@ const Page = async(ctx : any) => {
  
 
     return (<Preloader2 data={products || null}/>)
+  }
+catch (err) {
+  console.log('err: ', err);
+  
+  return (<Preloader2 data={null}/>)
+
+}
 }
 
 export default Page

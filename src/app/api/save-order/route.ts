@@ -10,7 +10,7 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     // Process a POST request
     if (!order) return NextResponse.json({success:false})
-       const insertReq = await client.db("BABYWEAR").collection("Orders").insertOne(order);
+       const insertReq = await client.db("CRAFT").collection("Orders").insertOne(order);
        if (insertReq.acknowledged) {         
          return NextResponse.json({success:true});
         }

@@ -2,17 +2,17 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif !important;
+font-family: 'Inter', sans-serif !important;
 
 
 }
 * ,h1,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
 }
 .w100 {
     width:100%
 }
-$color : #1888d7 !important;
+$color : #000000 !important;
 .img {
     object-fit: cover;
     width:100%;

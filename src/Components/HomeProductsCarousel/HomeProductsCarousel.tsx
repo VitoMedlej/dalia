@@ -29,7 +29,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         }}>
        
             <Typography
-                className='sectionTitle box'
+                className='sectionTitle text-center center auto box'
                 sx={{
              
                 fontSize: {
@@ -37,7 +37,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
                     sm: '1.4em'
                 },
                 padding:.5,
-                fontWeight: '600'
+                fontWeight: '300'
             }}>
               {Collectiontitle}
             </Typography>
