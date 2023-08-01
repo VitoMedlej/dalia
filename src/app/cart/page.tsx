@@ -22,7 +22,8 @@ const textStyle = {
 const EmptyCartAlert = () => {
     return (
         <Box sx={{
-            py: 10
+            pb: 10,
+            pt: 15
         }}>
             <Box
                 className='flexed'
@@ -62,7 +63,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('list-bag') || []
+    let localCart : ICartItem[] = loadState('shping-list') || []
     useEffect(() => {
         if (localCart) {
             
@@ -73,17 +74,18 @@ const Cart = () => {
     const refetchState = () => {
         // let localCart : ICartItem[] = loadState('userbag') || []
 
-        setCartItems(loadState('list-bag'))
+        setCartItems(loadState('shping-list'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('list-bag', state);
+         saveState('shping-list', state);
          setCartItems(state);
      }
     return (
         <Box sx={{
-            py: 5,
+            pb: 5,
+            pt:20,
             maxWidth:'xl',
             margin:'0 auto',
             px: 1
@@ -108,7 +110,7 @@ const Cart = () => {
                     {cartItems && cartItems.length > 0 ?
                     cartItems.map(item=>{
                         return <CartProduct 
-                        
+                        selectedColor={item?.selectedColor}
                         onChange={refetchState}
                         key={item._id}
                         img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>
@@ -155,28 +157,16 @@ const Cart = () => {
                     className='decor-none bg'>
 
                     <Btn
-                    className='bg'
-                    sx={{width:'100%',':hover':{color:'white !important'},bordeRadius:1,mt:2.5}}>Checkout Now</Btn>
+                    sx={{width:'100%',borderRadius:25,mt:2.5}}>Checkout Now</Btn>
                     </Link>
 
                     <Link href='/collection/products' className='decor-none'>
 
                     <Btn
                     
-                    v2={true} sx={{bordeRadius:1,mx:0,':hover':{background:'white',color:'black'},width:'100%',mt:1}}>Continue Shopping</Btn>
+                     sx={{mx:0,':hover':{background:'white',color:'black'},background:'transparent',borderRadius:'25px',width:'100%',mt:1}}>Continue Shopping</Btn>
                     </Link>
-                    <Box className='flex wrap'> 
-                        <Typography sx={{width:'100%',fontWeight:500,pb:.5}}>
-                            We Also Accept:
-                        </Typography>
-                        <Box sx={{width:'80px'}}>
-                        <img src="https://whish.money/app/logos/whish_v2.png" alt="Whish Money Payment method logo" className="img contain" />
-                        </Box>
-                        <Box sx={{width:'80px',ml:2}}>
-
-<img src="https://www.omt.com.lb/storage/services/X0OGLcDfG3zrQ68JDEomA65t9.jpg" alt="Western Union Money Payment method logo" className="img contain" />
-</Box>
-                    </Box>
+                
                 </Box>
                 
             </Box>

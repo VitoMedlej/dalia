@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('list-bag') || []
+            let localCart : ICartItem[] = loadState('shping-list') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +34,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('list-bag', state);
+        saveState('shping-list', state);
         setCartItems(state);
     }
     return (
@@ -103,23 +103,28 @@ export default function TemporaryDrawer() {
                         width:{xs:'100%',sm:'340px'},
                     }}>
                        <Btn 
-                       sx={{width:'100%',mx:1}}
+                       sx={{width:'100%',mx:1
+                    ,borderRadius:25,
+                    }}
                        onClick={()=>{setCartOpen(false),router.push('/checkout')}}
                        disabled={cartItems.length < 1}>
                             Checkout
                        </Btn>
-                        <Btn 
+                        <Btn
+                         
                         sx={{
                             width:'100%',
-                            mx:1,
+                            mx:1
+                    ,borderRadius:25,
+                            background:'transparent',my:1,
                             ':hover':{background:'#1a4671',color:'white'}}}
                         onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
-                        v2={true} >
+                         >
                         Continue Shopping
                         </Btn>
                         <Btn
                         className='text-center auto'
-                        sx={{color:'#1a4671',mx:1,border:'none',':hover':{background:'white',color:'#1a4671'}}} 
+                        sx={{mx:1,border:'none',':hover':{background:'white',color:'#1a4671'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
                         View Cart Page

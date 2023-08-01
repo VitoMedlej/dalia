@@ -14,11 +14,15 @@ import { useEffect, useState } from 'react'
 import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
+import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
 
 const Index = () => {
     const {productId} = useParams()
+    const {incrementQty} = useCart()
  
     const {addToCart}= useCart()
+    const [loading,setLoading] = useState(false)
+    const [selectedColor,setSelectedColor] = useState('')
     const [data,setData] = useState<{
       product: IProduct | any ;
       moreProducts: IProduct[] | never[];
@@ -31,57 +35,95 @@ const Index = () => {
     
        const InitialFetch = async () => {
         try {
-      
+          setLoading(true)
           const req = await fetch(`${server}/api/get-by-id?id=${productId}`,{ cache: 'no-store' })
           const res = await req.json()
         
           if (res?.success && res?.product) {
             setData({product:res?.product,moreProducts : res?.moreProducts})
+          setLoading(false)
+
           }
           return null
+          setLoading(false)
+
         }
         catch(er) {
           console.log('er getAll: ', er);
+          setLoading(false)
+
       
         }
       }
       useEffect(() => {
         
         InitialFetch()
-    
+        
+        return  ()=> setLoading(false)
+
       }, [])
 
     
   return (
      
     
-      <>
+      <Box sx={{mt:15}}>
  
-      <BreadCrumb />
-{data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1}} className='auto' container>
-       <Grid  item xs={12} sm={6} md={7} >
+      <BreadCrumb  />
+{data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+       <Grid  item xs={12}  md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
    
        </Grid>
-       <Grid sx={{px:{xs:1,sm:1.5}}} item xs={12} sm={6} md={5}>
+       <Grid sx={{
+        border:'1px solid #00000029',
+        px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:500,fontSize:{xs:'2em',sm:'2.25sem'}}}>
-              {data?.product?.title || 'Product Name'}
-             </Typography>
-             <Typography className='green' component={'h2'} sx={{fontSize:'1.25em',fontWeight:700}}>
-               In Stock
+             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem'}}}>
+              {data?.product?.title || 'Loading Product Details'}
              </Typography>
              <Typography className='gray' component={'h4'} sx={{fontWeight:400}}>
                {data?.product?.category}
              </Typography>
+             {/* <Typography className='green' component={'h2'} sx={{fontSize:'1.25em',fontWeight:700}}>
+               In Stock
+             </Typography> */}
+            
              <Typography 
-              className='clr'   component={'h1'} sx={{my:.25,fontWeight:600,fontSize:{xs:'2em',sm:'2.25sem'}}}>
+                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.25sem'}}}>
                  ${data?.product?.price || 0}
              </Typography>
          </Box>
-         <Divider></Divider>
    
-       { data?.product?.size && <Box sx={{py:2}}>
+      
+         
+             <Box className='flex wrap' sx={{my:2,position:'relative'}}>
+              <Box sx={{width:'100%'}}>
+
+             <QuantityPicker 
+                    onChange={(e:number)=>{incrementQty(data?.product?._id,e)}}
+                    
+                    min={1} max={10} value={data?.product?.qty > 10 ? 10 : data?.product?.qty || 1}/>
+              </Box>
+
+             <Btn 
+                     onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true)}
+             
+              sx={{gap:.5,
+                borderRadius:25,
+             width:{xs:'100%',sm:'49%'}}}>
+                 Add To Cart
+                 <AiOutlineShoppingCart  fontSize={'medium'}/>
+             </Btn>
+             <Btn   sx={{border:'none',background:'transparent', color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'100%',sm:'49%'}}}>
+                 WhatsApp 
+                 <BsWhatsapp fontSize={'medium'}/>
+             </Btn>
+             </Box>
+         <Divider></Divider>
+
+         <Box sx={{pt:4}}>
+         { data?.product?.size && <Box >
              <Box >
                  <Typography >
                  <strong>Size:</strong>{' '}{data.product.size}
@@ -91,27 +133,26 @@ const Index = () => {
                 <ProductOptionSelect/>
              </Box> */}
          </Box>}
-         
-             <Box sx={{my:2,position:'relative'}}>
-             <Btn 
-                     onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price},true)}
-             
-             className='bg' sx={{gap:.5,border:'1px solid #0000003d',width:'100%',borderRadius:1}}>
-                 <Typography 
 
-                 sx={{fontWeight:500}}>
-                 Add To Cart
+         { !data?.product?.colors && <Box className='flex' sx={{py:2}}>
+                 <Typography >
+                 <strong>Colors:</strong>{' '}
                  </Typography>
-                 <AiOutlineShoppingCart  fontSize={'medium'}/>
-             </Btn>
-             <Btn  v2 sx={{color:'white',gap:.5,mt:.5,border:'1px solid green',background:'green',":hover":{color:'green'},width:'100%',borderRadius:1}}>
-                 <Typography  sx={{fontWeight:500}}>
-                 WhatsApp 
-                 </Typography>
-                 <BsWhatsapp fontSize={'medium'}/>
-             </Btn>
+             <Box  className='flex wrap row' sx={{gap:'.1em'}}>
+                 {
+                 
+                 ['red','green','white','black','yellow'].map(color=>{
+                  return <Box className='cursor'
+                  onClick={()=>setSelectedColor(color)}
+                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>
+                 }) }
              </Box>
-         <Box sx={{pt:4}}>
+              
+             {/* <Box>
+                <ProductOptionSelect/>
+             </Box> */}
+         </Box>}
+
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
              </Typography>
@@ -123,7 +164,7 @@ const Index = () => {
          {/* <ProductReview/>  */}
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
    </Grid> }
-   </>
+   </Box>
     
   )
 }

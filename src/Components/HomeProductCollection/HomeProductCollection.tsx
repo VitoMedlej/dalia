@@ -11,6 +11,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
                 sx={{
                   pb:'.5em',
                 px:1,
+                pt:9,
                   textAlign:'center !important',
                 fontSize: {
                     xs: '1.2em',
@@ -18,7 +19,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
                 },
                 fontWeight: '300'
             }}>
-                Explore Different Categories
+                View Our Latest Products
             </Typography>
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{

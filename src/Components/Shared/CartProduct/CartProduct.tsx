@@ -12,7 +12,7 @@ import Btn from '@/Components/Btn/Btn';
 
 
 
-const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartItem) => {
+const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedColor}:ICartItem) => {
  
     const {incrementQty} = useCart()
     return (
@@ -50,6 +50,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                     <Link style={{color:'black'}} className='decor-none black' href={`/product/${_id}`} >
 
                     <Typography
+                    className='flex  items-center align-center row gap1'
                     component='h4'
                     sx={{
                         margin: 0,
@@ -58,6 +59,13 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img}:ICartIte
                         fontSize:{sm:'1.1em',md:'1.3em'}
                     }}>
                        {title}
+                    {selectedColor &&   <Box 
+                    
+                    className='flex center items-center align-center row gap1'
+                    
+                    sx={{width:'15px',height:'15px',background:selectedColor,borderRadius:'50%'}}>
+                        
+                       </Box>}
                     </Typography>
                         </Link>
                     <Typography

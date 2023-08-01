@@ -10,6 +10,7 @@ import {MdFastfood} from 'react-icons/md';
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
+import { categories } from '../Navbar/Navbar';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -32,7 +33,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   const Lista = () => (
     <Box
-      sx={{ width:  'auto',py:1 }}
+      sx={{ width:  '300px',py:1 }}
       role="presentation"
       onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
@@ -73,16 +74,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
               primary={'All Categories'} />
             </ListItemButton>
           </ListItem>
-       {[
-'girl',
-'boy',
-'baby girl',
-'baby boy',
-'adult matching outfits',
-'other',
-
-
-    ].map((text, index) => {
+       {categories.map((text, index) => {
           if (!text) return;
           return <ListItem
           onClick={()=>router.push(`/${text.replace(/ /g, '-')}/products`)}
@@ -103,8 +95,9 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
         })
         
         }
-        <SMicons/>
       </List>
+      <SMicons/>
+
       <Divider />
       
     </Box>

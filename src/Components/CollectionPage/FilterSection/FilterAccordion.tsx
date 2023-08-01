@@ -11,6 +11,7 @@ import * as React from 'react';
 import SelectOneForm from './Forms/SelectOneForm';
 import { Box, MenuItem } from '@mui/material';
 import Btn from '@/Components/Btn/Btn';
+import { categories } from '@/Components/Navbar/Navbar';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
@@ -42,8 +43,8 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              title= 'Category'
             List={
             
-            ['collection','boy','girl','baby girl','baby boy','adult matching outfits','sale']
-           
+         
+                categories
              
            }
             value={options.category}

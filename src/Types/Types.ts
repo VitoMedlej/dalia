@@ -23,4 +23,5 @@ export interface ICartItem {
     category ?: string;
     remove: (id:string) => void;
     shortdesc ?: string;
+    selectedColor ?: string;
 }

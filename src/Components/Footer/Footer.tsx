@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import {Typography } from '@mui/material'
+import {Typography , Box } from '@mui/material'
 import './style.css'
 import SMicons from '../SMicons/SMicons';
 // import SMicons from './SMicons';
@@ -58,6 +58,18 @@ const Footer = () => (
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
           </ul>
         </div>
+        <Box className='flex wrap'> 
+                        <Typography sx={{width:'100%',fontWeight:500,pb:.5}}>
+                            We Also Accept:
+                        </Typography>
+                        <Box sx={{width:'80px'}}>
+                        <img src="https://whish.money/app/logos/whish_v2.png" alt="Whish Money Payment method logo" className="img contain" />
+                        </Box>
+                        <Box sx={{width:'80px',ml:2}}>
+
+<img src="https://www.omt.com.lb/storage/services/X0OGLcDfG3zrQ68JDEomA65t9.jpg" alt="Western Union Money Payment method logo" className="img contain" />
+</Box>
+                    </Box>
       </div>
     </div>
 

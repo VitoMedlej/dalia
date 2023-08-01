@@ -6,7 +6,7 @@ import { useCartContext } from "@/context/Contexts";
 const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
     const incrementQty = (_id:string,newValue ?: number) => {
-        const state = loadState('list-bag') || [];
+        const state = loadState('shping-list') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         if (foundIndex !== -1 && selectedItem) {
@@ -17,12 +17,14 @@ const useCart = () => {
 
             state[foundIndex] = selectedItem
 
-           saveState('list-bag', state)           
+           saveState('shping-list', state)           
            return true
        }
        return false;
     }
-    const addToCart = (_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,description?:string},open=true) => {
+    const addToCart = (_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,selectedColor?:string},open=true) => {
+       
+        
         //1- get the cart from localstorage
          const increased =        incrementQty(_id)       
         if (increased) {
@@ -31,11 +33,11 @@ const useCart = () => {
         }
         
             //if we do not have the item in cart, insert it
-        pushState('list-bag',
+        pushState('shping-list',
         {qty:1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title
-        ,_id:product._id,price:product.price})
+        ,_id:product._id,price:product.price,selectedColor: product?.selectedColor || ''})
         if(open) {
              
             setCartOpen(true)

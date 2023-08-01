@@ -12,7 +12,8 @@ import { useRouter } from 'next/navigation';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        { img : 'https://www.crafterscompanion.co.uk/page//content/uploads/2022/02/IMG_7879-1-1024x683.jpg'},
+        { img : 'https://cdn.shopify.com/s/files/1/0635/4468/8866/files/craft-tools-for-cutting.jpg?v=1657684586'},
+        { img : 'https://reviewed-com-res.cloudinary.com/image/fetch/s--7JZMZC9t--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_1200/https://reviewed-production.s3.amazonaws.com/1582737147771/cricut-maker-2.jpg'},
      
      ])
     useEffect(() => {

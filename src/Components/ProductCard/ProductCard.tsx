@@ -27,17 +27,17 @@ const ProductCard = ({
 
     return (
         <Box
-            className='hover-shadow  trans'
+            className='  trans'
             sx={{
+            border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
-            boxShadow: `rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px`,
-            minWidth: {xs:'130px',sm:'32%',md:'283px'},
+            minWidth: {xs:'150px',sm:'32%',md:'283px',lg:'300px'},
             width: width
                 ? width
                 : {
                     xs: '47%',
-                    sm: '23%'
+                    sm: '32%'
                 }
         }}>
             <Box 
@@ -50,53 +50,55 @@ const ProductCard = ({
                     src={images
                     ? images[0]
                     : ''}
-                    alt=""
+                    alt="Prdouct image"
                     className="img"/>
             </Box>
+            
             <Box 
             sx={{
                 px: .95
             }}>
-                <Typography
-                    className='clr'
+                    <Typography
                     sx={{
-                    my: .5,
-                    fontWeight: '600',
-                    fontSize: '1.06em'
+                    fontWeight: '300',
+                    fontSize: '.76em'
                 }}>
-                    {price}$
+                    {category}
                 </Typography>
+               
                 <Typography
             className='limited cursor '
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'.80em',sm:'.95em'},
+                    fontSize: {xs:'.89em',sm:'1.195em'},
                     fontWeight: '500'
                 }}>
                     {title}
                 </Typography>
                 <Typography
                     sx={{
-                    fontWeight: '200',
-                    fontSize: '.76em'
+                    my: .5,
+                    color:'green',
+                    fontWeight: '400',
+                    fontSize: '1.16em'
                 }}>
-                    {category}
+                    {price}$
                 </Typography>
                 <Btn
             className='cursor gap1'
                 
                      onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
-                    v2
+                    
                     sx={{
-                    color: 'black',
-                    borderColor: 'black',
-                    hover: {
-                        border: '2px solid #1a4671'
-                    }
+                        color:'white',
+                        width:'100%',
+                   
+                    borderRadius:25,
+                  
+                 
                 }}>
-                    Add
-                    <GrAdd color='#1a4671' fontSize={'small'}/>
+                    Add To Cart
                 </Btn>
             </Box>
         </Box>

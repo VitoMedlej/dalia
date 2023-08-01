@@ -72,7 +72,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('list-bag')
+      const products = loadState('shping-list')
  
 
       const total = 10

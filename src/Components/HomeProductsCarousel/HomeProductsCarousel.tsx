@@ -41,6 +41,12 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             }}>
               {Collectiontitle}
             </Typography>
+            <Link  href='/collection/products' className="decor-none">
+
+<Btn sx={{borer:'none',background:'transparent', color:'#2ec6d4',borderRadius:25,margin:'.25em auto'}}>
+    All Products
+</Btn>
+</Link>
             <Divider  light />
 
             
@@ -56,14 +62,9 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
                 
                 data={data && data.length > 0 && data?.slice(0,25) || []}/>
             </Box>
-            <Divider  light />
 
-            <Link  href='/collection/products' className="decor-none">
-
-                <Btn sx={{margin:'1em auto'}}>
-                    All Products
-                </Btn>
-</Link>
+   
+<Divider  light />
         
                 </Box>
                 

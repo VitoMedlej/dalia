@@ -22,6 +22,25 @@ import SearchInput from './SearchInput';
 import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
+
+
+export const categories = [
+    'Teckwrap',
+    '3D puff',
+    ' materials'
+,    'Cricut Joy'
+ ,  ' Cricut Maker'
+
+   , 'Tools and blades'
+    ,'Handmade goods'
+  ,  'Vintage items'
+   , 'Craft supplies'
+    ,'Fine art'
+    ,'Unique',
+    'paper craft ','stamping ','art supplies' ,'knitting' ,'sewing' 
+,
+     'other',
+]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
     const [openModal,
@@ -35,7 +54,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('list-bag') || []
+        // const cart = loadState('shping-list') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -44,7 +63,7 @@ export default function Navbar() {
 
 
     return ( <> <Box
-    className='center auto flex'
+    className='center auto  bg flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
@@ -55,9 +74,12 @@ export default function Navbar() {
         position : 'fixed',
         flexGrow: 1
     }}>
-        <Box className='flex bg white gap1 align-center items-center w100 center' sx={{py:.45}} >
+        <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
+                    maxWidth:'xl',
+            
+            py:.45}} >
             <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-              Delivery All Over Lebanon |  whatsapp📲: +961 76069567
+              Delivery All Over Lebanon |  whatsapp📲: +961 03874743
             </Typography>
                    {/* <Typography
                                 sx={{
@@ -85,17 +107,17 @@ export default function Navbar() {
             boxShadow: 'none'
         }}>
             <Toolbar
-    className='center  flex w100 '
+    className='center  flex w100  auto'
 
                 sx={{
-                    
+                    border : `1px solid #00000012`,
                 background:'white',
-             
+                    maxWidth:'xl',
                 px:'0 !important',
                 
                 flexWrap: 'wrap'
             }}> 
-                  <Link className='flex  aling-center items-center '  href='/' color='inherit'>
+                  <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
 
 <Box
     sx={{
@@ -221,9 +243,9 @@ export default function Navbar() {
                             sx={{
                             color: 'black'
                         }}>
-                            <Badge color='primary' badgeContent={`${localCart.length || '0'}`}>
+                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
                                 <CiShoppingCart color='black'/>
-                            </Badge>
+                            {/* </Badge> */}
                             {/* <Typography>
                                 Cart
                             </Typography> */}
