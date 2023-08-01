@@ -142,7 +142,7 @@ const Index = () => {
                  {
                  
                  ['red','green','white','black','yellow'].map(color=>{
-                  return <Box className='cursor'
+                  return <Box className='cursor' key={color}
                   onClick={()=>setSelectedColor(color)}
                   sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>
                  }) }
