@@ -12,9 +12,10 @@ const Page = async(ctx : any) => {
 
   try {
 
-    const page = 0;
+    // const page = 0;
     const {category} = ctx.params;
     const {search } = ctx?.searchParams;
+    const {page} = ctx?.searchParams;
    
 
     // const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category

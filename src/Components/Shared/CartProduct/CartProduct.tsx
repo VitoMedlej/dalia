@@ -54,6 +54,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                     component='h4'
                     sx={{
                         margin: 0,
+                        width:'100%',
                         cursor:'pointer',
                         fontWeight: '400',
                         fontSize:{sm:'1.1em',md:'1.3em'}
