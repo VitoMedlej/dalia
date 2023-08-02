@@ -4,7 +4,7 @@ import HomeProductsCarousel from '@/Components/HomeProductsCarousel/HomeProducts
 import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImageCarousel'
 // import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 // import ProductReview from '@/Components/ProductReview/ProductReview'
-import {  Box, Divider, Grid, Typography } from '@mui/material'
+import {  Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
 import {BsWhatsapp} from 'react-icons/bs'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import BreadCrumb from '@/Components/BreadCrumb/BreadCrumb'
@@ -63,14 +63,14 @@ const Index = () => {
 
       }, [])
 
-    
+      console.log('data?.product: ', data?.product);
   return (
      
     
       <Box sx={{mt:15}}>
  
       <BreadCrumb  />
-{data?.product !== undefined &&   <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+{!loading && data?.product !== undefined && data?.product?.title ?  <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
        <Grid  item xs={12}  md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
    
@@ -134,14 +134,14 @@ const Index = () => {
              </Box> */}
          </Box>}
 
-         { !data?.product?.colors && <Box className='flex' sx={{py:2}}>
+         { data?.product?.colors && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
              <Box  className='flex wrap row' sx={{gap:'.1em'}}>
                  {
                  
-                 ['red','green','white','black','yellow'].map(color=>{
+                data?.product?.colors.map((color : string)=>{
                   return <Box className='cursor' key={color}
                   onClick={()=>setSelectedColor(color)}
                   sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>
@@ -163,7 +163,11 @@ const Index = () => {
        </Grid>
          {/* <ProductReview/>  */}
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
-   </Grid> }
+   </Grid> : <Box className='flex auto center align-center' sx={{py:15}}>
+
+     <CircularProgress />
+   </Box>
+     }
    </Box>
     
   )
