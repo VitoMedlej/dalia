@@ -25,12 +25,14 @@ import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 
 export const categories = [
+    'Collection',
+    'Cricut Joy',
+    'other',
     'Teckwrap',
     '3D puff',
     ' materials'
-,    'Cricut Joy'
  ,  ' Cricut Maker'
-
+    
    , 'Tools and blades'
     ,'Handmade goods'
   ,  'Vintage items'
@@ -39,7 +41,6 @@ export const categories = [
     ,'Unique',
     'paper craft ','stamping ','art supplies' ,'knitting' ,'sewing' 
 ,
-     'other',
 ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
