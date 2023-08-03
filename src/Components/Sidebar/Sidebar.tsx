@@ -74,15 +74,15 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
               primary={'All Categories'} />
             </ListItemButton>
           </ListItem>
-       {categories.map((text, index) => {
+       {categories.slice(0,8).map((text, index) => {
           if (!text) return;
           return <ListItem
-          onClick={()=>router.push(`/${text.replace(/ /g, '-')}/products`)}
+          onClick={()=>router.push(`/${text.replace(/ /g, '-').toLocaleLowerCase()}/products`)}
           key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 {index % 2 === 0 ? <IoShirtOutline /> : <IoShirtSharp />}
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText
               sx={{
                 color:'black',
