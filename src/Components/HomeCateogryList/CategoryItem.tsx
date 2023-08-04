@@ -1,3 +1,4 @@
+"use client"
 import {Box, Typography} from "@mui/material"
 import {useRouter} from "next/navigation"
 // import {ICategoryItem} from "../../src/Types"

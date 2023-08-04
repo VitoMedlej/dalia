@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import  { Autoplay } from 'swiper'
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation} from "swiper";
+// import {Navigation} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
@@ -19,7 +19,7 @@ const Preloader3 = ({res}:{res:any}) => {
      
      ])
     useEffect(() => {
-    if (res && res?.MainCarousel) {
+    if (res && res?.MainCarousel && res?.MainCarousel?.length >0) {
         console.log('res?.MainCarousel: ', res?.MainCarousel);
         // console.log('res: ', );
         setImgs(res?.MainCarousel)

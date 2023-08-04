@@ -1,8 +1,8 @@
-// "use client"
+"use client"
 
 import Preloader3 from '../Preloader3';
 
-const MainCarousel = async () => {
+const MainCarousel =  () => {
 
 
 
