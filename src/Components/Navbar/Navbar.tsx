@@ -14,7 +14,7 @@ import Link from 'next/link';
 import {Badge, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
-import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
+// import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
 import {CiSearch,CiShoppingCart} from 'react-icons/ci'
 
 import SearchInput from './SearchInput';

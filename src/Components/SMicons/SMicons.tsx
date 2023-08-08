@@ -4,7 +4,7 @@ import {FaFacebook ,FaInstagram,FaWhatsapp} from 'react-icons/fa';
 const sm = [
     {
         Icon:FaInstagram,
-        href:'https://www.instagram.com/onbeirut/'
+        href:'https://www.instagram.com/thecraftroom.lb/?next=https%3A%2F%2Fwww.instagram.com%2Fticketshopcol%2Fp%2FBwKRsoxI8Tf%2F%3Fhl%3Dcs%26__coig_login%3D1'
     },
     {Icon:FaWhatsapp,href:'https://wa.me/+96103874743'},
     {

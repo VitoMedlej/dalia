@@ -1,5 +1,5 @@
-import { server } from '@/Utils/Server'
-import Head from 'next/head'
+// import { server } from '@/Utils/Server'
+// import Head from 'next/head'
 import React from 'react'
 
 

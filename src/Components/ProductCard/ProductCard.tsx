@@ -1,8 +1,9 @@
-import {IProduct} from '@/Types/Types'
+"use client"
+// import {IProduct} from '@/Types/Types'
 import {Box, Typography} from '@mui/material'
 import React from 'react'
 import Btn from '../Btn/Btn'
-import {GrAdd} from 'react-icons/gr'
+// import {GrAdd} from 'react-icons/gr'
 import {useRouter} from 'next/navigation'
 import useCart from '@/Hooks/useCart'
 const ProductCard = ({
