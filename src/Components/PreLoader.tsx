@@ -17,11 +17,11 @@ const cates = [{img:'https://www.crafterscompanion.com/page//content/uploads/202
 
 ]
 const 
-PreLoader = ({data}:any) => {
+PreLoader = ({data,resImages}:any) => {
     const router= useRouter();
   return (
     <Box >
-      <MainCarousel/>
+      <MainCarousel resImages={resImages}/>
 
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
