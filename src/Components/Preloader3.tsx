@@ -13,9 +13,9 @@ const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
         { img : 'https://seelindsay.com/wp-content/uploads/2020/04/Cricut-Joy.jpg'},
-        {img:`https://cricut.com/blog/wp-content/uploads/2020/02/Meet-Cricut-Joy.png`},
-        {img:`https://inspirationcontent.cricut.com/inspiration/posts/2020/02/12/Meet_Cricut_Joy/Kitchen_notecards.jpg`},
-        { img : 'https://reviewed-com-res.cloudinary.com/image/fetch/s--7JZMZC9t--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_1200/https://reviewed-production.s3.amazonaws.com/1582737147771/cricut-maker-2.jpg'},
+        // {img:`https://cricut.com/blog/wp-content/uploads/2020/02/Meet-Cricut-Joy.png`},
+        // {img:`https://inspirationcontent.cricut.com/inspiration/posts/2020/02/12/Meet_Cricut_Joy/Kitchen_notecards.jpg`},
+        // { img : 'https://reviewed-com-res.cloudinary.com/image/fetch/s--7JZMZC9t--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_1200/https://reviewed-production.s3.amazonaws.com/1582737147771/cricut-maker-2.jpg'},
      
      ])
     useEffect(() => {
