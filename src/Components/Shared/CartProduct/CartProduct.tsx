@@ -21,9 +21,11 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
             className="trans"
             sx={{
                 display:'flex',
-                gap:'1em',
+                // gap:'1em',
+                py:3,
+                px:0,
             flex:1,
-            padding: '1em',
+            // padding: '1em',
             ':hover': {
                 backgroundColor: '#0000000f',
                 borderRadius: '6px'
@@ -31,7 +33,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
         }}>
             <Box
                 sx={{
-                mr: '.5em',
+                mr: .5,
                 width: '100px',
                 height: '100px',
                 borderRadius: '6px'

@@ -68,26 +68,7 @@ export default function Navbar() {
         position : 'fixed',
         flexGrow: 1
     }}>
-        <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
-                    maxWidth:'xl',
-                    height:'100%',
-            py:.45}} >
-            <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-            Free Delivery On Orders Over $40 In Lebanon 
-            </Typography>
-                   {/* <Typography
-                                sx={{
-                                
-                                px: '.1em',
-                                // color: 'black',
-                                display : {
-                                    xs: 'none',
-                                    lg: 'flex'
-                                }
-                            }}>
-                               +{process.env.NEXT_PUBLIC_WA}
-                            </Typography> */}
-        </Box>
+      
         <AppBar
     className='center relative  flex'
 
@@ -100,6 +81,15 @@ export default function Navbar() {
             margin: '0 auto',
             boxShadow: 'none'
         }}>
+              <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
+                    maxWidth:'xl',
+                    height:'100%',
+            py:.45}} >
+            <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
+            Free Delivery On Orders Over $40 In Lebanon 
+            </Typography>
+              
+        </Box>
             <Toolbar
     className='center  flex w100  auto'
 
