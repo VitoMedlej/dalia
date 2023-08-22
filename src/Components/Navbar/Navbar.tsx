@@ -16,7 +16,7 @@ import {Badge, Divider, Typography} from '@mui/material';
 import {useRouter} from 'next/navigation';
 // import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
 import {CiSearch,CiShoppingCart} from 'react-icons/ci'
-
+import {AiOutlineHome,AiOutlineShoppingCart} from 'react-icons/ai'
 import SearchInput from './SearchInput';
 
 import NavButtom from './NavButtom';
@@ -144,14 +144,46 @@ export default function Navbar() {
                         // justifyContent: 'end'
                     }}
                         className='flex right'>
- 
+                             
+                        
+                             
+                             <IconButton
+                            onClick={() => router.push('/')}
+                            size="large"
+                            edge="start"
+                            aria-label="menu"
+                            sx={{
+                                margin : '8px',padding:0,
+                            color: 'black',
+
+                            // margin: '0.1em',
+                            display: {
+                                md: 'none'
+                            }
+                        }}>
+                            <AiOutlineHome color='black'/>
+                        </IconButton>
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+                            sx={{
+                                margin : '8px',padding:0,
+                            color: 'black'
+                        }}>
+                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
+
+                                <AiOutlineShoppingCart color='black'/>
+                            {/* </Badge> */}
+                            {/* <Typography>
+                                Cart
+                            </Typography> */}
+                        </IconButton>
     <IconButton
                             onClick={() => setOpen(!open)}
                             size="large"
                             edge="start"
                             aria-label="menu"
                             sx={{
-                            padding : '8px',
+                            margin : '8px',padding:0,
                             color: 'black',
                             // margin: '0.1em',
                             display: {
@@ -160,19 +192,7 @@ export default function Navbar() {
                         }}>
                             <IoIosMenu color='black'/>
                         </IconButton>
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-                            sx={{
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                            {/* <Typography>
-                                Cart
-                            </Typography> */}
-                        </IconButton>
+                   
    {/* <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
 
                         <IconButton
@@ -222,6 +242,7 @@ export default function Navbar() {
                                 <CiSearch color='black'/>
                           
                         </IconButton>
+
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
@@ -236,6 +257,7 @@ export default function Navbar() {
                             </IconButton>
 
 
+
                             <IconButton
                             onClick={() => setOpen(!open)}
                             edge="start"
@@ -243,9 +265,7 @@ export default function Navbar() {
                             sx={{
                             color: 'black',
                             // margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
+                         
                         }}>
                             <IoIosMenu color='black'/>
                         </IconButton>

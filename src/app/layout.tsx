@@ -40,7 +40,6 @@ export default function RootLayout({children} : {
 
                      {children}
                     </main>
-                    {/* {children} */}
                 </ContextWrapper>
                 <Footer/>
             </body>
