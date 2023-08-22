@@ -60,36 +60,32 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
                                 </Box>
       <List>
       <ListItem
+          sx={{fontWeight:600}}
+
           onClick={()=>router.push(`/collection/products`)}
            disablePadding>
             <ListItemButton>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 <MdFastfood />
-              </ListItemIcon>
-              <ListItemText
-              sx={{
-                color:'black',
-                textTransform: 'capitalize'
-              }}
-              primary={'All Categories'} />
+              </ListItemIcon> */}
+                  <Typography sx={{fontWeight:600}}>
+              All Products
+            </Typography>
             </ListItemButton>
           </ListItem>
        {categories.slice(0,8).map((text, index) => {
           if (!text) return;
           return <ListItem
+        
           onClick={()=>router.push(`/${text.replace(/ /g, '-').toLocaleLowerCase()}/products`)}
           key={text} disablePadding>
             <ListItemButton>
               {/* <ListItemIcon>
                 {index % 2 === 0 ? <IoShirtOutline /> : <IoShirtSharp />}
               </ListItemIcon> */}
-              <ListItemText
-              sx={{
-                color:'black',
-
-                textTransform: 'capitalize'
-              }}
-              primary={text} />
+            <Typography sx={{fontWeight:600}}>
+              {text}
+            </Typography>
             </ListItemButton>
           </ListItem>
         })

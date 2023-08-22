@@ -21,7 +21,7 @@ try {
         // .find({isFeatured: false})
         .find({})
         .sort({_id: -1})
-        .limit(55)
+        .limit(20)
 
     await ProductsQuery.forEach((doc : any) => {
 

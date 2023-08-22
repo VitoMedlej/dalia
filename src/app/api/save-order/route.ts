@@ -6,7 +6,6 @@ import { type NextRequest } from 'next/server'
 export  async function POST(req: NextRequest, res: NextApiResponse) {
   // const order = req?.body.get('order')
   const {order} = await req.json()
-  console.log('order: ', order);
   if (req.method === 'POST') {
     // Process a POST request
     if (!order) return NextResponse.json({success:false})

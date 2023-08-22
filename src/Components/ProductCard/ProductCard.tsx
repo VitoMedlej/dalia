@@ -82,7 +82,7 @@ const ProductCard = ({
                     my: .5,
                     color:'green',
                     fontWeight: '400',
-                    fontSize: '1.16em'
+                    fontSize: {xs:'1.01em',sm:'1.16em'}
                 }}>
                     {price}$
                 </Typography>

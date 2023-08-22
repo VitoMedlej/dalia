@@ -20,7 +20,6 @@ const Preloader3 = ({res}:{res:any}) => {
      ])
     useEffect(() => {
     if (res && res?.MainCarousel && res?.MainCarousel?.length >0) {
-        console.log('res?.MainCarousel: ', res?.MainCarousel);
         // console.log('res: ', );
         setImgs(res?.MainCarousel)
     }
@@ -33,8 +32,8 @@ const Preloader3 = ({res}:{res:any}) => {
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
             // maxWidth: 'lg',
-            maxHeight:'450px',
-             
+            maxHeight:'500px',
+            maxWidth:'lg',
             margin: '0 auto',
             display: {
                 xs: 'flex'

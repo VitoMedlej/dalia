@@ -16,7 +16,7 @@ const Page = async(ctx : any) => {
     const {category} = ctx.params;
     const {search } = ctx?.searchParams;
     const {page} = ctx?.searchParams;
-   
+    const pageSize = 12; // Number of items per page
 
     // const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category
     //     ? `${category}`.replace(/-/g, ' ')
@@ -41,8 +41,18 @@ const Page = async(ctx : any) => {
         .collection("Products");
     let products : any = []
 
+    let countQuery;
 
-   
+    if (!filterByCate){
+        countQuery = await ProductsCollection.count();
+    } else {
+        countQuery = await ProductsCollection.count({category: filterByCate});
+    }
+    
+    const totalPages = Number(Math.ceil(countQuery / pageSize) - 1); // Total number of pages
+
+
+
     const ProductsQuery =
     
     search && search?.length > 1 ?      await ProductsCollection.find({
@@ -67,7 +77,7 @@ const Page = async(ctx : any) => {
           : {}
       )
         .sort({_id: -1})
-        .skip(Number(page || 0) * 12)
+        .skip(Number(page * 12 || 0) )
         .limit(12)
 
     await ProductsQuery.forEach((doc : any) => {
@@ -79,14 +89,17 @@ const Page = async(ctx : any) => {
 
  
 
-    return (<Preloader2 data={products || null}/>)
+    return (<Preloader2 totalPages={totalPages || 1} data={products || null}/>)
   }
 catch (err) {
   console.log('err: ', err);
   
-  return (<Preloader2 data={null}/>)
+  return (<Preloader2 totalPages={1} data={null}/>)
 
 }
 }
 
 export default Page
+
+
+export const dynamic = 'force-dynamic'

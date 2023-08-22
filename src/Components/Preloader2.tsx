@@ -9,16 +9,30 @@ import { IProduct } from '@/Types/Types'
 import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
-const Preloader2 = ({data}:any) => {
+const Preloader2 = ({data,totalPages}:any) => {
     // console.log('data: ', data);
-    const [pageNB,setPageNB] = useState(0)
+    // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
     const [products,setProducts] = useState(data)
     const {category} = useParams() 
-    const counted = 1;
-    const handlePagination = async (val:number) => {
-        router.push(`${server}/${category ?category : 'collection'}/products?page=${val ? val : 0}`)
-    }
+    const pagess= useParams() 
+
+
+
+    const fetchData = async (val:number) => {
+    const url =  `/api/fetch-all?category=${category}&page=${Number(val - 1) || 0}`  ;
+        const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
+        const res = await req.json()
+        
+        
+
+            setProducts(res?.data?.products ? res?.data?.products : [])
+      };
+  
+    // const handlePagination = async (val:number) => {
+    //     // router.replace(`${server}/${category ?category : 'collection'}/products?page=${val ? val : 0}`)
+    //     fetchData()
+    // }
     // const [data,setData] = useState< {
     //     products: IProduct[] | never[] ; 
        
@@ -56,13 +70,13 @@ No products found, try a different category...
     </Box>
     <Pagination
         onChange={(e, val) => {
-        handlePagination(val)
+            fetchData(val)
     }}
         sx={{
         my: 3
     }}
-        count={counted > 1
-        ? counted
+        count={totalPages > 1 
+        ? totalPages
         : 1}
         className='flex center '/>
 

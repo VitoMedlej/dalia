@@ -25,22 +25,15 @@ import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 
 export const categories = [
-    'Collection',
-    'Cricut Joy',
-    'other',
-    'Teckwrap',
-    '3D puff',
-    ' materials'
- ,  ' Cricut Maker'
-    
-   , 'Tools and blades'
-    ,'Handmade goods'
-  ,  'Vintage items'
-   , 'Craft supplies'
-    ,'Fine art'
-    ,'Unique',
-    'paper craft ','stamping ','art supplies' ,'knitting' ,'sewing' 
-,
+    'New Arrivals',
+    `Hot offers`,
+`Cricut machines`, 
+`Heat presses`,
+`Materials`,
+`Tools and Accessories` ,
+`Pens and markers`,
+`Customizable Blanks`,
+`Art supplies`,
 ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
@@ -80,7 +73,7 @@ export default function Navbar() {
             
             py:.45}} >
             <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-              Delivery All Over Lebanon |  whatsapp📲: +961 03874743
+            Free Delivery On Orders Over $40 In Lebanon 
             </Typography>
                    {/* <Typography
                                 sx={{
