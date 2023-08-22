@@ -3,8 +3,11 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
+import Btn from '../Btn/Btn'
+import { useRouter } from 'next/navigation'
 
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
+ const router = useRouter()
   return (
     <Box sx={{my:4}} className='center auto'>
             <Typography
@@ -22,6 +25,11 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
             }}>
                 View Our Latest Products
             </Typography>
+            <Btn 
+            onClick={()=>router.push('/collection/products')}
+            sx={{border:'none',color:'black'}} v2>
+              View All
+            </Btn>
               <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 

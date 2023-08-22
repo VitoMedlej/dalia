@@ -54,7 +54,7 @@ PreLoader = ({data,resImages}:any) => {
                 flex:1,
                 fontWeight: '300'
             }}>
-               Explose Categories
+               Explore Categories
             </Typography>
          
 

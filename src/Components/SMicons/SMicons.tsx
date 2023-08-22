@@ -1,6 +1,9 @@
 import { Box } from '@mui/material';
 import React from 'react'
 import {FaFacebook ,FaInstagram,FaWhatsapp} from 'react-icons/fa';
+import {BsTiktok} from 'react-icons/bs';
+
+
 const sm = [
     {
         Icon:FaInstagram,
@@ -8,8 +11,11 @@ const sm = [
     },
     {Icon:FaWhatsapp,href:'https://wa.me/+96103874743'},
     {
+      Icon :BsTiktok ,href: `tiktok.com/@thecraftroomlb`,
+    },
+    {
 
-    Icon:FaFacebook,   href:'https://www.facebook.com/onbeirut'
+    Icon:FaFacebook,   href:'https://www.facebook.com/profile.php?id=100087524961925&mibextid=9R9pXO'
 }]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (
