@@ -82,8 +82,8 @@ export default function Navbar() {
             boxShadow: 'none'
         }}>
               <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
-                    maxWidth:'xl',
-                    height:'100%',
+                    // maxWidth:'xl',
+                    height:'20px',
             py:.45}} >
             <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
             Free Delivery On Orders Over $40 In Lebanon 
