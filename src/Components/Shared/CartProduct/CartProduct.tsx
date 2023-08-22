@@ -44,7 +44,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                     className='img contain'
                     alt="Cart Product Img"/>
             </Box>
-            <Box className='wrap' sx={{display:'flex',width:'100%'}}>
+            <Box className='wrap flex' sx={{flex:1,display:'flex',width:'100%'}}>
 
                 <Box>
                     <Link style={{color:'black'}} className='decor-none black' href={`/product/${_id}`} >

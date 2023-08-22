@@ -9,11 +9,11 @@ import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
 
 
-const cates = [{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_7772-1024x683.jpg',category:'Tools'},
-{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_4963-1024x683.jpg',category:'More Tools'},
-{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9100-1024x683.jpg',category:'Machines'} ,
-{img:'https://i.etsystatic.com/45256079/c/942/942/8/0/il/60ed38/5140412525/il_600x600.5140412525_nxcd.jpg',category:'Ropes'}  ,
-{img:'https://i.etsystatic.com/37495329/r/il/d2aec0/4310920560/il_340x270.4310920560_i6j3.jpg',category:'kit'}  ,
+const cates = [{img:'https://ucarecdn.com/dcd75a0a-1eca-4982-8716-201e5cb163f5/shot26amain0595i0121.jpg',category:'Cricut machines'},
+{img:'https://ucarecdn.com/7923ebb3-31ea-4f4a-b095-c2a1d6bae4b0/20065821.jpg',category:'Customizable Blanks'},
+{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9100-1024x683.jpg',category:'Hot offers'} ,
+{img:'https://i.etsystatic.com/45256079/c/942/942/8/0/il/60ed38/5140412525/il_600x600.5140412525_nxcd.jpg',category: 'New Arrivals'}  ,
+{img:'https://i.etsystatic.com/37495329/r/il/d2aec0/4310920560/il_340x270.4310920560_i6j3.jpg',category:'Materials'}  ,
 
 ]
 const 
