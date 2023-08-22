@@ -1,3 +1,4 @@
+"use client"
 import { Box, Typography, Rating, TextField } from '@mui/material';
 import React from 'react'
 import Btn from '../Btn/Btn';

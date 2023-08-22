@@ -1,3 +1,4 @@
+"use client"
 import {Box, Typography, Rating} from '@mui/material'
 import React from 'react'
 

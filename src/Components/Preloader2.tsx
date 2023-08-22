@@ -15,18 +15,23 @@ const Preloader2 = ({data,totalPages}:any) => {
     const router = useRouter()
     const [products,setProducts] = useState(data)
     const {category} = useParams() 
-    const pagess= useParams() 
+
 
 
 
     const fetchData = async (val:number) => {
-    const url =  `/api/fetch-all?category=${category}&page=${Number(val - 1) || 0}`  ;
-        const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
-        const res = await req.json()
+        console.log('val: ', val);
+        console.log('category: ', category);
+    const url =  `/api/fetch-page?category=${category}&page=${Number(val - 1) || 0}`  ;
+    const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
+    const res = await req.json()
+    console.log('res: ', res);
         
-        
-
             setProducts(res?.data?.products ? res?.data?.products : [])
+
+            if (window) {
+                window.scrollTo(0,0)
+            }
       };
   
     // const handlePagination = async (val:number) => {

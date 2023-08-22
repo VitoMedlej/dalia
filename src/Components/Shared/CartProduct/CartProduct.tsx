@@ -1,3 +1,4 @@
+"use client"
 import { Box, IconButton, Typography } from '@mui/material'
 // import {ImCancelCircle} from 'react-icons/im';
 import {AiOutlineDelete,AiOutlineEye} from 'react-icons/ai';

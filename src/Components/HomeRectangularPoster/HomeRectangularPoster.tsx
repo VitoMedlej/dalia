@@ -1,3 +1,4 @@
+"use client"
 import { Box, Container } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import React from 'react'
