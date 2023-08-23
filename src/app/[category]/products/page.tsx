@@ -47,9 +47,10 @@ const Page = async(ctx : any) => {
         countQuery = await ProductsCollection.count();
     } else {
         countQuery = await ProductsCollection.count({category: filterByCate});
-    }
+      }
+      console.log('countQuery: ', countQuery);
     
-    const totalPages = Number(Math.ceil(countQuery / pageSize) - 1); // Total number of pages
+    const totalPages = Number(Math.ceil(countQuery / pageSize)); // Total number of pages
 
 
 

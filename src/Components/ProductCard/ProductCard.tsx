@@ -89,7 +89,7 @@ const ProductCard = ({
                 <Btn
             className='cursor gap1'
                 
-                     onClick={()=>addToCart(_id,{title,category,img:images[0],_id,price},true)}
+                     onClick={()=>addToCart(1,_id,{title,category,img:images[0],_id,price},true)}
                     
                     sx={{
                         color:'white',

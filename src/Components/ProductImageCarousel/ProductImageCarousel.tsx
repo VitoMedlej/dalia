@@ -35,7 +35,7 @@ export default function App({images}:{images:string[] | []| undefined}) {
             return    <SwiperSlide key={img}>
               <Box sx={{height:{xs:'100%',md:'600px'}}}>
 
-            <img className='img' src={`${img}`} alt={'Product Image'} />
+            <img className='img contain' src={`${img}`} alt={'Product Image'} />
               </Box>
           </SwiperSlide>
           })

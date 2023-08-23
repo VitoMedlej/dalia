@@ -54,12 +54,15 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
         Order summary
       </Typography>
       <List disablePadding>
-        {products?.length > 0 && products.map((product:any) => (
-          <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
-             <ListItemText primary={`${product?.title || 'Product Name'}`}  />
+        {products?.length > 0 && products.map((product:any) => {
+
+        
+          if (!product?._id) return;
+         return <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
+             <ListItemText primary={`${product?.title || 'Product Name'} - ${product?.selectedColor ? product?.selectedColor : ''}`}  />
             <Typography variant="body2">${product?.price}</Typography>
           </ListItem>
-        ))}
+        })}
         <Divider/>
         {/* <ListItem sx={{px: 0 }}>
 

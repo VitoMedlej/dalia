@@ -10,6 +10,7 @@ import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
 const Preloader2 = ({data,totalPages}:any) => {
+    console.log('totalPages: ', totalPages);
     // console.log('data: ', data);
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()

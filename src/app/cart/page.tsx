@@ -109,6 +109,7 @@ const Cart = () => {
                 }}>
                     {cartItems && cartItems.length > 0 ?
                     cartItems.map(item=>{
+                        if (!item?._id) return;
                         return <CartProduct 
                         selectedColor={item?.selectedColor}
                         onChange={refetchState}

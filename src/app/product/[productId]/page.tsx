@@ -22,7 +22,9 @@ const Index = () => {
  
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
+    const [selectedQuantity,setSelectedQuantity] = useState(1)
     const [selectedColor,setSelectedColor] = useState('')
+    console.log('selectedColor: ', selectedColor);
     const [data,setData] = useState<{
       product: IProduct | any ;
       moreProducts: IProduct[] | never[];
@@ -40,12 +42,12 @@ const Index = () => {
           const res = await req.json()
         
           if (res?.success && res?.product) {
-            setData({product:res?.product,moreProducts : res?.moreProducts})
+          setData({product:res?.product,moreProducts : res?.moreProducts})
           setLoading(false)
 
           }
-          return null
           setLoading(false)
+          return null
 
         }
         catch(er) {
@@ -63,7 +65,6 @@ const Index = () => {
 
       }, [])
 
-      console.log('data?.product: ', data?.product);
   return (
      
     
@@ -97,21 +98,21 @@ const Index = () => {
    
       
          
-             <Box className='flex wrap' sx={{my:2,position:'relative'}}>
+             <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:'100%'}}>
 
              <QuantityPicker 
-                    onChange={(e:number)=>{incrementQty(data?.product?._id,e)}}
+                    onChange={(e:number)=>{setSelectedQuantity(e)}}
                     
-                    min={1} max={10} value={data?.product?.qty > 10 ? 10 : data?.product?.qty || 1}/>
+                    min={1} max={10} value={selectedQuantity}/>
               </Box>
 
              <Btn 
-                     onClick={()=>addToCart(`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true)}
+                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true,true)}
              
               sx={{gap:.5,
                 borderRadius:25,
-             width:{xs:'100%',sm:'49%'}}}>
+             width:{xs:'100%',sm:'49%' }}}>
                  Add To Cart
                  <AiOutlineShoppingCart  fontSize={'medium'}/>
              </Btn>
@@ -142,6 +143,7 @@ const Index = () => {
                  {
                  
                 data?.product?.colors.map((color : string)=>{
+                  
                   return <Box className='cursor' key={color}
                   onClick={()=>setSelectedColor(color)}
                   sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>
