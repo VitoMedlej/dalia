@@ -9,11 +9,11 @@ import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
 
 
-const cates = [{img:'https://ucarecdn.com/dcd75a0a-1eca-4982-8716-201e5cb163f5/shot26amain0595i0121.jpg',category:'Cricut machines'},
-{img:'https://ucarecdn.com/7923ebb3-31ea-4f4a-b095-c2a1d6bae4b0/20065821.jpg',category:'Customizable Blanks'},
-{img:'https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9100-1024x683.jpg',category:'Hot offers'} ,
-{img:'https://i.etsystatic.com/45256079/c/942/942/8/0/il/60ed38/5140412525/il_600x600.5140412525_nxcd.jpg',category: 'New Arrivals'}  ,
-{img:'https://i.etsystatic.com/37495329/r/il/d2aec0/4310920560/il_340x270.4310920560_i6j3.jpg',category:'Materials'}  ,
+const cates = [{img:'https://ucarecdn.com/4635c19f-1ac8-454f-aaf7-8c67adfe4fd0/WhatsAppImage20230824at191722.jpeg',category:'Cricut machines'},
+{img:'https://4.bp.blogspot.com/-Jt0CZBa0r6s/WQoWgzdYryI/AAAAAAAAuE4/WNVqO4RNJEoJZeWAGCCDtT-YdkxV-JaPwCPcB/s640/wholesale%2Bcraft%2Bblanks.JPG',category:'Customizable Blanks'},
+{img:'https://ucarecdn.com/e490c41b-ddd1-4ef1-a06c-b1b0692bd83a/WhatsAppImage20230824at191716.jpeg',category:'Hot offers'} ,
+{img:'https://ucarecdn.com/bfb9f54b-ee34-4cdc-930c-3a97234595fe/WhatsAppImage20230824at191719.jpeg',category: 'New Arrivals'}  ,
+{img:'https://ucarecdn.com/d01c6f74-4d3b-46c4-9d31-67966950b09e/WhatsAppImage20230824at191720.jpeg',category:'Materials'}  ,
 
 ]
 const 
@@ -25,10 +25,10 @@ PreLoader = ({data,resImages}:any) => {
 
     <Container disableGutters className='wrap auto flex' sx={{pt:10,px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
-    <Box className='flex auto row ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
+    <Box className='flex auto wrap ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
       {
-        ['https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_8026-1024x683.jpg','https://www.crafterscompanion.com/page//content/uploads/2022/02/IMG_9956-1024x683.jpg'].map(img=>{
-          return <Box className='cursor' onClick={()=>router.push('/collection/products')} key={img} sx={{width:{xs:'99%',sm:'49%',md:'48%'}}}>
+        ['https://ucarecdn.com/e79d337c-b709-4ea4-aec0-6f3403afff1e/WhatsAppImage20230824at191717.jpeg','https://ucarecdn.com/3a54db45-c216-4076-996c-3ec4524be8f0/WhatsAppImage20230824at191727.jpeg'].map(img=>{
+          return <Box className='cursor' onClick={()=>router.push('/collection/products')} key={img} sx={{minWidth:'200px',my:1,width:{xs:'99%',sm:'49%',md:'48%'}}}>
             <img src={img} alt="Category Image Shop Now" className="img" />
           </Box>
         })
