@@ -73,7 +73,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
             </Typography>
             </ListItemButton>
           </ListItem>
-       {categories.slice(0,8).map((text, index) => {
+       {categories.slice(0,12).map((text, index) => {
           if (!text) return;
           return <ListItem
         
