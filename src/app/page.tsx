@@ -45,7 +45,6 @@ try {
       const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/11c7944e-bdec-4962-bcad-f24fe432bca6/basket/Images`,{ next: { revalidate: 400 } })
       let resImages : any = await  reqImages.json();
       // let res = {data:null}
-      console.log('res: ', res);
       return (
         <PreLoader resImages={resImages || null} data={res?.data}/>
        )

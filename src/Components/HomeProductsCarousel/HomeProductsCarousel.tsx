@@ -24,8 +24,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             maxWidth: 'lg',
             width :'99%',
             margin: '0 auto',
-            mt: '6em',
-            mb:'3em',
+            my: '3em',
             ...sx,
         }}>
        
@@ -48,7 +47,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     All Products
 </Btn>
 </Link>
-            <Divider  light />
+            {/* <Divider  light /> */}
 
             
             <Box
@@ -65,7 +64,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Box>
 
    
-<Divider  light />
+{/* <Divider  light /> */}
         
                 </Box>
                 
