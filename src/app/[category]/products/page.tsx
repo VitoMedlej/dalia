@@ -35,7 +35,7 @@ const Page = async(ctx : any) => {
         // let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
     const ProductsCollection = await client
         .db("CRAFT")
         .collection("Products");
@@ -46,6 +46,7 @@ const Page = async(ctx : any) => {
     if (!filterByCate){
         countQuery = await ProductsCollection.count();
     } else {
+      console.log('filterByCate: ', filterByCate);
         countQuery = await ProductsCollection.count({category: filterByCate});
       }
       console.log('countQuery: ', countQuery);

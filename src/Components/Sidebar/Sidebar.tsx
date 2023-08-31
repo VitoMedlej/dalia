@@ -1,6 +1,6 @@
 "use client";
 import {useContext} from 'react';
-import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography} from '@mui/material';
+import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography, Accordion, AccordionDetails, AccordionSummary} from '@mui/material';
 import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
 
@@ -72,8 +72,25 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
               All Products
             </Typography>
             </ListItemButton>
+      {/* <Accordion>
+            
+                  <AccordionSummary
+          // expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Accordion 1</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion> */}
+
           </ListItem>
-       {categories.slice(0,12).map((text, index) => {
+       {categories.map((text, index) => {
           if (!text) return;
           return <ListItem
         

@@ -42,7 +42,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
     const ProductsCollection = await client
         .db("CRAFT")
         .collection("Products");
