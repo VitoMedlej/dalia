@@ -91,7 +91,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
  className='cursor'
  sx={{borderRadius:'50%',height:{xs:'48vw',sm:'24vw',md:'24vw',lg:'15vw'},
  my:2,width:{xs:'48vw',sm:'24vw',md:'24vw',lg:'15vw'}}}>
-        <img src={resImages?.first} alt={`Circut Machines Images image`} style={{borderRadius:'50%'}} className="img" />
+        <img src={resImages?.first} alt={`Circut Machines Images image`} style={{borderRadius:'2%'}} className="img" />
         <Typography sx={{fontWeight:'500',fontSize:'.65em',textAlign: 'center',px:1}}>
         Circut Machines
 </Typography>
