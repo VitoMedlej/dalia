@@ -16,6 +16,7 @@ const Page = async(ctx : any) => {
     const {category} = ctx.params;
     const {search } = ctx?.searchParams;
     const {page} = ctx?.searchParams;
+    const {type} = ctx?.searchParams;
     const pageSize = 12; // Number of items per page
 
     // const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category
@@ -36,6 +37,7 @@ const Page = async(ctx : any) => {
 
         
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByType = !type ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
     const ProductsCollection = await client
         .db("CRAFT")
         .collection("Products");
@@ -44,15 +46,20 @@ const Page = async(ctx : any) => {
     let countQuery;
 
     if (!filterByCate){
-        countQuery = await ProductsCollection.count();
+        if (filterByType) {
+          
+          countQuery = await ProductsCollection.count({type: filterByType});
+        }
+        else {
+          countQuery = await ProductsCollection.count();
+
+        }
     } else {
-      console.log('filterByCate: ', filterByCate);
         countQuery = await ProductsCollection.count({category: filterByCate});
       }
-      console.log('countQuery: ', countQuery);
     
     const totalPages = Number(Math.ceil(countQuery / pageSize)); // Total number of pages
-
+    const filtered = filterByCate && filterByCate !== 'null' && filterByCate !== null
 
 
     const ProductsQuery =
@@ -67,16 +74,30 @@ const Page = async(ctx : any) => {
     
     await ProductsCollection
     .find(
-        filterByCate && filterByCate !== 'null' && filterByCate !== null
-          ? {
+        
+      filtered  && filterByType  ? {
               category: {
                 $regex: new RegExp(
-                  `^${filterByCate.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+                  `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
                   'i'
                 ),
               },
+              type : {
+                $regex: new RegExp(
+                  `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+                  'i'
+                ),
+              } ,
+
             }
-          : {}
+          : filtered ?  {
+            category: {
+              $regex: new RegExp(
+                `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+                'i'
+              ),
+            },
+          } : {}
       )
         .sort({_id: -1})
         .skip(Number(page * 12 || 0) )

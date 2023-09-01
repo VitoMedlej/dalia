@@ -5,7 +5,7 @@ import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
 
 import { useRouter } from 'next/navigation';
-import {MdFastfood} from 'react-icons/md';
+import {AiOutlineArrowUp} from 'react-icons/ai';
 
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
@@ -35,7 +35,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     <Box
       sx={{ width:  '300px',py:1 }}
       role="presentation"
-      onClick={toggleDrawer( false)}
+      // onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
@@ -62,39 +62,171 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       <ListItem
           sx={{fontWeight:600}}
 
-          onClick={()=>router.push(`/collection/products`)}
+          onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
             <ListItemButton>
-              {/* <ListItemIcon>
-                <MdFastfood />
-              </ListItemIcon> */}
+            
                   <Typography sx={{fontWeight:600}}>
               All Products
             </Typography>
             </ListItemButton>
-      {/* <Accordion>
+  
+
+          </ListItem>
+
+
+                  <Accordion sx={{border:'none',boxShadow:'none',}}>
             
                   <AccordionSummary
-          // expandIcon={<ExpandMoreIcon />}
+          expandIcon={<AiOutlineArrowUp />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Accordion 1</Typography>
+       <Typography sx={{fontWeight:600}}>
+             Materials
+            </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion> */}
+        <List
+  
 
-          </ListItem>
-       {categories.map((text, index) => {
+        
+           disablePadding>
+
+
+{[`Adhesive Vinyls`,
+`Heat Transfer Vinyls`,
+`Papers and Cards`,
+`Other Materials`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+  onClick={()=>
+    {setOpen(false);
+    router.push(`/materials/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+
+key={i}>
+
+  
+  <ListItemButton >
+                  <Typography sx={{fontWeight:300}}>
+              -{i}
+            </Typography>
+            </ListItemButton>
+</ListItem>
+            
+            })}
+          </List>
+
+
+        </AccordionDetails>
+      </Accordion>
+
+
+
+      <Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+            <AccordionSummary
+    expandIcon={<AiOutlineArrowUp />}
+    aria-controls="panel1a-content"
+    id="panel1a-header"
+  >
+ <Typography sx={{fontWeight:600}}>
+ Tools and Accessories
+      </Typography>
+  </AccordionSummary>
+  <AccordionDetails>
+  <List
+
+
+  
+     disablePadding>
+
+
+{[`Crafting Tools`,
+`Machine Blades`,
+`Cutting mats`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/tools-and-accessories/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+
+key={i}>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -{i}
+      </Typography>
+      </ListItemButton>
+</ListItem>
+      
+      })}
+    </List>
+
+
+  </AccordionDetails>
+</Accordion>
+
+
+
+
+<Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+            <AccordionSummary
+    expandIcon={<AiOutlineArrowUp />}
+    aria-controls="panel1a-content"
+    id="panel1a-header"
+  >
+ <Typography sx={{fontWeight:600}}>
+ Art supplies
+      </Typography>
+  </AccordionSummary>
+  <AccordionDetails>
+  <List
+
+
+  
+     disablePadding>
+
+
+{[`Paints`,
+`Pen & Markers`,
+`Other Art Supplies`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/art-supplies/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+
+key={i}>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -{i}
+      </Typography>
+      </ListItemButton>
+</ListItem>
+      
+      })}
+    </List>
+
+
+  </AccordionDetails>
+</Accordion>
+       {[
+    'New Arrivals',
+    `Hot offers`,
+`Cricut machines`, 
+`Heat presses`,
+
+`Pens and markers`,
+`Customizable Blanks`,
+
+].map((text, index) => {
           if (!text) return;
           return <ListItem
         
-          onClick={()=>router.push(`/${text.replace(/ /g, '-').toLocaleLowerCase()}/products`)}
+          onClick={()=>{setOpen(false);
+            router.push(`/${text.replace(/ /g, '-').toLocaleLowerCase()}/products`)}}
           key={text} disablePadding>
             <ListItemButton>
               {/* <ListItemIcon>
