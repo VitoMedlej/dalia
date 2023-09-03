@@ -35,6 +35,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
             const { nextUrl } = req;
     const category = nextUrl.searchParams.get('category');
     const page = nextUrl.searchParams.get('page');
+    const type = nextUrl.searchParams.get('type');
             // let page = 0;
             // let category = null
         // const { searchParams } = new URL(req.url);
@@ -42,7 +43,8 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
 
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByType = !type || type === 'any' || type === 'null' ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
     const ProductsCollection = await client
         .db("CRAFT")
         .collection("Products");
@@ -51,7 +53,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
    
     const ProductsQuery = await ProductsCollection
-        .find(filterByCate && filterByCate !== 'null' && filterByCate !== null ? { category: filterByCate } : {})
+        .find(filterByCate && filterByCate !== 'null' && filterByCate !== null && filterByType ? { category: filterByCate , type : filterByType  } :  filterByCate && filterByCate !== 'null' && filterByCate !== null ? {category: filterByCate} : {})
         .sort({_id: -1})
         .skip(Number(page || 0) * 12)
         .limit(12)

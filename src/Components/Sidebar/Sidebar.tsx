@@ -92,7 +92,21 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
         
            disablePadding>
+<ListItem sx={{padding:0,width:'100%'}}
 
+onClick={()=>
+{setOpen(false);
+router.push(`/materials/products`)}}
+
+>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -All Materials
+      </Typography>
+      </ListItemButton>
+</ListItem>
 
 {[`Adhesive Vinyls`,
 `Heat Transfer Vinyls`,
@@ -140,8 +154,23 @@ key={i}>
   
      disablePadding>
 
+<ListItem sx={{padding:0,width:'100%'}}
 
-{[`Crafting Tools`,
+onClick={()=>
+{setOpen(false);
+router.push(`/tools-and-accessories/products`)}}
+
+>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -All Tools
+      </Typography>
+      </ListItemButton>
+</ListItem>
+{[
+  `Crafting Tools`,
 `Machine Blades`,
 `Cutting mats`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
@@ -186,7 +215,21 @@ key={i}>
 
   
      disablePadding>
+<ListItem sx={{padding:0,width:'100%'}}
 
+onClick={()=>
+{setOpen(false);
+router.push(`/art-supplies/products`)}}
+
+>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -All Supplies
+      </Typography>
+      </ListItemButton>
+</ListItem>
 
 {[`Paints`,
 `Pen & Markers`,

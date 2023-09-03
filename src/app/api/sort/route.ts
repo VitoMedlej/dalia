@@ -90,7 +90,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
           $sort: sortCriteria
         },
         {
-          $limit: 30
+          $limit: 50
         }
       ]);
 

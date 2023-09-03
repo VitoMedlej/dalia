@@ -10,20 +10,28 @@ import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
 const Preloader2 = ({data,totalPages}:any) => {
-    console.log('totalPages: ', totalPages);
-    // console.log('data: ', data);
+    console.log('data: ', data?.length);
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
-    const [products,setProducts] = useState(data)
+    const [products,setProducts] = useState<any>()
+    useEffect(() => {
+      
+        // if (!products) {
+            setProducts(data)
+        // }
+      
+    }, [data])
+    
     const {category} = useParams() 
+    const searchParams = useSearchParams();
+    const type =  searchParams.get('type')
+    // const {type} = useSearchParams();
 
 
 
 
     const fetchData = async (val:number) => {
-        console.log('val: ', val);
-        console.log('category: ', category);
-    const url =  `/api/fetch-page?category=${category}&page=${Number(val - 1) || 0}`  ;
+    const url =  `/api/get-cate?category=${category ? category : 'collection'}&page=${Number(val - 1) || 0}?type=${type ? type : null}`  ;
     const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
     const res = await req.json()
     console.log('res: ', res);
