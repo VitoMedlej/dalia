@@ -48,7 +48,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('shping-list') || []
+        // const cart = loadState('sgh2j40-tlsit') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -62,10 +62,10 @@ export default function Navbar() {
             zIndex:12,
         flexWrap: 'wrap',
                 width:'100%',
-
+                boxShadow:'none',
         background:'white',
         border: 'none',
-        position : 'fixed',
+        // position : 'fixed',
         flexGrow: 1
     }}>
       
@@ -74,12 +74,12 @@ export default function Navbar() {
 
             sx={{
 
+                boxShadow:'none',
 
                 background:'white',
             // maxWidth: 'lg',
                 width:'100%',
             margin: '0 auto',
-            boxShadow: 'none'
         }}>
               <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
                     // maxWidth:'xl',
@@ -116,13 +116,6 @@ export default function Navbar() {
         alt="the craft room logo"/>
 </Box>
 </Link>
-<NavButtom/>
-
-               
-            
-
-               
-
                 <Box
                     sx={{
                     px:1,
@@ -146,7 +139,7 @@ export default function Navbar() {
                         className='flex right'>
                              
                         
-                             
+{/*                              
                              <IconButton
                             onClick={() => router.push('/')}
                             size="large"
@@ -162,7 +155,7 @@ export default function Navbar() {
                             }
                         }}>
                             <AiOutlineHome color='black'/>
-                        </IconButton>
+                        </IconButton> */}
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
@@ -209,6 +202,10 @@ export default function Navbar() {
                     </Box>
 
                 </Box>
+  <SearchInput/>
+  <SearchInput
+mobile
+                    /> 
 
                 <Box
                     sx={{
@@ -233,7 +230,7 @@ export default function Navbar() {
                     }}
                         className='flex right'>
  
- <IconButton
+ {/* <IconButton
                             onClick={() => setOpenModal(!openModal)}
                             sx={{
                             color: 'black'
@@ -241,7 +238,7 @@ export default function Navbar() {
 
                                 <CiSearch color='black'/>
                           
-                        </IconButton>
+                        </IconButton> */}
 
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
@@ -251,14 +248,14 @@ export default function Navbar() {
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
                                 <CiShoppingCart color='black'/>
                             {/* </Badge> */}
-                            {/* <Typography>
-                                Cart
-                            </Typography> */}
+                            <Typography sx={{ml:.5}}>
+                                My Cart
+                            </Typography>
                             </IconButton>
 
 
 
-                            <IconButton
+                            {/* <IconButton
                             onClick={() => setOpen(!open)}
                             edge="start"
                             aria-label="menu"
@@ -268,15 +265,14 @@ export default function Navbar() {
                          
                         }}>
                             <IoIosMenu color='black'/>
-                        </IconButton>
+                        </IconButton> */}
                     
                     </Box>
 
                 </Box>
-             <SearchInput
-mobile
-                    /> 
+           
 <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
+<NavButtom/>
              
             </Toolbar>
         </AppBar>

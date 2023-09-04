@@ -7,6 +7,8 @@ import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
+import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
+import Testimonials from './Testimonials/Testimonials'
 
 const 
 PreLoader = ({data,resImages}:any) => {
@@ -32,8 +34,9 @@ PreLoader = ({data,resImages}:any) => {
   return (
     <Box >
       <MainCarousel resImages={resImages}/>
+      <Perks/>
 
-    <Container disableGutters className='wrap auto flex' sx={{pt:4,px:{sm:1},maxWidth:'xl',display:'flex'}}>
+    <Container disableGutters className='wrap auto flex' sx={{px:{sm:1},maxWidth:'xl',display:'flex'}}>
   
     {/* <Box className='flex auto wrap ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
       {
@@ -45,11 +48,11 @@ PreLoader = ({data,resImages}:any) => {
       }
     </Box> */}
 
-     <Box
+     {/* <Box
                 className=' text-center auto center box'
      
-     sx={{mx:1,width:'100%'}}>
-
+     sx={{mx:1,width:'100%'}}> */}
+{/* 
         
          <Typography
                 className='sectionTitle text-center auto center box'
@@ -66,9 +69,9 @@ PreLoader = ({data,resImages}:any) => {
             }}>
                Explore Categories
             </Typography>
-         
+          */}
 
-            <Box className='wrap  space-evenly' sx={{width:'100%',my:3,display:{xs:'flex'}}}>
+            {/* <Box className='wrap  space-evenly' sx={{width:'100%',my:3,display:{xs:'flex'}}}> */}
 
         {/* {cates.map((i:any)=>{
             return <Box
@@ -85,7 +88,7 @@ PreLoader = ({data,resImages}:any) => {
 
         })} */}
 
-{resImages?.first && <Box
+{/* {resImages?.first && <Box
 
 onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCase() || 'collection'}/products`)}
  className='cursor'
@@ -133,24 +136,25 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
   <Typography sx={{ fontWeight: '500', fontSize: '.65em', textAlign: 'center', px: 1 }}>
     Materials
   </Typography>
-</Box>}
+</Box>} */}
 
 
-            </Box>
+            {/* </Box> */}
 
-     </Box>
+     {/* </Box> */}
 
       <Box/>
         <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts}/>
+       
+    </Container>
+    <FullscreenPoster/>
         <HomeProductCollection products={ data?.products }/>
 
-      
+    <Testimonials/>
         
 
         
-        <Perks/>
 
-    </Container>
         <ContactSection/>
   </Box>
   )

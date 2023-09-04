@@ -63,7 +63,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('shping-list') || []
+    let localCart : ICartItem[] = loadState('sgh2j40-tlsit') || []
     useEffect(() => {
         if (localCart) {
             
@@ -74,12 +74,12 @@ const Cart = () => {
     const refetchState = () => {
         // let localCart : ICartItem[] = loadState('userbag') || []
 
-        setCartItems(loadState('shping-list'))
+        setCartItems(loadState('sgh2j40-tlsit'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('shping-list', state);
+         saveState('sgh2j40-tlsit', state);
          setCartItems(state);
      }
     return (

@@ -23,7 +23,6 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     //     ? `${category}`.replace(/-/g, ' ')
     //     : 'collection'}`, { cache: 'no-store' })
     // const res = await req.json()
-    // console.log('res: ', res);
     
     
     // const { nextUrl } = req;
@@ -39,11 +38,9 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'null'  ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterBySearch = search && search?.length > 1; 
-        console.log('filterByType: ', filterByType);
-        console.log('filterByCate: ', filterByCate);
         
     const ProductsCollection = await client
-        .db("CRAFT")
+        .db("PETS")
         .collection("Products");
     let products : any = []
     
@@ -88,16 +85,15 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         return {}
       }
     }
-    console.log('filterQuery(): ', filterQuery());
     const countQuery = await ProductsCollection.count(filterQuery());
     
     const totalPages = Number(Math.ceil(countQuery / pageSize)); // Total number of pages
-    
+    const skip = Number(page) * 12
  
     
     const ProductsQuery =
           await ProductsCollection.find(filterQuery()).sort({_id: -1})
-        .skip(Number(Number(page || 0)  * 12 || 0) )
+        .skip(Number(skip) ? Number(skip) : 0)
         .limit(12)
     
     await ProductsQuery.forEach((doc : any) => {

@@ -10,7 +10,7 @@ import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 
 const Preloader2 = ({data,totalPages}:any) => {
-    console.log('data: ', data?.length);
+   
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
     const [products,setProducts] = useState<any>()
@@ -31,16 +31,19 @@ const Preloader2 = ({data,totalPages}:any) => {
 
 
     const fetchData = async (val:number) => {
-    const url =  `/api/get-cate?category=${category ? category : 'collection'}&page=${Number(val - 1) || 0}?type=${type ? type : null}`  ;
+    const url =  `/api/get-cate?category=${category ? category : 'collection'}&page=${Number(val - 1) || 0}&type=${type ? type : null}`  ;
     const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
     const res = await req.json()
     console.log('res: ', res);
         
             setProducts(res?.data?.products ? res?.data?.products : [])
-
+            console.log('totalPages: ', totalPages);
+            totalPages = res?.data?.totalPages;
+            console.log('totalPages2: ', totalPages);
             if (window) {
                 window.scrollTo(0,0)
             }
+
       };
   
     // const handlePagination = async (val:number) => {
@@ -55,7 +58,7 @@ const Preloader2 = ({data,totalPages}:any) => {
        
     //   })
   return (
-    <Container sx={{mt:15}} disableGutters maxWidth='lg'>
+    <Container sx={{mt:4}} disableGutters maxWidth='lg'>
     <Box
         sx={{
         width: '100%',

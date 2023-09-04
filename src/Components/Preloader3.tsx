@@ -74,13 +74,14 @@ const Preloader3 = ({res}:{res:any}) => {
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
             // maxWidth: 'lg',
-            maxHeight:'500px',
-            maxWidth:'lg',
+            maxHeight:{xs:'100vh',md:'500px'},
+            // maxWidth:'lg',
             margin: '0 auto',
             display: {
                 xs: 'flex'
             },
-            mt:20,
+            mt:0,
+            pt:0,
             mb:2,
             height: '100%'
         }}>

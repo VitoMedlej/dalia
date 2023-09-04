@@ -7,7 +7,7 @@ const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
     const incrementQty = (_id:string,newValue ?: number,selectedColor?:string) => {
        
-        const state = loadState('shping-list') || [];
+        const state = loadState('sgh2j40-tlsit') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         
@@ -23,7 +23,7 @@ const useCart = () => {
             }
             state[foundIndex] = selectedItem
             
-           saveState('shping-list', state)           
+           saveState('sgh2j40-tlsit', state)           
            return true
        }
        return false;
@@ -39,7 +39,7 @@ const useCart = () => {
         }
         
             //if we do not have the item in cart, insert it
-        pushState('shping-list',
+        pushState('sgh2j40-tlsit',
         {qty:selectedQuantity || 1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title

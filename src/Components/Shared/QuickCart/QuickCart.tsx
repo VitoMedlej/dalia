@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('shping-list') || []
+            let localCart : ICartItem[] = loadState('sgh2j40-tlsit') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +34,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('shping-list', state);
+        saveState('sgh2j40-tlsit', state);
         setCartItems(state);
     }
     return (

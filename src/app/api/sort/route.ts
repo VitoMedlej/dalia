@@ -60,7 +60,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         }
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
-        .db("CRAFT")
+        .db("PETS")
         .collection("Products");
     let products : any = []
 

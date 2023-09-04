@@ -8,7 +8,7 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'The Craft Room | Arts & Crafts Supplies, Cricut Products',
+    title: 'PetsTown - Shop Pet Supplies in Lebanon',
     description: `Shop at The Craft Room, where creativity becomes reality. Find all your arts and
      crafts supplies, including best Cricut products in Lebanon`,
     icons: {
@@ -36,7 +36,7 @@ export default function RootLayout({children} : {
                     <Sidebar cates={undefined}/>
                     <QuickCart/>
                     <ScrollToTop/>
-                    <main style={{marginTop:6}}>
+                    <main >
 
                      {children}
                     </main>

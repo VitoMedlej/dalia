@@ -58,7 +58,7 @@ export default function Checkout() {
 
     const handleNext = () => {
       if (info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
-        saveState('order-bag',info)
+        saveState('sgh2j40-b12fg',info)
         setActiveStep(activeStep + 1);
       
       } 
@@ -72,7 +72,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('shping-list')
+      const products = loadState('sgh2j40-tlsit')
  
 
       const total = 10
@@ -88,8 +88,8 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,total}})
         });
   const content = await rawResponse.json();
-  saveState('order-bag',null)
-  saveState('shping-list',null)
+  saveState('sgh2j40-b12fg',null)
+  saveState('sgh2j40-tlsit',null)
 
 }
   }
@@ -110,7 +110,7 @@ export default function Checkout() {
   <ThemeProvider theme={theme}>
       <CssBaseline />
   
-      <Container component="main" maxWidth="sm" sx={{ mt:20, mb: 4 }}>
+      <Container component="main" maxWidth="sm" sx={{ mt:4, mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout

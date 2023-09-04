@@ -22,7 +22,7 @@ const NavButtom = () => {
         <Container
             className='flex   '
             sx={{
-                gap:{xs:1.5,sm:1.75,md:2},
+                gap:{xs:1.25,sm:1.65,md:1},
             maxWidth: 'lg',
             overflow:'hidden',
             py:1.5,
@@ -34,13 +34,14 @@ const NavButtom = () => {
                     </Typography>
                 </Link> */}
                  <Link className='clr decor-none uppercase' href={`/collection/products`}>
-                    <Typography  component='p' sx={{width:'max-content',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
+                    <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
                     All Products
                     </Typography>
                 </Link>
             {categories.slice(0,6).map(i => {
                 return <Link className='clr decor-none uppercase' key={i} href={`/${i.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
-                    <Typography  component='p' sx={{width:'max-content',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
+                    <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+                    
                     {i}
                     </Typography>
                 </Link>

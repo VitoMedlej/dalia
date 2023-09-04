@@ -9,18 +9,16 @@ import Preloader2 from "@/Components/Preloader2"
 const Page = async(ctx : any) => {
   
   try {
-    console.log('ctx: ', ctx);
     const {category} = ctx?.params
     const {type} = ctx?.searchParams;
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}`,{cache:'no-store',next:{revalidate:0}})
+    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}`,{cache:'no-store',next:{revalidate:0}})
     const res = await req.json();    
-    console.log('res: ', res);
 
     // const totalPages = 1;
     // const products = {}
  
 
-    return (<Preloader2 totalPages={res?.totalPages || 1} data={res?.data?.products || null}/>)
+    return (<Preloader2 totalPages={res?.data?.totalPages || 1} data={res?.data?.products || null}/>)
   }
 catch (err) {
   console.log('err: ', err);
@@ -31,5 +29,4 @@ catch (err) {
 }
 
 export default Page
-
 

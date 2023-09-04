@@ -135,7 +135,7 @@ const Index = () => {
              </Box> */}
          </Box>}
 
-         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
+         {/* { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
@@ -150,10 +150,8 @@ const Index = () => {
                  }) }
              </Box>
               
-             {/* <Box>
-                <ProductOptionSelect/>
-             </Box> */}
-         </Box>}
+             
+         </Box>} */}
 
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:
