@@ -25,15 +25,11 @@ import { useCartContext, useDrawerContext } from '@/context/Contexts';
 
 
 export const categories = [
-    'New Arrivals',
-    `Hot offers`,
-`Cricut machines`, 
-`Heat presses`,
-`Materials`,
-`Tools and Accessories` ,
-`Pens and markers`,
-`Customizable Blanks`,
-`Art supplies`,
+    "New Arrivals",
+    "Cats",
+    "Dogs",
+    "Birds",
+    "Offers",
 ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
@@ -113,7 +109,7 @@ export default function Navbar() {
     <img
         className='img'
         src={`/icon.png`}
-        alt="the craft room logo"/>
+        alt="Pets Town logo"/>
 </Box>
 </Link>
                 <Box

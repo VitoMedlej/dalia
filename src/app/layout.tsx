@@ -9,8 +9,7 @@ import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
     title: 'PetsTown - Shop Pet Supplies in Lebanon',
-    description: `Shop at The Craft Room, where creativity becomes reality. Find all your arts and
-     crafts supplies, including best Cricut products in Lebanon`,
+    description: `Discover a wide range of pet supplies at PetsTown, your local pet shop in Lebanon. We offer quality products for dogs, cats, birds, and more.`,
     icons: {
         icon: `https://ucarecdn.com/f21fe250-e19c-4fd7-b4e7-bf1b246a3640/favicon.jpeg`
     }
