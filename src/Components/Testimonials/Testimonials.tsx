@@ -31,7 +31,7 @@ const tests =[
     {
       title: "A Pet Paradise!",
       reviewer: "(Emma, Pet Lover)",
-      description: "Pets Town is an absolute paradise for pet owners. Their wide array of pet supplies is simply amazing. From top-notch pet food to a delightful selection of toys and accessories, they cater to every pet's needs. I'm thoroughly impressed by their unwavering commitment to quality and their genuine care for their customers. Pets Town has become my go-to place for all things pet-related!",
+      description: "Pets Town is an absolute paradise for pet owners. Their wide array of pet supplies is simply amazing. From top-notch pet food to a delightful selection of toys and accessories, they cater to every pet&apos;s needs. I&apos;m thoroughly impressed by their unwavering commitment to quality and their genuine care for their customers. Pets Town has become my go-to place for all things pet-related!",
     },
     {
       title: "Exceptional Service, Happy Pets!",
@@ -41,7 +41,7 @@ const tests =[
     {
       title: "A Lifesaver for Pet Businesses!",
       reviewer: "(Sophia, Pet Business Owner)",
-      description: "Managing pet supplies for our business used to be a hassle until we discovered Pets Town. We regularly source pet supplies for our clients and partners, and Pets Town's extensive product range has been a game-changer. Even with large orders, their website handles them seamlessly. The Pets Town team goes above and beyond to ensure our branding looks flawless on the pet supplies. Their professionalism and efficiency have saved us invaluable time. We wholeheartedly endorse Pets Town!",
+      description: "Managing pet supplies for our business used to be a hassle until we discovered Pets Town. We regularly source pet supplies for our clients and partners, and Pets Town&apos;s extensive product range has been a game-changer. Even with large orders, their website handles them seamlessly. The Pets Town team goes above and beyond to ensure our branding looks flawless on the pet supplies. Their professionalism and efficiency have saved us invaluable time. We wholeheartedly endorse Pets Town!",
     },
   ];
     
@@ -64,7 +64,7 @@ const tests =[
                 flex:1,
                 fontWeight: '500'
             }}>
-                Our Client's Testimonials
+                Our Client&apos;s Testimonials
             </Typography>
             </Box>
        <Box
