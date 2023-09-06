@@ -37,7 +37,10 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'null'  ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
-        let filterBySearch = search && search?.length > 1; 
+        let filterBySearch = !search || search?.length < 1 ? null : `${search}`; 
+        console.log('search: ', search);
+        console.log('filterByType: ', filterByType);
+        console.log('filterBySearch: ', filterBySearch);
         
     const ProductsCollection = await client
         .db("PETS")
@@ -48,7 +51,8 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
 
     
     const filterQuery = () => {
-      if (filterBySearch) {
+      
+      if (filterBySearch !== null && filterBySearch != 'null') {
         return {
       $or: [
           { title: { $regex: search, $options: 'i' } },
@@ -91,6 +95,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     const skip = Number(page) * 12
  
     
+    console.log('filterQuery(): ', filterQuery());
     const ProductsQuery =
           await ProductsCollection.find(filterQuery()).sort({_id: -1})
         .skip(Number(skip) ? Number(skip) : 0)
@@ -101,6 +106,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         products.push(doc)
         
       });
+      console.log('products: ', products);
     if (!products || products?.length < 1  ) {
       throw 'ERROR: Could not find any products'
     }

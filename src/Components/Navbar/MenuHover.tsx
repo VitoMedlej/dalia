@@ -52,6 +52,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
             position:'absolute',
             width: '100%',
             minHeight: '350px',
+            maxHeight:'600px',
             left:0,
             backgroundColor: 'white',
 
@@ -62,7 +63,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
 
             <li>
-            <Typography  component='p' sx={{color:'black',width:'max-content',fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+            <Typography onClick={()=>setShowMenu(false)}  component='p' sx={{color:'black',width:'max-content',fontWeight:600,fontSize:{xs:'.86em',sm:'1.125em'}}}>
                 {category}
      </Typography>
             </li>
@@ -71,7 +72,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
               <li className='' key={subcategory}>
               <Link className=' decor-none uppercase' key={subcategory} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ subcategory.replace(/ /g, '-').toLocaleLowerCase()}`}>
                 
-     <Typography  component='p' sx={{width:'max-content',fontWeight:300,py:.15,fontSize:{xs:'.7em',sm:'.85em'}}}>
+     <Typography onClick={()=>setShowMenu(false)}  component='p' sx={{width:'max-content',fontWeight:300,py:.15,fontSize:{xs:'.7em',sm:'.85em'}}}>
                 {subcategory}
      </Typography>
  </Link>
