@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import {Typography , Box } from '@mui/material'
+import {Typography , Box, Divider } from '@mui/material'
 import './style.css'
 import SMicons from '../SMicons/SMicons';
 // import SMicons from './SMicons';
@@ -9,6 +9,7 @@ import SMicons from '../SMicons/SMicons';
 
 const Footer = () => (
   <footer className="site-footer " style={{color:'black',background:'white'}}>
+    <Divider></Divider>
     <div className="container " style={{color:'black',background:'white'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
@@ -21,7 +22,7 @@ const Footer = () => (
             <img className='img ' src='https://ucarecdn.com/80fdb836-ff38-415a-a359-66a9f41bcb57/279234257_691043618773985_3830166968954566921_n.jpg' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
-          <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
+          <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
           At PetsTown, we are passionate about providing the best care for your pets. Our pet shop in Lebanon offers a wide selection of high-quality pet supplies for dogs, cats, birds, and more. Our friendly and knowledgeable staff is always here to help you find the perfect product for your furry friend. Shop at PetsTown today and give your pet the love and care they deserve.
           </Typography>
           <SMicons/>

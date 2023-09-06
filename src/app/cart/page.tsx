@@ -72,7 +72,6 @@ const Cart = () => {
       
     }, [])
     const refetchState = () => {
-        // let localCart : ICartItem[] = loadState('userbag') || []
 
         setCartItems(loadState('sgh2j40-tlsit'))
         
