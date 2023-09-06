@@ -18,7 +18,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='/icon.png' alt="Pets Town Lebanon Logo" />
+            <img className='img ' src='https://ucarecdn.com/80fdb836-ff38-415a-a359-66a9f41bcb57/279234257_691043618773985_3830166968954566921_n.jpg' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em',color:"2b2b2b" }}  className='footer-p '>
@@ -50,27 +50,16 @@ const Footer = () => (
      
           <ul  className='ul-white' style={{color:'black'}}>
             <li className='link-title'>Contact</li>
-            <li><Link href="mailto:sales@thecraftroom-lb.com">sales@petstown.com</Link></li>
+            {/* <li><Link href="mailto:sales@thecraftroom-lb.com">sales@petstown.com</Link></li> */}
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/thecraftroom.lb/?next=https%3A%2F%2Fwww.instagram.com%2Fticketshopcol%2Fp%2FBwKRsoxI8Tf%2F%3Fhl%3Dcs%26__coig_login%3D1" target="_blank" rel="noreferrer" >@thecraftroom</a></li>
+            <li><a href="https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noreferrer" >@pets_town_lb</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
-            <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li>
+            {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>
         </div>
-        <Box className='flex wrap'> 
-                        <Typography sx={{width:'100%',fontWeight:500,pb:.5}}>
-                            We Also Accept:
-                        </Typography>
-                        <Box sx={{width:'80px'}}>
-                        <img src="https://whish.money/app/logos/whish_v2.png" alt="Whish Money Payment method logo" className="img contain" />
-                        </Box>
-                        <Box sx={{width:'80px',ml:2}}>
-
-<img src="https://www.omt.com.lb/storage/services/X0OGLcDfG3zrQ68JDEomA65t9.jpg" alt="Western Union Money Payment method logo" className="img contain" />
-</Box>
-                    </Box>
+  
       </div>
     </div>
 

@@ -43,7 +43,7 @@ export default function TemporaryDrawer() {
                 <Box
                     sx={{
                     // maxWidth: '500px',
-                    width: '100%',
+                    width: '99%',
 
                     margin: '0 auto'
                 }}>
@@ -85,7 +85,7 @@ export default function TemporaryDrawer() {
                         : <Box className='auto center col flex items-center ' sx={{py:5}}>
 
                         <Box sx={{width:'60px'}}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReJ1L9fmcCrMGqF0D0_kpEBDUzAr71C5Bw0fnXCzOvN_-rK5SOiLapcMwXo--Wd63pzw4&usqp=CAU" alt="Empty Cart Image" className="img" />
+                            <img src="https://cdn-icons-png.flaticon.com/512/6533/6533851.png" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
                             No Products Have Been Added.
@@ -100,7 +100,7 @@ export default function TemporaryDrawer() {
                         margin: '1em auto !important',
                        flexWrap:'wrap',
                         display:'flex',
-                        width:{xs:'100%',sm:'340px'},
+                        width:{xs:'99%',sm:'340px'},
                     }}>
                        <Btn 
                        sx={{width:'100%',mx:1
@@ -116,8 +116,11 @@ export default function TemporaryDrawer() {
                             width:'100%',
                             mx:1
                     ,borderRadius:25,
-                            background:'transparent',my:1,
-                            ':hover':{background:'#1a4671',color:'white'}}}
+                    border:'1px solid #ff9715',
+                    color:'#ff9715',
+                    background:'none',
+                          my:1,
+                            }}
                         onClick={()=>{setCartOpen(false),router.push('/collection/products')}}
                          >
                         Continue Shopping

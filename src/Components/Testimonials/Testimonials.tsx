@@ -56,13 +56,12 @@ const tests =[
                   pt:9,
                   width:'100%',
                   display:'flex',
-                fontSize: {
+                  fontSize: {
                     xs: '1.42em',
-                    sm: '1.74em',
-                    md:'2em'
+                    sm: '2em'
                 },
                 flex:1,
-                fontWeight: '500'
+                fontWeight: '600'
             }}>
                 Our Client&apos;s Testimonials
             </Typography>
@@ -96,12 +95,12 @@ const tests =[
                 breakpoints={
  {// when window width is >= 320px
  320: {
-    slidesPerView: 2,
+    slidesPerView:1,
     spaceBetween: 20
   },
   // when window width is >= 480px
   480: {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20
   },
   // when window width is >= 640px

@@ -2,8 +2,8 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
-
-const HoverMenu = ({ category, subcategories } : {category: string, subcategories: string[]}) => {
+import {AiOutlineDown} from 'react-icons/ai'
+const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: string[]}) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMouseEnter = () => {
@@ -13,7 +13,7 @@ const HoverMenu = ({ category, subcategories } : {category: string, subcategorie
   const handleMouseLeave = (e : any) => {
     if (
       !e.relatedTarget ||
-      (e.relatedTarget.id !== 'menu' && e.relatedTarget.id !== 'button')
+      (e.relatedTarget.id !== 'menu' && e.relatedTarget.id !== 'related-img' && e.relatedTarget.id !== 'button')
     ) {
       setShowMenu(false);
     }
@@ -21,41 +21,55 @@ const HoverMenu = ({ category, subcategories } : {category: string, subcategorie
 
   return (
     <Box sx={{
+      margin:'0 1em ',
+      zIndex:12345678,
+
+      background:'transparent',
         }}>
     
       <Typography 
-      className='clr cursor decor-none uppercase'
+      className=' cursor center flex gap1 black decor-none uppercase'
         id="button"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-      component='p' sx={{width:'max-content',color:'black',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
-      {category}
+        component='p' sx={{width:'max-content',
+        alignItems: 'center',
+        zIndex:12345678,
+        
+        fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+     {category} 
+    <AiOutlineDown/> 
    </Typography>
 
 
       {showMenu && (
         <Box
-        className='flex'
+        className='flex '
           id="menu"
           sx={{
+            zIndex:12345678,
+      boxShadow: '1px 1px 3px #00000017',
             position:'absolute',
             width: '100%',
-            height: '350px',
+            minHeight: '350px',
             left:0,
             backgroundColor: 'white',
 
           }}
           onMouseLeave={handleMouseLeave}
         >
-          <ul style={{paddingTop:7,width:'50%'}}>
+          <ul style={{paddingTop:7,width:'30%'}}>
+          <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
+
             <li>
-            <Typography className='clr decor-none uppercase'  component='p' sx={{width:'max-content',pb:2,fontWeight:600,fontSize:{xs:'.7em',sm:'.85em'}}}>
-                Types
+            <Typography  component='p' sx={{color:'black',width:'max-content',fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+                {category}
      </Typography>
             </li>
+          </Link>
             {subcategories.map((subcategory) => (
-              <li className='black' key={subcategory}>
-              <Link className='clr decor-none uppercase' key={subcategory} href={`/${category + '/' + subcategory.replace(/ /g, '-')}/products`}>
+              <li className='' key={subcategory}>
+              <Link className=' decor-none uppercase' key={subcategory} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ subcategory.replace(/ /g, '-').toLocaleLowerCase()}`}>
                 
      <Typography  component='p' sx={{width:'max-content',fontWeight:300,py:.15,fontSize:{xs:'.7em',sm:'.85em'}}}>
                 {subcategory}
@@ -64,8 +78,8 @@ const HoverMenu = ({ category, subcategories } : {category: string, subcategorie
                 </li>
             ))}
           </ul>
-          <Box sx={{pt:7,height:'250px'}}>
-            <img src="https://img-lcwaikiki.mncdn.com/mnresize/1200/1600/pim/productimages/20221/5617444/l_20221-s27945z1-ffj_5.jpg" alt="Category Image" className="img" />
+          <Box  sx={{pointerEvents:'none',cursor:'none', width:'70%',height:'100%',minHeight:'350px'}}>
+            <img src={`${img}`} alt="Category Image" className="img " />
           </Box>
         </Box>
       )}

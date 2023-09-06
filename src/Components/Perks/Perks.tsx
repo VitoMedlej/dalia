@@ -26,37 +26,21 @@ const Perks = () => {
         },
       ];
   return (
-    <Box className='w100' sx={{px:1,py:4}}>
-        <Box>
-        {/* <Typography
-                className='sectionTitle center auto text-center box'
-                sx={{
-                  pt:'.5em',
-                  mx:1,
-                  width:'100%',
-                  display:{xs:'flex',sm:'flex'},
-                fontSize: {
-                    xs: '1.2em',
-                    sm: '1.4em'
-                },
-                fontWeight: '300'
-            }}>
-Advantages
-            </Typography> */}
-        </Box>
+    <Box sx={{py:4,mx:{xs:1,sm:1.5,md:2}}}>
+       
         <Box  className='flex wrap gap auto row justify-between'>
 
         {
            items.map(i=>{
                 return <Box key={i.title} className='center items-center auto flex row' sx={{
                     py:2,
-                    width:{xs:'49%',sm:'32%',md:'22%'}}}>
+                    width:{xs:'47%',sm:'30%',md:'22%'}}}>
                     <Box sx={{width:'100px'}}>
                         <img src={i.icon} alt="" className="img contain" />
                     </Box>
-                    <Box sx={{ml:.5}} className="flex col">
+                    <Box sx={{ml:.7}} className="flex col">
 
-                    <Typography className='' sx={{fontSize:'1em',fontWeight:600}}  component={'h1'}>{i.title}</Typography>
+                    <Typography className='' sx={{fontSize:{xs:'.89em',sm:'1em'},fontWeight:600}}  component={'h1'}>{i.title}</Typography>
                     <Typography sx={{fontSize:'.71em'}} component={'p'}>{i.text}</Typography>
                     </Box>
                 </Box>

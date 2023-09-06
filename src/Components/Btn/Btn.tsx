@@ -2,39 +2,44 @@
 import { Button } from '@mui/material'
 import React from 'react'
 
+
+
 let style1 = {
-    color: 'black !important',
-    background: ' #2ec6d4',
-    border:'1px solid #2ec6d4',
-    borderRadius:'25 !important',
-    
-    ':hover': {
-        background: '#2ec6d4',
-        color:'white !important',
-    border:'1px solid #2ec6d4'
+  color: 'white',
+  background: '#ff9715',
+  border: 'none',
+  borderRadius: '8px', 
+  transition: 'background 0.3s ease, transform 0.2s ease',
 
-    },
-    display: 'flex',
-
-    py: 1.22,
-    px: 2.52,
-    fontSize: '12px'
+  ':hover': {
+      background: '#ff8e00',
+      transform: 'scale(1.05)',
+  },
+  display: 'flex',
+  padding: '6px 34px',
+  fontWeight: '600',
+  fontSize: '12px',
+  cursor: 'pointer',
+  outline: 'none',
 }
 let style2 = {
-    color: 'black',
-  
-    display: 'flex',
-    fontWeight:'700',
-    bordeRadius:25,
-    my:1,
-    py: 1.22,
-    px: 2.52,
-    borderRadius:'25 !important',
-  
-    ':hover':{  borderColor: 'black'},
-    fontSize: '10px',
-    
-    border:'1.1px solid #2ec6d4'
+  color: '#ff9715',
+  background: 'transparent',
+  border: 'none',
+  borderRadius: '8px', 
+  // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  transition: 'background 0.3s ease, transform 0.2s ease',
+
+  ':hover': {
+      background: '#ff8e00',
+      transform: 'scale(1.05)',
+  },
+  display: 'flex',
+  padding: '6px 34px',
+  fontWeight: '600',
+  fontSize: '12px',
+  cursor: 'pointer',
+  outline: 'none',
 }
 
 const Btn = ({v2,disabled,onClick,className,children,sx}:{className?:string,disabled?:boolean,onClick?:()=>void,sx?:any,v2?:boolean,children?:any}) => {

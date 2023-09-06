@@ -148,14 +148,15 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
        
     </Container>
     <FullscreenPoster/>
-        <HomeProductCollection products={ data?.products }/>
+    <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts}/>
+    <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts}/>
 
     <Testimonials/>
         
 
         
 
-        <ContactSection/>
+        {/* <ContactSection/> */}
   </Box>
   )
 }

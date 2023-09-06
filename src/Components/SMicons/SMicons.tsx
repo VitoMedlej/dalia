@@ -7,16 +7,16 @@ import {BsTiktok} from 'react-icons/bs';
 
 const sm = [
     {
-        Icon:FaInstagram,
-        href:'https://www.instagram.com/thecraftroom.lb/?next=https%3A%2F%2Fwww.instagram.com%2Fticketshopcol%2Fp%2FBwKRsoxI8Tf%2F%3Fhl%3Dcs%26__coig_login%3D1'
+        Icon:'https://images.squarespace-cdn.com/content/v1/56e2e0c520c6472a2586add2/1615388332386-LFQRQFE53FIOLDRNADTY/2.png',
+        href:'https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D'
     },
-    {Icon:FaWhatsapp,href:'https://wa.me/+96171984678'},
-    {
-      Icon :BsTiktok ,href: `tiktok.com/@thecraftroomlb`,
-    },
+    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+96171984678'},
+    // {
+    //   Icon :BsTiktok ,href: `tiktok.com/@thecraftroomlb`,
+    // },
     {
 
-    Icon:FaFacebook,   href:'https://www.facebook.com/profile.php?id=100087524961925&mibextid=9R9pXO'
+    Icon:'https://th.bing.com/th/id/R.51ae405e1b464603ee8ac65599eb5c95?rik=Hz2DT9FdIMH3cQ&pid=ImgRaw&r=0 ',   href:'https://www.facebook.com/profile.php?id=100087524961925&mibextid=9R9pXO'
 }]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (
@@ -24,8 +24,10 @@ const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
 
     {sm.map((item)=>{
       return <a key={item.href} className='center flex auto rounded smIcon pointer align-center gap white' href={`${item.href}`} target='_blank' rel={'noneferrer'}>
+            <Box sx={{width:'30px'}}>
 
-            <item.Icon color={color || 'white'} size='2em'/>
+            <img src={item.Icon} alt="" className="img cover" />
+            </Box>
          </a>
     })}
     </Box>

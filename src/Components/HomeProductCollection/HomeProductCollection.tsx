@@ -11,26 +11,27 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{my:4}} className='center auto'>
             <Typography
-                className='sectionTitle text-center center auto box'
+                className='sectionTitle  text-center center auto box'
                 sx={{
                   pb:'.5em',
                 px:1,
                 pt:9,
                   textAlign:'center !important',
                 fontSize: {
-                    xs: '1.2em',
-                    sm: '1.4em'
+                    xs: '1.42em',
+                    sm: '2em'
                 },
-                fontWeight: '300'
+                fontWeight: '600'
             }}>
                 View Our Latest Products
             </Typography>
-            <Btn 
+            <Btn v2
+            className='auto shadow1' 
             onClick={()=>router.push('/collection/products')}
-            sx={{border:'none',color:'black'}} v2>
+            >
               View All
             </Btn>
-              <Box sx={{mb:2}} className='flex wrap gap1 justify-center'>
+              <Box sx={{mb:2,mt:4}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 
                       return <ProductCard key={i?._id} title={i?.title} price={i?.price} _id={i?._id} 

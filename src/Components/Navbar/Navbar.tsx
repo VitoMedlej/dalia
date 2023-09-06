@@ -21,6 +21,7 @@ import SearchInput from './SearchInput';
 
 import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext } from '@/context/Contexts';
+import Btn from '../Btn/Btn';
 
 
 
@@ -52,8 +53,10 @@ export default function Navbar() {
     }, [cartOpen])
 
 
-    return ( <> <Box
-    className='center auto  bg flex'
+    return ( <>
+     <Box
+     id='navy'
+    className='center auto relative  bg flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
@@ -61,11 +64,13 @@ export default function Navbar() {
                 boxShadow:'none',
         background:'white',
         border: 'none',
-        // position : 'fixed',
+        px:0,
         flexGrow: 1
     }}>
       
         <AppBar
+     id='navy2'
+
     className='center relative  flex'
 
             sx={{
@@ -77,20 +82,55 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-              <Box className='flex bg white gap1 align-center items-center w100 center' sx={{
-                    // maxWidth:'xl',
-                    height:'20px',
-            py:.45}} >
-            <Typography sx={{fontSize:{xs:'.7em',sm:'.8em'}}} className='center text-center'>
-            Free Delivery On Orders Over $40 In Lebanon 
-            </Typography>
+                   <Box sx={{px:1,py:.5,display:{xs:'none',md:'flex'}}} className='  bg white'>
+        <Box sx={{maxWidth:'lg',alignItems:'center',justifyContent:'space-between',width:'100%'}} className='bg white  flex   auto'>
+            <Typography sx={{display:'flex',flex:1}} component='p'>
+          Payment in USD and LBP, Rate is determined upon delivery
+        </Typography>
+         
+            <Box
+                sx={{
+                px: 1,
               
-        </Box>
+              
+                color: 'white'
+            }}
+                className='flex text-center  center col auto'>
+
+           
+                <Box sx={{maxWidth:'500px'}} className='align-center flex space-between'>
+                <a href='https://th.bing.com/th/id/OIP.JtmXSh_uyZBaTg1eXd-NtgAAAA?pid=ImgDet&rs=1' target='_blank' rel='noopener'>
+
+<Btn sx={{mx:1.5,minWidth:'auto',padding:0,':hover':{background:'transparent'},background:'none'}}>
+<Box sx={{width:'20px',height:'20px'}} className='center auto flex'>
+
+  <img src="https://ucarecdn.com/47c77ab9-77d8-4f0f-b6aa-c39e6ce25ba7/2removebgpreview.png" alt="" className="img" />
+  </Box>
+</Btn>
+</a>
+<a href='https://wa.me/96176358544' target='_blank' rel='noopener'>
+
+<Btn sx={{mx:1.5,minWidth:'auto',padding:0,':hover':{background:'transparent'},background:'none'}}>
+<Box sx={{width:'20px',height:'20px'}} className='center auto flex'>
+
+  <img src="https://ucarecdn.com/80077082-51f1-405a-8723-82076be4f4ff/422022efe5324e93a824b05813a48f5c.png" alt="" className="img" />
+  </Box>
+</Btn>
+</a>
+
+                </Box>
+                </Box>
+                </Box>
+         
+
+            </Box>
             <Toolbar
-    className='center  flex w100  auto'
+     id='navy3'
+
+    className='center relative  flex  w100  auto'
 
                 sx={{
-                    border : `1px solid #00000012`,
+                
                 background:'white',
                     maxWidth:'xl',
                 px:'0 !important',
@@ -108,7 +148,7 @@ export default function Navbar() {
 }}>
     <img
         className='img'
-        src={`/icon.png`}
+        src={`https://ucarecdn.com/80fdb836-ff38-415a-a359-66a9f41bcb57/279234257_691043618773985_3830166968954566921_n.jpg`}
         alt="Pets Town logo"/>
 </Box>
 </Link>
@@ -160,7 +200,7 @@ export default function Navbar() {
                         }}>
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
 
-                                <AiOutlineShoppingCart color='black'/>
+                                <CiShoppingCart color='black'/>
                             {/* </Badge> */}
                             {/* <Typography>
                                 Cart

@@ -42,17 +42,17 @@ const SwiperCarousel = ({data, delay} : {
             modules={[FreeMode,Autoplay, Pagination]}
             breakpoints={{
                 200 : {
-                    slidesPerView:1,
+                    slidesPerView:2,
                 },
                 540: {
                     slidesPerView: 2,
                   },
                   
                   1024: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                   },
                   1640: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                   },
                 
                

@@ -6,6 +6,10 @@ import Btn from '../Btn/Btn'
 // import {GrAdd} from 'react-icons/gr'
 import {useRouter} from 'next/navigation'
 import useCart from '@/Hooks/useCart'
+
+import {BiCartAdd} from 'react-icons/bi';
+
+
 const ProductCard = ({
     title,
     price,
@@ -28,18 +32,22 @@ const ProductCard = ({
 
     return (
         <Box
-            className='  trans'
+            className='  trans cardproduct'
             sx={{
+            boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
             border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
-            minWidth: {xs:'150px',sm:'32%',md:'283px',lg:'300px'},
+            my:1,
+            minWidth: {xs:'150px',sm:'30%'},
             width: width
                 ? width
                 : {
                     xs: '47%',
-                    sm: '32%'
+                    sm: '32%',
+                    md: '22%'
                 }
+            
         }}>
             <Box 
             className='cursor'
@@ -58,7 +66,16 @@ const ProductCard = ({
             <Box 
             sx={{
                 px: .95
-            }}>
+            }}>  <Typography
+            className='limited cursor '
+
+                    onClick={() => router.push(`/product/${_id}`)}
+                    sx={{
+                    fontSize: {xs:'.85em',sm:'1.005em'},
+                    fontWeight: '600'
+                }}>
+                    {title}
+                </Typography>
                     <Typography
                     sx={{
                     fontWeight: '300',
@@ -67,39 +84,33 @@ const ProductCard = ({
                     {category}
                 </Typography>
                
-                <Typography
-            className='limited cursor '
-
-                    onClick={() => router.push(`/product/${_id}`)}
-                    sx={{
-                    fontSize: {xs:'.89em',sm:'1.195em'},
-                    fontWeight: '500'
-                }}>
-                    {title}
-                </Typography>
+              
                 <Typography
                     sx={{
-                    my: .5,
+                    mb:.5,
                     color:'green',
-                    fontWeight: '400',
-                    fontSize: {xs:'1.01em',sm:'1.16em'}
+                    fontWeight: '600',
+                    fontSize: {xs:'.99em',sm:'1.06em'}
                 }}>
                     {price}$
                 </Typography>
-                <Btn
-            className='cursor gap1'
+                <Btn 
+            className='cursor  gap1'
                 
                      onClick={()=>addToCart(1,_id,{title,category,img:images[0],_id,price},true)}
                     
                     sx={{
-                        color:'white',
-                        width:'100%',
+                        // color:'white',
                    
-                    borderRadius:25,
+                    // borderRadius:'8',
                   
                  
                 }}>
-                    Add To Cart
+                    <Box  className="flex">
+
+                    ADD
+                    <BiCartAdd fontSize='20px'/>
+                    </Box>
                 </Btn>
             </Box>
         </Box>

@@ -17,16 +17,16 @@ const ScrollUp = () => {
     <Box className='flex row center flex align-center' sx={{position:'fixed',zIndex:4124,bottom:'6%',right:'2%'}}>
 
 
-    <Btn onClick={()=>scrollToTop()} sx={{
+    {/* <Btn onClick={()=>scrollToTop()} sx={{
       color:'white !important',
       width:'30px',margin:'0em auto',height:'30px',px:0,minWidth:0}}>
         <BsArrowUpShort style={{color:'white !important',fontSize:'2em'}}/>
-    </Btn>
+    </Btn> */}
     <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
 
-    <Btn sx={{ border:'1px solid transparent',
+    <Btn sx={{ border:'1px solid transparent',boxShadow:'none',
     borderRadius:25,
-    padding:0,':hover':{background:'transparent'},background:'none'}}>
+    padding:0,':hover':{background:'none'},background:'none'}}>
       <Box className='center flex align-center' sx={{width:'30px'}}>
 
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="" className="img" />

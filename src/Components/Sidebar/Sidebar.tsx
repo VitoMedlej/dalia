@@ -10,7 +10,7 @@ import {AiOutlineArrowUp} from 'react-icons/ai';
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
-import { categories } from '../Navbar/Navbar';
+import { catsSubcategories, dogsSubcategories, offersSubcategories } from '../Navbar/NavButtom';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -33,7 +33,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   const Lista = () => (
     <Box
-      sx={{ width:  '300px',py:1 }}
+      sx={{ minWidth:{xs:'270px'},  width:  {xs:'100%',sm:'350px',md:'400px'},py:1 }}
       role="presentation"
       // onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
@@ -44,7 +44,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       >
         <Box>
           <Typography sx={{fontWeight:600}}>
-            Menu
+            Sidebar Menu
           </Typography>
         </Box>
 
@@ -64,16 +64,29 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
-            <ListItemButton>
+              <ListItemButton sx={{py:1.5}} >
             
                   <Typography sx={{fontWeight:600}}>
               All Products
             </Typography>
             </ListItemButton>
   
+          <Divider></Divider>
+          </ListItem> 
+          <ListItem
+          sx={{fontWeight:600}}
+
+          onClick={()=>{router.push(`/new-arrivals/products`); toggleDrawer(false)}}
+           disablePadding>
+              <ListItemButton sx={{py:1}} >
+            
+                  <Typography sx={{fontWeight:600}}>
+             New Arrivals
+            </Typography>
+            </ListItemButton>
+  
 
           </ListItem>
-
 
                   <Accordion sx={{border:'none',boxShadow:'none',}}>
             
@@ -83,7 +96,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           id="panel1a-header"
         >
        <Typography sx={{fontWeight:600}}>
-             Materials
+             Dogs
             </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -96,22 +109,19 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
 onClick={()=>
 {setOpen(false);
-router.push(`/materials/products`)}}
+router.push(`/dogs/products`)}}
 
 >
 
 
-<ListItemButton >
+  <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
-        -All Materials
+        View Dog Collections
       </Typography>
       </ListItemButton>
 </ListItem>
 
-{[`Adhesive Vinyls`,
-`Heat Transfer Vinyls`,
-`Papers and Cards`,
-`Other Materials`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{dogsSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
   onClick={()=>
     {setOpen(false);
@@ -120,7 +130,7 @@ router.push(`/materials/products`)}}
 key={i}>
 
   
-  <ListItemButton >
+    <ListItemButton sx={{py:1}} >
                   <Typography sx={{fontWeight:300}}>
               -{i}
             </Typography>
@@ -144,7 +154,7 @@ key={i}>
     id="panel1a-header"
   >
  <Typography sx={{fontWeight:600}}>
- Tools and Accessories
+Cats
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -158,30 +168,27 @@ key={i}>
 
 onClick={()=>
 {setOpen(false);
-router.push(`/tools-and-accessories/products`)}}
+router.push(`/cats/products`)}}
 
 >
 
 
-<ListItemButton >
+  <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
-        -All Tools
+        -Browse Cat Collection
       </Typography>
       </ListItemButton>
 </ListItem>
-{[
-  `Crafting Tools`,
-`Machine Blades`,
-`Cutting mats`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{catsSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/tools-and-accessories/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+router.push(`/cats/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
 
 key={i}>
 
 
-<ListItemButton >
+  <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
         -{i}
       </Typography>
@@ -194,7 +201,6 @@ key={i}>
 
   </AccordionDetails>
 </Accordion>
-
 
 
 
@@ -206,7 +212,7 @@ key={i}>
     id="panel1a-header"
   >
  <Typography sx={{fontWeight:600}}>
- Art supplies
+Offers
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -215,34 +221,32 @@ key={i}>
 
   
      disablePadding>
+
 <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/art-supplies/products`)}}
+router.push(`/offers/products`)}}
 
 >
 
 
-<ListItemButton >
+  <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
-        -All Supplies
+        Browse Offers
       </Typography>
       </ListItemButton>
 </ListItem>
-
-{[`Paints`,
-`Pen & Markers`,
-`Other Art Supplies`].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{offersSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/art-supplies/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+router.push(`/offers/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
 
 key={i}>
 
 
-<ListItemButton >
+  <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
         -{i}
       </Typography>
@@ -255,39 +259,11 @@ key={i}>
 
   </AccordionDetails>
 </Accordion>
-       {[
-    'New Arrivals',
-    `Hot offers`,
-`Cricut machines`, 
-`Heat presses`,
 
-`Pens and markers`,
-`Customizable Blanks`,
 
-].map((text, index) => {
-          if (!text) return;
-          return <ListItem
-        
-          onClick={()=>{setOpen(false);
-            router.push(`/${text.replace(/ /g, '-').toLocaleLowerCase()}/products`)}}
-          key={text} disablePadding>
-            <ListItemButton>
-              {/* <ListItemIcon>
-                {index % 2 === 0 ? <IoShirtOutline /> : <IoShirtSharp />}
-              </ListItemIcon> */}
-            <Typography sx={{fontWeight:600}}>
-              {text}
-            </Typography>
-            </ListItemButton>
-          </ListItem>
-        })
-        
-        }
+   
       </List>
-      <SMicons/>
-
-      <Divider />
-      
+  <SMicons />   
     </Box>
   );
 
