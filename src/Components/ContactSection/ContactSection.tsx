@@ -5,7 +5,7 @@ import React from 'react'
 
 
 import {AiOutlineWhatsApp,AiOutlineInstagram} from 'react-icons/ai'
-import EmailInput from './EmailInput'
+// import EmailInput from './EmailInput'
 const Perks = () => {
     return (
         <Box

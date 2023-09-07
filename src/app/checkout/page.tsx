@@ -46,7 +46,7 @@ export default function Checkout() {
 
   const [info,setInfo] = useState({
     firstName:'',
-    lastName:'',city:'',email:'',phone:'',address1:'',address2:''  })
+    lastName:'',city:'',phone:'',address1:'',address2:''  })
     const handleChange = (e: any) => {
       setInfo({
         ...info,
@@ -57,7 +57,7 @@ export default function Checkout() {
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     const handleNext = () => {
-      if (info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
+      if (info && info.firstName && info.lastName && info.address1 && info.phone) {
         saveState('sgh2j40-b12fg',info)
         setActiveStep(activeStep + 1);
       
@@ -142,7 +142,7 @@ export default function Checkout() {
                 )}
                 <Button
                     type='submit'
-                    disabled={!info?.email.match(regex) || !info.email || info.phone?.length < 6 || info.email?.length < 5 || !info?.firstName || info?.firstName.length < 2 || !info.phone }
+                    disabled={ info.phone?.length < 6|| !info?.firstName || info?.firstName.length < 2 || !info.phone }
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}

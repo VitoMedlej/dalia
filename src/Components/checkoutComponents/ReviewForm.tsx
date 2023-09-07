@@ -75,18 +75,21 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${total}
+            ${total} 
           </Typography>
         </ListItem>
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
+        <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+          NOTE: 3$ all over lebanon, only 1 condition the total is under 20kg
+          </Typography>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-          Order Summary
+          Order Summary 
           </Typography>
                 <Typography gutterBottom>{info.firstName}</Typography>
                 <Typography gutterBottom>{info.lastName}</Typography>
-                <Typography gutterBottom>{info.email}</Typography>
+                {/* <Typography gutterBottom>{info.email}</Typography> */}
                 <Typography gutterBottom>{info.phone}</Typography>
                 <Typography gutterBottom>{info.address1}</Typography>
                 <Typography gutterBottom>{info.address2}</Typography>

@@ -3,7 +3,7 @@ import { ICartItem } from "@/Types/Types";
 function totalCal(cartItems: ICartItem[]) {
     // if (!item?._id) return;
     let totalPrice = 0;
-
+    
     for (const item of cartItems) {
         if (item?._id && Number(item?.price)) {
 
