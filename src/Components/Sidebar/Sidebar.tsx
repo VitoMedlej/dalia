@@ -11,6 +11,7 @@ import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
 import { catsSubcategories, dogsSubcategories, offersSubcategories } from '../Navbar/NavButtom';
+import NestedAccordion from './NestedAccordion';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -88,7 +89,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           </ListItem>
 
-                  <Accordion sx={{border:'none',boxShadow:'none',}}>
+                  {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
                   <AccordionSummary
           expandIcon={<AiOutlineArrowUp />}
@@ -142,11 +143,11 @@ key={i}>
 
 
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
 
+            <NestedAccordion toggleDrawer={toggleDrawer}/>
 
-
-      <Accordion sx={{border:'none',boxShadow:'none',}}>
+      {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
     expandIcon={<AiOutlineArrowUp />}
@@ -159,52 +160,48 @@ Cats
   </AccordionSummary>
   <AccordionDetails>
   <List
-
-
-  
      disablePadding>
 
 <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/cats/products`)}}
-
->
-
-
+router.push(`/cats/products`)}}>
   <ListItemButton sx={{py:1}} >
             <Typography sx={{fontWeight:300}}>
         -Browse Cat Collection
       </Typography>
       </ListItemButton>
 </ListItem>
-{catsSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{catsSubcategories.map(i=>{   return  <Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+  <AccordionSummary
+expandIcon={<AiOutlineArrowUp />}
+aria-controls="panel1a-content"
+id="panel1a-header"
+>
+<Typography sx={{fontWeight:600}}>
+Cats
+</Typography>
+</AccordionSummary>
+<AccordionDetails>
+  abc
+</AccordionDetails>
+  </Accordion>
 
-onClick={()=>
-{setOpen(false);
-router.push(`/cats/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
-
-key={i}>
 
 
-  <ListItemButton sx={{py:1}} >
-            <Typography sx={{fontWeight:300}}>
-        -{i}
-      </Typography>
-      </ListItemButton>
-</ListItem>
       
       })}
     </List>
 
 
   </AccordionDetails>
-</Accordion>
+</Accordion> */}
 
 
 
-<Accordion sx={{border:'none',boxShadow:'none',}}>
+{/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
     expandIcon={<AiOutlineArrowUp />}
@@ -258,7 +255,7 @@ key={i}>
 
 
   </AccordionDetails>
-</Accordion>
+</Accordion> */}
 
 
    

@@ -10,8 +10,8 @@ const Page = async(ctx : any) => {
   
   try {
     const {category} = ctx?.params
-    const {type,search} = ctx?.searchParams;
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}`,{cache:'no-store',next:{revalidate:0}})
+    const {type,search,subcategory} = ctx?.searchParams;
+    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? subcategory : null}`,{cache:'no-store',next:{revalidate:0}})
     const res = await req.json();    
 
     // const totalPages = 1;

@@ -7,9 +7,9 @@ function totalCal(cartItems: ICartItem[]) {
     for (const item of cartItems) {
         if (item?._id && Number(item?.price)) {
 
-            totalPrice += item.qty * item.price;
+            totalPrice += item?.qty * Number(item?.price);
         }
     }
-    return totalPrice;
+    return Number(totalPrice) + 3 ;
   }
   export default totalCal

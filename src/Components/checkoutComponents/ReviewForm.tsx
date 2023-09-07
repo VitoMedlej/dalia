@@ -58,7 +58,10 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 
         
           if (!product?._id) return;
+             console.log('product: ', product);
          return <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
+            <Typography sx={{mr:.5}} variant="body2">{`${product?.qty ? product?.qty : 1}x `}</Typography>
+          
              <ListItemText primary={`${product?.title || 'Product Name'} - ${product?.selectedColor ? product?.selectedColor : ''}`}  />
             <Typography variant="body2">${product?.price}</Typography>
           </ListItem>
@@ -72,18 +75,23 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 </Typography>
 </ListItem> */}
         <ListItem sx={{ px: 0 }}>
-
+        <ListItemText primary="Delivery Fees" />
+          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+             3$
+          </Typography>
+          </ListItem>
+          <ListItem sx={{ px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${total} 
+            ${total}
           </Typography>
         </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-        <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-          NOTE: 3$ all over lebanon, only 1 condition the total is under 20kg
+        <Typography variant="h6" gutterBottom color='green' sx={{fontSize:'.9em', mx: 2,my:2 }}>
+          NOTE: 3$ all over lebanon excpet for orders under 20kg
           </Typography>
+        <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
           Order Summary 
           </Typography>
