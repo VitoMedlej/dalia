@@ -14,9 +14,7 @@ const sm = [
     // {
     //   Icon :BsTiktok ,href: `tiktok.com/@thecraftroomlb`,
     // },
-    {
-
-}]
+ ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (
     <Box className='row flex' sx={{zIndex:1234567,maxWidth:'200px',mt:2,...sx}}>
