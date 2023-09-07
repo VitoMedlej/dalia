@@ -3,28 +3,28 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 const Perks = () => {
-    const items = [
-        {
-          title: 'Pet Supplies Selection',
-          icon: 'https://www.svgrepo.com/show/113124/dog-dish.svg',
-          text: 'Explore our pet supplies and accessories.'
-        },
-        {
-          title: 'Professional Pet Grooming',
-          icon: 'https://www.svgrepo.com/show/516266/fetch-rewards.svg',
-          text: 'Expert grooming services for your pets.'
-        },
-        {
-          title: `Lebanon's Preferred Pet Shop`,
-          icon: 'https://www.svgrepo.com/show/295893/pet-house-kennel.svg',
-          text: 'Your trusted pet store with quality products.'
-        },
-        {
-          title: 'Local & Imported Pet Food',
-          icon: 'https://www.svgrepo.com/show/295889/pet-food-paw.svg',
-          text: 'Explore a variety of pet food options.'
-        },
-      ];
+    const items =  [
+      {
+        title: "Lebanon's #1 pet shop",
+        icon: "https://www.svgrepo.com/show/113124/dog-dish.svg",
+        text: "Best quality and best prices"
+      },
+      {
+        title: "Widest pet food range",
+        icon: "https://www.svgrepo.com/show/516266/fetch-rewards.svg",
+        text: "suitable for every budget while assuring best quality for your pet health"
+      },
+      {
+        title: "Pet supplies",
+        icon: "https://www.svgrepo.com/show/295893/pet-house-kennel.svg",
+        text: "The perfect place to spoil your loved one"
+      },
+      {
+        title: "Wide range of services",
+        icon: "https://www.svgrepo.com/show/295889/pet-food-paw.svg",
+        text: "Contact us for any service inquiries"
+      }
+    ]
   return (
     <Box sx={{py:4,mx:{xs:1,sm:1.5,md:2}}}>
        

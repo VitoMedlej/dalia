@@ -4,7 +4,7 @@ import React from 'react'
 
 
 
-import {AiOutlineWhatsApp,AiOutlineInstagram,AiFillFacebook} from 'react-icons/ai'
+import {AiOutlineWhatsApp,AiOutlineInstagram} from 'react-icons/ai'
 import EmailInput from './EmailInput'
 const Perks = () => {
     return (
@@ -77,36 +77,6 @@ const Perks = () => {
 
                 </Box>
 
-                <Box
-
-sx={{
-    display: 'flex',
-    gap: '.5em',
-    alignItems: 'center',
-    flexDirection: 'row'
-}}>
-<Box className='flexed'>
-    <AiFillFacebook  color= '#fff' />
-</Box>
-<Box
-    sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }}>
-    {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.facebook.com/profile.php?id=100087524961925&mibextid=9R9pXO"}>
-
-
-        <Typography
-            sx={{
-                fontSize: '1.1em'
-            }}>Facebook</Typography>
-    </a>
-
-    }
-</Box>
-
-</Box>
 
 {/* 
                 <Box

@@ -43,7 +43,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
           />
         </Grid>
 
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <TextField
             required
             id="email1"
@@ -55,7 +55,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             autoComplete="email"
             variant="standard"
           />
-        </Grid>
+        </Grid> */}
         <Grid item xs={12}>
           <TextField
             required
@@ -88,7 +88,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             value={info.address2}
           onChange={handleChange}
             name="address2"
-            label="Any extra information"
+            label="Notes"
             fullWidth
             rows={4}
             autoComplete="shipping address-line2"

@@ -1,7 +1,7 @@
 "use client"
 import { Box } from '@mui/material';
 import React from 'react'
-import {FaFacebook ,FaInstagram,FaWhatsapp} from 'react-icons/fa';
+import {FaInstagram,FaWhatsapp} from 'react-icons/fa';
 import {BsTiktok} from 'react-icons/bs';
 
 
@@ -16,7 +16,6 @@ const sm = [
     // },
     {
 
-    Icon:'https://th.bing.com/th/id/R.51ae405e1b464603ee8ac65599eb5c95?rik=Hz2DT9FdIMH3cQ&pid=ImgRaw&r=0 ',   href:'https://www.facebook.com/profile.php?id=100087524961925&mibextid=9R9pXO'
 }]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (
