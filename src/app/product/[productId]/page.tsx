@@ -68,7 +68,7 @@ const Index = () => {
   return (
      
     
-      <Box sx={{mt:15}}>
+      <Box sx={{mt:8}}>
  
       <BreadCrumb  />
 {!loading && data?.product !== undefined && data?.product?.title ?  <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
