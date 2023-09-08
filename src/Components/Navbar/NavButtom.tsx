@@ -102,7 +102,7 @@ fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
 </Typography>
 </Link>
-                <Link className='black decor-none uppercase' href={`/birds/products`}>
+                {/* <Link className='black decor-none uppercase' href={`/birds/products`}>
 
                 <Typography 
       className=' cursor center flex gap1 black decor-none uppercase'
@@ -114,7 +114,7 @@ New Arrivals
         fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
      Birds
    </Typography>
-   </Link>
+   </Link> */}
            
 
             { [

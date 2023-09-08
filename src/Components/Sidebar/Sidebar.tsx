@@ -145,7 +145,7 @@ key={i}>
         </AccordionDetails>
       </Accordion> */}
 
-            <NestedAccordion toggleDrawer={toggleDrawer}/>
+            <NestedAccordion toggleDrawer={setOpen}/>
 
       {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             

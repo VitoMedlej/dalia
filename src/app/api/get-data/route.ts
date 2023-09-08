@@ -16,18 +16,18 @@ try {
     const featuredProductsQuery = await ProductsCollection
         // .find({isFeatured: true})
         .find({})
-        .limit(20)
-    const ProductsQuery = await ProductsCollection
-        // .find({isFeatured: false})
-        .find({})
-        .sort({_id: -1})
-        .limit(20)
+        .limit(35)
+    // const ProductsQuery = await ProductsCollection
+    //     // .find({isFeatured: false})
+    //     .find({})
+    //     .sort({_id: -1})
+    //     .limit(35)
+    
+    // await ProductsQuery.forEach((doc : any) => {
 
-    await ProductsQuery.forEach((doc : any) => {
+    //     products.push(doc)
 
-        products.push(doc)
-
-    });
+    // });
 
     await featuredProductsQuery.forEach((doc : any) => {
 
@@ -35,14 +35,15 @@ try {
 
     })
 
-    if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
+    // if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
+        if (!featuredProducts || featuredProducts.length < 0 ) {
         return NextResponse.json({success: false});
     }
 
     return NextResponse.json({
         success: true,
         data: {
-            products,
+            // products,
             featuredProducts
         }
     });

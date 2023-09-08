@@ -38,7 +38,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
     
         
-        let filterBySubcate = !type || !subCategory || subCategory == null  ? null : `${subCategory}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${subCategory}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'null'  ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterBySearch = !search || search?.length < 1 ? null : `${search}`; 
@@ -58,7 +58,9 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
       $or: [
           { title: { $regex: search, $options: 'i' } },
           { description: { $regex: search, $options: 'i' } },
-          { category: { $regex: search, $options: 'i' } }
+          { category: { $regex: search, $options: 'i' } },
+          { type: { $regex: search, $options: 'i' } },
+          { subCategory: { $regex: search, $options: 'i' } },
       ]
     } 
   }
@@ -108,6 +110,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
       }
     }
     const countQuery = await ProductsCollection.count(filterQuery());
+    console.log('filterQuery(): ', filterQuery());
     
     const totalPages = Number(Math.ceil(countQuery / pageSize)); // Total number of pages
     const skip = Number(page) * 12
@@ -123,6 +126,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         products.push(doc)
         
       });
+      console.log('products: ', products?.length);
     if (!products || products?.length < 1  ) {
       throw 'ERROR: Could not find any products'
     }

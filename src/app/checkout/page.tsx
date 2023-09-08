@@ -38,7 +38,19 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [cart,setCart] = useState<any>();
 
+  
+  useEffect(() => {
+    const products = loadState('sgh2j40-tlsit')
+    console.log('products: ', products);
+    
+    if (products) {
+      setCart(products)
+    }
+  
+    
+  }, [])
   
   const handleBack = () => {
     setActiveStep(activeStep - 1);
@@ -73,6 +85,7 @@ export default function Checkout() {
 
     const saveOrder = async () => {
       const products = loadState('sgh2j40-tlsit')
+      
  
 
       const total = 10
@@ -142,7 +155,7 @@ export default function Checkout() {
                 )}
                 <Button
                     type='submit'
-                    disabled={ info.phone?.length < 6|| !info?.firstName || info?.firstName.length < 2 || !info.phone }
+                    disabled={ !cart || info.phone?.length < 6|| !info?.firstName || info?.firstName.length < 2 || !info.phone }
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}
