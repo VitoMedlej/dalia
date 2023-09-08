@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import {AiOutlineDown} from 'react-icons/ai'
+import NestedMenuAccordion from '../Sidebar/NestedAccordion';
 const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: string[]}) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -41,7 +42,6 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
     <AiOutlineDown/> 
    </Typography>
 
-
       {showMenu && (
         <Box
         className='flex '
@@ -59,7 +59,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           }}
           onMouseLeave={handleMouseLeave}
         >
-          <ul style={{paddingTop:7,width:'30%'}}>
+          {/* <ul style={{paddingTop:7,width:'30%'}}>
           <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
 
             <li>
@@ -78,7 +78,9 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
  </Link>
                 </li>
             ))}
-          </ul>
+          </ul> */}
+        <NestedMenuAccordion/>
+
           <Box  sx={{pointerEvents:'none',cursor:'none', width:'70%',height:'100%',minHeight:'350px'}}>
             <img src={`${img}`} alt="Category Image" className="img " />
           </Box>

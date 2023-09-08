@@ -9,7 +9,7 @@ import { AiOutlineArrowUp } from 'react-icons/ai'; // Assuming you've imported t
 import { Box } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
-const AllCats =  [
+export const AllCats =  [
     {
       categoryName: "dogs",
       categoryItems: [
@@ -97,7 +97,7 @@ const AllCats =  [
         const [open, setOpen] = useState(false);
         const router = useRouter()
         const handleRoute = (category : string,mainCategory:string,subCategory?:string) => {
-          toggleDrawer(false);
+          toggleDrawer && toggleDrawer(false);
           router.push(`/${mainCategory.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${category ? category.replace(/ /g, '-').toLocaleLowerCase() : null}&subcategory=${subCategory ? subCategory.replace(/ /g, '-').toLocaleLowerCase() : null}`)
           return
             };

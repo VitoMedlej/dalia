@@ -89,7 +89,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
       </List>
       <Grid container spacing={2}>
         <Typography variant="h6" gutterBottom color='green' sx={{fontSize:'.9em', mx: 2,my:2 }}>
-          NOTE: 3$ all over lebanon excpet for orders under 20kg
+          NOTE: Delivery charge for orders that exceed 25KG will be charged extra.
           </Typography>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>

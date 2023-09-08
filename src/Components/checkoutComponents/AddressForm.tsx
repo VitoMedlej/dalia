@@ -95,10 +95,11 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             variant="standard"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} >
           <TextField
             id="city"
             name="city"
+            required
             value={info.city}
           onChange={handleChange}
             label="City"
