@@ -38,7 +38,8 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
     
         
-        let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${subCategory}`.replace(/-/g, ' ').toLocaleLowerCase()
+        console.log('subCategory: ', subCategory);
+        let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${decodeURIComponent(subCategory)}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'null'  ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterBySearch = !search || search?.length < 1 ? null : `${search}`; 
@@ -49,7 +50,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     let products : any = []
     
     
-
+    console.log('filterBySubcate: ', filterBySubcate);
     
     const filterQuery = () => {
       

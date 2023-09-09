@@ -98,7 +98,7 @@ export const AllCats =  [
         const router = useRouter()
         const handleRoute = (category : string,mainCategory:string,subCategory?:string) => {
           toggleDrawer && toggleDrawer(false);
-          router.push(`/${mainCategory.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${category ? category.replace(/ /g, '-').toLocaleLowerCase() : null}&subcategory=${subCategory ? subCategory.replace(/ /g, '-').toLocaleLowerCase() : null}`)
+          router.push(`/${mainCategory.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${category ? category.replace(/ /g, '-').toLocaleLowerCase() : null}&subcategory=${subCategory ? encodeURIComponent(subCategory).toLocaleLowerCase() : null}`)
           return
             };
       

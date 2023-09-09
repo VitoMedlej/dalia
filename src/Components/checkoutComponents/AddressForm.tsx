@@ -68,6 +68,22 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             autoComplete="phone-number phone" 
             variant="standard"
           />
+      </Grid>
+
+                  <Grid item xs={12} >
+          <TextField
+            id="city"
+            name="city"
+            required
+            value={info.city}
+          onChange={handleChange}
+            label="City"
+            fullWidth
+            autoComplete="shipping address-level2"
+            variant="standard"
+          />
+          
+        </Grid>
         </Grid>
         <Grid item xs={12}>
           <TextField
@@ -84,6 +100,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
         </Grid>
         <Grid item xs={12}>
           <TextField
+          
             id="address2"
             value={info.address2}
           onChange={handleChange}
@@ -95,24 +112,10 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             variant="standard"
           />
         </Grid>
-        <Grid item xs={12} >
-          <TextField
-            id="city"
-            name="city"
-            required
-            value={info.city}
-          onChange={handleChange}
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="standard"
-          />
-          
-        </Grid>
+
      
 
         
-      </Grid>
         </Box>
   );
 }

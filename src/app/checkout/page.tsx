@@ -65,11 +65,12 @@ export default function Checkout() {
         [e.target.name]:e.target.value
       })
     }
-
+    
+    console.log('info: ', info);
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     const handleNext = () => {
-      if (info && info.firstName && info.lastName && info.address1 && info.phone) {
+      if (info && info.firstName && info.lastName && info.address1 && info.phone && info.city && info.address2) {
         saveState('sgh2j40-b12fg',info)
         setActiveStep(activeStep + 1);
       
