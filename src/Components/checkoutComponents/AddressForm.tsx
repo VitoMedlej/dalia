@@ -68,9 +68,8 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             autoComplete="phone-number phone" 
             variant="standard"
           />
-      </Grid>
-
-                  <Grid item xs={12} >
+        </Grid>
+        <Grid item xs={12} >
           <TextField
             id="city"
             name="city"
@@ -83,7 +82,6 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             variant="standard"
           />
           
-        </Grid>
         </Grid>
         <Grid item xs={12}>
           <TextField
@@ -116,6 +114,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
      
 
         
+      </Grid>
         </Box>
   );
 }
