@@ -14,9 +14,13 @@ const Preloader3 = ({res}:{res:any}) => {
     const [imgs,setImgs] = useState(
         [
             {
-              img: "https://luckypetslb.com/cdn/shop/files/Banner_2947decb-7837-4c05-b9ee-55fa472ffc9a_1512x.png?v=1638893070",
-              text: ""
+                img: "https://ucarecdn.com/0e337313-96c8-4ff4-85b5-c49154d9ac38/",
+                text: ""
             },
+            {
+                img: "https://ucarecdn.com/4e5a1f10-6259-41f3-8c13-5906bf634d96/",
+                text: ""
+            }
            
           ]
         
