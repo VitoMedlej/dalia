@@ -2,6 +2,7 @@ export interface IProduct {
     title: string;
     price: number;
     _id: string;
+    inStock ?: boolean;
     description: string;
     images: string[] | [];
     attributes ?: [] | 

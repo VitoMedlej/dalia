@@ -24,7 +24,7 @@ const Index = () => {
     const [loading,setLoading] = useState(false)
     const [selectedQuantity,setSelectedQuantity] = useState(1)
     const [selectedColor,setSelectedColor] = useState('')
-    console.log('selectedColor: ', selectedColor);
+
     const [data,setData] = useState<{
       product: IProduct | any ;
       moreProducts: IProduct[] | never[];
@@ -90,15 +90,15 @@ const Index = () => {
                In Stock
              </Typography> */}
             
-             <Typography 
+          {!data?.product?.inStock &&   <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.25sem'}}}>
                  ${data?.product?.price || 0}
-             </Typography>
+             </Typography>}
          </Box>
    
       
          
-             <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
+            {!data?.product?.inStock ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:'100%'}}>
 
              <QuantityPicker 
@@ -121,6 +121,11 @@ const Index = () => {
                  <BsWhatsapp fontSize={'medium'}/>
              </Btn>
              </Box>
+            :
+            <Typography component={'h1'} sx={{color:'green',fontWeight:400,pt:1,fontSize:{xs:'1.5em',sm:'2.25sem'}}}>
+            Out of Stock
+           </Typography>
+            }
          <Divider></Divider>
 
          <Box sx={{pt:4}}>

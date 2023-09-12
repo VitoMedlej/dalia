@@ -17,8 +17,10 @@ const ProductCard = ({
     category,
     _id,
     width,
-    height
+    height,
+    inStock
 } : {
+    inStock?:boolean,
     _id: string,
     title: string,
     price: number,
@@ -85,7 +87,9 @@ const ProductCard = ({
                 </Typography>
                
               
-                <Typography
+               {!inStock ?
+               <>
+               <Typography
                     sx={{
                     mb:.5,
                     color:'green',
@@ -112,6 +116,21 @@ const ProductCard = ({
                     <BiCartAdd fontSize='20px'/>
                     </Box>
                 </Btn>
+                
+               </>
+
+               :
+
+                  <Typography
+                    sx={{
+                    mb:.5,
+                    color:'red',
+                    fontWeight: '600',
+                    fontSize: {xs:'.99em',sm:'1.06em'}
+                }}>
+                    Out Of Stock
+                </Typography>
+                }
             </Box>
         </Box>
     )
