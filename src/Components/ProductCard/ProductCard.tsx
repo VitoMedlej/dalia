@@ -87,7 +87,7 @@ const ProductCard = ({
                 </Typography>
                
               
-               {!inStock ?
+               {inStock !== false ?
                <>
                <Typography
                     sx={{

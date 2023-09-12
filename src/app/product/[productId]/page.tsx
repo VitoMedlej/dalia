@@ -90,7 +90,7 @@ const Index = () => {
                In Stock
              </Typography> */}
             
-          {!data?.product?.inStock &&   <Typography 
+          {data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.25sem'}}}>
                  ${data?.product?.price || 0}
              </Typography>}
@@ -98,7 +98,7 @@ const Index = () => {
    
       
          
-            {!data?.product?.inStock ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
+            {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:'100%'}}>
 
              <QuantityPicker 
