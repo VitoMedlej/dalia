@@ -34,10 +34,10 @@ const ProductCard = ({
 
     return (
         <Box
-            className='  trans cardproduct'
+            className='  trans cardproduct center text-center'
             sx={{
-            boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
-            border : '1px solid #000000a',
+            // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
+            // border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
             my:1,
@@ -47,44 +47,39 @@ const ProductCard = ({
                 : {
                     xs: '47%',
                     sm: '32%',
-                    md: '22%'
                 }
             
         }}>
             <Box 
-            className='cursor'
+            className='cursor auto'
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
-                height: height || {xs:'180px',sm:'300px',md:'350px'}
+                width:{xs:'200px',sm:'300px',md:'350px'},
+                height: height || {xs:'250px',sm:'350px',md:'400px'}
             }}>
                 <img
                     src={images
                     ? images[0]
                     : ''}
                     alt="Prdouct image"
-                    className="img contain"/>
+                    className="img cover"/>
             </Box>
             
             <Box 
             sx={{
-                px: .95
+                px: .95,
+                mt:1.5,
             }}>  <Typography
-            className='limited cursor '
+            className='limited cursor center text-center '
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'.85em',sm:'1.005em'},
-                    fontWeight: '600'
+                    fontSize: {xs:'1.1em',sm:'1.35em'},
+                    fontWeight: '400'
                 }}>
                     {title}
                 </Typography>
-                    <Typography
-                    sx={{
-                    fontWeight: '300',
-                    fontSize: '.76em'
-                }}>
-                    {category}
-                </Typography>
+        
                
               
                {inStock !== false ?
@@ -92,13 +87,12 @@ const ProductCard = ({
                <Typography
                     sx={{
                     mb:.5,
-                    color:'green',
-                    fontWeight: '600',
-                    fontSize: {xs:'.99em',sm:'1.06em'}
+                    fontWeight: '300',
+                    fontSize: {xs:'.99em',sm:'1em'}
                 }}>
                     {price}$
                 </Typography>
-                <Btn 
+                {/* <Btn 
             className='cursor  gap1'
                 
                      onClick={()=>addToCart(1,_id,{title,category,img:images[0],_id,price},true)}
@@ -116,7 +110,7 @@ const ProductCard = ({
                     <BiCartAdd fontSize='20px'/>
                     </Box>
                 </Btn>
-                
+                 */}
                </>
 
                :

@@ -31,20 +31,21 @@ const TestimonialCard = ({title,reviewer,description}:{title:string,reviewer:str
             // className='clr'
                 sx={{
                     // color:'#f8f8f8',
-                fontWeight: 500,
+                fontWeight: 300,
                     maxWidth:'500px',
                 pt: 1.25,
                 fontSize: 14
             }}
                 component={'p'}>{description}</Typography>
                  <Typography
-            className='clr'
+            className='color2'
                 sx={{
                     // color:'#f8f8f8',
                     fontStyle:'italic',
                 fontWeight: 400,
                     maxWidth:'300px',
                 pb:4,
+                pt:1,
                 fontSize: 15
             }}
                 component={'p'}>-{reviewer}</Typography>

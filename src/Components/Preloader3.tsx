@@ -1,32 +1,26 @@
 "use client"
-import { Box } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import  { Autoplay } from 'swiper'
 import {Swiper, SwiperSlide} from "swiper/react";
 // import {Navigation} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
+import { Autoplay } from 'swiper';
+import Btn from './Btn/Btn';
+
 
 
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
-    const [imgs,setImgs] = useState(
-        [
-            {
-                img: "https://ucarecdn.com/22466a86-d184-41b1-8ac3-32c9a47d1a44/InShot_20230909_2242239471.jpg",
-                text: ""
-            },
-            {
-                img: "https://ucarecdn.com/9c88e6d7-12be-4b3c-949d-28ac9e14c7e2/InShot_20230909_2245426331.jpg",
-                text: ""
-            }
-           
-          ]
-        
-    )
+    const [imgs,setImgs] = useState([
+        {img : `https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-hero-image-bg_cXRc9c18.webp`},
+       
+     ])
     useEffect(() => {
-    if (res && res?.MainCarousel && res?.MainCarousel?.length >0) {
+        console.log('res: ', res);
+    if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
+        console.log('res?.MainCarousel: ', res?.MainCarousel);
         // console.log('res: ', );
         setImgs(res?.MainCarousel)
     }
@@ -38,17 +32,18 @@ const Preloader3 = ({res}:{res:any}) => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
+            maxWidth:'none',
             // maxWidth: 'lg',
-            maxHeight:{xs:'100vh',md:'500px'},
-            // maxWidth:'lg',
+            minHeight:'500px',
+            maxHeight:{xs:'600px',sm:'90vh',md:'700px'},
             margin: '0 auto',
+            mt:4,
+            height : {xs:'100%',sm:'550px',md:'650px'},
+             
             display: {
                 xs: 'flex'
             },
-            mt:0,
-            pt:0,
-            mb:2,
-            height: '100%'
+            // mt:20,
         }}>
             <Swiper
             
@@ -57,7 +52,7 @@ const Preloader3 = ({res}:{res:any}) => {
                 spaceBetween={0}
                 loop={true}
                 autoplay={{
-                delay: 2000,
+                delay: 3000,
                 disableOnInteraction: true
             }}
                 modules={[Autoplay]}
@@ -66,16 +61,46 @@ const Preloader3 = ({res}:{res:any}) => {
                 {imgs.map((item) => {
     
                     return <SwiperSlide 
-                        onClick={() => router.push('/collection/products')}
-                    className='ztop pointer ' key={item.img}>
+                        onClick={() => router.push('/')}
+                    className='ztop  ' key={item.img}>
                         <Box
                             sx={{
-         
-                        
+                                position:'relative',
                                 height: '100%',
                             width:'100%'
                         }}>
-    
+                        <Container className='auto' sx={{width:'100%'}} maxWidth='lg' disableGutters>
+                            
+                      
+                            <Box sx={{top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.43}} className="absolute">
+
+                            </Box>
+                            <Box 
+                            className='auto'
+                            sx={{
+                                top:'50%',
+                                px:{xs:4,sm:5,md:6},
+                                maxWidth:'550px',
+                                transform:'translateY(-50%)',
+                                zIndex:123456,
+                                position:'absolute'}}>
+                                <Typography sx={{color:'white',fontSize:{xs:'1.95em',sm:'3em',md:'3.5em',lg:'4em'},fontWeight:900}}>
+                                Experience the Power of Nature
+                                </Typography>
+                                <Typography sx={{color:'white',fontSize:{xs:'.75em',sm:'.84em'},mt:1,maxWidth:'600px'}}>
+                                Welcome to Truenaturalblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
+                                </Typography>
+                                <Box className="flex">
+
+                                <Btn className='bg white borderColor' sx={{mt:3}}>
+                                    Shop Now
+                                </Btn>
+                                <Btn  v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
+                                    Discover 
+                                </Btn>
+                                </Box>
+                            </Box>
+                            </Container>
                             <img
             
                                 className={`img pointer  
@@ -83,6 +108,7 @@ const Preloader3 = ({res}:{res:any}) => {
                                 // ${item?.className}
                                 src={`${item.img}`}
                                 alt="Main Carousel Image"/>
+           
                         </Box>
                     </SwiperSlide>
                 })

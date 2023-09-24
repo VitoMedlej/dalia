@@ -56,7 +56,7 @@ export default function Navbar() {
     return ( <>
      <Box
      id='navy'
-    className='center auto relative  bg flex'
+    className='center auto   bg flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
@@ -71,7 +71,7 @@ export default function Navbar() {
         <AppBar
      id='navy2'
 
-    className='center relative  flex'
+    className='center   flex'
 
             sx={{
 
@@ -82,48 +82,7 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-                   <Box sx={{px:1,py:.5,display:{xs:'none',md:'flex'}}} className='  bg white'>
-        <Box sx={{maxWidth:'lg',alignItems:'center',justifyContent:'space-between',width:'100%'}} className='bg white  flex   auto'>
-            <Typography sx={{display:'flex',flex:1}} component='p'>
-          Payment in USD and LBP, Rate is determined upon delivery
-        </Typography>
-         
-            <Box
-                sx={{
-                px: 1,
-              
-              
-                color: 'white'
-            }}
-                className='flex text-center  center col auto'>
-
-           
-                <Box sx={{maxWidth:'500px'}} className='align-center flex space-between'>
-                <a href='https://th.bing.com/th/id/OIP.JtmXSh_uyZBaTg1eXd-NtgAAAA?pid=ImgDet&rs=1' target='_blank' rel='noopener'>
-
-<Btn sx={{mx:1.5,minWidth:'auto',padding:0,':hover':{background:'transparent'},background:'none'}}>
-<Box sx={{width:'20px',height:'20px'}} className='center auto flex'>
-
-  <img src="https://ucarecdn.com/47c77ab9-77d8-4f0f-b6aa-c39e6ce25ba7/2removebgpreview.png" alt="" className="img" />
-  </Box>
-</Btn>
-</a>
-<a href='https://wa.me/96176358544' target='_blank' rel='noopener'>
-
-<Btn sx={{mx:1.5,minWidth:'auto',padding:0,':hover':{background:'transparent'},background:'none'}}>
-<Box sx={{width:'20px',height:'20px'}} className='center auto flex'>
-
-  <img src="https://ucarecdn.com/80077082-51f1-405a-8723-82076be4f4ff/422022efe5324e93a824b05813a48f5c.png" alt="" className="img" />
-  </Box>
-</Btn>
-</a>
-
-                </Box>
-                </Box>
-                </Box>
-         
-
-            </Box>
+               
             <Toolbar
      id='navy3'
 
@@ -144,11 +103,11 @@ export default function Navbar() {
     mx: {
         sm: '1em'
     },
-    width:{xs:'90px',sm: '120px'}
+    width:{xs:'90px',sm: '90px'}
 }}>
     <img
         className='img'
-        src={`https://ucarecdn.com/80fdb836-ff38-415a-a359-66a9f41bcb57/279234257_691043618773985_3830166968954566921_n.jpg`}
+        src={`https://ucarecdn.com/46a52749-a6f7-40f1-932c-d7a98074c48c/WhatsAppImage20230922at1306531.jpeg`}
         alt="Pets Town logo"/>
 </Box>
 </Link>
@@ -238,10 +197,12 @@ export default function Navbar() {
                     </Box>
 
                 </Box>
-  <SearchInput/>
-  <SearchInput
+<NavButtom/>
+
+  {/* <SearchInput/> */}
+  {/* <SearchInput
 mobile
-                    /> 
+                    />  */}
 
                 <Box
                     sx={{
@@ -284,9 +245,7 @@ mobile
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
                                 <CiShoppingCart color='black'/>
                             {/* </Badge> */}
-                            <Typography sx={{ml:.5}}>
-                                My Cart
-                            </Typography>
+                          
                             </IconButton>
 
 
@@ -308,7 +267,6 @@ mobile
                 </Box>
            
 <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
-<NavButtom/>
              
             </Toolbar>
         </AppBar>

@@ -5,10 +5,10 @@ import React from 'react'
 
 
 let style1 = {
-  color: 'white',
-  background: '#ff9715',
-  border: 'none',
-  borderRadius: '8px', 
+  color: 'black',
+  background: 'white',
+  border:'1px solid',
+  borderRadius: '0px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
@@ -16,22 +16,23 @@ let style1 = {
       transform: 'scale(1.05)',
   },
   display: 'flex',
-  padding: '6px 34px',
-  fontWeight: '600',
+  padding: '11px 35px',
+  fontWeight: '400',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',
 }
 let style2 = {
-  color: '#ff9715',
+  color: 'white',
   background: 'transparent',
-  border: 'none',
-  borderRadius: '8px', 
+  border: '1px solid white',
+  borderRadius: '0px', 
   // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#ff8e00',
+    color:'black',
+      background: 'white',
       transform: 'scale(1.05)',
   },
   display: 'flex',

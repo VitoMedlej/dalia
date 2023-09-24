@@ -24,10 +24,13 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             maxWidth: 'lg',
             width :'99%',
             margin: '0 auto',
-            my: '3em',
+            // my: '3em',
+            mt:'4em',
+            mb:'3em',
             ...sx,
         }}>
-       
+            <Box className="flex justify-between" sx={{width:'100%'}}>
+
             <Typography
                 className='sectionTitle   box'
                 sx={{
@@ -42,8 +45,10 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
               {Collectiontitle}
             </Typography>
             
-            <Divider  light />
-
+            <Btn>
+                Shop All
+            </Btn>
+            </Box>
             
             <Box
                 sx={{

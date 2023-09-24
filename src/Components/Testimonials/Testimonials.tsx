@@ -47,23 +47,23 @@ const tests =[
     
     
   return (
-    <Box className=' flex col ' sx={{background:'#00000005',width:'100%',height:'100%'}}>
+    <Box className=' flex col ' sx={{width:'100%',height:'100%'}}>
  <Box className='flex col'  sx={{flex:1,width:'100%',pt:'6em'}}>
  <Typography
-                className='sectionTitle clr text-center auto center box'
+                className='sectionTitle  text-center auto center box'
                 sx={{
                   pb:'.5em',
-                  pt:9,
+                  pt:4,
                   width:'100%',
                   display:'flex',
                   fontSize: {
-                    xs: '1.42em',
-                    sm: '2em'
+                    xs: '1.62em',
+                    sm: '2em',md:'2.5em'
                 },
                 flex:1,
-                fontWeight: '600'
+                fontWeight: '500'
             }}>
-                Our Client&apos;s Testimonials
+               Our Customers speak for us
             </Typography>
             </Box>
        <Box

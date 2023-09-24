@@ -2,17 +2,22 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 
 
 }
 * ,h1,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 .w100 {
     width:100%
 }
-$color : #ff9715 !important;
+$color : #0273b5 !important;
+$color2 : #7fbf44 !important;
+$color3 : #f27a23 !important;
+.color3 {
+    color: $color3;
+}
 .img {
     object-fit: cover;
     width:100%;
@@ -20,6 +25,24 @@ $color : #ff9715 !important;
     .contain {
         object-fit: contain !important;
     }
+}
+.bg2 {
+    background: $color2;
+}
+.borderColor {
+    border-color: $color;
+}
+.borderColor2 {
+    border-color: $color2;
+}
+.rounded {
+    border-radius: 50% ;
+}
+.color2 {
+    color: $color2;
+}
+.color {
+    color: $color;
 }
 .flex {
     display: flex;
@@ -63,6 +86,11 @@ $color : #ff9715 !important;
 }
 .gap1 {
     gap:.25em;
+
+}
+.absolute
+{
+    position: absolute;
 }
 .justify-center {
     justify-content: center

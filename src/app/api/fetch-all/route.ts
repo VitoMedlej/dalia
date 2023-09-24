@@ -46,7 +46,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
         let filterByType = !type || type === 'any' || type === 'null' ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
     const ProductsCollection = await client
-        .db("PETS")
+        .db("NATURE")
         .collection("Products");
     let products : any = []
 

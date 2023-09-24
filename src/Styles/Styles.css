@@ -2,15 +2,19 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 *, h1, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .w100 {
   width: 100%;
+}
+
+.color3 {
+  color: #f27a23 !important;
 }
 
 .img {
@@ -22,6 +26,30 @@ body {
 .img .contain {
   -o-object-fit: contain !important;
      object-fit: contain !important;
+}
+
+.bg2 {
+  background: #7fbf44 !important;
+}
+
+.borderColor {
+  border-color: #0273b5 !important;
+}
+
+.borderColor2 {
+  border-color: #7fbf44 !important;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.color2 {
+  color: #7fbf44 !important;
+}
+
+.color {
+  color: #0273b5 !important;
 }
 
 .flex {
@@ -61,7 +89,7 @@ body {
 }
 
 .bg {
-  background: #ff9715 !important;
+  background: #0273b5 !important;
 }
 
 .white {
@@ -74,6 +102,10 @@ body {
 
 .gap1 {
   gap: 0.25em;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .justify-center {
@@ -110,7 +142,7 @@ button[disabled] {
 }
 
 .clr {
-  color: #ff9715 !important;
+  color: #0273b5 !important;
 }
 
 .auto {
