@@ -8,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'PetsTown - Shop Pet Supplies in Lebanon',
-    description: `Discover a wide range of pet supplies at PetsTown, your local pet shop in Lebanon. We offer quality products for dogs, cats, birds, and more.`,
+    title: 'truenatureblend - Shop Natural Meds in Lebanon',
+    description: `Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.`,
     icons: {
-        icon: `https://ucarecdn.com/f21fe250-e19c-4fd7-b4e7-bf1b246a3640/favicon.jpeg`
+        icon: `https://ucarecdn.com/46a52749-a6f7-40f1-932c-d7a98074c48c/WhatsAppImage20230922at1306531.jpeg`
     }
 }
 

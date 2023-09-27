@@ -10,7 +10,6 @@ import {AiOutlineArrowUp} from 'react-icons/ai';
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
-import { catsSubcategories, dogsSubcategories, offersSubcategories } from '../Navbar/NavButtom';
 import NestedAccordion from './NestedAccordion';
 
 
@@ -44,7 +43,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       
       >
         <Box>
-          <Typography sx={{fontWeight:600}}>
+          <Typography sx={{fontWeight:300}}>
             Sidebar Menu
           </Typography>
         </Box>
@@ -260,7 +259,6 @@ key={i}>
 
    
       </List>
-  <SMicons />   
     </Box>
   );
 

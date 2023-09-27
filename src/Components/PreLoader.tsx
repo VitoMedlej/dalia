@@ -53,12 +53,12 @@ PreLoader = ({data,resImages}:any) => {
       {/* <Perks/> */}
 
     <Grid  sx={{background:'#f4f8fd',width:'100%',py:8}} container>
-    <Grid  maxWidth='lg' item xs={12} sm={6}>
+    <Grid  maxWidth='lg' item xs={12} md={6}>
       <Box sx={{height:'500px',maxWidth:'450px'}} className='auto'>
         <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-home-about-image_cXRc9c18.webp" alt="" className="img" />
       </Box>
     </Grid>
-    <Grid maxWidth='lg' item xs={12} sm={6}>
+    <Grid maxWidth='lg' item xs={12} md={6}>
     <Container  className='wrap col   auto flex' sx={{alignItems:'left',px:{sm:1},pt:{xs:2,sm:4},display:'flex'}}>
         <Typography sx={{fontWeight:400}} className='color2'>
           ABOUT US
@@ -67,7 +67,7 @@ PreLoader = ({data,resImages}:any) => {
         Welcome to True Natural Blend
         </Typography>
         <Typography sx={{width:'100%',maxWidth:'500px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
-        At Truenaturalblend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.
+        At Truenatureblend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.
         </Typography>
         <Btn v2 className='color' sx={{width:'100px',color:'black',mt:2,px:0}}>
           Learn More
@@ -77,7 +77,7 @@ PreLoader = ({data,resImages}:any) => {
     </Grid>
     <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
       <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      Why Choose Truenaturalblend?
+      Why Choose Truenatureblend?
       </Typography>
       <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
       Our supplements are made with only the finest natural ingredients, carefully selected for their purity and potency. Our products are free from harmful chemicals
@@ -210,16 +210,42 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
      {/* </Box> */}
 
       <Box/>
-        <HomeProductCollection  products={[{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Ali Dawa',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Ali Dawa',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Ali Dawa',_id:'14152',price:123}]}/>
-      <Container  className='flex center items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>
+    
+        <HomeProductCollection  products={[{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123}]}/>
+        <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='lg'>
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
+                  <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-men-image-thumbnail_cXRc9c18.webp" alt="" className="img" />
+                  <Box  className="absolute flex center auto items-center text-center col ">
+                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>Organic Herbs</Typography>
+                    <Btn sx={{border:'none',mx:'auto'}}>
+                    SHOP NOW
+                    </Btn>
+                  </Box>
+            </Box>
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
+                  <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-women-image-tumbnail_cXRc9c18.webp" alt="" className="img" />
+                  <Box  className="absolute flex center auto items-center col text-center">
+                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>Organic Herbs</Typography>
+                    <Btn sx={{border:'none',mx:'auto'}}>
+                      SHOP NOW
+                    </Btn>
+                  </Box>
+            </Box>
+          
+      </Container>
+
+      <HomeProductCollection  products={[{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123}]}/>
+
+
+      <Container  className='flex center wrap items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>
         <Box>
         <Typography sx={{width:'100%',maxWidth:'600px',flex:1,fontSize:{xs:'.95em',sm:'1.19em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
             
-            At Truenaturalblend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment
+            At Truenatureblend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment
             </Typography>
         </Box>
         
-        <Box sx={{width:{xs:'100%',sm:'200px'}}} className='auto rounded'>
+        <Box sx={{ width:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
           <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-recycled-circle-iamge_cXRc9c18.webp" alt="" className="img rounded" />
         </Box>
         </Container>       
@@ -228,10 +254,29 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(18)}/> */}
 
     <Testimonials/>
-        
+
+    <Box sx={{my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
+      <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
+      <Box sx={{maxWidth:'lg'}} className="absolute center flex text-center col auto">
+        <Typography sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
+        Our Mission
+        </Typography>
+        <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
+        Our mission at Truenatureblend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.
+        </Typography>
+        <Btn sx={{mt:2,mx:'auto'}} v2>
+        Reach Us
+      </Btn>
+      </Box>
+      <Box sx={{height:'100%',width:'100%'}}>
+      <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-cta-image-bg_cXRc9c18.webp" alt="" className="img" />
+ 
+      </Box>
+
+      </Box>        
 
         
-
+        <Perks></Perks>
         {/* <ContactSection/> */}
   </Box>
   )

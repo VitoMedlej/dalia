@@ -9,7 +9,6 @@ import SMicons from '../SMicons/SMicons';
 
 const Footer = () => (
   <footer className="site-footer " style={{color:'black',background:'white'}}>
-    <Divider></Divider>
     <div className="container " style={{color:'black',background:'white'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
@@ -19,13 +18,13 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/80fdb836-ff38-415a-a359-66a9f41bcb57/279234257_691043618773985_3830166968954566921_n.jpg' alt="Pets Town Lebanon Logo" />
+            <img className='img ' src='https://ucarecdn.com/46a52749-a6f7-40f1-932c-d7a98074c48c/WhatsAppImage20230922at1306531.jpeg' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          At PetsTown, we are passionate about providing the best care for your pets. Our pet shop in Lebanon offers a wide selection of high-quality pet supplies for dogs, cats, birds, and more. Our friendly and knowledgeable staff is always here to help you find the perfect product for your furry friend. Shop at PetsTown today and give your pet the love and care they deserve.
+          Welcome to Truenatureblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
           </Typography>
-          <SMicons/>
+          {/* <SMicons/> */}
 
           {/* <ul className="site-footer__social-networks">
           <li><a href="https://www.facebook.com/profile.php?id=100063581229923" rel="noreferrer" target='_blank'><i className="icon-facebook"></i></a></li>
@@ -55,7 +54,7 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noreferrer" >@pets_town_lb</a></li>
+            <li><a href="https://www.instagram.com/truenatureblend/" target="_blank" rel="noreferrer" >@truenatureblend</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>

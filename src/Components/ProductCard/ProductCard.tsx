@@ -41,11 +41,11 @@ const ProductCard = ({
             py: 1,
             margin: '0em auto',
             my:1,
-            minWidth: {xs:'150px',sm:'30%'},
+            minWidth: {xs:'95%',sm:'30%'},
             width: width
                 ? width
                 : {
-                    xs: '47%',
+                    xs: '99%',
                     sm: '32%',
                 }
             
@@ -54,8 +54,8 @@ const ProductCard = ({
             className='cursor auto'
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
-                width:{xs:'200px',sm:'300px',md:'350px'},
-                height: height || {xs:'250px',sm:'350px',md:'400px'}
+                width:{xs:'98%',sm:'100%',md:'350px'},
+                height: height || {xs:'350px',sm:'350px',md:'400px'}
             }}>
                 <img
                     src={images

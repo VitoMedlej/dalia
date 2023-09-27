@@ -63,7 +63,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/truenatureblend/"}>
 
 
                             <Typography

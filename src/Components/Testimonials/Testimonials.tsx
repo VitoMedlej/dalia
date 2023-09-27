@@ -27,21 +27,21 @@ import { Autoplay } from 'swiper';
 const Testimonial = () => {
 
 
-const tests =[
+  const tests = [
     {
-      title: "A Pet Paradise!",
-      reviewer: "(Emma, Pet Lover)",
-      description: "Pets Town is an absolute paradise for pet owners. Their wide array of pet supplies is simply amazing. From top-notch pet food to a delightful selection of toys and accessories, they cater to every pet&apos;s needs. I&apos;m thoroughly impressed by their unwavering commitment to quality and their genuine care for their customers. Pets Town has become my go-to place for all things pet-related!",
+      title: "Discover the Power of Truenatureblend!",
+      reviewer: "(Ella, Health Enthusiast)",
+      description: "Truenatureblend is a true haven for health and wellness enthusiasts like myself. Their premium selection of natural supplements is a game-changer. From the revitalizing effects of ashwagandha to the vitality boost of tongkat ali, they have it all. I've experienced a remarkable improvement in my overall well-being since I started incorporating their products into my daily routine. Truenatureblend is my go-to destination for all my health and wellness needs!",
     },
     {
-      title: "Exceptional Service, Happy Pets!",
-      reviewer: "(Daniel, Proud Pet Parent)",
-      description: "Pets Town sets a high standard for pet shops. As a devoted pet parent, finding reliable pet supplies is crucial, and Pets Town consistently delivers. Their website is user-friendly, making it a breeze to find everything my furry friend needs. What truly sets them apart is their dedication to providing top-quality products and their keen eye for detail. Pets Town has earned my trust as the ultimate destination for pet essentials!",
+      title: "A Wellness Oasis with Truenatureblend!",
+      reviewer: "(Oliver, Fitness Fanatic)",
+      description: "When it comes to my fitness journey, Truenatureblend has been a true ally. Their range of natural supplements, including cordyceps and lion's mane mushroom, has been a game-changer in my routine. The quality of their products is unparalleled, and I've seen significant improvements in my energy levels and mental clarity. Truenatureblend is my one-stop-shop for all things related to health and wellness. I can't recommend them enough!",
     },
     {
-      title: "A Lifesaver for Pet Businesses!",
-      reviewer: "(Sophia, Pet Business Owner)",
-      description: "Managing pet supplies for our business used to be a hassle until we discovered Pets Town. We regularly source pet supplies for our clients and partners, and Pets Town&apos;s extensive product range has been a game-changer. Even with large orders, their website handles them seamlessly. The Pets Town team goes above and beyond to ensure our branding looks flawless on the pet supplies. Their professionalism and efficiency have saved us invaluable time. We wholeheartedly endorse Pets Town!",
+      title: "Truenatureblend: Your Path to Optimal Health!",
+      reviewer: "(Ava, Wellness Advocate)",
+      description: "As a wellness advocate, I'm always on the lookout for high-quality supplements, and Truenatureblend has exceeded my expectations. Their comprehensive range of natural products, including ashwagandha, tongkat ali, cordyceps mushroom, and more, is a testament to their commitment to well-being. Whether you're a health enthusiast or someone looking to enhance their overall health, Truenatureblend is the answer. Trust me; you won't be disappointed!",
     },
   ];
     
@@ -105,9 +105,15 @@ const tests =[
   },
   // when window width is >= 640px
   640: {
+    slidesPerView: 2,
+    spaceBetween: 20
+  },
+  940: {
     slidesPerView: 3,
     spaceBetween: 20
-  }}
+  }
+
+}
 
                 }
                 modules={[ Autoplay]}

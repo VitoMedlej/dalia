@@ -108,7 +108,7 @@ export default function Navbar() {
     <img
         className='img'
         src={`https://ucarecdn.com/46a52749-a6f7-40f1-932c-d7a98074c48c/WhatsAppImage20230922at1306531.jpeg`}
-        alt="Pets Town logo"/>
+        alt="truenatureblend logo"/>
 </Box>
 </Link>
                 <Box

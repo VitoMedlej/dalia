@@ -35,10 +35,10 @@ const Preloader3 = ({res}:{res:any}) => {
             maxWidth:'none',
             // maxWidth: 'lg',
             minHeight:'500px',
-            maxHeight:{xs:'600px',sm:'90vh',md:'700px'},
+            maxHeight:{xs:'100vh',sm:'90vh',md:'700px'},
             margin: '0 auto',
             mt:4,
-            height : {xs:'100%',sm:'550px',md:'650px'},
+            height : {xs:'100vh',sm:'550px',md:'650px'},
              
             display: {
                 xs: 'flex'
@@ -84,11 +84,11 @@ const Preloader3 = ({res}:{res:any}) => {
                                 transform:'translateY(-50%)',
                                 zIndex:123456,
                                 position:'absolute'}}>
-                                <Typography sx={{color:'white',fontSize:{xs:'1.95em',sm:'3em',md:'3.5em',lg:'4em'},fontWeight:900}}>
+                                <Typography sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.65em',lg:'4em'},fontWeight:900}}>
                                 Experience the Power of Nature
                                 </Typography>
-                                <Typography sx={{color:'white',fontSize:{xs:'.75em',sm:'.84em'},mt:1,maxWidth:'600px'}}>
-                                Welcome to Truenaturalblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
+                                <Typography sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
+                                Welcome to Truenatureblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
                                 </Typography>
                                 <Box className="flex">
 

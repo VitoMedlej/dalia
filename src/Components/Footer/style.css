@@ -31,9 +31,10 @@ footer .site-footer__links ul li a {
   text-decoration: none !important;
 }
 footer .site-footer__links ul .link-title {
-  font-weight: 300;
+  font-weight: 500;
   padding: 0 0 0.65em 0;
-  color: black;
+  font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.87);
   font-weight: 600 !important;
 }
 footer .footer-p {

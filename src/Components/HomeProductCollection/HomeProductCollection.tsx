@@ -11,7 +11,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{my:4}} className='center auto'>
            
-           <Box className="flex justify-between auto" sx={{pt:8,maxWidth:'lg',width:'100%'}}>
+           <Box className="flex justify-between auto" sx={{pt:8,pb:4,maxWidth:'lg',width:'100%'}}>
 
 <Typography
     className='sectionTitle   box'
