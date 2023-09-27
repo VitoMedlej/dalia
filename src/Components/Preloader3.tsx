@@ -35,7 +35,7 @@ const Preloader3 = ({res}:{res:any}) => {
             maxWidth:'none',
             // maxWidth: 'lg',
             minHeight:'500px',
-            maxHeight:{xs:'100vh',sm:'90vh',md:'700px',lg:'750px'},
+            maxHeight:{sm:'90vh',md:'700px',lg:'750px'},
             margin: '0 auto',
          
             height : {xs:'100vh',sm:'550px',md:'100%'},
