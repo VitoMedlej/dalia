@@ -56,7 +56,7 @@ export default function Navbar() {
     return ( <>
      <Box
      id='navy'
-    className='center auto   bg flex'
+    className='center auto relative   bg flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
@@ -71,7 +71,7 @@ export default function Navbar() {
         <AppBar
      id='navy2'
 
-    className='center   flex'
+    className='center relative  flex'
 
             sx={{
 
@@ -98,7 +98,7 @@ export default function Navbar() {
             }}> 
                   <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
 
-<Box
+<Box className='flex'
     sx={{
     mx: {
         sm: '1em'

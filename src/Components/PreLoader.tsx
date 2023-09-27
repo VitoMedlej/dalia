@@ -257,7 +257,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
     <Box sx={{my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
       <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
-      <Box sx={{maxWidth:'lg'}} className="absolute center flex text-center col auto">
+      <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
         <Typography sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
         Our Mission
         </Typography>
