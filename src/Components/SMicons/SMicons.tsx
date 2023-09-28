@@ -11,9 +11,7 @@ const sm = [
         href:'https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D'
     },
     {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+96176983550'},
-    // {
-    //   Icon :BsTiktok ,href: `tiktok.com/@thecraftroomlb`,
-    // },
+  
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (

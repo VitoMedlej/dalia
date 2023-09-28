@@ -10,43 +10,36 @@ import Perks from './Perks/Perks'
 import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
 import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
+import useLanguage from '@/Hooks/useLanguage'
 
 const 
 PreLoader = ({data,resImages}:any) => {
   const router= useRouter();
-  
+  const {text} = useLanguage()
   const textsArray = [
     {
       id: 1,
-      title: '100% Natural',
-      desc: 'Our supplements are made from only the finest natural ingredients, ensuring that you get the best possible results without any harmful chemicals or additives.'
+      title: text('100% Natural', '100٪ طبيعي'),
+      desc: text('Our supplements are made from only the finest natural ingredients, ensuring that you get the best possible results without any harmful chemicals or additives.', 'مكملاتنا مصنوعة فقط من أرقى المكونات الطبيعية، مما يضمن لك الحصول على أفضل النتائج دون أي مواد كيميائية ضارة أو مواد إضافية.')
     },
     {
       id: 2,
-      title: 'Purity and Potency',
-      desc: 'We carefully select our ingredients for their purity and potency, ensuring that you get the best possible results from our supplements.'
+      title: text('Purity and Potency', 'النقاء والفعالية'),
+      desc: text('We carefully select our ingredients for their purity and potency, ensuring that you get the best possible results from our supplements.', 'نحن نختار مكوناتنا بعناية بسبب نقاوتها وفعاليتها، مما يضمن لك الحصول على أفضل النتائج من مكملاتنا.')
     },
     {
       id: 3,
-      title: 'Expertly Formulated',
-      desc: 'Our supplements are expertly formulated by our team of experienced professionals, ensuring that you get the best possible results every time.'
+      title: text('Expertly Formulated', 'صياغة خبيرة'),
+      desc: text('Our supplements are expertly formulated by our team of experienced professionals, ensuring that you get the best possible results every time.', 'تم صياغة مكملاتنا بخبرة من قبل فريق من المحترفين ذوي الخبرة، مما يضمن لك الحصول على أفضل النتائج في كل مرة.')
     },
     {
       id: 4,
-      title: 'Great Value',
-      desc: 'Our supplements offer great value for money, providing you with the highest quality ingredients at an affordable price.'
+      title: text('Great Value', 'قيمة عظيمة'),
+      desc: text('Our supplements offer great value for money, providing you with the highest quality ingredients at an affordable price.', 'تقدم مكملاتنا قيمة عظيمة للمال، حيث توفر لك أعلى جودة من المكونات بسعر معقول.')
     }
   ];
   
-  
-  // [{img:'https://ucarecdn.com/4635c19f-1ac8-454f-aaf7-8c67adfe4fd0/WhatsAppImage20230824at191722.jpeg',category:'Cricut machines'},
-  // {img:'https://4.bp.blogspot.com/-Jt0CZBa0r6s/WQoWgzdYryI/AAAAAAAAuE4/WNVqO4RNJEoJZeWAGCCDtT-YdkxV-JaPwCPcB/s640/wholesale%2Bcraft%2Bblanks.JPG',category:'Customizable Blanks'},
-  // {img:'https://ucarecdn.com/e490c41b-ddd1-4ef1-a06c-b1b0692bd83a/WhatsAppImage20230824at191716.jpeg',category:'Hot offers'} ,
-  // {img:'https://ucarecdn.com/bfb9f54b-ee34-4cdc-930c-3a97234595fe/WhatsAppImage20230824at191719.jpeg',category: 'New Arrivals'}  ,
-  // {img:'https://ucarecdn.com/d01c6f74-4d3b-46c4-9d31-67966950b09e/WhatsAppImage20230824at191720.jpeg',category:'Materials'}  ,
-  
-  // ]
-  // const twinImages =resImages?.categoryImage && resImages?.categoryImage?.length > 1 ? resImages?.categoryImage  :  [{img:'https://ucarecdn.com/e79d337c-b709-4ea4-aec0-6f3403afff1e/WhatsAppImage20230824at191717.jpeg'},{img:'https://ucarecdn.com/3a54db45-c216-4076-996c-3ec4524be8f0/WhatsAppImage20230824at191727.jpeg'}]
+
   return (
     <Box >
       <MainCarousel resImages={resImages}/>
@@ -61,26 +54,32 @@ PreLoader = ({data,resImages}:any) => {
     <Grid maxWidth='lg' item xs={12} md={6}>
     <Container  className='wrap col   auto flex' sx={{alignItems:'left',px:{sm:1},pt:{xs:2,sm:4},display:'flex'}}>
         <Typography sx={{fontWeight:400}} className='color2'>
-          ABOUT US
+        {text('ABOUT US', 'من نحن')}
+
         </Typography>
         <Typography sx={{width:'100%',maxWidth:'500px',fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className=''>
-        Welcome to True Natural Blend
+        {text('Welcome to True Natural Blend', 'مرحبًا في ترو ناتشور بليند')}
+
         </Typography>
         <Typography sx={{width:'100%',maxWidth:'500px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
-        At Truenatureblend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.
+        {text('At Truenatureblend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
+
         </Typography>
         <Btn v2 className='color' sx={{width:'100px',color:'black',mt:2,px:0}}>
-          Learn More
+        {text('Learn More', 'تعرف أكثر')}
+
         </Btn>
     </Container>
 
     </Grid>
     <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
       <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      Why Choose Truenatureblend?
+      {text('Why Choose Truenatureblend?', 'لماذا تختار ترو ناشور بليند؟')}
+
       </Typography>
       <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
-      Our supplements are made with only the finest natural ingredients, carefully selected for their purity and potency. Our products are free from harmful chemicals
+      {text('Our supplements are made with only the finest natural ingredients, carefully selected for their purity and potency. Our products are free from harmful chemicals', 'مكملاتنا مصنوعة فقط من أرقى المكونات الطبيعية، تم اختيارها بعناية بسبب نقاوتها وفعاليتها. منتجاتنا خالية من المواد الكيميائية الضارة.')}
+
         </Typography>
     </Grid>
     <Grid  xs={12}  sx={{mt:4}}
@@ -216,18 +215,24 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
                   <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-men-image-thumbnail_cXRc9c18.webp" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center text-center col ">
-                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>Organic Herbs</Typography>
+                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
+                    {text('Organic Herbs', 'أعشاب عضوية')}
+
+                    </Typography>
                     <Btn sx={{border:'none',mx:'auto'}}>
-                    SHOP NOW
+                    {text('SHOP NOW', 'تسوق الآن')}
+
                     </Btn>
                   </Box>
             </Box>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
                   <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-women-image-tumbnail_cXRc9c18.webp" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center col text-center">
-                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>Organic Herbs</Typography>
+                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>{text('Organic Herbs', 'أعشاب عضوية')}
+</Typography>
                     <Btn sx={{border:'none',mx:'auto'}}>
-                      SHOP NOW
+                    {text('SHOP NOW', 'تسوق الآن')}
+
                     </Btn>
                   </Box>
             </Box>
@@ -241,7 +246,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         <Box>
         <Typography sx={{width:'100%',maxWidth:'600px',flex:1,fontSize:{xs:'.95em',sm:'1.19em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
             
-            At Truenatureblend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment
+        {text('At Truenatureblend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
+
             </Typography>
         </Box>
         
@@ -259,13 +265,14 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
       <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
       <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
         <Typography sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
-        Our Mission
+        {text('Our Mission', 'رسالتنا')}
         </Typography>
         <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
-        Our mission at Truenatureblend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.
+        {text('Our mission at Truenatureblend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
+
         </Typography>
         <Btn sx={{mt:2,mx:'auto'}} v2>
-        Reach Us
+        {text('Reach Us', 'تواصل معنا')}
       </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>

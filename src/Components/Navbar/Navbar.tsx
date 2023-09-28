@@ -20,8 +20,9 @@ import {AiOutlineHome,AiOutlineShoppingCart} from 'react-icons/ai'
 import SearchInput from './SearchInput';
 
 import NavButtom from './NavButtom';
-import { useCartContext, useDrawerContext } from '@/context/Contexts';
+import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import Btn from '../Btn/Btn';
+import useLanguage from '@/Hooks/useLanguage';
 
 
 
@@ -51,8 +52,9 @@ export default function Navbar() {
             setLocalCart(cart)
         }
     }, [cartOpen])
+    const {text} = useLanguage()
 
-
+    const {lang,setLang} = useLangContext()
     return ( <>
      <Box
      id='navy'
@@ -134,23 +136,17 @@ export default function Navbar() {
                         className='flex right'>
                              
                         
-{/*                              
-                             <IconButton
-                            onClick={() => router.push('/')}
-                            size="large"
-                            edge="start"
-                            aria-label="menu"
+                             
+                             <Btn
+                            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
                             sx={{
                                 margin : '8px',padding:0,
                             color: 'black',
 
                             // margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
                         }}>
-                            <AiOutlineHome color='black'/>
-                        </IconButton> */}
+                            {text('العربية','English')}
+                        </Btn>
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
@@ -227,7 +223,18 @@ mobile
                     }}
                         className='flex right'>
  
- {/* <IconButton
+
+                               <Btn
+                            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+                            sx={{
+                                margin : '8px',padding:0,
+                            color: 'black',
+
+                            // margin: '0.1em',
+                        }}>
+                            {text('English','Arabic')}
+                        </Btn>
+                        <IconButton
                             onClick={() => setOpenModal(!openModal)}
                             sx={{
                             color: 'black'
@@ -235,8 +242,7 @@ mobile
 
                                 <CiSearch color='black'/>
                           
-                        </IconButton> */}
-
+                        </IconButton>
                         <IconButton
                             onClick={() => setCartOpen(!cartOpen)}
                             sx={{
