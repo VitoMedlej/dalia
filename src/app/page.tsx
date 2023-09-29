@@ -1,5 +1,5 @@
 
-"use client"
+// "use client"
 import PreLoader from "@/Components/PreLoader"
 import { server } from "@/Utils/Server"
 // import { IProduct } from "@/Types/Types"
