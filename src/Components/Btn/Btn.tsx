@@ -12,7 +12,8 @@ let style1 = {
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#ff8e00',
+      background: '#0273b5',
+      color:'white',
       transform: 'scale(1.05)',
   },
   display: 'flex',

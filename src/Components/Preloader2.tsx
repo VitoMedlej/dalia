@@ -60,14 +60,13 @@ const Preloader2 = ({data,totalPages}:any) => {
     //   })
   return (
     <Container sx={{mt:2}} disableGutters maxWidth='lg'>
-    <Box
+    {/* <Box
         sx={{
         width: '100%',
         minHeight: '100px'
     }}>
-<FilterSection setProducts={setProducts}/>
-    </Box>
-    <BreadCrumb></BreadCrumb>
+    </Box> */}
+    {/* <BreadCrumb></BreadCrumb> */}
    
 
     <Box className='flex wrap' sx={{

@@ -210,7 +210,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
       <Box/>
     
-        <HomeProductCollection  products={[{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123}]}/>
+      <HomeProductCollection  products={data.featuredProducts}/>
+
         <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='lg'>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
                   <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-men-image-thumbnail_cXRc9c18.webp" alt="" className="img" />
@@ -239,7 +240,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           
       </Container>
 
-      <HomeProductCollection  products={[{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123},{description:'',category:'abc',images:['https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-product-image-005_cXRc9c18.webp'],title:'Tongkat Ali',_id:'14152',price:123}]}/>
+      {/* <HomeProductCollection  products={data}/> */}
 
 
       <Container  className='flex center wrap items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>

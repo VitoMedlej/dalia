@@ -148,7 +148,7 @@ export default function Navbar() {
                             {text('العربية','English')}
                         </Btn>
                         <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
+                            onClick={() => router.push('/collection/products')}
                             sx={{
                                 margin : '8px',padding:0,
                             color: 'black'
@@ -244,7 +244,7 @@ mobile
                           
                         </IconButton>
                         <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
+                        onClick={() => router.push('/collection/products')}
                             sx={{
                             color: 'black'
                         }}>

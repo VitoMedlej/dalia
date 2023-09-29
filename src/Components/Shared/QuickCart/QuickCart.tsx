@@ -116,8 +116,7 @@ export default function TemporaryDrawer() {
                             width:'100%',
                             mx:1
                     ,borderRadius:25,
-                    border:'1px solid #ff9715',
-                    color:'#ff9715',
+                   
                     background:'none',
                           my:1,
                             }}

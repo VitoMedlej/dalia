@@ -68,9 +68,8 @@ const Index = () => {
   return (
      
     
-      <Box sx={{mt:8}}>
+      <Box sx={{mt:4}}>
  
-      <BreadCrumb  />
 {!loading && data?.product !== undefined && data?.product?.title ?  <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
        <Grid  item xs={12}  md={7} >
          <ProductImageCarousel images={data?.product?.images}/>
