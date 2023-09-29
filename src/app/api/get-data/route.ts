@@ -32,8 +32,9 @@ try {
     await featuredProductsQuery.forEach((doc : any) => {
 
         featuredProducts.push(doc)
-
+        
     })
+    console.log('featuredProducts: ', featuredProducts);
 
     // if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
         if (!featuredProducts || featuredProducts.length < 0 ) {
