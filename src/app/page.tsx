@@ -53,7 +53,7 @@ try {
        )
 }
 catch (e) {
-  console.log('e home: ', e);
+  console.log('e main home: ', e);
   return (
     <PreLoader resImages={null} data={ null}/>
    )
