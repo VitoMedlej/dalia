@@ -76,7 +76,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     });
 }
 catch (e) {
-    console.log('e fetch-all: ', e);
+    console.log('e fetch-page: ', e);
     return NextResponse.json({
         success: false,
         data: {

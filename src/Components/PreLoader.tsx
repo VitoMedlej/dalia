@@ -210,7 +210,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
       <Box/>
     
-      <HomeProductCollection  products={data.featuredProducts}/>
+      <HomeProductCollection  products={data?.featuredProducts}/>
 
         <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='lg'>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
