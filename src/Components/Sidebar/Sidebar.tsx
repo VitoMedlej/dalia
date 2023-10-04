@@ -76,7 +76,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           <ListItem
           sx={{fontWeight:600}}
 
-          onClick={()=>{router.push(`/new-arrivals/products`); toggleDrawer(false)}}
+          onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
               <ListItemButton sx={{py:1}} >
             
@@ -87,6 +87,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   
 
           </ListItem>
+          
 
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
@@ -144,7 +145,7 @@ key={i}>
         </AccordionDetails>
       </Accordion> */}
 
-            <NestedAccordion toggleDrawer={setOpen}/>
+            {/* <NestedAccordion toggleDrawer={setOpen}/> */}
 
       {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
