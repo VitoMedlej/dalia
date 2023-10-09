@@ -15,7 +15,7 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img : `https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-hero-image-bg_cXRc9c18.webp`},
+        {img : `https://clickhowto.com/wp-content/uploads/2017/05/Natural-products.jpg`},
        
      ])
     useEffect(() => {

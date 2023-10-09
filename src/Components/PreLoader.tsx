@@ -48,7 +48,7 @@ PreLoader = ({data,resImages}:any) => {
     <Grid  sx={{background:'#f4f8fd',width:'100%',py:8}} container>
     <Grid  maxWidth='lg' item xs={12} md={6}>
       <Box sx={{height:'500px',maxWidth:'450px'}} className='auto'>
-        <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-home-about-image_cXRc9c18.webp" alt="" className="img" />
+        <img src="https://th.bing.com/th?id=OIP.-vo-9U4aOd2GzWcsqpXJfAHaJQ&w=423&h=579&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="" className="img" />
       </Box>
     </Grid>
     <Grid maxWidth='lg' item xs={12} md={6}>
@@ -253,7 +253,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         </Box>
         
         <Box sx={{ width:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
-          <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-recycled-circle-iamge_cXRc9c18.webp" alt="" className="img rounded" />
+          <img src="https://th.bing.com/th?id=OIP.F5aWTvziirjG0Wmz6-DxHQHaNK&w=187&h=333&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="" className="img rounded" />
         </Box>
         </Container>       
     {/* <FullscreenPoster/> */}
