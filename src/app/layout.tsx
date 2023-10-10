@@ -11,7 +11,7 @@ export const metadata = {
     title: 'truenatureblend - Shop Natural Meds in Lebanon',
     description: `Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.`,
     icons: {
-        icon: `https://ucarecdn.com/46a52749-a6f7-40f1-932c-d7a98074c48c/WhatsAppImage20230922at1306531.jpeg`
+        icon: `https://ucarecdn.com/42db8a52-041f-4b79-8bfb-5c10a3a3c4fd/truenatureblendgreen011.jpg`
     }
 }
 

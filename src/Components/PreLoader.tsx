@@ -88,9 +88,9 @@ PreLoader = ({data,resImages}:any) => {
 
       {textsArray.map(i=>{
         return <Box sx={{borderBottom:'1px solid white',width:{xs:'98%',sm:'200px',md:'48%'},maxWidth:'500px',mt:2.5}} key={i.id}>
-          <Typography className='color3'>
+          {/* <Typography className='color3'>
             .0{i.id}
-          </Typography>
+          </Typography> */}
           <Typography className='color2' sx={{fontSize:'1.4em',fontWeight:500}}>
             {i.title}
           </Typography>
@@ -214,10 +214,10 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
         <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='lg'>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
-                  <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-men-image-thumbnail_cXRc9c18.webp" alt="" className="img" />
+                  <img src="https://ucarecdn.com/4fc6fdc2-a720-40dd-8469-80966a92a759/purplemushroom.webp" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center text-center col ">
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
-                    {text('Organic Herbs', 'أعشاب عضوية')}
+                    {text('Medicinal Mushroom', 'الفطر الطبي')}
 
                     </Typography>
                     <Btn sx={{border:'none',mx:'auto'}}>
@@ -227,7 +227,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                   </Box>
             </Box>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
-                  <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-shop-women-image-tumbnail_cXRc9c18.webp" alt="" className="img" />
+                  <img src="https://ksa-wats.com/wp-content/uploads/2018/12/11-1.jpg" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center col text-center">
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>{text('Organic Herbs', 'أعشاب عضوية')}
 </Typography>
@@ -252,7 +252,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
             </Typography>
         </Box>
         
-        <Box sx={{ width:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
+        <Box sx={{ width:{xs:'200px',sm:'200px'},height:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
           <img src="https://th.bing.com/th?id=OIP.F5aWTvziirjG0Wmz6-DxHQHaNK&w=187&h=333&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="" className="img rounded" />
         </Box>
         </Container>       
@@ -277,7 +277,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
       </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>
-      <img src="https://10web-site.ai/25/wp-content/uploads/sites/28/2023/09/recycled-shoe-store-cta-image-bg_cXRc9c18.webp" alt="" className="img" />
+      <img src="https://th.bing.com/th/id/R.232188324515c59892fe6bdb1524bc11?rik=rqi5%2b%2fybk0ASHA&pid=ImgRaw&r=0" alt="" className="img" />
  
       </Box>
 
