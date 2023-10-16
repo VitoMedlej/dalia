@@ -9,8 +9,20 @@ import {AiOutlineArrowUp} from 'react-icons/ai';
 
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
-import SMicons from '../SMicons/SMicons';
-import NestedAccordion from './NestedAccordion';
+// import SMicons from '../SMicons/SMicons';
+// import NestedAccordion from './NestedAccordion';
+
+
+const cates = [
+  `Lions Mane`,
+`MACA`,
+`Bacopa Monnieri `,
+`Passion Flower `,
+`GABA`,
+`Taurine`,
+`L arginine`,
+`L Lysine`,
+]
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
@@ -88,7 +100,24 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
           </ListItem>
           
+    {
+      cates?.map(i=>{
+        return   <ListItem key={i}
+        sx={{fontWeight:600}}
 
+        onClick={()=>{router.push(`/${encodeURIComponent(i.toLocaleLowerCase())}/products`); toggleDrawer(false)}}
+         disablePadding>
+            <ListItemButton sx={{py:1}} >
+          
+                <Typography sx={{fontWeight:600}}>
+           {i}
+          </Typography>
+          </ListItemButton>
+
+
+        </ListItem>
+      })
+    }
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
                   <AccordionSummary

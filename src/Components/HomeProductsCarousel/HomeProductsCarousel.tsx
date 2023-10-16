@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
+import { useRouter } from 'next/router'
 const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
@@ -16,7 +17,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     }>>
 }) => {
     
-    
+    const router = useRouter()
 
     return (
         <Box
@@ -45,7 +46,8 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
               {Collectiontitle}
             </Typography>
             
-            <Btn>
+            <Btn
+            onClick={()=>router.push('/collection/products')}>
                 Shop All
             </Btn>
             </Box>

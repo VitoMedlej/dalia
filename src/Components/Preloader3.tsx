@@ -86,20 +86,29 @@ const Preloader3 = ({res}:{res:any}) => {
                                 transform:'translateY(-50%)',
                                 zIndex:123456,
                                 position:'absolute'}}>
-                                <Typography sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.65em',lg:'4em'},fontWeight:900}}>
+                                <Typography 
+                                
+                                sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.65em',lg:'4em'},fontWeight:900}}>
                                 {text('Experience the Power of Nature', 'استشعر قوة الطبيعة')}
                                 </Typography>
-                                <Typography sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
+                                <Typography 
+                                sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
                                 {text('Welcome to Truenatureblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion\'s mane mushroom, and more.', 'مرحبًا بك في ترو ناشور بليند، متجرك الشامل لجميع احتياجات صحتك وعافيتك. اكتشف تشكيلتنا الرائعة من المكملات الطبيعية الفاخرة، بما في ذلك الأشواغاندا، وتونجكات علي، وفطر كورديسيبس، وفطر رأس الأسد، والمزيد.')}
 
                                 </Typography>
                                 <Box className="flex">
 
-                                <Btn className='bg white borderColor' sx={{mt:3}}>
+                                <Btn
+                                onClick={()=>router.push('/collection/products')}
+                                
+                                className='bg white borderColor' sx={{mt:3}}>
                                 {text('Shop Now', 'تسوق الآن')}
 
                                 </Btn>
-                                <Btn  v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
+                                <Btn 
+                                onClick={()=>router.push('/about')}
+                                
+                                v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
                                 {text('Discover', 'اكتشف')}
  
                                 </Btn>

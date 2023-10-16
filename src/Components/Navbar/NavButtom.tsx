@@ -3,8 +3,6 @@ import { Box, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 // import MenuHover from './MenuHover'
-import { categories } from './Navbar'
-import MenuHover from './MenuHover'
 
 export const catsSubcategories = [
     "Food",
@@ -89,19 +87,7 @@ Collections
 </Typography>
 </Link>
 
-<Link className='black decor-none ' href={`/collection/products`}>
 
-<Typography 
-className=' cursor center flex gap1 black decor-none captialize'
-id="button"
-component='p' sx={{width:'max-content',
-mx:'1em',
-alignItems: 'center',
-
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Shop Now
-</Typography>
-</Link>
 
 <Link className='black decor-none ' href={`/about`}>
 
@@ -113,7 +99,7 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Reach Us
+About Us
 </Typography>
 </Link>
 
