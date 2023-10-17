@@ -48,7 +48,7 @@ PreLoader = ({data,resImages}:any) => {
     <Grid  sx={{background:'#f4f8fd',width:'100%',py:8}} container>
     <Grid  maxWidth='lg' item xs={12} md={6}>
       <Box sx={{height:'500px',maxWidth:'450px'}} className='auto'>
-        <img src="https://th.bing.com/th?id=OIP.-vo-9U4aOd2GzWcsqpXJfAHaJQ&w=423&h=579&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="" className="img" />
+        <img src="https://ucarecdn.com/c9a20ac1-a815-4a27-ac99-9f896cc6f0bd/doctors.jpg" alt="" className="img" />
       </Box>
     </Grid>
     <Grid maxWidth='lg' item xs={12} md={6}>
@@ -263,7 +263,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         </Box>
         
         <Box sx={{ width:{xs:'200px',sm:'200px'},height:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
-          <img src="https://ucarecdn.com/c9a20ac1-a815-4a27-ac99-9f896cc6f0bd/-/preview/500x500/-/quality/smart_retina/-/format/auto/" alt="" className="img rounded" />
+          <img src="https://funmauj.b-cdn.net/test/928368.jpg" alt="" className="img rounded" />
         </Box>
         </Container>       
     {/* <FullscreenPoster/> */}

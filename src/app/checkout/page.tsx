@@ -43,7 +43,6 @@ export default function Checkout() {
   
   useEffect(() => {
     const products = loadState('sgh2j40-tlsit')
-    console.log('products: ', products);
     
     if (products) {
       setCart(products)

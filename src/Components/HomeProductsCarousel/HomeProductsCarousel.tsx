@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
