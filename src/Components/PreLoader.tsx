@@ -1,13 +1,13 @@
 "use client"
 import React from 'react'
 import { Box,  Container, Grid, Typography } from "@mui/material"
-import ContactSection from './ContactSection/ContactSection'
+// import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
-import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
+// import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
-import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
+// import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
 import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'

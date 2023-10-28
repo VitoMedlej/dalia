@@ -18,7 +18,10 @@ const Preloader3 = ({res}:{res:any}) => {
         {img : `https://clickhowto.com/wp-content/uploads/2017/05/Natural-products.jpg`},
        
      ])
-     
+     const redir = () => {
+        router.push('/collection/products')
+        console.log('abc')
+     }
     useEffect(() => {
         console.log('res: ', res);
     if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
@@ -64,7 +67,7 @@ const Preloader3 = ({res}:{res:any}) => {
                 {imgs.map((item) => {
     
                     return <SwiperSlide 
-                        onClick={() => router.push('/')}
+                     
                     className='ztop  ' key={item.img}>
                         <Box
                             sx={{
@@ -75,7 +78,7 @@ const Preloader3 = ({res}:{res:any}) => {
                         <Container className='auto' sx={{width:'100%'}} maxWidth='lg' disableGutters>
                             
                       
-                            <Box sx={{top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.43}} className="absolute">
+                            <Box sx={{pointerEvents:'none',top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.43}} className="absolute">
 
                             </Box>
                             <Box 
@@ -100,7 +103,7 @@ const Preloader3 = ({res}:{res:any}) => {
                                 <Box className="flex">
 
                                 <Btn
-                                onClick={()=>router.push('/collection/products')}
+                                onClick={()=>redir()}
                                 
                                 className='bg white borderColor' sx={{mt:3}}>
                                 {text('Shop Now', 'تسوق الآن')}
@@ -118,7 +121,7 @@ const Preloader3 = ({res}:{res:any}) => {
                             </Container>
                             <img
             
-                                className={`img pointer  
+                                className={`img   
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}
