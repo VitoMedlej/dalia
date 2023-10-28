@@ -18,6 +18,7 @@ const Preloader3 = ({res}:{res:any}) => {
         {img : `https://clickhowto.com/wp-content/uploads/2017/05/Natural-products.jpg`},
        
      ])
+     
     useEffect(() => {
         console.log('res: ', res);
     if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
@@ -106,7 +107,7 @@ const Preloader3 = ({res}:{res:any}) => {
 
                                 </Btn>
                                 <Btn 
-                                onClick={()=>router.push('/about')}
+                                onClick={()=>{router.push('/about')}}
                                 
                                 v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
                                 {text('Discover', 'اكتشف')}

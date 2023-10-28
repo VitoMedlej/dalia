@@ -8,6 +8,7 @@ import FilterSection from './CollectionPage/FilterSection/FilterSection'
 import { IProduct } from '@/Types/Types'
 import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
+import SearchInput from './Navbar/SearchInput'
 
 const Preloader2 = ({data,totalPages}:any) => {
    
@@ -66,6 +67,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         minHeight: '100px'
     }}>
     </Box> */}
+    <SearchInput/>
     {/* <BreadCrumb></BreadCrumb> */}
    
 
