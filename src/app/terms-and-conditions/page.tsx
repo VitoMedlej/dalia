@@ -39,7 +39,7 @@ const Index = () => {
             }
         </Box>
         <Box>
-            <Link href='/info/privacy-policy'>
+            <Link href='/privacy-policy'>
                 Privacy Policy
             </Link>
         </Box>

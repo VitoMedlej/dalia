@@ -25,7 +25,7 @@ const Index = () => {
             }
         </Box>
         <Box>
-            <Link href='/info/terms-and-conditions'>
+            <Link href='/terms-and-conditions'>
                 Terms and conditions
             </Link>
         </Box>
