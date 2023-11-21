@@ -9,7 +9,7 @@ import {IoIosSearch} from 'react-icons/io'
 import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 // 
-export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
+export default function SearchInput({sx,mobile,handleSubmit}:{mobile?:boolean,sx?:any,handleSubmit?:any}) {
   const router = useRouter()
   const [value,
     setValue] = React.useState('');
@@ -23,7 +23,7 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
 
   return (
     <Paper
-    onSubmit={(e)=>handleSearch(e)}
+    onSubmit={(e)=>handleSubmit ? handleSubmit() : handleSearch(e)}
       component="form"
       className='searchinput '
       sx={{
@@ -39,7 +39,9 @@ export default function SearchInput({sx,mobile}:{mobile?:boolean,sx?:any}) {
         border:'1px solid #00000036',
         borderRadius:'4px',
         
-         display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'}, alignItems: 'center',maxWidth:{xs:'100%',md:'600px',lg:'60%'}
+        //  display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
+         display:'flex',
+         alignItems: 'center',maxWidth:{xs:'100%',md:'600px',lg:'60%'}
          ,...sx
         }}
     >

@@ -21,13 +21,13 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         // let val = (event.target as HTMLInputElement).value;
         setOptions({...options,category:val})
       };
-    const handlePrice = (value:number[]) => {
-        // let price = ;
-        setOptions({...options,price:value})
-    }
-    const handleSort = (val:string) => {
-        setOptions({...options,sort:val})
-    }
+    // const handlePrice = (value:number[]) => {
+    //     // let price = ;
+    //     setOptions({...options,price:value})
+    // }
+    // const handleSort = (val:string) => {
+    //     setOptions({...options,sort:val})
+    // }
     const filters = [
         // {
         //     title: 'Price',
@@ -40,11 +40,22 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         // },
          {
              comp: <SelectOneForm
+             sx={{maxWidth:'150px'}}
              title= 'Category'
             List={
             
-              [  'collection',
-                ...categories]
+                [
+                    'collection',
+                    `Lions Mane`,
+                  `MACA`,
+                  `Bacopa Monnieri `,
+                  `Passion Flower `,
+                  `GABA`,
+                  `Taurine`,
+                  `L arginine`,
+                  `L Lysine`,
+            'Cordyceps','Tongkat-ali','Ashwagandha'
+                  ]
              
            }
             value={options.category}
@@ -54,20 +65,20 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             />
         },
 
-        {
-            comp: <SelectOneForm
-            title= 'Sort By'
-            List={[
-                'latest',
-                'highestPrice',
-                'lowestPrice'
-            ]
+        // {
+        //     comp: <SelectOneForm
+        //     title= 'Sort By'
+        //     List={[
+        //         'latest',
+        //         'highestPrice',
+        //         'lowestPrice'
+        //     ]
 
-             }
-            value={options.sort}
-            setValue={handleSort}
-           />
-        },
+        //      }
+        //     value={options.sort}
+        //     setValue={handleSort}
+        //    />
+        // },
         // {
         //     title: 'Sort By',
 
@@ -91,7 +102,7 @@ return  <Box
 className='flex  center items-center'
                     key={index}
                     sx={{
-                  
+                    
                     boxShadow: 'none'
                 }}>
                 
@@ -102,8 +113,11 @@ className='flex  center items-center'
                  
               
             })}
-               <Btn onClick={()=>handleSubmit()}>
-                        Submit
+               <Btn sx={{px:0,color:'green',py:0,border:'none'}} onClick={()=>handleSubmit()}>
+                        Search
+                    </Btn>
+                    <Btn sx={{px:0,py:0,border:'none',color:'red'}}  onClick={()=>handleSubmit(true)}>
+                        Reset
                     </Btn>
         </Box>
     );

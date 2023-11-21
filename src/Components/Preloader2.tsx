@@ -47,6 +47,25 @@ const Preloader2 = ({data,totalPages}:any) => {
             }
 
       };
+      const [options,setOptions] = useState({
+          price : [1,100000],
+          sort : 'latest',
+          category : 'collection',
+          // query : '',
+          
+      })
+      const handleSubmit = async (reset?:boolean) => {
+        if (reset) {
+           return router.push('/collection/products')
+        }
+        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options?.category || 'collection'}`  ;
+        const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
+        const res = await req.json()
+        // if () {
+
+            setProducts(res?.data?.products ? res?.data?.products : [])
+        // }
+    }
   
     // const handlePagination = async (val:number) => {
     //     // router.replace(`${server}/${category ?category : 'collection'}/products?page=${val ? val : 0}`)
@@ -59,15 +78,21 @@ const Preloader2 = ({data,totalPages}:any) => {
     //     products : [],
        
     //   })
+ 
   return (
     <Container sx={{mt:2}} disableGutters maxWidth='lg'>
-    {/* <Box
+    <Box
+    className='flex  items-center wrap'
         sx={{
+        mb:4,
         width: '100%',
         minHeight: '100px'
     }}>
-    </Box> */}
-    <SearchInput/>
+    <SearchInput 
+    // handleSubmit={handleSubmit}
+    sx={{mx:1,mb:0,width:{xs:'95%',sm:'250px'},display:'flex !Important'}} mobile/>
+    <FilterSection handleSubmit={handleSubmit} options={options} setOptions={setOptions} setProducts={setProducts}/>
+    </Box>
     {/* <BreadCrumb></BreadCrumb> */}
    
 
@@ -76,6 +101,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
+            width={'45%'}
             key={i?._id}
             inStock={i?.inStock 
             }

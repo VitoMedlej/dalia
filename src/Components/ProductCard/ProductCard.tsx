@@ -41,11 +41,11 @@ const ProductCard = ({
             py: 1,
             margin: '0em auto',
             my:1,
-            minWidth: {xs:'95%',sm:'30%'},
+            minWidth: {sm:'30%'},
             width: width
                 ? width
                 : {
-                    xs: '99%',
+                    xs: '48%',
                     sm: '32%',
                 }
             
@@ -74,7 +74,7 @@ const ProductCard = ({
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'1.1em',sm:'1.35em'},
+                    fontSize: {xs:'.8em',sm:'1.35em'},
                     fontWeight: '400'
                 }}>
                     {title}

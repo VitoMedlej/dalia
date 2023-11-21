@@ -148,6 +148,15 @@ export default function Navbar() {
                             {text('العربية','English')}
                         </Btn>
                         <IconButton
+                            onClick={() => setOpenModal(!openModal)}
+                            sx={{
+                            color: 'black'
+                        }}>
+
+                                <CiSearch color='black'/>
+                          
+                        </IconButton>
+                        <IconButton
                             onClick={() => router.push('/collection/products')}
                             sx={{
                                 margin : '8px',padding:0,
@@ -170,9 +179,9 @@ export default function Navbar() {
                             margin : '8px',padding:0,
                             color: 'black',
                             // margin: '0.1em',
-                            display: {
-                                md: 'none'
-                            }
+                            // display: {
+                            //     md: 'none'
+                            // }
                         }}>
                             <IoIosMenu color='black'/>
                         </IconButton>
@@ -194,6 +203,7 @@ export default function Navbar() {
 
                 </Box>
 <NavButtom/>
+
 
   {/* <SearchInput/> */}
   {/* <SearchInput
@@ -243,6 +253,7 @@ mobile
                                 <CiSearch color='black'/>
                           
                         </IconButton>
+
                         <IconButton
                         onClick={() => router.push('/collection/products')}
                             sx={{
@@ -253,6 +264,7 @@ mobile
                             {/* </Badge> */}
                           
                             </IconButton>
+
 
 
 

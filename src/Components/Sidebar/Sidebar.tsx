@@ -13,16 +13,6 @@ import {GrFormClose} from 'react-icons/gr'
 // import NestedAccordion from './NestedAccordion';
 
 
-const cates = [
-  `Lions Mane`,
-`MACA`,
-`Bacopa Monnieri `,
-`Passion Flower `,
-`GABA`,
-`Taurine`,
-`L arginine`,
-`L Lysine`,
-]
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
