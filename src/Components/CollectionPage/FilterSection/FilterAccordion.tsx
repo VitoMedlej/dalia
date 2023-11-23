@@ -45,7 +45,6 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             List={
             
                 [
-                    'collection',
                     `Lions Mane`,
                   `MACA`,
                   `Bacopa Monnieri `,
@@ -54,6 +53,8 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                   `Taurine`,
                   `L arginine`,
                   `L Lysine`,
+                  'Organic Herbs',
+                  'Mushrooms',
             'Cordyceps','Tongkat-ali','Ashwagandha'
                   ]
              
