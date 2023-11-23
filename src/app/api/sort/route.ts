@@ -72,13 +72,13 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
       $or: [
           { title: { $regex: search, $options: 'i' } },
           { description: { $regex: search, $options: 'i' } },
-          { category: { $regex: search, $options: 'i' } }
+          { type: { $regex: search, $options: 'i' } }
       ]
   }) :
     await ProductsCollection.aggregate([
         {
           $match: filterByCate && filterByCate !== 'null' && filterByCate !== null
-            ? { category: filterByCate }
+            ? { type: filterByCate }
             : {}
         },
         {
