@@ -91,19 +91,20 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           </ListItem>
           
     {
-      [
-        `Lions Mane`,
-      `MACA`,
-      `Bacopa Monnieri `,
-      `Passion Flower `,
-      `GABA`,
-      `Taurine`,
-      `L arginine`,
-      `L Lysine`,
-      'Organic Herbs',
-      'Mushrooms',
+            [
+              'Collection',
+      `Lions Mane`,
+    `MACA`,
+    `Bacopa Monnieri `,
+    `Passion Flower `,
+    `GABA`,
+    `Taurine`,
+    `L arginine`,
+    `L Lysine`,
+    'Organic Herbs',
+    'Mushrooms',
 'Cordyceps','Tongkat-ali','Ashwagandha'
-      ]
+    ]
 .map(i=>{
         return   <ListItem key={i}
         sx={{fontWeight:600}}

@@ -44,19 +44,20 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              title= 'Category'
             List={
             
-                [
-                    `Lions Mane`,
-                  `MACA`,
-                  `Bacopa Monnieri `,
-                  `Passion Flower `,
-                  `GABA`,
-                  `Taurine`,
-                  `L arginine`,
-                  `L Lysine`,
-                  'Organic Herbs',
-                  'Mushrooms',
-            'Cordyceps','Tongkat-ali','Ashwagandha'
-                  ]
+               [
+                'Collection',
+        `Lions Mane`,
+      `MACA`,
+      `Bacopa Monnieri `,
+      `Passion Flower `,
+      `GABA`,
+      `Taurine`,
+      `L arginine`,
+      `L Lysine`,
+      'Organic Herbs',
+      'Mushrooms',
+'Cordyceps','Tongkat-ali','Ashwagandha'
+      ]
              
            }
             value={options.category}
