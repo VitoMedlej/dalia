@@ -64,8 +64,15 @@ const Preloader2 = ({data,totalPages}:any) => {
         
             
         })
+        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${'collection'}`  ;
+        const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
+        const res = await req.json()
+        // if () {
+
+            setProducts(res?.data?.products ? res?.data?.products : [])
+            return
     }
-        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options?.category || 'collection'}`  ;
+        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options?.category.toLowerCase() || 'collection'}`  ;
         const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
         // if () {

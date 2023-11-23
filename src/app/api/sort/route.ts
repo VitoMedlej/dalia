@@ -58,7 +58,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
           default:
             sortCriteria = {_id : -1};
         }
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByCate = !category || category?.toLocaleLowerCase() === 'collection' || category?.toLocaleLowerCase() === 'category' ? null : `${category}`.toLocaleLowerCase()
     const ProductsCollection = await client
         .db("NATURE")
         .collection("Products");

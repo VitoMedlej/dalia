@@ -45,7 +45,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             List={
             
                [
-                'Collection',
+                'collection',
         `Lions Mane`,
       `MACA`,
       `Bacopa Monnieri `,
@@ -115,10 +115,10 @@ className='flex  center items-center'
                  
               
             })}
-               <Btn sx={{px:0,color:'green',py:0,border:'none'}} onClick={()=>handleSubmit()}>
+               <Btn sx={{px:0,color:'green',py:0,':hover':{background:'none'},border:'none'}} onClick={()=>handleSubmit()}>
                         Search
                     </Btn>
-                    <Btn sx={{px:0,py:0,border:'none',color:'red'}}  onClick={()=>handleSubmit(true)}>
+                    <Btn sx={{px:0,py:0,border:'none',color:'red',':hover':{background:'none'}}}  onClick={()=>handleSubmit(true)}>
                         Reset
                     </Btn>
         </Box>
