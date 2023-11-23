@@ -26,7 +26,7 @@ const ProductCard = ({
     price: number,
     images: string[],
     category: string,
-    width?: string | number
+    width?: string | number | any,
     height?: string | number
 }) => {
     const router = useRouter()

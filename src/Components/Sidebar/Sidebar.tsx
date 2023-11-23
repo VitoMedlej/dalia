@@ -100,6 +100,8 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       `Taurine`,
       `L arginine`,
       `L Lysine`,
+      'Organic Herbs',
+      'Mushrooms',
 'Cordyceps','Tongkat-ali','Ashwagandha'
       ]
 .map(i=>{

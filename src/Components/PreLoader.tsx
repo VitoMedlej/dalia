@@ -224,7 +224,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
                     </Typography>
                     <Btn
-        onClick={()=>router.push('/collection/products')}
+        onClick={()=>router.push('/mushrooms/products')}
                     
                     sx={{border:'none',mx:'auto'}}>
                     {text('SHOP NOW', 'تسوق الآن')}
@@ -238,7 +238,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>{text('Organic Herbs', 'أعشاب عضوية')}
 </Typography>
                     <Btn
-            onClick={()=>router.push('/collection/products')}
+            onClick={()=>router.push('/organic herbs/products')}
 
                     
                     sx={{border:'none',mx:'auto'}}>

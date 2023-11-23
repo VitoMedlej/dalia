@@ -56,8 +56,15 @@ const Preloader2 = ({data,totalPages}:any) => {
       })
       const handleSubmit = async (reset?:boolean) => {
         if (reset) {
-           return router.push('/collection/products')
-        }
+        //    return router.push('/collection/products')
+        setOptions({
+            price : [1,100000],
+            sort : 'latest',
+            category : 'collection',
+        
+            
+        })
+    }
         const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options?.category || 'collection'}`  ;
         const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
@@ -101,7 +108,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
-            width={'45%'}
+            width={{xs:'45%',sm:'32%'}}
             key={i?._id}
             inStock={i?.inStock 
             }
