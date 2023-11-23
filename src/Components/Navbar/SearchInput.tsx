@@ -16,9 +16,9 @@ export default function SearchInput({sx,mobile,handleSubmit}:{mobile?:boolean,sx
     const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
         e.preventDefault()
         console.log('q: ', value);
-        if (value.length > 2) {
+        // if (value.length > 2) {
             router.push(`/collection/products?limit=80&search=${value}`)
-        }
+        // }
     }
 
   return (

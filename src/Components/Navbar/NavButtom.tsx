@@ -86,6 +86,45 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Collections
 </Typography>
 </Link>
+<Link className='black decor-none ' href={`/Mushrooms/products`}>
+
+<Typography 
+className=' cursor center flex gap1 black decor-none captialize'
+id="button"
+component='p' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+Mushrooms
+</Typography>
+</Link>
+<Link className='black decor-none ' href={`/organic herbs/products`}>
+
+<Typography 
+className=' cursor center flex gap1 black decor-none captialize'
+id="button"
+component='p' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+Organic Herbs
+</Typography>
+</Link>
+<Link className='black decor-none ' href={`/cordyceps/products`}>
+
+<Typography 
+className=' cursor center flex gap1 black decor-none captialize'
+id="button"
+component='p' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+Cordyceps
+</Typography>
+</Link>
 
 
 
