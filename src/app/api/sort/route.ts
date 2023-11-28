@@ -36,6 +36,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
     const category = nextUrl.searchParams.get('category');
     const search = nextUrl.searchParams.get('search') ;
     const sort = nextUrl.searchParams.get('sort') || 'latest';
+    const type = nextUrl.searchParams.get('type')
    
             // let page = 0;
             // let category = null
@@ -59,6 +60,8 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
             sortCriteria = {_id : -1};
         }
         let filterByCate = !category || category?.toLocaleLowerCase() === 'collection' || category?.toLocaleLowerCase() === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByType = !type || type === null || type == 'null' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
+        
     const ProductsCollection = await client
         .db("NATURE")
         .collection("Products");
@@ -66,33 +69,77 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
 
 
    
-    const ProductsQuery = 
-    
-    search && search?.length > 1 ?      await ProductsCollection.find({
+    const ProductsQuery =  search && search?.length > 1 ?  
+        await ProductsCollection.find({
       $or: [
           { title: { $regex: search, $options: 'i' } },
-          { description: { $regex: search, $options: 'i' } },
+          // { description: { $regex: search, $options: 'i' } },
           { type: { $regex: search, $options: 'i' } }
+          ,{ category: { $regex: search, $options: 'i' } }
       ]
   }) :
-    await ProductsCollection.aggregate([
-        {
-          $match: filterByCate && filterByCate !== 'null' && filterByCate !== null
-            ? { type: filterByCate }
-            : {}
-        },
-        {
-          $addFields: {
-            convertedPrice: { $toDouble: '$price' }
-          }
-        },
-        {
-          $sort: sortCriteria
-        },
-        {
-          $limit: 50
-        }
-      ]);
+  filterByCate && filterByType ?
+  await ProductsCollection.aggregate([
+    {
+      $match: filterByType && filterByCate && filterByCate !== 'null' && filterByCate !== null
+        ? { category: filterByCate , type : filterByType }
+        : {}
+    },
+    {
+      $addFields: {
+        convertedPrice: { $toDouble: '$price' }
+      }
+    },
+    {
+      $sort: sortCriteria
+    },
+    {
+      $limit: 50
+    }
+  ])
+  :
+  filterByType ? await ProductsCollection.aggregate([
+    {
+      $match: filterByType && filterByType !== 'null' && filterByType !== null
+        ? { type:  filterByType }
+        : {}
+    },
+    {
+      $addFields: {
+        convertedPrice: { $toDouble: '$price' }
+      }
+    },
+    {
+      $sort: sortCriteria
+    },
+    {
+      $limit: 50
+    }
+  ])
+
+
+  :
+  await ProductsCollection.aggregate([
+    {
+      $match: filterByCate && filterByCate !== 'null' && filterByCate !== null
+        ? { category: filterByCate , type : filterByType }
+        : {}
+    },
+    {
+      $addFields: {
+        convertedPrice: { $toDouble: '$price' }
+      }
+    },
+    {
+      $sort: sortCriteria
+    },
+    {
+      $limit: 50
+    }
+  ])
+
+
+ 
 
     await ProductsQuery.forEach((doc : any) => {
 

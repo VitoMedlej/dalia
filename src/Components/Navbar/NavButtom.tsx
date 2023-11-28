@@ -112,7 +112,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Organic Herbs
 </Typography>
 </Link>
-<Link className='black decor-none ' href={`/cordyceps/products`}>
+<Link className='black decor-none ' href={`/natural supplements/products`}>
 
 <Typography 
 className=' cursor center flex gap1 black decor-none captialize'
@@ -122,7 +122,7 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Cordyceps
+Natural Supplements
 </Typography>
 </Link>
 

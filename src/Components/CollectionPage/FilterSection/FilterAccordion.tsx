@@ -21,6 +21,11 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         // let val = (event.target as HTMLInputElement).value;
         setOptions({...options,category:val})
       };
+      const handleTypeChange = (val: string) => {
+        // setValue(();
+        // let val = (event.target as HTMLInputElement).value;
+        setOptions({...options,type:val})
+      };
     // const handlePrice = (value:number[]) => {
     //     // let price = ;
     //     setOptions({...options,price:value})
@@ -46,17 +51,9 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             
                [
                 'collection',
-        `Lions Mane`,
-      `MACA`,
-      `Bacopa Monnieri `,
-      `Passion Flower `,
-      `GABA`,
-      `Taurine`,
-      `L arginine`,
-      `L Lysine`,
-      'Organic Herbs',
-      'Mushrooms',
-'Cordyceps','Tongkat-ali','Ashwagandha'
+                `mushrooms`,
+                `organic herbs`,
+                `natural supplements`
       ]
              
            }
@@ -66,6 +63,34 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                 }
             />
         },
+        {
+            comp: <SelectOneForm
+            sx={{maxWidth:'150px'}}
+            title= 'Type'
+           List={
+           
+              [
+               'collection',
+       `Lions Mane`,
+     `MACA`,
+     `Bacopa Monnieri `,
+     `Passion Flower `,
+     `GABA`,
+     `Taurine`,
+     `L arginine`,
+     `L Lysine`,
+     'Organic Herbs',
+     'Mushrooms',
+'Cordyceps','Tongkat-ali','Ashwagandha'
+     ]
+            
+          }
+           value={options?.type}
+           setValue={
+            handleTypeChange
+               }
+           />
+       },
 
         // {
         //     comp: <SelectOneForm

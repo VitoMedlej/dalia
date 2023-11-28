@@ -10,8 +10,8 @@ import { Box } from '@mui/material';
 
 const FAQs = [
   {
-    "Q": "What is Truenaturalblend and what do you sell?",
-    "A": "Truenaturalblend is an online store devoted to providing natural supplements that promote health and wellness. Our products include premium-quality organic herbs and mushrooms such as ashwagandha, tongkat ali, cordyceps, lion’s mane, and more."
+    "Q": "What is True Nature Blend and what do you sell?",
+    "A": "True Nature Blend is an online store devoted to providing natural supplements that promote health and wellness. Our products include premium-quality organic herbs and mushrooms such as ashwagandha, tongkat ali, cordyceps, lion’s mane, and more."
   },
   {
     "Q": "Are your products organic?",
@@ -19,11 +19,11 @@ const FAQs = [
   },
   {
     "Q": "How long does shipping take?",
-    "A": "Shipping times may vary depending on your location and the shipping method you choose. We offer standard shipping which usually takes 3-5 business days within the US. Please note that international shipping may take longer. You will receive a tracking number once your order has been shipped."
+    "A": "Shipping times may vary depending on your location and the shipping method you choose. We offer standard shipping which usually takes 3-5 business days within the Beirut. Please note that international shipping may take longer. You will receive a tracking number once your order has been shipped."
   },
   {
     "Q": "What is your return policy?",
-    "A": "We want you to be 100% satisfied with your purchase, so we offer a 30-day money-back guarantee on all our products. If you’re not happy with your purchase, simply contact us and we’ll be happy to assist you with a return or exchange."
+    "A": "We want you to be 100% satisfied with your purchase, so we offer a 5-day money-back guarantee on all our products. If you’re not happy with your purchase, simply contact us and we’ll be happy to assist you with a return or exchange."
   },
   {
     "Q": "Do you offer any discounts or promotions?",

@@ -74,7 +74,7 @@ const ProductCard = ({
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'.8em',sm:'1.35em'},
+                    fontSize: {xs:'.8em',sm:'1.1em',md:'1.35em'},
                     fontWeight: '400'
                 }}>
                     {title}

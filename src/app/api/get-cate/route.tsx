@@ -38,11 +38,12 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
     
         
-        console.log('subCategory: ', subCategory);
-        let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${decodeURIComponent(subCategory)}`.replace(/-/g, ' ').toLocaleLowerCase()
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${decodeURIComponent(category)}`.replace(/-/g, ' ').toLocaleLowerCase()
-        let filterByType = !type || type === null || type == 'null'  ? null : `${type}`.replace(/-/g, ' ').toLocaleLowerCase()
+        // let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${decodeURIComponent(subCategory)}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection'  || category == 'null' || category === 'category' ? null : `${decodeURIComponent(category)}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByType = !type || type === null || type == 'null' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
         let filterBySearch = !search || search?.length < 1 ? null : `${search}`; 
+        console.log('filterByType: ', filterByType);
+        console.log('filterByCate: ', filterByCate);
         
     const ProductsCollection = await client
         .db("NATURE")
@@ -50,7 +51,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     let products : any = []
     
     
-    console.log('filterBySubcate: ', filterBySubcate);
+  
     
     const filterQuery = () => {
       
@@ -58,31 +59,31 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         return {
       $or: [
           { title: { $regex: search, $options: 'i' } },
-          { description: { $regex: search, $options: 'i' } },
+          // { description: { $regex: search, $options: 'i' } },
           { category: { $regex: search, $options: 'i' } },
           { type: { $regex: search, $options: 'i' } },
-          { subCategory: { $regex: search, $options: 'i' } },
+          // { subCategory: { $regex: search, $options: 'i' } },
       ]
     } 
   }
-  if (filterByCate && filterByType && filterBySubcate) {
-    return { category: {
-      $regex: new RegExp(
-          `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
-          'i'
-        ),
-      },
-      subCategory : { $regex: new RegExp(
-        `^${filterBySubcate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
-        'i'
-      )},
-      type : {
-        $regex: new RegExp(
-          `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
-          'i'
-        ),
-      }}
-      } 
+  // if (filterByCate && filterByType && filterBySubcate) {
+  //   return { category: {
+  //     $regex: new RegExp(
+  //         `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+  //         'i'
+  //       ),
+  //     },
+  //     subCategory : { $regex: new RegExp(
+  //       `^${filterBySubcate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+  //       'i'
+  //     )},
+  //     type : {
+  //       $regex: new RegExp(
+  //         `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+  //         'i'
+  //       ),
+  //     }}
+  //     } 
   if (filterByCate && filterByType) {
     return { category: {
       $regex: new RegExp(
@@ -92,7 +93,8 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
       },
       type : {
         $regex: new RegExp(
-          `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+          // `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+          `^${filterByType?.toLocaleLowerCase()}$`,
           'i'
         ),
       }}
@@ -106,6 +108,15 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
               ),
       }}
     }
+    if (filterByType) {
+      return  {
+        type: {
+          $regex: new RegExp(
+            `^${filterByType?.toLocaleLowerCase()}$`,
+            'i'
+            ),
+    }}
+  }
     else {
         return {}
       }

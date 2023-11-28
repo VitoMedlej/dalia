@@ -22,7 +22,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          Welcome to Truenatureblend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
+          Welcome to True Nature blend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.
           </Typography>
           {/* <SMicons/> */}
 

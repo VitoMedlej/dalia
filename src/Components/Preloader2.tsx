@@ -9,11 +9,14 @@ import { IProduct } from '@/Types/Types'
 import BreadCrumb from './BreadCrumb/BreadCrumb'
 import ProductCard from './ProductCard/ProductCard'
 import SearchInput from './Navbar/SearchInput'
+import FilterBar from './Navbar/FilterBar'
 
 const Preloader2 = ({data,totalPages}:any) => {
    
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
+    
+    const [newValue,setnewValue] = useState<any>('')
     const [products,setProducts] = useState<any>()
     useEffect(() => {
       
@@ -36,7 +39,7 @@ const Preloader2 = ({data,totalPages}:any) => {
 
 
     const fetchData = async (val:number) => {
-    const url =  `/api/get-cate?category=${category ? category : 'collection'}&subCategory=${subCategory ? encodeURIComponent(subCategory) : null}&page=${Number(val - 1) || 0}&type=${type ? type : null}`  ;
+    const url =  `/api/get-cate?category=${category ? category : 'collection'}&search=${newValue ? encodeURIComponent(newValue) : null}&page=${Number(val - 1) || 0}&type=${type ? type : null}`  ;
     const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
     const res = await req.json()
         
@@ -50,21 +53,28 @@ const Preloader2 = ({data,totalPages}:any) => {
       const [options,setOptions] = useState({
           price : [1,100000],
           sort : 'latest',
+          type : 'all',
           category : 'collection',
           // query : '',
           
       })
-      const handleSubmit = async (reset?:boolean) => {
+      const handleSubmit = async (reset?:boolean,e?:any) => {
+        if (e) {
+            e.preventDefault()
+        }
         if (reset) {
+            setnewValue('')
+       
         //    return router.push('/collection/products')
         setOptions({
             price : [1,100000],
             sort : 'latest',
+            type:'all',
             category : 'collection',
         
             
         })
-        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${'collection'}`  ;
+        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&type=${'all'}&category=${'collection'}`  ;
         const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
         // if () {
@@ -72,7 +82,9 @@ const Preloader2 = ({data,totalPages}:any) => {
             setProducts(res?.data?.products ? res?.data?.products : [])
             return
     }
-        const url =   `/api/sort?min=${options.price[0]}&max=${options.price[1]}&sort=${options.sort}&category=${options?.category.toLowerCase() || 'collection'}`  ;
+        const url =   `/api/sort?search=${encodeURIComponent(`${newValue}`)}&min=${options.price[0]}&max=${options.price[1]}&type=${options.type}&category=${options?.category}`  ;
+        console.log('url: ', url);
+      
         const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
         const res = await req.json()
         // if () {
@@ -92,7 +104,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     //     products : [],
        
     //   })
- 
+    
   return (
     <Container sx={{mt:2}} disableGutters maxWidth='lg'>
     <Box
@@ -102,9 +114,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         width: '100%',
         minHeight: '100px'
     }}>
-    <SearchInput 
-    // handleSubmit={handleSubmit}
-    sx={{mx:1,mb:0,width:{xs:'95%',sm:'250px'},display:'flex !Important'}} mobile/>
+        <FilterBar handleSubmit={handleSubmit} setNewValue={setnewValue} newValue={newValue}/>
     <FilterSection handleSubmit={handleSubmit} options={options} setOptions={setOptions} setProducts={setProducts}/>
     </Box>
     {/* <BreadCrumb></BreadCrumb> */}

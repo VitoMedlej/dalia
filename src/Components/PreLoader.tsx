@@ -62,7 +62,7 @@ PreLoader = ({data,resImages}:any) => {
 
         </Typography>
         <Typography sx={{width:'100%',maxWidth:'500px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
-        {text('At Truenatureblend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
+        {text('At True Nature blend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
 
         </Typography>
         <Btn 
@@ -77,7 +77,7 @@ PreLoader = ({data,resImages}:any) => {
     </Grid>
     <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
       <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      {text('Why Choose Truenatureblend?', 'لماذا تختار ترو ناشور بليند؟')}
+      {text('Why Choose True Nature blend?', 'لماذا تختار ترو ناشور بليند؟')}
 
       </Typography>
       <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
@@ -215,8 +215,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     
       <HomeProductCollection  products={data?.featuredProducts}/>
 
-        <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='lg'>
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
+        <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
                   <img src="https://ucarecdn.com/4fc6fdc2-a720-40dd-8469-80966a92a759/purplemushroom.webp" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center text-center col ">
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
@@ -224,7 +224,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
                     </Typography>
                     <Btn
-        onClick={()=>router.push('/mushrooms/products')}
+        onClick={()=>router.push(`/mushrooms/products?type=all`)}
+
                     
                     sx={{border:'none',mx:'auto'}}>
                     {text('SHOP NOW', 'تسوق الآن')}
@@ -232,13 +233,29 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                     </Btn>
                   </Box>
             </Box>
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'45vw'}}}>
+            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
+                  <img src="https://dewarticles.com/wp-content/uploads/2021/06/natural-products.jpg" alt="Natural Supplements Image" className="img" />
+                  <Box  className="absolute flex center auto items-center text-center col ">
+                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
+                    {text('Natural Supplements', 'المكملات الغذائية الطبيعية')}
+
+                    </Typography>
+                    <Btn
+        onClick={()=>router.push(`/natural supplements/products?type=all`)}
+                    
+                    sx={{border:'none',mx:'auto'}}>
+                    {text('SHOP NOW', 'تسوق الآن')}
+
+                    </Btn>
+                  </Box>
+            </Box>
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
                   <img src="https://ucarecdn.com/7e5db5d1-ab25-456e-b7c0-91ef79ac9c56/-/preview/700x700/-/quality/smart_retina/-/format/auto/" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center col text-center">
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>{text('Organic Herbs', 'أعشاب عضوية')}
 </Typography>
                     <Btn
-            onClick={()=>router.push('/organic herbs/products')}
+            onClick={()=>router.push(`/organic herbs/products?type=all`)}
 
                     
                     sx={{border:'none',mx:'auto'}}>
@@ -257,7 +274,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         <Box>
         <Typography sx={{width:'100%',maxWidth:'600px',flex:1,fontSize:{xs:'.95em',sm:'1.19em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
             
-        {text('At Truenatureblend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
+        {text('At True Nature blend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
 
             </Typography>
         </Box>
@@ -279,7 +296,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         {text('Our Mission', 'رسالتنا')}
         </Typography>
         <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
-        {text('Our mission at Truenatureblend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
+        {text('Our mission at True Nature blend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
 
         </Typography>
         <Btn
