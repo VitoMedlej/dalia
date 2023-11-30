@@ -39,7 +39,7 @@ const Preloader2 = ({data,totalPages}:any) => {
 
 
     const fetchData = async (val:number) => {
-    const url =  `/api/get-cate?category=${category ? category : 'collection'}&search=${newValue ? encodeURIComponent(newValue) : null}&page=${Number(val - 1) || 0}&type=${type ? type : null}`  ;
+    const url =  `/api/get-cate?category=${category ? category : 'all'}&search=${newValue ? encodeURIComponent(newValue) : null}&page=${Number(val - 1) || 0}&type=${type ? type : null}`  ;
     const req = await fetch(`${server}${url}`,{cache:'no-store', next: { revalidate: 0 }})
     const res = await req.json()
         
@@ -53,8 +53,8 @@ const Preloader2 = ({data,totalPages}:any) => {
       const [options,setOptions] = useState({
           price : [1,100000],
           sort : 'latest',
-          type : 'all',
-          category : 'collection',
+          type : 'All',
+          category : 'All',
           // query : '',
           
       })
