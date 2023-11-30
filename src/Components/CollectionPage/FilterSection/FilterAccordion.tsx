@@ -50,7 +50,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             List={
             
                [
-                'collection',
+                'All',
                 `mushrooms`,
                 `organic herbs`,
                 `natural supplements`
@@ -68,9 +68,9 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
             sx={{maxWidth:'150px'}}
             title= 'Type'
            List={
-           
+            options?.category === 'All' ?
               [
-               'collection',
+               'All',
        `Lions Mane`,
      `MACA`,
      `Bacopa Monnieri `,
@@ -79,11 +79,42 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
      `Taurine`,
      `L arginine`,
      `L Lysine`,
-     'Organic Herbs',
-     'Mushrooms',
+
+   
 'Cordyceps','Tongkat-ali','Ashwagandha'
      ]
-            
+     :
+     options?.category === 'mushrooms' ?
+     [
+        'All',
+`Lions Mane`,
+
+
+'Cordyceps'
+]
+:
+options?.category === 'organic herbs' ?
+[
+    'All',
+
+`MACA`,
+`Bacopa Monnieri `,
+`Passion Flower `,
+'Tongkat-ali','Ashwagandha'
+]
+:
+options?.category === 'natural supplements' ? 
+[
+    'All',
+     `GABA`,
+     `Taurine`,
+     `L arginine`,
+     `L Lysine`,
+
+   
+]:
+
+[]
           }
            value={options?.type}
            setValue={

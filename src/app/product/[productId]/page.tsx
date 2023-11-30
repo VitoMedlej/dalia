@@ -116,10 +116,14 @@ const Index = () => {
                  Add To Cart
                  <AiOutlineShoppingCart  fontSize={'medium'}/>
              </Btn>
+             <a style={{textDecoration:'none',}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+
+
              <Btn   sx={{border:'none',background:'transparent', color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'100%',sm:'49%'}}}>
                  WhatsApp 
                  <BsWhatsapp fontSize={'medium'}/>
              </Btn>
+             </a>
              </Box>
             :
             <Typography component={'h1'} sx={{color:'green',fontWeight:400,pt:1,fontSize:{xs:'1.5em',sm:'2.25sem'}}}>

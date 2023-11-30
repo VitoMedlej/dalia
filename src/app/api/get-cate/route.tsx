@@ -39,8 +39,8 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     
         
         // let filterBySubcate = !type || !subCategory || subCategory == 'null'  ? null : `${decodeURIComponent(subCategory)}`.replace(/-/g, ' ').toLocaleLowerCase()
-        let filterByCate = !category || category === 'collection'  || category == 'null' || category === 'category' ? null : `${decodeURIComponent(category)}`.replace(/-/g, ' ').toLocaleLowerCase()
-        let filterByType = !type || type === null || type == 'null' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
+        let filterByCate = !category || category === 'all' || category === 'collection'  || category == 'null' || category === 'category' ? null : `${decodeURIComponent(category)}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByType = !type || type === null || type == 'null' || type?.toLocaleLowerCase() == 'all' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
         let filterBySearch = !search || search?.length < 1 ? null : `${search}`; 
         console.log('filterByType: ', filterByType);
         console.log('filterByCate: ', filterByCate);

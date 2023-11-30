@@ -59,8 +59,10 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
           default:
             sortCriteria = {_id : -1};
         }
-        let filterByCate = !category || category?.toLocaleLowerCase() === 'collection' || category?.toLocaleLowerCase() === 'category' ? null : `${category}`.toLocaleLowerCase()
-        let filterByType = !type || type === null || type == 'null' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
+        let filterByCate = !category || category?.toLocaleLowerCase() === 'collection' 
+        || category?.toLocaleLowerCase() === 'all' 
+        || category?.toLocaleLowerCase() === 'category' ? null : `${category}`.toLocaleLowerCase()
+        let filterByType = !type || type === null || type === 'all' || type == 'null' || type == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
         
     const ProductsCollection = await client
         .db("NATURE")
