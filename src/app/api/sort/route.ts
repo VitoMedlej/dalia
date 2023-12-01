@@ -64,6 +64,8 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         || category== 'All' 
         || category?.toLocaleLowerCase() == 'category' ? null : `${category}`.toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'All'  || type == 'all' || type == 'null' || type?.toLocaleLowerCase() == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
+        console.log('filterByType: ', filterByType);
+        console.log('filterByCate: ', filterByCate);
         
     const ProductsCollection = await client
         .db("NATURE")
@@ -81,7 +83,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
           ,{ category: { $regex: search, $options: 'i' } }
       ]
   }) :
-  filterByCate && filterByType ?
+  filterByCate && filterByType && filterByType !== 'null' && filterByCate !== 'null' ?
   await ProductsCollection.aggregate([
     {
       $match: filterByType && filterByCate && filterByCate !== 'null' && filterByCate !== null
@@ -125,7 +127,8 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
   await ProductsCollection.aggregate([
     {
       $match: filterByCate && filterByCate !== 'null' && filterByCate !== null
-        ? { category: filterByCate , type : filterByType }
+        // ? { category: filterByCate , type : filterByType }
+        ? { category: filterByCate  }
         : {}
     },
     {
