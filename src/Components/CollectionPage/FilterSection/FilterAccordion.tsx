@@ -45,7 +45,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         // },
          {
              comp: <SelectOneForm
-             sx={{maxWidth:'150px'}}
+             sx={{maxWidth:'250px'}}
              title= 'Category'
             List={
             
@@ -65,7 +65,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
         },
         {
             comp: <SelectOneForm
-            sx={{maxWidth:'150px'}}
+            sx={{maxWidth:'250px'}}
             title= 'Type'
            List={
              options?.category?.toLocaleLowerCase() === 'all' ?
