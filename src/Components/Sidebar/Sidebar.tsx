@@ -1,23 +1,38 @@
 "use client";
-import {useContext} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography, Accordion, AccordionDetails, AccordionSummary} from '@mui/material';
 import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
+import {AiOutlineHeart} from 'react-icons/ai'
 
 import { useRouter } from 'next/navigation';
 import {AiOutlineArrowUp} from 'react-icons/ai';
 
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
-// import SMicons from '../SMicons/SMicons';
-// import NestedAccordion from './NestedAccordion';
-
-
+import SMicons from '../SMicons/SMicons';
+import { categories } from '../Navbar/Navbar';
+import Btn from '../Btn/Btn';
+import Link from 'next/link';
 
 
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
- 
+  
   const {open, setOpen} = useContext(DrawerContext);
+  const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+
+  const fetchUserAndList = async () => {
+    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+    if (user) {
+           let parsedUser = JSON.parse(user)
+           if (!parsedUser) {return}
+           setLocalUser(parsedUser)
+    }
+}
+useEffect(()=>{
+  fetchUserAndList()
+
+},[])
   const router = useRouter();
   const toggleDrawer =
     ( open: boolean) =>
@@ -35,7 +50,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   const Lista = () => (
     <Box
-      sx={{ minWidth:{xs:'270px'},  width:  {xs:'100%',sm:'350px',md:'400px'},py:1 }}
+      sx={{ width:  '300px',py:1 }}
       role="presentation"
       // onClick={toggleDrawer( false)}
       onKeyDown={toggleDrawer( false)}
@@ -45,8 +60,8 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       
       >
         <Box>
-          <Typography sx={{fontWeight:300}}>
-            Sidebar Menu
+          <Typography sx={{fontWeight:600}}>
+            Menu
           </Typography>
         </Box>
 
@@ -62,76 +77,30 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
                                 </Box>
       <List>
       <ListItem
-          sx={{fontWeight:600}}
+          sx={{fontWeight:400}}
 
           onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
-              <ListItemButton sx={{py:1.5}} >
+            <ListItemButton>
             
-                  <Typography sx={{fontWeight:600}}>
+                  <Typography sx={{fontWeight:400}}>
               All Products
             </Typography>
             </ListItemButton>
   
-          <Divider></Divider>
-          </ListItem> 
-          {/* <ListItem
-          sx={{fontWeight:600}}
 
-          onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
-           disablePadding>
-              <ListItemButton sx={{py:1}} >
-            
-                  <Typography sx={{fontWeight:600}}>
-             New Arrivals
-            </Typography>
-            </ListItemButton>
-  
-
-          </ListItem> */}
-          
-    {
-            [
-    //           'Collection',
-    //   `Lions Mane`,
-    // `MACA`,
-    // `Bacopa Monnieri `,
-    // `Passion Flower `,
-    // `GABA`,
-    // `Taurine`,
-    // `L arginine`,
-    // `L Lysine`,
-    'Natural Supplements',
-    'Organic Herbs',
-    'Mushrooms',
-// 'Cordyceps','Tongkat-ali','Ashwagandha'
-    ]
-.map(i=>{
-        return   <ListItem key={i}
-        sx={{fontWeight:600}}
-
-        onClick={()=>{router.push(`/${encodeURIComponent(i.toLocaleLowerCase())}/products`); toggleDrawer(false)}}
-         disablePadding>
-            <ListItemButton sx={{py:1}} >
-          
-                <Typography sx={{fontWeight:600}}>
-           {i}
-          </Typography>
-          </ListItemButton>
+          </ListItem>
 
 
-        </ListItem>
-      })
-    }
-                  {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
+                  <Accordion sx={{border:'none',boxShadow:'none',}}>
             
                   <AccordionSummary
           expandIcon={<AiOutlineArrowUp />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-       <Typography sx={{fontWeight:600}}>
-             Dogs
+       <Typography sx={{fontWeight:400}}>
+       Organic herbs
             </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -144,28 +113,31 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
 onClick={()=>
 {setOpen(false);
-router.push(`/dogs/products`)}}
+router.push(`/organic herbs/products`)}}
 
 >
 
 
-  <ListItemButton sx={{py:1}} >
+<ListItemButton >
             <Typography sx={{fontWeight:300}}>
-        View Dog Collections
+        -View All
       </Typography>
       </ListItemButton>
 </ListItem>
 
-{dogsSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{[`MACA`,
+`Bacopa Monnieri`,
+`Passion Flower`,
+'Tongkat-ali','Ashwagandha'].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
   onClick={()=>
     {setOpen(false);
-    router.push(`/materials/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+    router.push(`/organic herbs/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
 
 key={i}>
 
   
-    <ListItemButton sx={{py:1}} >
+  <ListItemButton >
                   <Typography sx={{fontWeight:300}}>
               -{i}
             </Typography>
@@ -177,73 +149,19 @@ key={i}>
 
 
         </AccordionDetails>
-      </Accordion> */}
+      </Accordion>
 
-            {/* <NestedAccordion toggleDrawer={setOpen}/> */}
 
-      {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
+
+      <Accordion sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
     expandIcon={<AiOutlineArrowUp />}
     aria-controls="panel1a-content"
     id="panel1a-header"
   >
- <Typography sx={{fontWeight:600}}>
-Cats
-      </Typography>
-  </AccordionSummary>
-  <AccordionDetails>
-  <List
-     disablePadding>
-
-<ListItem sx={{padding:0,width:'100%'}}
-
-onClick={()=>
-{setOpen(false);
-router.push(`/cats/products`)}}>
-  <ListItemButton sx={{py:1}} >
-            <Typography sx={{fontWeight:300}}>
-        -Browse Cat Collection
-      </Typography>
-      </ListItemButton>
-</ListItem>
-{catsSubcategories.map(i=>{   return  <Accordion sx={{border:'none',boxShadow:'none',}}>
-            
-  <AccordionSummary
-expandIcon={<AiOutlineArrowUp />}
-aria-controls="panel1a-content"
-id="panel1a-header"
->
-<Typography sx={{fontWeight:600}}>
-Cats
-</Typography>
-</AccordionSummary>
-<AccordionDetails>
-  abc
-</AccordionDetails>
-  </Accordion>
-
-
-
-      
-      })}
-    </List>
-
-
-  </AccordionDetails>
-</Accordion> */}
-
-
-
-{/* <Accordion sx={{border:'none',boxShadow:'none',}}>
-            
-            <AccordionSummary
-    expandIcon={<AiOutlineArrowUp />}
-    aria-controls="panel1a-content"
-    id="panel1a-header"
-  >
- <Typography sx={{fontWeight:600}}>
-Offers
+ <Typography sx={{fontWeight:400}}>
+ natural supplements
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -257,27 +175,31 @@ Offers
 
 onClick={()=>
 {setOpen(false);
-router.push(`/offers/products`)}}
+router.push(`/natural supplements/products`)}}
 
 >
 
 
-  <ListItemButton sx={{py:1}} >
+<ListItemButton >
             <Typography sx={{fontWeight:300}}>
-        Browse Offers
+        -View All
       </Typography>
       </ListItemButton>
 </ListItem>
-{offersSubcategories.map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{[
+     `GABA`,
+     `Taurine`,
+     `L arginine`,
+     `L Lysine`,].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/offers/products?type=${i.replace(/ /g, '-').toLocaleLowerCase()}`)}}
+router.push(`/natural supplements/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
 
 key={i}>
 
 
-  <ListItemButton sx={{py:1}} >
+<ListItemButton >
             <Typography sx={{fontWeight:300}}>
         -{i}
       </Typography>
@@ -289,11 +211,83 @@ key={i}>
 
 
   </AccordionDetails>
-</Accordion> */}
+</Accordion>
 
 
-   
+
+
+<Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+            <AccordionSummary
+    expandIcon={<AiOutlineArrowUp />}
+    aria-controls="panel1a-content"
+    id="panel1a-header"
+  >
+ <Typography sx={{fontWeight:400}}>
+ Mushrooms
+      </Typography>
+  </AccordionSummary>
+  <AccordionDetails>
+  <List
+
+
+  
+     disablePadding>
+<ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/mushrooms/products`)}}
+
+>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -View All
+      </Typography>
+      </ListItemButton>
+</ListItem>
+
+{[`Lions Mane`,
+
+
+'Cordyceps'].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/mushrooms/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
+
+key={i}>
+
+
+<ListItemButton>
+            <Typography sx={{fontWeight:300}}>
+        -{i}
+      </Typography>
+      </ListItemButton>
+</ListItem>
+      
+      })}
+    </List>
+
+
+  </AccordionDetails>
+</Accordion>
+    
       </List>
+        {/* <SMicons/> */}
+        <Link href='/about' className='decor-none' style={{color:'black',padding:' .25em 0'}}>
+        <ListItemButton>
+        
+        <Typography sx={{ color:'black',fontWeight:400}}>
+         About Us
+            </Typography>
+            </ListItemButton>
+      </Link>
+    
+      <Divider />
+      
     </Box>
   );
 
