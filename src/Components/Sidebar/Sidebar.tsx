@@ -75,7 +75,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   
           <Divider></Divider>
           </ListItem> 
-          <ListItem
+          {/* <ListItem
           sx={{fontWeight:600}}
 
           onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
@@ -88,22 +88,23 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
             </ListItemButton>
   
 
-          </ListItem>
+          </ListItem> */}
           
     {
             [
-              'Collection',
-      `Lions Mane`,
-    `MACA`,
-    `Bacopa Monnieri `,
-    `Passion Flower `,
-    `GABA`,
-    `Taurine`,
-    `L arginine`,
-    `L Lysine`,
+    //           'Collection',
+    //   `Lions Mane`,
+    // `MACA`,
+    // `Bacopa Monnieri `,
+    // `Passion Flower `,
+    // `GABA`,
+    // `Taurine`,
+    // `L arginine`,
+    // `L Lysine`,
+    'Natural Supplements',
     'Organic Herbs',
     'Mushrooms',
-'Cordyceps','Tongkat-ali','Ashwagandha'
+// 'Cordyceps','Tongkat-ali','Ashwagandha'
     ]
 .map(i=>{
         return   <ListItem key={i}
