@@ -48,7 +48,7 @@ PreLoader = ({data,resImages}:any) => {
     <Grid  sx={{background:'#f4f8fd',width:'100%',py:8}} container>
     <Grid  maxWidth='lg' item xs={12} md={6}>
       <Box sx={{height:'500px',maxWidth:'450px'}} className='auto'>
-        <img src="https://ucarecdn.com/c9a20ac1-a815-4a27-ac99-9f896cc6f0bd/doctors.jpg" alt="" className="img" />
+        <img src="https://ucarecdn.com/08f81b04-00dc-46e8-be04-a6533597d644/aipic.JPG" alt="" className="img" />
       </Box>
     </Grid>
     <Grid maxWidth='lg' item xs={12} md={6}>
