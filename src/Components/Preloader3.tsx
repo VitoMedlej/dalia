@@ -15,12 +15,14 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img : `https://clickhowto.com/wp-content/uploads/2017/05/Natural-products.jpg`},
+        {img : `https://ucarecdn.com/b932387a-ccf1-4878-9935-11bac7e01ad0/edit1.jpeg`},
+        {img : `https://ucarecdn.com/80b6912c-46a8-4385-8823-f5c1ad1533e5/edit3.jpg`},
+        {img : `https://ucarecdn.com/b932387a-ccf1-4878-9935-11bac7e01ad0/edit1.jpeg`},
        
      ])
      const redir = () => {
         router.push('/collection/products')
-        console.log('abc')
+        // console.log('abc')
      }
     useEffect(() => {
         console.log('res: ', res);
