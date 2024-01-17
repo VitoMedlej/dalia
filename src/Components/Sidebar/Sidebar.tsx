@@ -126,6 +126,8 @@ router.push(`/organic herbs/products`)}}
 </ListItem>
 
 {[`MACA`,
+     `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
+
 `Bacopa Monnieri`,
 `Passion Flower`,
 'Tongkat-ali','Ashwagandha'].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}

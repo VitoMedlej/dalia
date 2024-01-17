@@ -73,7 +73,6 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                'All',
        `Lions Mane`,
      `MACA`,
-     `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
 
      `Bacopa Monnieri`,
      `Passion Flower`,
@@ -98,6 +97,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
  options?.category?.toLocaleLowerCase() === 'organic herbs' ?
 [
     'All',
+    `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
 
 `MACA`,
 `Bacopa Monnieri`,
