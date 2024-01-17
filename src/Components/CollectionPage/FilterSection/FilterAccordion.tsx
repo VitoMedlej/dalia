@@ -73,6 +73,8 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                'All',
        `Lions Mane`,
      `MACA`,
+     `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
+
      `Bacopa Monnieri`,
      `Passion Flower`,
      `GABA`,
