@@ -40,8 +40,14 @@ const Footer = () => (
         <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div> */}
           <ul className=' ul-white'>
-            <li className='link-title'>Site links</li>
-            <li><Link  href="/">Home</Link></li>
+            <li className='link-title'>
+              <h1>
+
+              Site links
+              </h1>
+              </li>
+            <li><Link  href="/">
+              Home</Link></li>
             <li><Link href="/collection/products">All Products</Link></li> 
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
@@ -49,7 +55,13 @@ const Footer = () => (
           </ul>
      
           <ul  className='ul-white' style={{color:'black'}}>
-            <li className='link-title'>Contact</li>
+            <li className='link-title'>
+            <h1>
+
+              Contact
+            </h1>
+            
+              </li>
             {/* <li><Link href="mailto:sales@thecraftroom-lb.com">sales@petstown.com</Link></li> */}
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}

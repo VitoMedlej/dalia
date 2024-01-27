@@ -33,7 +33,6 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
-    console.log('data: ', data);
     
     
        const InitialFetch = async () => {
@@ -77,29 +76,32 @@ const Index = () => {
    
        </Grid>
        <Grid sx={{
-        border:'1px solid #00000029',
+        // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem'}}}>
+             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'3em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
-             <Typography className='gray' component={'h4'} sx={{fontWeight:400}}>
-               {data?.product?.category}
-             </Typography>
-             {/* <Typography className='green' component={'h2'} sx={{fontSize:'1.25em',fontWeight:700}}>
+           { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
                In Stock
-             </Typography> */}
-            
+             </Typography>
+            : 
+            <Typography className='red' component={'h1'} sx={{color:'red',fontSize:'1.25em',fontWeight:300}}>
+               Out of stock
+             </Typography>
+            }
           {data?.product?.inStock !== false &&   <Typography 
-                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.25sem'}}}>
+                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.55em'}}}>
                  ${data?.product?.price || 0}
              </Typography>}
+             
+            
          </Box>
    
       
          
             {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
-              <Box sx={{width:'100%'}}>
+              <Box sx={{width:'fit-content'}}>
 
              <QuantityPicker 
                     onChange={(e:number)=>{setSelectedQuantity(e)}}
@@ -111,24 +113,36 @@ const Index = () => {
                      onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true,true)}
              
               sx={{gap:.5,
-                borderRadius:25,
-             width:{xs:'100%',sm:'49%' }}}>
-                 Add To Cart
+                borderRadius:0,
+             width:{xs:'100%'}}}>
+                 <Typography component='h1'>
+                 ADD TO CART
+
+                 </Typography>
                  <AiOutlineShoppingCart  fontSize={'medium'}/>
              </Btn>
+            
+
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'95%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
 
 
-             <Btn   sx={{border:'none',background:'transparent', color:'green',gap:.5,mt:.5,":hover":{color:'black'},width:{xs:'100%',sm:'49%'}}}>
+<Btn      sx={{gap:.5,
+                borderRadius:0,
+                mt:1,
+                border:'none',
+                background:'white',color:'green',
+             width:{xs:'100%'}}}>
                  WhatsApp 
                  <BsWhatsapp fontSize={'medium'}/>
              </Btn>
              </a>
+          
+
              </Box>
             :
-            <Typography component={'h1'} sx={{color:'green',fontWeight:400,pt:1,fontSize:{xs:'1.5em',sm:'2.25sem'}}}>
+            <Typography component={'h1'} sx={{color:'red',fontWeight:400,pt:1,fontSize:{xs:'1.5em',sm:'2.25sem'}}}>
             Out of Stock
            </Typography>
             }
@@ -163,6 +177,14 @@ const Index = () => {
               
              
          </Box>} */}
+           { data?.product?.Category && <Box >
+             <Box >
+                 <Typography >
+                 <strong>Category:</strong>{' '}{data.product.category}
+                 </Typography>
+             </Box>
+            
+         </Box>}
 
              <Typography sx={{fontWeight:600,py:.25}}>
                  Product Description:

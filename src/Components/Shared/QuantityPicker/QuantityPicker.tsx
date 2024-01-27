@@ -78,13 +78,13 @@ useEffect(() => {
                 className="add" onClick={handleChange('increment')}>Up</button>
       </div>
        :
-       <span className="quantity-picker">
-        <button className={`${props.disableDec ? 'mod-disable ' : ''}quantity-modifier modifier-left`} 
-        onClick={handleChange('decrement')}>&ndash;</button>
+       <span style={{borderRadius:'0'}} className="quantity-picker flex center text-center">
+        <button  style={{borderRadius:'0',width:'50px',height:'50px'}} className={`${props.disableDec ? 'mod-disable ' : ''}quantity-modifier flex center auto text-center items-center  modifier-left`} 
+        onClick={handleChange('decrement')}>-</button>
         <input style={{width:props.width?props.width:'4rem'}} className="quantity-display" type="text" 
         value={value} onChange={handleChange('input')} />
-        <button className={`${props.disableInc ? 'mod-disable ' : ''}quantity-modifier modifier-right`} 
-        onClick={handleChange('increment')}>&#xff0b;</button>
+        <button style={{borderRadius:'0',width:'50px',height:'50px'}} className={`${props.disableInc ? 'mod-disable ' : ''}quantity-modifier modifier-right`} 
+        onClick={handleChange('increment')}>+</button>
       </span>
       
     );

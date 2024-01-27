@@ -1,38 +1,55 @@
-import withMongoClient from '@/database/mongo';
+import client from '@/database/mongodb';
 import type {NextApiResponse}
 from 'next';
 import {NextResponse} from 'next/server'
 import {type NextRequest} from 'next/server'
 
 export async function GET(req : NextRequest, res : NextApiResponse) {
-    try {
-        const result : any = await withMongoClient(async(client : any) => {
-            const ProductsCollection = await client
-                .db("BEE")
-                .collection("Products");
-            let featuredProducts : any = [];
+try {
 
-            const featuredProductsQuery = await ProductsCollection
-                .find({})
-                .limit(35)
+    const ProductsCollection = await client
+        .db("BEE")
+        .collection("Products");
+    let featuredProducts : any = [];
+    let products : any = []
 
-            await featuredProductsQuery.forEach((doc : any) => {
+    const featuredProductsQuery = await ProductsCollection
+        .find({isFeatured: true})
+        // .find({})
+        .limit(20)
+    const ProductsQuery = await ProductsCollection
+        // .find({isFeatured: false})
+        .find({})
+        .sort({_id: -1})
+        .limit(20)
 
-                featuredProducts.push(doc)
+    await ProductsQuery.forEach((doc : any) => {
 
-            })
+        products.push(doc)
 
-            return featuredProducts
-        });
+    });
 
-        return NextResponse.json({success: true, result});
-    } catch (error : any) {
-        console.error('Error in GET route:', error);
-        return NextResponse.json({
-            success: false,
-            error: error.message || 'Internal Server Error'
-        });
+    await featuredProductsQuery.forEach((doc : any) => {
+
+        featuredProducts.push(doc)
+
+    })
+
+    if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
+        return NextResponse.json({success: false});
     }
+
+    return NextResponse.json({
+        success: true,
+        data: {
+            products,
+            featuredProducts
+        }
+    });
 }
 
-export const dynamic = 'force-dynamic'
+catch (error) {
+    console.log('error get-data: ', error);
+
+}
+}
