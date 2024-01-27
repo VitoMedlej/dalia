@@ -8,7 +8,7 @@ import {IoIosMenu} from 'react-icons/io'
 // import {CiShoppingCart} from 'react-icons/ci'
 
 import { useEffect, useState} from 'react';
-// import { CartContext, DrawerContext } from '../../../pages/_app'; import
+
 import SearchModal from './SearchModal';
 import Link from 'next/link';
 import {Badge, Divider, Typography} from '@mui/material';
@@ -26,13 +26,7 @@ import useLanguage from '@/Hooks/useLanguage';
 
 
 
-export const categories = [
-    "New Arrivals",
-    "Cats",
-    "Dogs",
-    "Birds",
-    "Offers",
-]
+export const categories =  ["Pure", "Fruit", "Nut", "Spreads", "Herbal"];
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
     const [openModal,
@@ -46,7 +40,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('sgh2j40-tlsit') || []
+        // const cart = loadState('F5NX6214-HJN35I') || []
         if (cart) {
 
             setLocalCart(cart)
@@ -109,8 +103,8 @@ export default function Navbar() {
 }}>
     <img
         className='img'
-        src={`https://ucarecdn.com/42db8a52-041f-4b79-8bfb-5c10a3a3c4fd/truenatureblendgreen011.jpg`}
-        alt="truenatureblend logo"/>
+        src={`https://ucarecdn.com/a1106da8-d56a-4cef-a9ee-4b27e18ef36c/Beeorganiclogo1.png`}
+        alt="BeeOrganic logo"/>
 </Box>
 </Link>
                 <Box
@@ -137,7 +131,7 @@ export default function Navbar() {
                              
                         
                              
-                             <Btn
+                             {/* <Btn
                             onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
                             sx={{
                                 margin : '8px',padding:0,
@@ -146,7 +140,7 @@ export default function Navbar() {
                             // margin: '0.1em',
                         }}>
                             {text('العربية','English')}
-                        </Btn>
+                        </Btn> */}
                         <IconButton
                             onClick={() => setOpenModal(!openModal)}
                             sx={{
@@ -234,7 +228,7 @@ mobile
                         className='flex right'>
  
 
-                               <Btn
+                               {/* <Btn
                             onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
                             sx={{
                                 margin : '8px',padding:0,
@@ -243,7 +237,7 @@ mobile
                             // margin: '0.1em',
                         }}>
                             {text('English','Arabic')}
-                        </Btn>
+                        </Btn> */}
                         <IconButton
                             onClick={() => setOpenModal(!openModal)}
                             sx={{
@@ -255,7 +249,8 @@ mobile
                         </IconButton>
 
                         <IconButton
-                        onClick={() => router.push('/collection/products')}
+                          onClick={() => setCartOpen(!cartOpen)}
+                        // onClick={() => router.push('/cart')}
                             sx={{
                             color: 'black'
                         }}>
@@ -284,7 +279,7 @@ mobile
 
                 </Box>
            
-<SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
+{/* <SearchModal openModal={openModal} setOpenModal={setOpenModal }/> */}
              
             </Toolbar>
         </AppBar>

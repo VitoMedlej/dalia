@@ -43,41 +43,45 @@ PreLoader = ({data,resImages}:any) => {
   return (
     <Box >
       <MainCarousel resImages={resImages}/>
-      {/* <Perks/> */}
+      <Perks/>
+      <HomeProductCollection  products={data?.featuredProducts}/>
 
-    <Grid  sx={{background:'#f4f8fd',width:'100%',py:8}} container>
-    <Grid  maxWidth='lg' item xs={12} md={6}>
-      <Box sx={{height:'500px',maxWidth:'450px'}} className='auto'>
-        <img src="https://ucarecdn.com/08f81b04-00dc-46e8-be04-a6533597d644/aipic.JPG" alt="" className="img" />
+
+    <Grid  sx={{background:'#f4f8fd',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
+
+    <Grid  maxWidth='lg' item xs={9} md={4}>
+      <Box sx={{height:'400px',maxWidth:'350px'}} className='auto'>
+        <img src="https://ucarecdn.com/fff2fc10-c313-47a2-b294-52ec5eb600e7/image00019.jpg" alt="" className="img" />
       </Box>
     </Grid>
-    <Grid maxWidth='lg' item xs={12} md={6}>
-    <Container  className='wrap col   auto flex' sx={{alignItems:'left',px:{sm:1},pt:{xs:2,sm:4},display:'flex'}}>
-        <Typography sx={{fontWeight:400}} className='color'>
-        {text('ABOUT US', 'من نحن')}
+    <Grid item xs={12} md={6}>
+    <Container  className='wrap col center text-center auto flex' sx={{alignItems:'center',px:{sm:1},display:'flex'}}>
+     
+        <Typography sx={{width:'100%',maxWidth:'400px',
+        pt:{xs:2,sm:0},
+        fontSize:{xs:'2em',sm:'2.1em'},
+        fontWeight:900}} component='h1' className='color2 center text-center'>
+        {text('Taste the Authenticity of Lebanon with BeeOrganic Honey', 'مرحبًا في ترو ناتشور بليند')}
 
         </Typography>
-        <Typography sx={{width:'100%',maxWidth:'500px',fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='color2'>
-        {text('Welcome to True Nature Blend', 'مرحبًا في ترو ناتشور بليند')}
+        <Typography sx={{width:'100%',maxWidth:'400px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className='center text-center'>
+        {text('At Bee Organic, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
 
         </Typography>
-        <Typography sx={{width:'100%',maxWidth:'500px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
-        {text('At True Nature blend, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
-
-        </Typography>
-        <Btn 
+        {/* <Btn 
         onClick={()=>router.push('/about')}
         
-        v2 className='color' sx={{width:'100px',color:'black',mt:2,px:0}}>
-        {text('Learn More', 'تعرف أكثر')}
+        className=' auto center' sx={{width:'150px',color:'black',mt:2,px:0}}>
+        {text('Learn More')}
 
-        </Btn>
+        </Btn> */}
     </Container>
 
     </Grid>
+
     <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
-      <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      {text('Why Choose True Nature blend?', 'لماذا تختار ترو ناشور بليند؟')}
+      <Typography  component='h1' sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
+      {text('Why Choose Bee Organic?', 'لماذا تختار ترو ناشور بليند؟')}
 
       </Typography>
       <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
@@ -213,8 +217,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
       <Box/>
     
-      <HomeProductCollection  products={data?.featuredProducts}/>
-
+{/* 
         <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
       <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
                   <img src="https://ucarecdn.com/4fc6fdc2-a720-40dd-8469-80966a92a759/purplemushroom.webp" alt="" className="img" />
@@ -265,16 +268,16 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                   </Box>
             </Box>
           
-      </Container>
+      </Container> */}
 
       {/* <HomeProductCollection  products={data}/> */}
 
 
-      <Container  className='flex center wrap items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>
+      {/* <Container  className='flex center wrap items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>
         <Box>
         <Typography sx={{width:'100%',maxWidth:'600px',flex:1,fontSize:{xs:'.95em',sm:'1.19em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
             
-        {text('At True Nature blend, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
+        {text('At Bee Organic, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
 
             </Typography>
         </Box>
@@ -282,38 +285,37 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         <Box sx={{ width:{xs:'200px',sm:'200px'},height:{xs:'200px',sm:'200px'},my:1}} className='auto rounded'>
           <img src="https://funmauj.b-cdn.net/test/928368.jpg" alt="" className="img rounded" />
         </Box>
-        </Container>       
+        </Container>        */}
     {/* <FullscreenPoster/> */}
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(10,18)}/> */}
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(18)}/> */}
 
-    <Testimonials/>
-
     <Box sx={{my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
       <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
       <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
-        <Typography sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
-        {text('Our Mission', 'رسالتنا')}
+        <Typography component='h1' sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
+        {text('We’re about creating a community', 'رسالتنا')}
         </Typography>
         <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
-        {text('Our mission at True Nature blend is to provide our customers with the highest quality natural supplements to support their health and wellness goals. We’re committed to sustainability and supporting the environment, and we believe in the power of nature to help us live our best lives.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
+        {text('that values health, wellness, and sustainability. We’re about educating our customers on the importance of bees in our ecosystem and how our consumption choices impact their survival.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
 
         </Typography>
         <Btn
-        onClick={()=>router.push('/about')}
+        onClick={()=>router.push('/collection/products')}
         sx={{mt:2,mx:'auto'}} v2>
-        {text('Reach Us', 'تواصل معنا')}
+        {text('Buy Now', 'تواصل معنا')}
       </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>
-      <img src="https://th.bing.com/th/id/R.232188324515c59892fe6bdb1524bc11?rik=rqi5%2b%2fybk0ASHA&pid=ImgRaw&r=0" alt="" className="img" />
+      <img src="https://th.bing.com/th/id/R.23b52c1b4ac90cffbfdf9fa5af6800a7?rik=8uvQObYQku8vZA&riu=http%3a%2f%2fimg1.wsimg.com%2fisteam%2fip%2f59f67ef2-0d3d-4e01-b060-b5c8b8657b99%2f455F2F40-FDD6-45AC-89C5-BBA51B27709E.jpeg&ehk=rSkzbGSGTX5Kl%2b4lDKjkpAvDo3jxBk%2bZOkfqHiGIQVA%3d&risl=&pid=ImgRaw&r=0" alt="" className="img" />
  
       </Box>
 
       </Box>        
 
+    {/* <Testimonials/> */}
+
         
-        <Perks></Perks>
         {/* <ContactSection/> */}
   </Box>
   )

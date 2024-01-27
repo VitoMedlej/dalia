@@ -6,19 +6,19 @@ import React from 'react'
 
 let style1 = {
   color: 'black',
-  background: 'white',
+  background: ' #f7e454',
   border:'1px solid',
   borderRadius: '0px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#0273b5',
-      color:'white',
+      background: '#F4E461',
+      color:'black',
       transform: 'scale(1.05)',
   },
   display: 'flex',
   padding: '11px 35px',
-  fontWeight: '400',
+  fontWeight: '600',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',
@@ -33,7 +33,7 @@ let style2 = {
 
   ':hover': {
     color:'black',
-      background: 'white',
+      background: '#F4E461',
       transform: 'scale(1.05)',
   },
   display: 'flex',

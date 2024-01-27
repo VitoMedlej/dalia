@@ -42,7 +42,7 @@ export default function Checkout() {
 
   
   useEffect(() => {
-    const products = loadState('sgh2j40-tlsit')
+    const products = loadState('F5NX6214-HJN35I')
     
     if (products) {
       setCart(products)
@@ -70,7 +70,7 @@ export default function Checkout() {
 
     const handleNext = () => {
       if (info && info.firstName && info.lastName && info.address1 && info.phone && info.city && info.address2) {
-        saveState('sgh2j40-b12fg',info)
+        saveState('V51N5-F7YBJ5X',info)
         setActiveStep(activeStep + 1);
       
       } 
@@ -84,7 +84,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('sgh2j40-tlsit')
+      const products = loadState('F5NX6214-HJN35I')
       
  
 
@@ -101,8 +101,8 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,total}})
         });
   const content = await rawResponse.json();
-  saveState('sgh2j40-b12fg',null)
-  saveState('sgh2j40-tlsit',null)
+  saveState('V51N5-F7YBJ5X',null)
+  saveState('F5NX6214-HJN35I',null)
 
 }
   }

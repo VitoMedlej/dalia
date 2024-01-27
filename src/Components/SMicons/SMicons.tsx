@@ -7,23 +7,23 @@ import {BsTiktok} from 'react-icons/bs';
 
 const sm = [
     {
-        Icon:'https://images.squarespace-cdn.com/content/v1/56e2e0c520c6472a2586add2/1615388332386-LFQRQFE53FIOLDRNADTY/2.png',
-        href:'https://www.instagram.com/pets_town_lb/?igshid=MzRlODBiNWFlZA%3D%3D'
+        Icon:'https://www.svgrepo.com/show/520798/instagram.svg',
+        href:'https://www.instagram.com/beeorganiclb?igsh=MXFreTZkbGI5ejlteA%3D%3D&utm_source=qr'
     },
-    {Icon:'https://logospng.org/download/whatsapp/logo-whatsapp-4096.png',href:'https://wa.me/+96170425430'},
+    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:'https://wa.me/+96112345678'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
   return (
-    <Box className='row flex' sx={{zIndex:1234567,maxWidth:'200px',mt:2,...sx}}>
+    <Box className='row flex' sx={{zIndex:1234567,...sx}}>
 
     {sm.map((item)=>{
-      return <a key={item.href} className='center flex auto rounded smIcon pointer align-center gap white' href={`${item.href}`} target='_blank' rel={'noneferrer'}>
-            <Box sx={{width:'30px'}}>
-
-            <img src={item.Icon} alt="" className="img cover" />
-            </Box>
+      return <Box  className='relative bg flex center items-center justify-center space-between' sx={{borderRadius:'50%',width:'50px',mx:.25,mt:1,height:'50px'}}>
+      <a key={item.href}  style={{width:'80%',height:'80%'}} className='img absolute' href={`${item.href}`} target='_blank' rel={'noneferrer'}>
+          
+            <img src={item.Icon} alt="" className="img contain " />
          </a>
+            </Box>
     })}
     </Box>
   )

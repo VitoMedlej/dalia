@@ -63,7 +63,7 @@ const EmptyCartAlert = () => {
 const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
-    let localCart : ICartItem[] = loadState('sgh2j40-tlsit') || []
+    let localCart : ICartItem[] = loadState('F5NX6214-HJN35I') || []
     useEffect(() => {
         if (localCart) {
             
@@ -73,12 +73,12 @@ const Cart = () => {
     }, [])
     const refetchState = () => {
 
-        setCartItems(loadState('sgh2j40-tlsit'))
+        setCartItems(loadState('F5NX6214-HJN35I'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('sgh2j40-tlsit', state);
+         saveState('F5NX6214-HJN35I', state);
          setCartItems(state);
      }
     return (

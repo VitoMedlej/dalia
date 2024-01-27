@@ -8,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'truenatureblend - Shop Natural Meds in Lebanon',
-    description: `Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion manes mushroom, and more.`,
+    title: 'Bee Organic | Premium Organic Honey from Lebanon',
+    description: `Discover the taste of pure, organic honey with Bee Organic. Experts in bee culture, we offer a range of honey products sourced sustainably from Lebanon’s rich flora.`,
     icons: {
-        icon: `https://ucarecdn.com/42db8a52-041f-4b79-8bfb-5c10a3a3c4fd/truenatureblendgreen011.jpg`
+        icon: `https://ucarecdn.com/a1106da8-d56a-4cef-a9ee-4b27e18ef36c/Beeorganiclogo1.png`
     }
 }
 
@@ -23,7 +23,10 @@ export default function RootLayout({children} : {
             <head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"></link>
             </head>
 
             <body className='relative'>

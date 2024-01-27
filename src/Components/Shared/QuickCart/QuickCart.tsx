@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('sgh2j40-tlsit') || []
+            let localCart : ICartItem[] = loadState('F5NX6214-HJN35I') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +34,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('sgh2j40-tlsit', state);
+        saveState('F5NX6214-HJN35I', state);
         setCartItems(state);
     }
     return (
@@ -71,7 +71,7 @@ export default function TemporaryDrawer() {
                     <Divider></Divider>
                     <Box
                         sx={{
-                        maxHeight: '350px',
+                        maxHeight: '450px',
                         overflowY: 'scroll'
                         
                     }}>
@@ -88,7 +88,7 @@ export default function TemporaryDrawer() {
                             <img src="https://cdn-icons-png.flaticon.com/512/6533/6533851.png" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
-                            No Products Have Been Added.
+                          You have not added any products.
                         </Typography>
                         </Box> 
                         }
@@ -100,11 +100,11 @@ export default function TemporaryDrawer() {
                         margin: '1em auto !important',
                        flexWrap:'wrap',
                         display:'flex',
-                        width:{xs:'99%',sm:'340px'},
+                        width:{xs:'99%',sm:'400px'},
                     }}>
                        <Btn 
-                       sx={{width:'100%',mx:1
-                    ,borderRadius:25,
+                       sx={{width:'90%',mx:1
+                    ,borderRadius:0,
                     }}
                        onClick={()=>{setCartOpen(false),router.push('/checkout')}}
                        disabled={cartItems.length < 1}>
@@ -113,9 +113,9 @@ export default function TemporaryDrawer() {
                         <Btn
                          
                         sx={{
-                            width:'100%',
+                            width:'90%',
                             mx:1
-                    ,borderRadius:25,
+                    ,borderRadius:0,
                    
                     background:'none',
                           my:1,
@@ -126,7 +126,7 @@ export default function TemporaryDrawer() {
                         </Btn>
                         <Btn
                         className='text-center auto'
-                        sx={{mx:1,border:'none',':hover':{background:'white',color:'#1a4671'}}} 
+                        sx={{mx:1,color:'black',border:'none',':hover':{background:'white',color:'black'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
                         View Cart Page

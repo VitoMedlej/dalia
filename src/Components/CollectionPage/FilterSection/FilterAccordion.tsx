@@ -49,12 +49,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              title= 'Category'
             List={
             
-               [
-                'All',
-                `mushrooms`,
-                `organic herbs`,
-                `natural supplements`
-      ]
+                ["collection","Pure", "Fruit", "Nut", "Spreads", "Herbal"]
              
            }
             value={options.category}
@@ -63,67 +58,67 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                 }
             />
         },
-        {
-            comp: <SelectOneForm
-            sx={{maxWidth:'250px'}}
-            title= 'Type'
-           List={
-             options?.category?.toLocaleLowerCase() === 'all' ?
-              [
-               'All',
-       `Lions Mane`,
-     `MACA`,
+//         {
+//             comp: <SelectOneForm
+//             sx={{maxWidth:'250px'}}
+//             title= 'Type'
+//            List={
+//              options?.category?.toLocaleLowerCase() === 'all' ?
+//               [
+//                'All',
+//        `Lions Mane`,
+//      `MACA`,
 
-     `Bacopa Monnieri`,
-     `Passion Flower`,
-     `GABA`,
-     `Taurine`,
-     `L arginine`,
-     `L Lysine`,
-
-   
-'Cordyceps','Tongkat-ali','Ashwagandha'
-     ]
-     :
-     options?.category?.toLocaleLowerCase() === 'mushrooms' ?
-     [
-        'All',
-`Lions Mane`,
-
-
-'Cordyceps'
-]
-:
- options?.category?.toLocaleLowerCase() === 'organic herbs' ?
-[
-    'All',
-    `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
-
-`MACA`,
-`Bacopa Monnieri`,
-`Passion Flower`,
-'Tongkat-ali','Ashwagandha'
-]
-:
- options?.category?.toLocaleLowerCase() === 'natural supplements' ? 
-[
-    'All',
-     `GABA`,
-     `Taurine`,
-     `L arginine`,
-     `L Lysine`,
+//      `Bacopa Monnieri`,
+//      `Passion Flower`,
+//      `GABA`,
+//      `Taurine`,
+//      `L arginine`,
+//      `L Lysine`,
 
    
-]:
+// 'Cordyceps','Tongkat-ali','Ashwagandha'
+//      ]
+//      :
+//      options?.category?.toLocaleLowerCase() === 'mushrooms' ?
+//      [
+//         'All',
+// `Lions Mane`,
 
-[]
-          }
-           value={options?.type}
-           setValue={
-            handleTypeChange
-               }
-           />
-       },
+
+// 'Cordyceps'
+// ]
+// :
+//  options?.category?.toLocaleLowerCase() === 'organic herbs' ?
+// [
+//     'All',
+//     `Milk thistle`, `Sea moss`  ,`Yohimbe bark` ,'Water pill' , `Multi vitamins`,
+
+// `MACA`,
+// `Bacopa Monnieri`,
+// `Passion Flower`,
+// 'Tongkat-ali','Ashwagandha'
+// ]
+// :
+//  options?.category?.toLocaleLowerCase() === 'natural supplements' ? 
+// [
+//     'All',
+//      `GABA`,
+//      `Taurine`,
+//      `L arginine`,
+//      `L Lysine`,
+
+   
+// ]:
+
+// []
+//           }
+//            value={options?.type}
+//            setValue={
+//             handleTypeChange
+//                }
+//            />
+//        },
 
         // {
         //     comp: <SelectOneForm
@@ -173,10 +168,10 @@ className='flex  center items-center'
                  
               
             })}
-               <Btn sx={{px:0,color:'green',py:0,':hover':{background:'none'},border:'none'}} onClick={()=>handleSubmit()}>
+               <Btn sx={{px:0,color:'green',py:0,':hover':{background:'none'},background:'none',border:'none'}} onClick={()=>handleSubmit()}>
                         Search
                     </Btn>
-                    <Btn sx={{px:0,py:0,border:'none',color:'red',':hover':{background:'none'}}}  onClick={()=>handleSubmit(true)}>
+                    <Btn sx={{px:0,py:0,border:'none',color:'red',':hover':{background:'none'},background:'none'}}  onClick={()=>handleSubmit(true)}>
                         Reset
                     </Btn>
         </Box>

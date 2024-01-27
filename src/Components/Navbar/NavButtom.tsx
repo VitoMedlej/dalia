@@ -4,46 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 // import MenuHover from './MenuHover'
 
-export const catsSubcategories = [
-    "Food",
-    "Treats",
-    "Toys",
-    "Collars",
-    "Leashes",
-    "Apparel",
-    "Grooming",
-    "Brushes",
-    "Litters",
-    "Hygiene",
-    "Health",
-    "Wellness",
-    "Medication",
-    "Fleas",
-    "Ticks"
-];
 
-export const dogsSubcategories = [
-    "Food",
-    "Treats",
-    "Toys",
-    "Collars",
-    "Leashes",
-    "Apparel",
-    "Grooming",
-    "Brushes",
-    "Hygiene",
-    "Health",
-    "Wellness",
-    "Medication",
-    "Fleas",
-    "Ticks"
-];
-
-export const offersSubcategories = [
-  	"Special Deals",
-  	"Clearance Items",
-  	"Discounted Bundles"
-];
 
 
 
@@ -62,7 +23,7 @@ const NavButtom = () => {
         <Container
             className='flex   '
             sx={{
-              
+            justifyContent: 'flex-end',
             maxWidth: 'lg',
             overflow:'hidden',
             py:1.5,
@@ -86,20 +47,25 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Collections
 </Typography>
 </Link>
-<Link className='black decor-none ' href={`/Mushrooms/products`}>
 
-<Typography 
-className=' cursor center flex gap1 black decor-none captialize'
-id="button"
-component='p' sx={{width:'max-content',
-mx:'1em',
-alignItems: 'center',
+{
+    ["Pure", "Fruit", "Nut", "Spreads", "Herbal"].map(i=>{
+        return <Link key={i} className='black decor-none ' href={`/${i}/products`}>
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Mushrooms
-</Typography>
-</Link>
-<Link className='black decor-none ' href={`/organic herbs/products`}>
+        <Typography 
+        className=' cursor center flex gap1 black decor-none captialize'
+        id="button"
+        component='p' sx={{width:'max-content',
+        mx:'1em',
+        alignItems: 'center',
+        fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+        {i}
+        </Typography>
+        </Link>
+    })
+}
+
+{/* <Link className='black decor-none ' href={`/organic herbs/products`}>
 
 <Typography 
 className=' cursor center flex gap1 black decor-none captialize'
@@ -124,11 +90,11 @@ alignItems: 'center',
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Natural Supplements
 </Typography>
-</Link>
+</Link> */}
 
 
 
-<Link className='black decor-none ' href={`/about`}>
+{/* <Link className='black decor-none ' href={`/about`}>
 
 <Typography 
 className=' cursor center flex gap1 black decor-none '
@@ -140,7 +106,7 @@ alignItems: 'center',
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 About Us
 </Typography>
-</Link>
+</Link> */}
 
 {/* <Link className='black decor-none uppercase' href={`/new-arrivals/products`}>
 

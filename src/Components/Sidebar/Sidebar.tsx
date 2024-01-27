@@ -83,16 +83,36 @@ useEffect(()=>{
            disablePadding>
             <ListItemButton>
             
-                  <Typography sx={{fontWeight:400}}>
-              All Products
+                  <Typography component='h1' sx={{fontWeight:600}}>
+              VIEW ALL
             </Typography>
             </ListItemButton>
   
 
           </ListItem>
 
+          {
+             ["Pure", "Fruit", "Nut", "Spreads", "Herbal"].map(i=>{
+              return    <ListItem
+              key={i}
+              sx={{fontWeight:400}}
+    
+              onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+               disablePadding>
+                <ListItemButton>
+                
+                      <Typography component='h1' sx={{fontWeight:600}}>
+                     {i.toUpperCase()}
+                </Typography>
+                </ListItemButton>
+      
+    
+              </ListItem>
+             })
+          }
 
-                  <Accordion sx={{border:'none',boxShadow:'none',}}>
+
+                  {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
                   <AccordionSummary
           expandIcon={<AiOutlineArrowUp />}
@@ -275,18 +295,11 @@ key={i}>
 
 
   </AccordionDetails>
-</Accordion>
+</Accordion> */}
     
       </List>
         {/* <SMicons/> */}
-        <Link href='/about' className='decor-none' style={{color:'black',padding:' .25em 0'}}>
-        <ListItemButton>
-        
-        <Typography sx={{ color:'black',fontWeight:400}}>
-         About Us
-            </Typography>
-            </ListItemButton>
-      </Link>
+     
     
       <Divider />
       

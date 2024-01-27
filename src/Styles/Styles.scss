@@ -2,19 +2,22 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
 
 
 }
-* ,h1,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
-    font-family: 'Poppins', sans-serif !important;
+h1 {
+    font-family: 'Oswald', sans-serif !important;
+}
+* ,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
+    font-family: 'Open Sans', sans-serif !important;
 }
 .w100 {
     width:100%
 }
-$color : #0273b5 !important;
-$color2 : #7fbf44 !important;
-$color3 : #f27a23 !important;
+$color : #f7e454 !important;
+$color2 : #0f0f0f !important;
+$color3 : #F4E461 !important;
 .color3 {
     color: $color3;
 }
@@ -27,7 +30,7 @@ $color3 : #f27a23 !important;
     }
 }
 .bg2 {
-    background: $color2;
+    background: $color3;
 }
 .borderColor {
     border-color: $color;

@@ -63,7 +63,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/truenatureblend/"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/BeeOrganic/"}>
 
 
                             <Typography

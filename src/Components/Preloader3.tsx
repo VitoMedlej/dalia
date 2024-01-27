@@ -15,10 +15,10 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img : `https://ucarecdn.com/d08afcc4-a1f9-4c65-905d-d220bd4a42b4/edit2.jpg`},
-        {img : `https://ucarecdn.com/8d7245e1-491d-49ee-8212-1cf911d932c9/edit4.jpg`},
-        {img : `https://ucarecdn.com/80b6912c-46a8-4385-8823-f5c1ad1533e5/edit3.jpg`},
-        {img : `https://ucarecdn.com/b932387a-ccf1-4878-9935-11bac7e01ad0/edit1.jpeg`},
+        {img:'https://www.zdrowiefit.pl/wp-content/uploads/2022/04/Produkty-pszczele-1536x1024.jpg'},
+         {
+        img:`https://th.bing.com/th/id/R.4904b6c65c536942a919c111e0e0d734?rik=odGE4dFC0fMQ1g&pid=ImgRaw&r=0`
+       }
        
      ])
      const redir = () => {
@@ -43,11 +43,11 @@ const Preloader3 = ({res}:{res:any}) => {
             width:'100%',
             maxWidth:'none',
             // maxWidth: 'lg',
-            minHeight:'500px',
-            maxHeight:{sm:'90vh',md:'700px',lg:'750px'},
+            minHeight:'400px',
+            maxHeight:{sm:'90vh',md:'500px',lg:'550px'},
             margin: '0 auto',
          
-            height : {xs:'100vh',sm:'550px',md:'100%'},
+            height : {xs:'100vh',sm:'450px',md:'100%'},
              
             display: {
                 xs: 'flex'
@@ -89,18 +89,18 @@ const Preloader3 = ({res}:{res:any}) => {
                             sx={{
                                 top:'50%',
                                 px:{xs:4,sm:5,md:6},
-                                maxWidth:'550px',
+                                maxWidth:'650px',
                                 transform:'translateY(-50%)',
                                 zIndex:123456,
                                 position:'absolute'}}>
                                 <Typography 
-                                
+                                component='h1'
                                 sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.65em',lg:'4em'},fontWeight:900}}>
-                                {text('Experience the Power of Nature', 'استشعر قوة الطبيعة')}
+                                {text('BeeOrganic: Savor the Sweetness of Nature', 'استشعر قوة الطبيعة')}
                                 </Typography>
                                 <Typography 
-                                sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'600px'}}>
-                                {text('Welcome to True Nature blend, your one-stop-shop for all your health and wellness needs. Discover our premium selection of natural supplements including ashwagandha, tongkat ali, cordyceps mushroom, lion\'s mane mushroom, and more.', 'مرحبًا بك في ترو ناشور بليند، متجرك الشامل لجميع احتياجات صحتك وعافيتك. اكتشف تشكيلتنا الرائعة من المكملات الطبيعية الفاخرة، بما في ذلك الأشواغاندا، وتونجكات علي، وفطر كورديسيبس، وفطر رأس الأسد، والمزيد.')}
+                                sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'700px'}}>
+                                {text('Join the BeeOrganic family today and get a 10% discount on your first purchase!', 'مرحبًا بك في ترو ناشور بليند، متجرك الشامل لجميع احتياجات صحتك وعافيتك. اكتشف تشكيلتنا الرائعة من المكملات الطبيعية الفاخرة، بما في ذلك الأشواغاندا، وتونجكات علي، وفطر كورديسيبس، وفطر رأس الأسد، والمزيد.')}
 
                                 </Typography>
                                 <Box className="flex">
@@ -108,17 +108,17 @@ const Preloader3 = ({res}:{res:any}) => {
                                 <Btn
                                 onClick={()=>redir()}
                                 
-                                className='bg white borderColor' sx={{mt:3}}>
+                                className='bg  borderColor' sx={{mt:3}}>
                                 {text('Shop Now', 'تسوق الآن')}
 
                                 </Btn>
-                                <Btn 
+                                {/* <Btn 
                                 onClick={()=>{router.push('/about')}}
                                 
                                 v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
                                 {text('Discover', 'اكتشف')}
  
-                                </Btn>
+                                </Btn> */}
                                 </Box>
                             </Box>
                             </Container>

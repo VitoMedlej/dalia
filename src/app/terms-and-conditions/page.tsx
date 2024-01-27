@@ -6,7 +6,7 @@ import React from 'react'
 
 
 const text = [
-`Welcome to / True Nature Blend 
+`Welcome to / Bee Organic 
 If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website, or contact us for clarification.`,
 `The use of this website is subject to the following terms of use:`,
 `Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.`,
