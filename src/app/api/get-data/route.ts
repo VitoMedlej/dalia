@@ -7,6 +7,11 @@ import {type NextRequest} from 'next/server'
 export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
+    if (!client || !client.isConnected()) {
+        return NextResponse.json({success: false});
+
+    }
+
     const ProductsCollection = await client
         .db("BEE")
         .collection("Products");
@@ -40,7 +45,7 @@ try {
         return NextResponse.json({success: false});
     }
 
-    client.close()
+    // client.close()
     return NextResponse.json({
         success: true,
         data: {
@@ -51,8 +56,9 @@ try {
 }
 
 catch (error) {
-    client.close()
     console.log('error get-data: ', error);
+    // client.close()
+    return NextResponse.json({success: false});
 
 }
 }
