@@ -41,9 +41,10 @@ import PreLoader from "@/Components/PreLoader"
 try {
 
       // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-    // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store',next:{revalidate:0} })
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
+    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store',next:{revalidate:0} })
+    // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
     let res = await req.json();
+    console.log('res: ', res);
       // console.log('res: ', res);
       // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
       // let resImages : any = await  reqImages.json();
@@ -51,13 +52,13 @@ try {
       // let res = {data:null}
       
       return (
-        <PreLoader resImages={resImages || null} data={res?.data}/>
+        <PreLoader resImages={resImages || null} data={res?.result}/>
        )
 }
 catch (e) {
   console.log('e main home: ', e);
   return (
-    <PreLoader resImages={null} data={ null}/>
+    <PreLoader resImages={null} data={null}/>
    )
 
 }

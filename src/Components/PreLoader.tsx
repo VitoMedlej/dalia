@@ -56,7 +56,7 @@ PreLoader = ({data,resImages}:any) => {
     <Box >
       <MainCarousel resImages={resImages}/>
       <Perks/>
-      <HomeProductCollection  products={data?.featuredProducts}/>
+      <HomeProductCollection  products={data}/>
 
 
     <Grid  sx={{background:'#f9d40100',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
