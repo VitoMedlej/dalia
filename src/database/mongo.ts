@@ -14,7 +14,8 @@ async function withMongoClient(callback : any) : Promise < any > {
 
         if (client.topology.isConnected()) {
             console.log('MongoDB client is connected');
-            return await callback(client); // Here's the fix
+            const result = await callback(client); // Store the result of the callback
+            return result; // Return the result
         } else {
             throw new Error('Failed to connect to MongoDB');
         }
@@ -28,5 +29,6 @@ async function withMongoClient(callback : any) : Promise < any > {
         }
     }
 }
+
 
 export default withMongoClient;
