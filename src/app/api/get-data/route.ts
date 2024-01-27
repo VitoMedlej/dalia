@@ -3,12 +3,26 @@ import type {NextApiResponse}
 from 'next';
 import {NextResponse} from 'next/server'
 import {type NextRequest} from 'next/server'
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
     if (!client) {
         // console.log('client: ', client);
+        const uri = `mongodb+srv://vittomedl:d9g2ZpBVtS4fYUR7@cluster0.khubqfx.mongodb.net/?retryWrites=true&w=majority`
+
+
+// const uri = "mongodb+srv://adminuser:<password>@cluster0.pukzncm.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+await client.connect((err:any) => {
+    if (err) {
+        //   const collection = client.db("Ecom").collection("Users");
+        //   console.log('collection: ', collection);
+        // perform actions on the collection object
+        console.error('Failed to connect to MongoDB', err);
+    };
+});
         return NextResponse.json({success: false});
 
     }
@@ -46,7 +60,7 @@ try {
         return NextResponse.json({success: false});
     }
 
-    // client.close()
+   await client.close()
     return NextResponse.json({
         success: true,
         data: {
