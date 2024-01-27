@@ -41,14 +41,15 @@ const EmptyCartAlert = () => {
                         alt="Empty Cart Image"
                         className="img"/>
                 </Box>
-                <Typography fontSize='2em' fontWeight='bold'>
+                <Typography fontSize='2em' component='h1' sx={{pb:1}} fontWeight='bold'>
                     Your Cart Is Empty!
                 </Typography>
               
-                <Link className='flex auto decor-none gap' href='/collection/products'>
+                <Link className='flex auto decor-none gap'  href='/collection/products'>
                     <Btn v2 className='flex auto ' sx={{
                         border:'none',
-                        mt: 3
+                        mt: 3,
+                        color:'black'
                     }}>
                       Browse Collection
                         <AiOutlineShoppingCart/>
@@ -144,27 +145,30 @@ const Cart = () => {
                   }}
                     className='flexed'> 
 
-                <span>Total:
 
                     <Typography sx={{
                         fontWeight: '600'
-                    }}>${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}</Typography>
-                    
+                    }}>
+                    Total:
+                        <span>
+                        ${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
+                        
                     </span>
+                        </Typography>
                     </Box>
                     <Link href='/checkout'
                     
                     className='decor-none bg'>
 
                     <Btn
-                    sx={{width:'100%',borderRadius:25,mt:2.5}}>Checkout Now</Btn>
+                    sx={{width:'100%',borderRadius:0,mt:2.5}}>Checkout Now</Btn>
                     </Link>
 
                     <Link href='/collection/products' className='decor-none'>
 
                     <Btn
                     
-                     sx={{mx:0,':hover':{background:'white',color:'black'},background:'transparent',borderRadius:'25px',width:'100%',mt:1}}>Continue Shopping</Btn>
+                     sx={{mx:0,':hover':{background:'white',color:'black'},background:'transparent',borderRadius:'0',width:'100%',mt:1}}>Continue Shopping</Btn>
                     </Link>
                 
                 </Box>

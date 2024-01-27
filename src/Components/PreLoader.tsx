@@ -20,23 +20,35 @@ PreLoader = ({data,resImages}:any) => {
     {
       id: 1,
       title: text('100% Natural', '100٪ طبيعي'),
-      desc: text('Our supplements are made from only the finest natural ingredients, ensuring that you get the best possible results without any harmful chemicals or additives.', 'مكملاتنا مصنوعة فقط من أرقى المكونات الطبيعية، مما يضمن لك الحصول على أفضل النتائج دون أي مواد كيميائية ضارة أو مواد إضافية.')
+      desc: text(
+        'Our honey is sourced from the purest natural environments, ensuring 100% natural goodness without any artificial additives or preservatives.',
+        'عسلنا يأتي من أجواء طبيعية نقية، مما يضمن لك الخير الطبيعي بنسبة 100٪ دون أي إضافات صناعية أو مواد حافظة.'
+      ),
     },
     {
       id: 2,
       title: text('Purity and Potency', 'النقاء والفعالية'),
-      desc: text('We carefully select our ingredients for their purity and potency, ensuring that you get the best possible results from our supplements.', 'نحن نختار مكوناتنا بعناية بسبب نقاوتها وفعاليتها، مما يضمن لك الحصول على أفضل النتائج من مكملاتنا.')
+      desc: text(
+        'We carefully select our beehives in pristine locations, ensuring the purity and potency of our honey, so you experience the best benefits.',
+        'نحن نختار خلايانا بعناية في أماكن نقية، مما يضمن نقاء وفعالية عسلنا، لتجربة فوائد متميزة.'
+      ),
     },
     {
       id: 3,
       title: text('Expertly Formulated', 'صياغة خبيرة'),
-      desc: text('Our supplements are expertly formulated by our team of experienced professionals, ensuring that you get the best possible results every time.', 'تم صياغة مكملاتنا بخبرة من قبل فريق من المحترفين ذوي الخبرة، مما يضمن لك الحصول على أفضل النتائج في كل مرة.')
+      desc: text(
+        'Our honey is expertly crafted by our team of experienced beekeepers, ensuring a premium product that delivers superior taste and quality.',
+        'تم تصنيع عسلنا بخبرة من قبل فريق من مربي النحل ذوي الخبرة، مما يضمن لك منتجًا ممتازًا يقدم طعمًا وجودة فائقين.'
+      ),
     },
     {
       id: 4,
       title: text('Great Value', 'قيمة عظيمة'),
-      desc: text('Our supplements offer great value for money, providing you with the highest quality ingredients at an affordable price.', 'تقدم مكملاتنا قيمة عظيمة للمال، حيث توفر لك أعلى جودة من المكونات بسعر معقول.')
-    }
+      desc: text(
+        'Bee Organic honey provides great value for your health, offering the highest quality honey at an affordable price for you and your family.',
+        'عسل بي أورجانيك يقدم قيمة عظيمة لصحتك، حيث يوفر عسل عالي الجودة بسعر معقول لك ولعائلتك.'
+      ),
+    },
   ];
   
 

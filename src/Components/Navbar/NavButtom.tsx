@@ -39,12 +39,12 @@ const NavButtom = () => {
 <Typography 
 className=' cursor center flex gap1 black decor-none captialize'
 id="button"
-component='p' sx={{width:'max-content',
+component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Collections
+COLLECTION
 </Typography>
 </Link>
 
@@ -53,13 +53,14 @@ Collections
         return <Link key={i} className='black decor-none ' href={`/${i}/products`}>
 
         <Typography 
+        component='h1'
         className=' cursor center flex gap1 black decor-none captialize'
         id="button"
-        component='p' sx={{width:'max-content',
+        sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
         fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-        {i}
+        {i.toUpperCase()}
         </Typography>
         </Link>
     })
