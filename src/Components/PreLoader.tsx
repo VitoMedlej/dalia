@@ -59,24 +59,24 @@ PreLoader = ({data,resImages}:any) => {
       <HomeProductCollection  products={data?.featuredProducts}/>
 
 
-    <Grid  sx={{background:'#f4f8fd',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
+    <Grid  sx={{background:'#f9d40100',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
 
     <Grid  maxWidth='lg' item xs={9} md={4}>
       <Box sx={{height:'400px',maxWidth:'350px'}} className='auto'>
-        <img src="https://ucarecdn.com/fff2fc10-c313-47a2-b294-52ec5eb600e7/image00019.jpg" alt="" className="img" />
+        <img src="https://ucarecdn.com/20fdd745-f27d-4fcc-810a-b1579112422f/2nd.jpg" alt="" className="img" />
       </Box>
     </Grid>
     <Grid item xs={12} md={6}>
     <Container  className='wrap col center text-center auto flex' sx={{alignItems:'center',px:{sm:1},display:'flex'}}>
      
-        <Typography sx={{width:'100%',maxWidth:'400px',
+        <Typography sx={{width:'100%',maxWidth:'500px',
         pt:{xs:2,sm:0},
-        fontSize:{xs:'2em',sm:'2.1em'},
+        fontSize:{xs:'2em',sm:'3em'},
         fontWeight:900}} component='h1' className='color2 center text-center'>
-        {text('Taste the Authenticity of Lebanon with BeeOrganic Honey', 'مرحبًا في ترو ناتشور بليند')}
+        {text('Taste the Authenticity of Lebanon ', 'مرحبًا في ترو ناتشور بليند')}
 
         </Typography>
-        <Typography sx={{width:'100%',maxWidth:'400px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className='center text-center'>
+        <Typography sx={{width:'100%',maxWidth:'470px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className='center text-center'>
         {text('At Bee Organic, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
 
         </Typography>
@@ -91,7 +91,7 @@ PreLoader = ({data,resImages}:any) => {
 
     </Grid>
 
-    <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
+    {/* <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
       <Typography  component='h1' sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
       {text('Why Choose Bee Organic?', 'لماذا تختار ترو ناشور بليند؟')}
 
@@ -100,16 +100,14 @@ PreLoader = ({data,resImages}:any) => {
       {text('Our supplements are made with only the finest natural ingredients, carefully selected for their purity and potency. Our products are free from harmful chemicals', 'مكملاتنا مصنوعة فقط من أرقى المكونات الطبيعية، تم اختيارها بعناية بسبب نقاوتها وفعاليتها. منتجاتنا خالية من المواد الكيميائية الضارة.')}
 
         </Typography>
-    </Grid>
-    <Grid  xs={12}  sx={{mt:4}}
+    </Grid> */}
+    {/* <Grid  xs={12}  sx={{mt:4}}
     >
       <Container sx={{maxWidth:'lg'}} className='flex wrap row justify-between'>
 
       {textsArray.map(i=>{
         return <Box sx={{borderBottom:'1px solid white',width:{xs:'98%',sm:'200px',md:'48%'},maxWidth:'500px',mt:2.5}} key={i.id}>
-          {/* <Typography className='color3'>
-            .0{i.id}
-          </Typography> */}
+  
           <Typography className='color2' sx={{fontSize:'1.4em',fontWeight:500}}>
             {i.title}
           </Typography>
@@ -120,7 +118,7 @@ PreLoader = ({data,resImages}:any) => {
       })}
       </Container>
 
-    </Grid>
+    </Grid> */}
     </Grid>
     {/* <Box className='flex auto wrap ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
       {
@@ -229,17 +227,17 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
       <Box/>
     
-{/* 
+
         <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
-                  <img src="https://ucarecdn.com/4fc6fdc2-a720-40dd-8469-80966a92a759/purplemushroom.webp" alt="" className="img" />
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
+                  <img src="https://ucarecdn.com/de6677d9-a5c9-4d36-8264-93901372dff5/image00006.jpeg" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center text-center col ">
-                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
-                    {text('Medicinal Mushroom', 'الفطر الطبي')}
+                    <Typography component='h1' className='center text-center' sx={{fontWeight:600,fontSize:'3em',textShadow:'1px 1px 3px #01010163',color:'white'}}>
+                    {text('Blossom Honey', 'الفطر الطبي')}
 
                     </Typography>
                     <Btn
-        onClick={()=>router.push(`/mushrooms/products?type=all`)}
+        onClick={()=>router.push(`/Fruit/products`)}
 
                     
                     sx={{border:'none',mx:'auto'}}>
@@ -248,7 +246,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                     </Btn>
                   </Box>
             </Box>
-            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
+            {/* <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
                   <img src="https://dewarticles.com/wp-content/uploads/2021/06/natural-products.jpg" alt="Natural Supplements Image" className="img" />
                   <Box  className="absolute flex center auto items-center text-center col ">
                     <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
@@ -263,14 +261,17 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
                     </Btn>
                   </Box>
-            </Box>
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'32%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'32vw'}}}>
-                  <img src="https://ucarecdn.com/7e5db5d1-ab25-456e-b7c0-91ef79ac9c56/-/preview/700x700/-/quality/smart_retina/-/format/auto/" alt="" className="img" />
+            </Box> */}
+      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
+                  <img src="https://ucarecdn.com/3b04ade0-643d-4c22-92df-1c5126ce676d/image00003.jpeg" alt="" className="img" />
                   <Box  className="absolute flex center auto items-center col text-center">
-                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000cc',color:'white'}}>{text('Organic Herbs', 'أعشاب عضوية')}
+                  <Typography component='h1' className='center text-center' sx={{fontWeight:600,fontSize:'3em',textShadow:'1px 1px 3px #01010163',color:'white'}}>
+
+                      
+                      {text('Al-JARDI HONEY', 'أعشاب عضوية')}
 </Typography>
                     <Btn
-            onClick={()=>router.push(`/organic herbs/products?type=all`)}
+            onClick={()=>router.push(`/Nut/products?type=all`)}
 
                     
                     sx={{border:'none',mx:'auto'}}>
@@ -280,7 +281,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                   </Box>
             </Box>
           
-      </Container> */}
+      </Container>
 
       {/* <HomeProductCollection  products={data}/> */}
 
@@ -305,7 +306,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     <Box sx={{my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
       <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
       <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
-        <Typography component='h1' sx={{fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
+        <Typography component='h1' sx={{textTransform:'uppercase',fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
         {text('We’re about creating a community', 'رسالتنا')}
         </Typography>
         <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
@@ -313,10 +314,13 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
         </Typography>
         <Btn
-        onClick={()=>router.push('/collection/products')}
-        sx={{mt:2,mx:'auto'}} v2>
-        {text('Buy Now', 'تواصل معنا')}
-      </Btn>
+            onClick={()=>router.push(`/collection/products?type=all`)}
+
+                    
+                    sx={{border:'none',mx:'auto',mt:1}}>
+                    {text('SHOP NOW', 'تسوق الآن')}
+
+                    </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>
       <img src="https://th.bing.com/th/id/R.23b52c1b4ac90cffbfdf9fa5af6800a7?rik=8uvQObYQku8vZA&riu=http%3a%2f%2fimg1.wsimg.com%2fisteam%2fip%2f59f67ef2-0d3d-4e01-b060-b5c8b8657b99%2f455F2F40-FDD6-45AC-89C5-BBA51B27709E.jpeg&ehk=rSkzbGSGTX5Kl%2b4lDKjkpAvDo3jxBk%2bZOkfqHiGIQVA%3d&risl=&pid=ImgRaw&r=0" alt="" className="img" />

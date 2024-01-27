@@ -14,6 +14,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
            <Box className="flex justify-between auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
 
 <Typography
+component={'h1'}
     className='sectionTitle   box'
     sx={{
  
@@ -24,13 +25,14 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     padding:.5,
     fontWeight: '300'
 }}>
- Our Best Sellers
+ View Our Products
 </Typography>
 
-<Btn
+<Btn 
+
 onClick={()=>router.push('/collection/products')}
 >
-    Shop All
+   Explore More
 </Btn>
 </Box>
 

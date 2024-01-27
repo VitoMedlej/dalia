@@ -78,7 +78,11 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-               
+            <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.20,fontSize:'.8em'}}>
+                <Typography className='clr' component='h1' >
+            FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
+                </Typography>
+            </Box>
             <Toolbar
      id='navy3'
 

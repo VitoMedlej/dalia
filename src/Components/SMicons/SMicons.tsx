@@ -1,8 +1,8 @@
 "use client"
 import { Box } from '@mui/material';
 import React from 'react'
-import {FaInstagram,FaWhatsapp} from 'react-icons/fa';
-import {BsTiktok} from 'react-icons/bs';
+// import {FaInstagram,FaWhatsapp} from 'react-icons/fa';
+// import {BsTiktok} from 'react-icons/bs';
 
 
 const sm = [
@@ -10,7 +10,7 @@ const sm = [
         Icon:'https://www.svgrepo.com/show/520798/instagram.svg',
         href:'https://www.instagram.com/beeorganiclb?igsh=MXFreTZkbGI5ejlteA%3D%3D&utm_source=qr'
     },
-    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:'https://wa.me/+96112345678'},
+    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:'https://wa.me/+96170657915'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {

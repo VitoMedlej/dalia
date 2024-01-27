@@ -95,8 +95,10 @@ const Preloader3 = ({res}:{res:any}) => {
                                 position:'absolute'}}>
                                 <Typography 
                                 component='h1'
-                                sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.65em',lg:'4em'},fontWeight:900}}>
-                                {text('BeeOrganic: Savor the Sweetness of Nature', 'استشعر قوة الطبيعة')}
+                                sx={{color:'white',fontSize:{xs:'2.65em',sm:'3.1em',md:'3.15em',lg:'3em'},
+                                textTransform:'capitalize',
+                                fontWeight:900}}>
+                                {text('THE TASTE OF PURE AUTHENTIC HONEY WITH BEE ORGNAIC', 'استشعر قوة الطبيعة')}
                                 </Typography>
                                 <Typography 
                                 sx={{color:'white',fontSize:{xs:'.85em',sm:'.87em'},mt:1,maxWidth:'700px'}}>
