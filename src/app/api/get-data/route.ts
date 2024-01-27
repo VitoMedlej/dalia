@@ -56,10 +56,13 @@ try {
     });
 }
 
-catch (error) {
+catch (error:any) {
     console.log('error get-data: ', error);
     // client.close()
-    return NextResponse.json({success: false});
+    return NextResponse.json({
+        success: false,
+        error: error.message, // or error.stack if you want the full stack trace
+    });
 
 }
 }
