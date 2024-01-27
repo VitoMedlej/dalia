@@ -40,6 +40,7 @@ try {
         return NextResponse.json({success: false});
     }
 
+    client.close()
     return NextResponse.json({
         success: true,
         data: {
@@ -50,6 +51,7 @@ try {
 }
 
 catch (error) {
+    client.close()
     console.log('error get-data: ', error);
 
 }
