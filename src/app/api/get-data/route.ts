@@ -7,7 +7,8 @@ import {type NextRequest} from 'next/server'
 export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
-    if (!client || !client.isConnected()) {
+    if (!client) {
+        // console.log('client: ', client);
         return NextResponse.json({success: false});
 
     }
