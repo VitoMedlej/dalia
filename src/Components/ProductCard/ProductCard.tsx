@@ -74,8 +74,8 @@ const ProductCard = ({
 
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'.8em',sm:'1.1em',md:'1.35em'},
-                    fontWeight: '400'
+                    fontSize: {xs:'.8em',sm:'1.1em',md:'1em'},
+                    fontWeight: '600'
                 }}>
                     {title}
                 </Typography>
@@ -87,22 +87,22 @@ const ProductCard = ({
                <Typography
                     sx={{
                     mb:.5,
-                    fontWeight: '300',
+                    color:'green',
+                    fontWeight: '400',
                     fontSize: {xs:'.99em',sm:'1em'}
                 }}>
                     {price}$
                 </Typography>
-                {/* <Btn 
-            className='cursor  gap1'
+                <Btn 
+            className='cursor clr  gap1'
                 
                      onClick={()=>addToCart(1,_id,{title,category,img:images[0],_id,price},true)}
-                    
+                    v2
                     sx={{
-                        // color:'white',
-                   
+                        margin:'0 auto'
                     // borderRadius:'8',
-                  
-                 
+                        ,
+                        ':hover':{color:'black !IMPORTANT',background:'#f7e454'}
                 }}>
                     <Box  className="flex">
 
@@ -110,7 +110,7 @@ const ProductCard = ({
                     <BiCartAdd fontSize='20px'/>
                     </Box>
                 </Btn>
-                 */}
+                
                </>
 
                :

@@ -17,17 +17,17 @@ try {
         .find({isFeatured: true})
         // .find({})
         .limit(20)
-    const ProductsQuery = await ProductsCollection
-        // .find({isFeatured: false})
-        .find({})
-        .sort({_id: -1})
-        .limit(20)
+    // const ProductsQuery = await ProductsCollection
+    //     // .find({isFeatured: false})
+    //     .find({})
+    //     .sort({_id: -1})
+    //     .limit(20)
 
-    await ProductsQuery.forEach((doc : any) => {
+    // await ProductsQuery.forEach((doc : any) => {
 
-        products.push(doc)
+    //     products.push(doc)
 
-    });
+    // });
 
     await featuredProductsQuery.forEach((doc : any) => {
 

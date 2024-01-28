@@ -40,12 +40,10 @@ import PreLoader from "@/Components/PreLoader"
 //   }, [])
 try {
 
-  console.log('process.env.NEXT_PUBLIC_URL: ', process.env.NEXT_PUBLIC_URL);
       // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
     const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store',next:{revalidate:0} })
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
     let res = req &&  await req.json();
-    console.log('res: ', res);
       // console.log('res: ', res);
       // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
       // let resImages : any = await  reqImages.json();
@@ -53,7 +51,7 @@ try {
       // let res = {data:null}
       
       return (
-        <PreLoader resImages={resImages || null} data={res?.result}/>
+        <PreLoader resImages={resImages || null} data={res?.data?.featuredProducts}/>
        )
 }
 catch (e) {
