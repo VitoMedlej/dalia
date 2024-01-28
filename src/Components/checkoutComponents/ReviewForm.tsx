@@ -58,12 +58,9 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 
         
           if (!product?._id) return;
-             console.log('product: ', product);
          return <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
-            <Typography sx={{mr:.5}} variant="body2">{`${product?.qty ? product?.qty : 1}x `}</Typography>
-          
-             <ListItemText primary={`${product?.title || 'Product Name'} - ${product?.selectedColor ? product?.selectedColor : ''}`}  />
-            <Typography variant="body2">${product?.price}</Typography>
+             <ListItemText primary={`${product?.qty || '1'} x ${product?.title || 'Product Name'} - ${product?.selectedColor ? product?.selectedColor : ''}`}  />
+            <Typography variant="body2">${product?.newPrice ? Number(product?.newPrice * Number(product?.qty || 1) ) : product?.price * Number(product?.qty || 1) }</Typography>
           </ListItem>
         })}
         <Divider/>
@@ -74,30 +71,30 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
   $3
 </Typography>
 </ListItem> */}
+ {/* {Number(total) < 60 && <ListItem sx={{ px: 0 }}>
+
+<ListItemText primary="Delivery Fees" />
+<Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
+  $4 (Free delivery for orders over $60)
+</Typography>
+</ListItem>} */}
         <ListItem sx={{ px: 0 }}>
-        <ListItemText primary="Delivery Fees" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-             3$
-          </Typography>
-          </ListItem>
-          <ListItem sx={{ px: 0 }}>
+
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            ${total}
+            {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
+            ${Number(total)?.toFixed(2)}
           </Typography>
         </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Typography variant="h6" gutterBottom color='green' sx={{fontSize:'.9em', mx: 2,my:2 }}>
-          NOTE: Delivery charge for orders that exceed 25KG will be charged extra.
-          </Typography>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-          Order Summary 
+          Order Summary
           </Typography>
                 <Typography gutterBottom>{info.firstName}</Typography>
                 <Typography gutterBottom>{info.lastName}</Typography>
-                {/* <Typography gutterBottom>{info.email}</Typography> */}
+                <Typography gutterBottom>{info.email}</Typography>
                 <Typography gutterBottom>{info.phone}</Typography>
                 <Typography gutterBottom>{info.address1}</Typography>
                 <Typography gutterBottom>{info.address2}</Typography>

@@ -38,18 +38,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [cart,setCart] = useState<any>();
 
-  
-  useEffect(() => {
-    const products = loadState('F5NX6214-HJN35I')
-    
-    if (products) {
-      setCart(products)
-    }
-  
-    
-  }, [])
   
   const handleBack = () => {
     setActiveStep(activeStep - 1);
@@ -57,19 +46,21 @@ export default function Checkout() {
 
   const [info,setInfo] = useState({
     firstName:'',
-    lastName:'',city:'',phone:'',address1:'',address2:''  })
+    checkbox:true,
+    checkbox2:true,
+    lastName:'',city:'',email:'',phone:'',address1:'',address2:''  })
     const handleChange = (e: any) => {
       setInfo({
         ...info,
         [e.target.name]:e.target.value
       })
     }
-    
-    console.log('info: ', info);
+
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     const handleNext = () => {
-      if (info && info.firstName && info.lastName && info.address1 && info.phone && info.city && info.address2) {
+      if (info?.checkbox2 && info?.checkbox && info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
+        localStorage.setItem('25VNSFKJNJKNX14hhJ52cknv',JSON.stringify({...info, name : `${info.firstName} ${info.lastName}`}))
         saveState('V51N5-F7YBJ5X',info)
         setActiveStep(activeStep + 1);
       
@@ -84,8 +75,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('F5NX6214-HJN35I')
-      
+      const products = loadState('V51N5-F7YBJ5X')
  
 
       const total = 10
@@ -101,8 +91,8 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,total}})
         });
   const content = await rawResponse.json();
-  saveState('V51N5-F7YBJ5X',null)
   saveState('F5NX6214-HJN35I',null)
+  saveState('V51N5-F7YBJ5X',null)
 
 }
   }
@@ -123,7 +113,7 @@ export default function Checkout() {
   <ThemeProvider theme={theme}>
       <CssBaseline />
   
-      <Container component="main" maxWidth="sm" sx={{ mt:4, mb: 4 }}>
+      <Container component="main" maxWidth="sm" sx={{ mt:20, mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
@@ -155,7 +145,9 @@ export default function Checkout() {
                 )}
                 <Button
                     type='submit'
-                    disabled={ !cart || info.phone?.length < 6|| !info?.firstName || info?.firstName.length < 2 || !info.phone }
+                    disabled={
+                      !info?.checkbox2 || !info?.checkbox
+                      || !info?.email.match(regex) || !info.email || info.phone?.length < 6 || info.email?.length < 5 || !info?.firstName || info?.firstName.length < 2 || !info.phone }
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}

@@ -2,6 +2,7 @@ import { ICartItem } from "@/Types/Types";
 
 function totalCal(cartItems: ICartItem[]) {
     // if (!item?._id) return;
+    console.log('cartItems: ', cartItems);
     if (!cartItems) return 0;
     let totalPrice = 0;
     for (const item of cartItems) {

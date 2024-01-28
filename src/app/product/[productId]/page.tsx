@@ -152,7 +152,7 @@ const Index = () => {
          { data?.product?.size && <Box >
              <Box >
                  <Typography >
-                 <strong>Size:</strong>{' '}{data.product.size}
+                {data.product.size}
                  </Typography>
              </Box>
              {/* <Box>
@@ -180,15 +180,13 @@ const Index = () => {
            { data?.product?.Category && <Box >
              <Box >
                  <Typography >
-                 <strong>Category:</strong>{' '}{data.product.category}
+                {data.product.category}
                  </Typography>
              </Box>
             
          </Box>}
 
-             <Typography sx={{fontWeight:600,py:.25}}>
-                 Product Description:
-             </Typography>
+           
              <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
              </Typography>

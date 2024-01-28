@@ -88,7 +88,7 @@ const ProductCard = ({
                     sx={{
                     mb:.5,
                     color:'green',
-                    fontWeight: '400',
+                    fontWeight: '500',
                     fontSize: {xs:'.99em',sm:'1em'}
                 }}>
                     {price}$

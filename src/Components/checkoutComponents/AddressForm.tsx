@@ -8,7 +8,30 @@ import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
 
 export default function AddressForm({info,setInfo,handleChange}:{handleChange:any,setInfo:any,info:any}) {
- 
+  const [data,setData]= useState(null)
+  const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+
+  const fetchUserAndList = async () => {
+    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+    if (user) {
+           let parsedUser = JSON.parse(user)
+           if (!parsedUser) {return}
+           setLocalUser(parsedUser)
+           if (parsedUser?.email && parsedUser?.name && parsedUser?.phone && parsedUser?.address1) {
+              setInfo({...info, email: parsedUser?.email, 
+                
+                city: parsedUser?.city,
+                phone: parsedUser?.phone,
+                address1: parsedUser?.address1,
+                address2: parsedUser?.address2,
+                firstName: parsedUser?.name?.split(" ")[0], lastName: parsedUser?.name?.split(" ")[1] ? parsedUser?.name?.split(" ")[1] : parsedUser?.name})
+           }
+    }
+}
+React.useEffect(()=>{
+  fetchUserAndList()
+
+},[])
   return (
           <Box component='form' >
       <Typography variant="h6" gutterBottom>
@@ -43,7 +66,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
           />
         </Grid>
 
-        {/* <Grid item xs={12}>
+        <Grid item xs={12}>
           <TextField
             required
             id="email1"
@@ -55,7 +78,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             autoComplete="email"
             variant="standard"
           />
-        </Grid> */}
+        </Grid>
         <Grid item xs={12}>
           <TextField
             required
@@ -68,20 +91,6 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
             autoComplete="phone-number phone" 
             variant="standard"
           />
-        </Grid>
-        <Grid item xs={12} >
-          <TextField
-            id="city"
-            name="city"
-            required
-            value={info.city}
-          onChange={handleChange}
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="standard"
-          />
-          
         </Grid>
         <Grid item xs={12}>
           <TextField
@@ -98,19 +107,44 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
         </Grid>
         <Grid item xs={12}>
           <TextField
-          
             id="address2"
             value={info.address2}
           onChange={handleChange}
             name="address2"
-            label="Notes"
+            label="Any extra information"
             fullWidth
             rows={4}
             autoComplete="shipping address-line2"
             variant="standard"
           />
         </Grid>
-
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="city"
+            name="city"
+            value={info.city}
+          onChange={handleChange}
+            label="City"
+            fullWidth
+            autoComplete="shipping address-level2"
+            variant="standard"
+          />
+          
+        </Grid>
+      {/* <Grid item xs={12} sm={ 12}>
+      <FormControlLabel
+        value={info.checkbox}
+        onChange={handleChange}
+        name='checkbox'
+      required control={<Checkbox  />} label="I agree to the Terms and conditions." />
+      </Grid>
+      <Grid item xs={12} sm={ 12}>
+      <FormControlLabel
+        value={info.checkbox2}
+        onChange={handleChange}
+        name='checkbox2'
+      required control={<Checkbox  />} label="I agree to receive emails understand that I can unsubscribe at any time by clicking the link in the email." />
+      </Grid> */}
      
 
         
