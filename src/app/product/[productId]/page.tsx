@@ -101,7 +101,7 @@ const Index = () => {
       
          
             {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
-              <Box sx={{width:'fit-content'}}>
+              <Box sx={{width:{xs:'max-content'}}}>
 
              <QuantityPicker 
                     onChange={(e:number)=>{setSelectedQuantity(e)}}
@@ -114,7 +114,7 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
-             width:{xs:'100%'}}}>
+             width:{xs:'70%',sm:'60%'}}}>
                  <Typography component='h1'>
                  ADD TO CART
 
@@ -125,7 +125,7 @@ const Index = () => {
 
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',width:'100%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'90%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
 
 
 <Btn      sx={{gap:.5,

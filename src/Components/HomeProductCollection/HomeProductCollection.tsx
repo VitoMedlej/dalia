@@ -29,7 +29,7 @@ component={'h1'}
 </Typography>
 
 <Btn 
-
+sx={{border:'1px solid #f7e454c'}}
 onClick={()=>router.push('/collection/products')}
 >
    Explore More

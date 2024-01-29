@@ -21,6 +21,13 @@ $color3 : #F4E461 !important;
 .color3 {
     color: $color3;
 }
+.topd {
+    object-position: top;
+}
+.centerd {
+    object-position: center;
+
+}
 .img {
     object-fit: cover;
     width:100%;

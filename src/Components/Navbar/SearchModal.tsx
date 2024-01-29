@@ -13,7 +13,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 460,
+  width: {xs:'max-content',sm:450},
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -36,11 +36,11 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <Typography>
+        <Typography className='center text-center'>
             Search By name, type or category...
         </Typography>
         <SearchInput
-        sx={{width:'100%'}}
+        sx={{width:'100%',mx:'auto',mt:1}}
          />
         </Box>
         {/* 

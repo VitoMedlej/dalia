@@ -71,7 +71,7 @@ const ProductCard = ({
                 mt:1.5,
             }}>  <Typography
             className='limited cursor center text-center '
-
+                    component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                     fontSize: {xs:'.8em',sm:'1.1em',md:'1em'},

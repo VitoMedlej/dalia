@@ -33,6 +33,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             <Box className="flex justify-between" sx={{width:'100%'}}>
 
             <Typography
+            component='h1'
                 className='sectionTitle   box'
                 sx={{
              
@@ -47,6 +48,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Typography>
             
             <Btn
+            sx={{border:'1px solid #f7e454'}}
             onClick={()=>router.push('/collection/products')}>
                 Shop All
             </Btn>

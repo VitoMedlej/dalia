@@ -15,10 +15,13 @@ import useLanguage from '@/Hooks/useLanguage';
 const Preloader3 = ({res}:{res:any}) => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-        {img:'https://www.zdrowiefit.pl/wp-content/uploads/2022/04/Produkty-pszczele-1536x1024.jpg'},
-         {
-        img:`https://th.bing.com/th/id/R.4904b6c65c536942a919c111e0e0d734?rik=odGE4dFC0fMQ1g&pid=ImgRaw&r=0`
-       }
+        {img:'https://ucarecdn.com/c425edb3-eb3d-4c34-af4c-f20890a0d9c9/image00019.jpg',position:'centerd'},
+        {img:'https://ucarecdn.com/af01a569-50de-4537-8434-827715426182/image00008.jpeg',position:'topd'},
+        {img:`https://ucarecdn.com/658f97dc-0a75-446c-9dda-ce16bfbc1bba/1st.jpg`,position:'topd'},
+        // {img:'https://www.zdrowiefit.pl/wp-content/uploads/2022/04/Produkty-pszczele-1536x1024.jpg'},
+    //      {
+    //      img:`https://th.bing.com/th/id/R.4904b6c65c536942a919c111e0e0d734?rik=odGE4dFC0fMQ1g&pid=ImgRaw&r=0`
+    //    }
        
      ])
      const redir = () => {
@@ -41,12 +44,12 @@ const Preloader3 = ({res}:{res:any}) => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
-            maxWidth:'none',
+            maxWidth:'1200px',
             // maxWidth: 'lg',
             minHeight:'400px',
             maxHeight:{sm:'90vh',md:'500px',lg:'550px'},
             margin: '0 auto',
-         
+            mt:1,
             height : {xs:'100vh',sm:'450px',md:'100%'},
              
             display: {
@@ -126,7 +129,7 @@ const Preloader3 = ({res}:{res:any}) => {
                             </Container>
                             <img
             
-                                className={`img   
+                                className={`img  ${item?.position} 
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}

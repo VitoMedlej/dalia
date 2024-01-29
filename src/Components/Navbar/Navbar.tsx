@@ -78,8 +78,8 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-            <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.25,fontSize:'.78em'}}>
-                <Typography className='clr' component='h1' >
+            <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.25}}>
+                <Typography className='clr' component='h1' sx={{fontSize:{xs:'.75em',sm:'.75em'}}}>
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
             </Box>
@@ -155,7 +155,9 @@ export default function Navbar() {
                           
                         </IconButton>
                         <IconButton
-                            onClick={() => router.push('/collection/products')}
+                            onClick={() => setCartOpen(!cartOpen)}
+
+                            // onClick={() => router.push('/collection/products')}
                             sx={{
                                 margin : '8px',padding:0,
                             color: 'black'
@@ -283,7 +285,7 @@ mobile
 
                 </Box>
            
-{/* <SearchModal openModal={openModal} setOpenModal={setOpenModal }/> */}
+<SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
              
             </Toolbar>
         </AppBar>

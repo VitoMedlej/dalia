@@ -21,6 +21,16 @@ h1 {
   color: #F4E461 !important;
 }
 
+.topd {
+  -o-object-position: top;
+     object-position: top;
+}
+
+.centerd {
+  -o-object-position: center;
+     object-position: center;
+}
+
 .img {
   -o-object-fit: cover;
      object-fit: cover;

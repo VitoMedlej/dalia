@@ -303,13 +303,13 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(10,18)}/> */}
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(18)}/> */}
 
-    <Box sx={{my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
-      <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.5}}></Box>
+    <Container sx={{padding:'0 !important',my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
+      <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.45}}></Box>
       <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
-        <Typography component='h1' sx={{textTransform:'uppercase',fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
+        <Typography component='h1' className='auto center' sx={{maxWidth:'900px',textTransform:'uppercase',fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
         {text('We’re about creating a community', 'رسالتنا')}
         </Typography>
-        <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'800px'}} className='auto'>
+        <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'660px'}} className='center auto'>
         {text('that values health, wellness, and sustainability. We’re about educating our customers on the importance of bees in our ecosystem and how our consumption choices impact their survival.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
 
         </Typography>
@@ -323,11 +323,11 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
                     </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>
-      <img src="https://th.bing.com/th/id/R.23b52c1b4ac90cffbfdf9fa5af6800a7?rik=8uvQObYQku8vZA&riu=http%3a%2f%2fimg1.wsimg.com%2fisteam%2fip%2f59f67ef2-0d3d-4e01-b060-b5c8b8657b99%2f455F2F40-FDD6-45AC-89C5-BBA51B27709E.jpeg&ehk=rSkzbGSGTX5Kl%2b4lDKjkpAvDo3jxBk%2bZOkfqHiGIQVA%3d&risl=&pid=ImgRaw&r=0" alt="" className="img" />
+      <img src="https://ucarecdn.com/6ce6563b-35b2-432c-9c62-51fbb4ffca8f/image00005.jpeg" alt="" className="img" />
  
       </Box>
 
-      </Box>        
+      </Container>        
 
     {/* <Testimonials/> */}
 

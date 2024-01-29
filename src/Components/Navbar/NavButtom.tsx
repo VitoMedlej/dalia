@@ -50,7 +50,7 @@ COLLECTION
 
 {
     ["Pure", "Fruit", "Nut", "Spreads", "Herbal"].map(i=>{
-        return <Link key={i} className='black decor-none ' href={`/${i}/products`}>
+        return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h1'
