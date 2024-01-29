@@ -11,6 +11,6 @@ function totalCal(cartItems: ICartItem[]) {
             totalPrice += item?.qty * Number(item?.price);
         }
     }
-    return Number(totalPrice) + 3 ;
+    return Number(totalPrice) ;
   }
   export default totalCal
