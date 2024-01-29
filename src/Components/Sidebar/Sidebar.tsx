@@ -90,8 +90,22 @@ useEffect(()=>{
   
 
           </ListItem>
+          <ListItem
+          sx={{fontWeight:400}}
+
+          onClick={()=>{router.push(`/pure/products`); toggleDrawer(false)}}
+           disablePadding>
+            <ListItemButton>
+            
+                  <Typography component='h1' sx={{fontWeight:600}}>
+              PURE HONEY
+            </Typography>
+            </ListItemButton>
+  
+
+          </ListItem>
     
-          {
+          {/* {
            [
             
           
@@ -113,7 +127,7 @@ useEffect(()=>{
     
               </ListItem>
              })
-          }
+          } */}
 
 <Accordion sx={{border:'none',boxShadow:'none',}}>
             
@@ -122,8 +136,8 @@ useEffect(()=>{
     aria-controls="panel1a-content"
     id="panel1a-header"
   >
- <Typography sx={{fontWeight:400}}>
-        Flavored Honey
+ <Typography component='h1' sx={{fontWeight:600}}>
+         FLAVORED HONEY
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -143,7 +157,7 @@ router.push(`/flavored honey/products`)}}
 
 <ListItemButton >
       <Typography sx={{fontWeight:300}}>
-  -View All
+  View All
 </Typography>
 </ListItemButton>
 </ListItem>
@@ -161,7 +175,7 @@ key={i}>
 
 <ListItemButton >
             <Typography sx={{fontWeight:300}}>
-        -{i}
+        {i}
       </Typography>
       </ListItemButton>
 </ListItem>
