@@ -90,9 +90,13 @@ useEffect(()=>{
   
 
           </ListItem>
-
+    
           {
-             ["Pure", "Fruit", "Nut", "Spreads", "Herbal"].map(i=>{
+           [
+            
+          
+           `Strawberry and Peanut`,
+           `Pure Honey`].map(i=>{
               return    <ListItem
               key={i}
               sx={{fontWeight:400}}
@@ -110,6 +114,64 @@ useEffect(()=>{
               </ListItem>
              })
           }
+
+<Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+            <AccordionSummary
+    expandIcon={<AiOutlineArrowUp />}
+    aria-controls="panel1a-content"
+    id="panel1a-header"
+  >
+ <Typography sx={{fontWeight:400}}>
+        Flavored Honey
+      </Typography>
+  </AccordionSummary>
+  <AccordionDetails>
+  <List
+
+
+  
+     disablePadding>
+<ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/flavored honey/products`)}}
+
+>
+
+
+<ListItemButton >
+      <Typography sx={{fontWeight:300}}>
+  -View All
+</Typography>
+</ListItemButton>
+</ListItem>
+
+{[`Honey with Peanut`,
+`Honey with Strawberry`
+].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/flavored honey/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
+
+key={i}>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        -{i}
+      </Typography>
+      </ListItemButton>
+</ListItem>
+      
+      })}
+    </List>
+
+
+  </AccordionDetails>
+</Accordion>
 
 
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
