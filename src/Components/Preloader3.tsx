@@ -50,7 +50,7 @@ const Preloader3 = ({res}:{res:any}) => {
             maxHeight:{sm:'90vh',md:'500px',lg:'550px'},
             margin: '0 auto',
             mt:1,
-            height : {xs:'100vh',sm:'450px',md:'100%'},
+            height : {xs:'600px',sm:'450px',md:'100%'},
              
             display: {
                 xs: 'flex'
