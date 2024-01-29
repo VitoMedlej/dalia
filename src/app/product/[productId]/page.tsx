@@ -15,6 +15,8 @@ import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
+import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
+import SelectWeight from '@/Components/SelectWeight/SelectWeight'
 
 const Index = () => {
     const {productId} = useParams()
@@ -23,7 +25,7 @@ const Index = () => {
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
     const [selectedQuantity,setSelectedQuantity] = useState(1)
-    const [selectedColor,setSelectedColor] = useState('')
+    // const [productselectedSize,setproductselectedSize] = useState('')
 
     const [data,setData] = useState<{
       product: IProduct | any ;
@@ -33,7 +35,9 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
-    
+    const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
+    ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
+    const [selectedSize, setselectedSize] = useState(multiWeight);
     
        const InitialFetch = async () => {
         try {
@@ -92,7 +96,9 @@ const Index = () => {
             }
           {data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.55em'}}}>
-                 ${data?.product?.price || 0}
+                 ${
+                 selectedSize?.price ||
+                 data?.product?.price || 0}
              </Typography>}
              
             
@@ -108,13 +114,16 @@ const Index = () => {
                     
                     min={1} max={10} value={selectedQuantity}/>
               </Box>
-
+              <SelectWeight
+              selectedSize={selectedSize}
+              setselectedSize={setselectedSize}
+              sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
              <Btn 
-                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:data.product.price, selectedColor},true,true)}
+                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,
-             width:{xs:'95%',sm:'50%'}}}>
+             width:{xs:'95%',sm:'95%'}}}>
                  <Typography component='h1'>
                  ADD TO CART
 
@@ -125,7 +134,7 @@ const Index = () => {
 
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',width:'90%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'95%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
 
 
 <Btn      sx={{gap:.5,
@@ -134,7 +143,7 @@ const Index = () => {
                 border:'none',
                 background:'white',color:'green',
              width:{xs:'100%'}}}>
-                 WhatsApp 
+                 WHATSAPP 
                  <BsWhatsapp fontSize={'medium'}/>
              </Btn>
              </a>
@@ -149,7 +158,7 @@ const Index = () => {
          <Divider></Divider>
 
          <Box sx={{pt:4}}>
-         { data?.product?.size && <Box >
+         {/* { data?.product?.size && <Box >
              <Box sx={{pb:1}}>
                  <Typography >
 
@@ -159,10 +168,8 @@ const Index = () => {
                   </strong>
                  </Typography>
              </Box>
-             {/* <Box>
-                <ProductOptionSelect/>
-             </Box> */}
-         </Box>}
+            
+         </Box>} */}
 
          {/* { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
@@ -174,8 +181,8 @@ const Index = () => {
                 data?.product?.colors.map((color : string)=>{
                   
                   return <Box className='cursor' key={color}
-                  onClick={()=>setSelectedColor(color)}
-                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === selectedColor ? 'blue':'transparent'}`}}></Box>
+                  onClick={()=>setproductselectedSize(color)}
+                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === productselectedSize ? 'blue':'transparent'}`}}></Box>
                  }) }
              </Box>
               

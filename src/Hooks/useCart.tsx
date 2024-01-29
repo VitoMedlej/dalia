@@ -5,7 +5,7 @@ import { useCartContext } from "@/context/Contexts";
 
 const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
-    const incrementQty = (_id:string,newValue ?: number,selectedColor?:string) => {
+    const incrementQty = (_id:string,newValue ?: number,productselectedSize?:string) => {
        
         const state = loadState('F5NX6214-HJN35I') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
@@ -17,9 +17,9 @@ const useCart = () => {
             else {
                 selectedItem.qty = selectedItem.qty + 1;
             }
-            if (selectedColor) {
+            if (productselectedSize) {
 
-                selectedItem.selectedColor = selectedColor;
+                selectedItem.productselectedSize = productselectedSize;
             }
             state[foundIndex] = selectedItem
             
@@ -28,11 +28,11 @@ const useCart = () => {
        }
        return false;
     }
-    const addToCart = (selectedQuantity = 1,_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,selectedColor?:string},open=true,replaceOld = false) => {
+    const addToCart = (selectedQuantity = 1,_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,productselectedSize?:string},open=true,replaceOld = false) => {
        
         
         //1- get the cart from localstorage
-         const increased =        incrementQty(_id,selectedQuantity,product?.selectedColor)       
+         const increased =        incrementQty(_id,selectedQuantity,product?.productselectedSize)       
         if (increased ) {
             setCartOpen(open ? true : false)
             return
@@ -43,7 +43,7 @@ const useCart = () => {
         {qty:selectedQuantity || 1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title
-        ,_id:product._id,price:product.price,selectedColor: product?.selectedColor || ''})
+        ,_id:product._id,price:product.price,productselectedSize: product?.productselectedSize || ''})
         if(open) {
              
             setCartOpen(true)

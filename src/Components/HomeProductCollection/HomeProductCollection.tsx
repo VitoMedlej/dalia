@@ -39,7 +39,10 @@ onClick={()=>router.push('/collection/products')}
               <Box sx={{mb:2,mt:4}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 
-                      return <ProductCard key={i?._id} inStock={i?.inStock} title={i?.title} price={i?.price} _id={i?._id} 
+                      return <ProductCard 
+                newPrice={i?.newPrice}
+                      
+                      key={i?._id} inStock={i?.inStock} title={i?.title} price={i?.price} _id={i?._id} 
                        images={i?.images?.length > 0 && i?.images[0]?.length > 3 ? i?.images : ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS90cK_Js0H-conZ_T6tHjPHtCXP8e-e7MHt69YkHWej5n90FlRvLFUMC2CmRt6UPy9dYc&usqp=CAU']}
                        category={i?.category}/>
                   })}

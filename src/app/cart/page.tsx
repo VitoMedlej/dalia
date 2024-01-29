@@ -112,7 +112,7 @@ const Cart = () => {
                     cartItems.map(item=>{
                         if (!item?._id) return;
                         return <CartProduct 
-                        selectedColor={item?.selectedColor}
+                        productselectedSize={item?.productselectedSize}
                         onChange={refetchState}
                         key={item._id}
                         img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>

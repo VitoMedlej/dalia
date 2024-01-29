@@ -1,7 +1,7 @@
 "use client"
-import { Box, IconButton, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 // import {ImCancelCircle} from 'react-icons/im';
-import {AiOutlineDelete,AiOutlineEye} from 'react-icons/ai';
+import {AiOutlineDelete} from 'react-icons/ai';
 // import Btn from '../Btn/Btn';
 import { QuantityPicker } from '../QuantityPicker/QuantityPicker';
 // import { loadState, saveState } from '../../Utils/LocalstorageFn';
@@ -13,10 +13,10 @@ import Btn from '@/Components/Btn/Btn';
 
 
 
-const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedColor}:ICartItem) => {
+const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productselectedSize}:ICartItem) => {
  
     const {incrementQty} = useCart()
-    console.log('selectedColor: ', selectedColor);
+
     return (
     <Box sx={{borderTop:'1px solid #0000001a',flex:1}}>
         <Box
@@ -64,12 +64,12 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,selectedC
                         fontSize:{sm:'1.1em',md:'1.3em'}
                     }}>
                        {title}
-                    {selectedColor &&   <Box 
+                    {productselectedSize &&   <Box 
                     
-                    className='flex center items-center align-center row gap1'
+                    className='flex  center items-center align-center row gap1'
                     
-                    sx={{width:'15px',height:'15px',border:'1px solid black',background:selectedColor,borderRadius:'50%'}}>
-                        
+                    sx={{fontSize:'11px',right:'5%',background:productselectedSize}}>
+                            {productselectedSize ? productselectedSize : ''}g
                        </Box>}
                     </Typography>
                         </Link>

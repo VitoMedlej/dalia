@@ -2,8 +2,13 @@ export interface IProduct {
     title: string;
     price: number;
     _id: string;
+    newPrice?:number;
     inStock ?: boolean;
     description: string;
+    sizes ?: {
+        size: number;
+        price: number;
+      }[] | null;
     images: string[] | [];
     attributes ?: [] | 
         {
@@ -24,5 +29,5 @@ export interface ICartItem {
     category ?: string;
     remove: (id:string) => void;
     shortdesc ?: string;
-    selectedColor ?: string;
+    productselectedSize ?: string;
 }
