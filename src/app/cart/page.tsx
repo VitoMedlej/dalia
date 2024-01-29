@@ -85,12 +85,13 @@ const Cart = () => {
     return (
         <Box sx={{
             pb: 5,
-            pt:20,
+            pt:6,
             maxWidth:'xl',
             margin:'0 auto',
             px: 1
         }}>
       {cartItems?.length >0 &&      <Typography
+      component='h1'
                 sx={{
                 fontSize: '1.5em',
                 padding: 1,
@@ -132,7 +133,7 @@ const Cart = () => {
                     // boxShadow:'1px 1px 3px #0000002b'
                 }}>
                   
-                    <Typography sx={{
+                    <Typography component='h1' sx={{
                         ...titleStyle
                     }}>Order Summary</Typography>
                   
@@ -149,8 +150,8 @@ const Cart = () => {
                     <Typography sx={{
                         fontWeight: '600'
                     }}>
-                    Total:
-                        <span>
+                    Total:{' '}
+                        <span style={{color:'green'}}>
                         ${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
                         
                     </span>

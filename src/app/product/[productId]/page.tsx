@@ -114,7 +114,7 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
-             width:{xs:'70%',sm:'60%'}}}>
+             width:{xs:'95%',sm:'50%'}}}>
                  <Typography component='h1'>
                  ADD TO CART
 
@@ -150,9 +150,13 @@ const Index = () => {
 
          <Box sx={{pt:4}}>
          { data?.product?.size && <Box >
-             <Box >
+             <Box sx={{pb:1}}>
                  <Typography >
-                {data.product.size}
+
+                Product Weight:{' '}
+                  <strong>
+                 {data?.product?.size}
+                  </strong>
                  </Typography>
              </Box>
              {/* <Box>
