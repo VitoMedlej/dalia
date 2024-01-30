@@ -10,6 +10,7 @@ import useCart from '@/Hooks/useCart'
 import {BiCartAdd} from 'react-icons/bi';
 
 
+
 const ProductCard = ({
     title,
     price,
@@ -41,6 +42,7 @@ const ProductCard = ({
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
+
     return (
         <Box
             className='  trans cardproduct center text-center'
@@ -101,7 +103,7 @@ const ProductCard = ({
         fontSize: { xs: '.99em', sm: '1em' },
     }}
 >
-    {newPrice ? (
+{newPrice ? (
         <>
             <s>{price}$</s> {newPrice}$
         </>

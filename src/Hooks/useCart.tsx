@@ -29,7 +29,7 @@ const useCart = () => {
        return false;
     }
     const addToCart = (selectedQuantity = 1,_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,productselectedSize?:string},open=true,replaceOld = false) => {
-       
+        // localStorage.setItem('isFirstOrder', 'false');
         
         //1- get the cart from localstorage
          const increased =        incrementQty(_id,selectedQuantity,product?.productselectedSize)       

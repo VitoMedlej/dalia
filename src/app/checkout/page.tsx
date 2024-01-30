@@ -93,7 +93,7 @@ export default function Checkout() {
   const content = await rawResponse.json();
   saveState('F5NX6214-HJN35I',null)
   saveState('V51N5-F7YBJ5X',null)
-
+  localStorage.setItem('isFirstOrder', 'false');
 }
   }
 

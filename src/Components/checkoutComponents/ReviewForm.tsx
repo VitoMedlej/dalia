@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import { Divider } from '@mui/material';
 import { loadState } from '@/Utils/LocalstorageFn';
 import totalCal from '@/Utils/totalCal';
+import useDiscount from '@/Hooks/useDiscount';
 
 
 // const products = [
@@ -43,8 +44,9 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
   const products = loadState('F5NX6214-HJN35I')
  
   const info = loadState('V51N5-F7YBJ5X')
-
+  
   const total = totalCal(products);
+  const {discountedPrice,isFirstOrder} = useDiscount(total)
   if (!info) {
     setActiveStep(0)
   }
@@ -83,9 +85,15 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
-            ${Number(total)?.toFixed(2)}
+            ${Number(discountedPrice)?.toFixed(2)}
           </Typography>
         </ListItem>
+        <Typography variant="subtitle1" sx={{color:'green', fontWeight: 400 }}>
+            {
+              
+              isFirstOrder ? `10% discount off your first order!` : ''
+            }
+            </Typography>
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
