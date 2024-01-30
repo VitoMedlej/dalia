@@ -35,9 +35,10 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
-    const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
-    ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
-    const [selectedSize, setselectedSize] = useState(multiWeight);
+
+    
+    
+    const [selectedSize, setselectedSize] = useState({size:'',price:''});
     
        const InitialFetch = async () => {
         try {
@@ -47,8 +48,10 @@ const Index = () => {
         
           if (res?.success && res?.product) {
           setData({product:res?.product,moreProducts : res?.moreProducts})
-          setLoading(false)
-
+          
+          setLoading(false);
+        
+    
           }
           setLoading(false)
           return null
@@ -114,10 +117,16 @@ const Index = () => {
                     
                     min={1} max={10} value={selectedQuantity}/>
               </Box>
+            
+            
               <SelectWeight
-              selectedSize={selectedSize}
+              selectedSize={selectedSize  }
               setselectedSize={setselectedSize}
-              sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
+              sizes={data?.product?.sizes ? data?.product?.sizes:  [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
+             
+             
+             
+             
              <Btn 
                      onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
              
