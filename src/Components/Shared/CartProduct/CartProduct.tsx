@@ -13,7 +13,7 @@ import Btn from '@/Components/Btn/Btn';
 
 
 
-const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productselectedSize}:ICartItem) => {
+const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productselectedSize,productselectedPrice}:ICartItem) => {
  
     const {incrementQty} = useCart()
 
@@ -89,7 +89,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                         color: 'green',
                         margin: ' .35em 0 0 0'
                     }}>
-                        ${price}
+                        ${productselectedPrice ? productselectedPrice : price}
                     </h2>
                     {/* <h2
                         style={{

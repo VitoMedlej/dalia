@@ -30,4 +30,5 @@ export interface ICartItem {
     remove: (id:string) => void;
     shortdesc ?: string;
     productselectedSize ?: string;
+    productselectedPrice?:string;
 }

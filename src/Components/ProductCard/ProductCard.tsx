@@ -42,7 +42,7 @@ const ProductCard = ({
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
-
+    console.log('sizes: ', sizes);
     return (
         <Box
             className='  trans cardproduct center text-center'

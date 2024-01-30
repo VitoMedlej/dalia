@@ -5,7 +5,7 @@ import { useCartContext } from "@/context/Contexts";
 
 const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
-    const incrementQty = (_id:string,newValue ?: number,productselectedSize?:string) => {
+    const incrementQty = (_id:string,newValue ?: number,productselectedSize?:string,productselectedPrice?:string) => {
        
         const state = loadState('F5NX6214-HJN35I') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
@@ -21,6 +21,9 @@ const useCart = () => {
 
                 selectedItem.productselectedSize = productselectedSize;
             }
+            if (productselectedPrice) {
+                selectedItem.productselectedPrice = productselectedPrice;
+            }
             state[foundIndex] = selectedItem
             
            saveState('F5NX6214-HJN35I', state)           
@@ -28,22 +31,23 @@ const useCart = () => {
        }
        return false;
     }
-    const addToCart = (selectedQuantity = 1,_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,productselectedSize?:string},open=true,replaceOld = false) => {
+    const addToCart = (selectedQuantity = 1,_id:string,product:{title:string,category?:string,img:string,_id:string,price:number,productselectedSize?:string,productselectedPrice?:string},open=true,replaceOld = false) => {
         // localStorage.setItem('isFirstOrder', 'false');
         
         //1- get the cart from localstorage
-         const increased =        incrementQty(_id,selectedQuantity,product?.productselectedSize)       
+         const increased =        incrementQty(_id,selectedQuantity,product?.productselectedSize,product?.productselectedPrice)       
         if (increased ) {
             setCartOpen(open ? true : false)
             return
         }
         
+        console.log('product: ', product);
             //if we do not have the item in cart, insert it
-        pushState('F5NX6214-HJN35I',
+            pushState('F5NX6214-HJN35I',
         {qty:selectedQuantity || 1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title
-        ,_id:product._id,price:product.price,productselectedSize: product?.productselectedSize || ''})
+        ,_id:product._id,price:product?.productselectedPrice ? product?.productselectedPrice : product.price,productselectedSize: product?.productselectedSize || ''})
         if(open) {
              
             setCartOpen(true)
