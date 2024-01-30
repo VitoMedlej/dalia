@@ -121,7 +121,7 @@ const ProductCard = ({
                     {price}$
                 </Typography> */}
                 <Btn 
-            className='cursor black  gap1'
+            className='cursor black bg gap1'
                 
                      onClick={()=>
                         sizes &&  sizes?.length > 0 ? 
@@ -130,12 +130,15 @@ const ProductCard = ({
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
                     v2
                     sx={{
+                        color:'black !important',
                         margin:'0 auto'
                     // borderRadius:'8',
                         ,
                         ':hover':{color:'black !IMPORTANT',background:'#f7e454'}
                 }}>
-                    <Box  className="flex">
+                    <Box sx={{
+                        
+                        color:'black !important',}} className="flex bg">
 
                     {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD'}
                     <BiCartAdd fontSize='20px'/>
