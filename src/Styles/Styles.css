@@ -18,7 +18,7 @@ h1 {
 }
 
 .color3 {
-  color: #F4E461 !important;
+  color: #84a545 !important;
 }
 
 .topd {
@@ -43,15 +43,15 @@ h1 {
 }
 
 .bg2 {
-  background: #F4E461 !important;
+  background: #84a545 !important;
 }
 
 .borderColor {
-  border-color: #f7e454 !important;
+  border-color: #006430 !important;
 }
 
 .borderColor2 {
-  border-color: #0f0f0f !important;
+  border-color: #1d1d1d !important;
 }
 
 .rounded {
@@ -59,11 +59,11 @@ h1 {
 }
 
 .color2 {
-  color: #0f0f0f !important;
+  color: #1d1d1d !important;
 }
 
 .color {
-  color: #f7e454 !important;
+  color: #006430 !important;
 }
 
 .flex {
@@ -103,7 +103,15 @@ h1 {
 }
 
 .bg {
-  background: #f7e454 !important;
+  background: #006430 !important;
+}
+
+.bg3 {
+  background: #1d1d1d !important;
+}
+
+.border3 {
+  border-color: #1d1d1d !important;
 }
 
 .white {
@@ -156,7 +164,7 @@ button[disabled] {
 }
 
 .clr {
-  color: #f7e454 !important;
+  color: #006430 !important;
 }
 
 .auto {

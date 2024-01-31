@@ -25,11 +25,11 @@ component={'h1'}
     padding:.5,
     fontWeight: '300'
 }}>
- View Our Products
+ Our Products
 </Typography>
 
 <Btn 
-sx={{border:'1px solid #f7e454c'}}
+sx={{border:'none',color:'black',background:'white'}}
 onClick={()=>router.push('/collection/products')}
 >
    Explore More

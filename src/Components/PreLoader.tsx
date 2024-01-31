@@ -11,6 +11,7 @@ import Perks from './Perks/Perks'
 import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
+import CategoryCard from './CategoryCard/CategoryCard'
 
 const 
 PreLoader = ({data,resImages}:any) => {
@@ -45,7 +46,7 @@ PreLoader = ({data,resImages}:any) => {
       id: 4,
       title: text('Great Value', 'قيمة عظيمة'),
       desc: text(
-        'Bee Organic honey provides great value for your health, offering the highest quality honey at an affordable price for you and your family.',
+        'Mounet Dalia honey provides great value for your health, offering the highest quality honey at an affordable price for you and your family.',
         'عسل بي أورجانيك يقدم قيمة عظيمة لصحتك، حيث يوفر عسل عالي الجودة بسعر معقول لك ولعائلتك.'
       ),
     },
@@ -55,8 +56,50 @@ PreLoader = ({data,resImages}:any) => {
   return (
     <Box >
       <MainCarousel resImages={resImages}/>
-      <Perks/>
       <HomeProductCollection  products={data}/>
+      <Grid className='bg center items-center ' container sx={{height:{md:'600px'},minHeight:{xs:'500px'}}}>
+
+        <Grid sx={{py:{xs:8,sm:0},px:{xs:1,sm:4}}} xs={12} className='' sm={6}>
+            <Typography sx={{pb:1,color:'white',fontWeight:900,fontSize:{xs:'2em',sm:'3em',md:'3.5em'}}}>
+              About Our Products
+            </Typography>
+            <Typography className='' sx={{color:'#d8d8d8',fontSize:'.91em',lineHeight:'1.75em'}}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat inventore officiis nulla culpa neque non sint. Fugiat explicabo autem excepturi expedita dolorum porro sequi omnis qui quo error quae commodi ullam, esse nisi id ea, reprehenderit sunt beatae a iure ut minima illum. Quo eligendi autem ullam itaque at sed!
+            </Typography>
+            <Btn className='bg3 white border3' sx={{mt:2}}>
+              Learn More
+            </Btn>
+        </Grid>
+        <Grid sx={{height:'100%'}}xs={12} sm={6}>
+          <Box sx={{width:'100%',height:'100%'}}>
+            <img src="https://ucarecdn.com/82634fa8-05f1-430d-a158-825d71c9779c/403996132_328527179893172_6812557316622611387_n.jpg" alt="" className="img" />
+          </Box>
+        </Grid>
+
+      </Grid>
+
+      <Container maxWidth='lg'>
+
+      {
+        [{
+          img:``,
+          title:''
+        },
+        {
+          img:``,
+          title:''
+        },
+        {
+          img:``,
+          title:''
+        }
+      ].map(i=>{
+        return <CategoryCard key={i} categoryName={i?.title} imageUrl={i?.img}/>
+        
+      })
+    }
+    </Container>
+      {/* <Perks/> */}
 
 
     <Grid  sx={{background:'#f9d40100',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
@@ -77,7 +120,7 @@ PreLoader = ({data,resImages}:any) => {
 
         </Typography>
         <Typography sx={{width:'100%',maxWidth:'470px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',mt:2}} className='center text-center'>
-        {text('At Bee Organic, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
+        {text('At Mounet Dalia, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
 
         </Typography>
         {/* <Btn 
@@ -93,7 +136,7 @@ PreLoader = ({data,resImages}:any) => {
 
     {/* <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
       <Typography  component='h1' sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      {text('Why Choose Bee Organic?', 'لماذا تختار ترو ناشور بليند؟')}
+      {text('Why Choose Mounet Dalia?', 'لماذا تختار ترو ناشور بليند؟')}
 
       </Typography>
       <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
@@ -290,7 +333,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         <Box>
         <Typography sx={{width:'100%',maxWidth:'600px',flex:1,fontSize:{xs:'.95em',sm:'1.19em'},fontWeight:300,color:'#4d555e',mt:2}} className=''>
             
-        {text('At Bee Organic, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
+        {text('At Mounet Dalia, we’re committed to sustainability. That’s why we use eco-friendly packaging and support sustainable farming practices to ensure that our products have a minimal impact on the environment.', 'في ترو ناشور بليند، نحن ملتزمون بالاستدامة. لهذا السبب نستخدم تعبئة صديقة للبيئة وندعم ممارسات الزراعة المستدامة لضمان أن منتجاتنا لها تأثير أدنى على البيئة.')}
 
             </Typography>
         </Box>

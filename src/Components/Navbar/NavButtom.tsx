@@ -15,7 +15,9 @@ const NavButtom = () => {
         className=' wrap  space-evenly'
         sx={{
             flex:1,
-            position:'relative',
+            borderTop:'1px solid #00000026',
+            width:'100%'
+,            position:'relative',
         // width: '100%',
         mx: 0,
         display : {xs:'none',md:'flex'}
@@ -23,10 +25,10 @@ const NavButtom = () => {
         <Container
             className='flex   '
             sx={{
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             maxWidth: 'lg',
             overflow:'hidden',
-            py:1.5,
+            py:2.5,
 
         }}>
 {/* <Link className=' decor-none uppercase' href={`/collection/products`}>

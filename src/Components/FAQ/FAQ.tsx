@@ -10,8 +10,8 @@ import { Box } from '@mui/material';
 
 const FAQs = [
   {
-    "Q": "What is Bee Organic and what do you sell?",
-    "A": "Bee Organic is an online store devoted to providing natural supplements that promote health and wellness. Our products include premium-quality organic herbs and mushrooms such as ashwagandha, tongkat ali, cordyceps, lion’s mane, and more."
+    "Q": "What is Mounet Dalia and what do you sell?",
+    "A": "Mounet Dalia is an online store devoted to providing natural supplements that promote health and wellness. Our products include premium-quality organic herbs and mushrooms such as ashwagandha, tongkat ali, cordyceps, lion’s mane, and more."
   },
   {
     "Q": "Are your products organic?",

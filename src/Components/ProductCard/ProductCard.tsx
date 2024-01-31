@@ -91,7 +91,7 @@ const ProductCard = ({
                     {title}
                 </Typography>
         
-               
+               <Box className='flex row'>
               
                {inStock !== false ?
                <>
@@ -111,16 +111,7 @@ const ProductCard = ({
         `${price}$`
     )}
 </Typography>
-               {/* <Typography
-                    sx={{
-                    mb:.5,
-                    color:'green',
-                    fontWeight: '700',
-                    fontSize: {xs:'.99em',sm:'1em'}
-                }}>
-                    {price}$
-                </Typography> */}
-                <Btn 
+<Btn 
             className='cursor black bg gap1'
                 
                      onClick={()=>
@@ -131,10 +122,10 @@ const ProductCard = ({
                     v2
                     sx={{
                         color:'black !important',
-                        margin:'0 auto'
+                        margin:'0 '
                     // borderRadius:'8',
                         ,
-                        ':hover':{color:'black !IMPORTANT',background:'#f7e454'}
+                        ':hover':{color:'black !IMPORTANT',background:'#006430'}
                 }}>
                     <Box sx={{
                         
@@ -144,6 +135,16 @@ const ProductCard = ({
                     <BiCartAdd fontSize='20px'/>
                     </Box>
                 </Btn>
+               {/* <Typography
+                    sx={{
+                    mb:.5,
+                    color:'green',
+                    fontWeight: '700',
+                    fontSize: {xs:'.99em',sm:'1em'}
+                }}>
+                    {price}$
+                </Typography> */}
+              
                 
                </>
 
@@ -159,6 +160,8 @@ const ProductCard = ({
                     Out Of Stock
                 </Typography>
                 }
+               </Box>
+
             </Box>
         </Box>
     )

@@ -22,7 +22,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          Welcome to Bee Organic, your one-stop destination for premium organic honey. As experts in bee culture, diseases, and treatments, we’re dedicated to providing you with the highest quality honey products.
+          Welcome to Mounet Dalia, your one-stop destination for premium organic honey. As experts in bee culture, diseases, and treatments, we’re dedicated to providing you with the highest quality honey products.
           </Typography>
           <SMicons/>
 

@@ -15,9 +15,9 @@ h1 {
 .w100 {
     width:100%
 }
-$color : #f7e454 !important;
-$color2 : #0f0f0f !important;
-$color3 : #F4E461 !important;
+$color : #006430 !important;
+$color2 : #1d1d1d !important;
+$color3 : #84a545 !important;
 .color3 {
     color: $color3;
 }
@@ -87,6 +87,12 @@ $color3 : #F4E461 !important;
 }
 .bg {
     background: $color ;
+}
+.bg3 {
+    background: $color2  ;
+}
+.border3 {
+    border-color: $color2;
 }
 .white {
  color: white !important;

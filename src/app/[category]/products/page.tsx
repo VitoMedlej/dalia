@@ -1,3 +1,4 @@
+"use client"
 import Preloader2 from "@/Components/Preloader2"
 // import type {  NextApiResponse}
 // from 'next';
@@ -6,17 +7,18 @@ import Preloader2 from "@/Components/Preloader2"
 
 
 
-const Page = async(ctx : any) => {
+const Page = (ctx : any) => {
+  // const Page = async(ctx : any) => {
   
   try {
     const {category} = ctx?.params
     const {type,search,subcategory} = ctx?.searchParams;
     // console.log('subcategory: ', subcategory);
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? encodeURIComponent(subcategory) : null}`)
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? encodeURIComponent(subcategory) : null}`,{cache:'no-store',next:{revalidate:0}})
+    // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? encodeURIComponent(subcategory) : null}`,{cache:'no-store',next:{revalidate:0}})
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? encodeURIComponent(category) : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}`)
-    const res = await req.json();    
-    // const res = {data:{totalPages:0,products:null},}
+    // const res = await req.json();    
+    const res = {data:{totalPages:0,products:null}}
     // const totalPages = 1;
     // const products = {}
  

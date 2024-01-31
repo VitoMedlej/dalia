@@ -38,7 +38,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
         flexBasis:'100%',
         boxShadow:'none',
         border:'1px solid #00000036',
-        borderRadius:'4px',
+        borderRadius:'10px',
         
         //  display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
          display:'flex',

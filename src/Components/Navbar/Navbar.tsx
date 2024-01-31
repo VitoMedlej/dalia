@@ -78,15 +78,15 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-            <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.25}}>
+            {/* <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.25}}>
                 <Typography className='clr' component='h1' sx={{py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
-            </Box>
+            </Box> */}
             <Toolbar
      id='navy3'
 
-    className='center relative  flex  w100  auto'
+    className='center relative  flex  col w100  auto'
 
                 sx={{
                 
@@ -96,6 +96,7 @@ export default function Navbar() {
                 
                 flexWrap: 'wrap'
             }}> 
+            <Box className='flex items-center w100 center '> 
                   <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
 
 <Box className='flex'
@@ -110,7 +111,28 @@ export default function Navbar() {
         src={`https://ucarecdn.com/a1106da8-d56a-4cef-a9ee-4b27e18ef36c/Beeorganiclogo1.png`}
         alt="BeeOrganic logo"/>
 </Box>
+
 </Link>
+
+
+<SearchInput/>
+<Btn
+                            onClick={() => setCartOpen(!cartOpen)}
+    className=' gap gap1'
+                            sx={{
+                                margin : '8px',
+                                
+                        }}>
+                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
+
+                                <CiShoppingCart fontSize={'2em'} color='white'/>
+                            {/* </Badge> */}
+                            <Typography>
+                                $ 0.0 (0)
+                            </Typography>
+                        </Btn>
+</Box>
+
                 <Box
                     sx={{
                     px:1,
@@ -145,7 +167,7 @@ export default function Navbar() {
                         }}>
                             {text('العربية','English')}
                         </Btn> */}
-                        <IconButton
+                        {/* <IconButton
                             onClick={() => setOpenModal(!openModal)}
                             sx={{
                             color: 'black'
@@ -153,23 +175,8 @@ export default function Navbar() {
 
                                 <CiSearch color='black'/>
                           
-                        </IconButton>
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-
-                            // onClick={() => router.push('/collection/products')}
-                            sx={{
-                                margin : '8px',padding:0,
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                            {/* <Typography>
-                                Cart
-                            </Typography> */}
-                        </IconButton>
+                        </IconButton> */}
+                   
     <IconButton
                             onClick={() => setOpen(!open)}
                             size="large"
@@ -202,7 +209,6 @@ export default function Navbar() {
                     </Box>
 
                 </Box>
-<NavButtom/>
 
 
   {/* <SearchInput/> */}
@@ -244,28 +250,9 @@ mobile
                         }}>
                             {text('English','Arabic')}
                         </Btn> */}
-                        <IconButton
-                            onClick={() => setOpenModal(!openModal)}
-                            sx={{
-                            color: 'black'
-                        }}>
+                       
 
-                                <CiSearch color='black'/>
-                          
-                        </IconButton>
-
-                        <IconButton
-                          onClick={() => setCartOpen(!cartOpen)}
-                        // onClick={() => router.push('/cart')}
-                            sx={{
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                          
-                            </IconButton>
-
+                    
 
 
 
@@ -286,6 +273,9 @@ mobile
                 </Box>
            
 <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
+<Divider></Divider>
+
+<NavButtom/>
              
             </Toolbar>
         </AppBar>

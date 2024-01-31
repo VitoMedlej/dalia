@@ -13,41 +13,40 @@ import useLanguage from '@/Hooks/useLanguage';
 
 
 const Preloader3 = ({res}:{res:any}) => {
-    const fetchDataAndSetImgs = async () => {
-        try {
-          const response = await fetch('https://api.jsonbin.io/v3/b/65b919d41f5677401f28610e', {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Master-Key': '$2a$10$iAUMdzZeDAI2qTW61Uz6UuE/S8Bgs4LfVuZxwByPpocU4CuR7Nzo2'
-            }
-          });
+    // const fetchDataAndSetImgs = async () => {
+    //     try {
+    //       const response = await fetch('https://api.jsonbin.io/v3/b/65b919d41f5677401f28610e', {
+    //         method: 'GET',
+    //         headers: {
+    //           'Content-Type': 'application/json',
+    //           'X-Master-Key': '$2a$10$iAUMdzZeDAI2qTW61Uz6UuE/S8Bgs4LfVuZxwByPpocU4CuR7Nzo2'
+    //         }
+    //       });
       
-          if (!response?.ok) {
-            throw new Error(`Failed to fetch data. Status: ${response?.status}`);
-          }
+    //       if (!response?.ok) {
+    //         throw new Error(`Failed to fetch data. Status: ${response?.status}`);
+    //       }
       
-          const data = await response.json();
-          setImgs(data?.record); // Assuming 'record' is the property containing the images in the response
-          console.log('Data fetched and set to setImgs:', setImgs);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
+    //       const data = await response.json();
+    //       setImgs(data?.record); // Assuming 'record' is the property containing the images in the response
+    //       console.log('Data fetched and set to setImgs:', setImgs);
+    //     } catch (error) {
+    //       console.error('Error fetching data:', error);
+    //     }
+    //   };
       
-    useEffect(() => {
+    // useEffect(() => {
       
     
-       fetchDataAndSetImgs()
-    }, [])
+    //    fetchDataAndSetImgs()
+    // }, [])
       
     
     const router = useRouter()
 
     const [imgs,setImgs] = useState([
-        {img:'https://ucarecdn.com/c425edb3-eb3d-4c34-af4c-f20890a0d9c9/image00019.jpg',position:'centerd'},
-        {img:'https://ucarecdn.com/af01a569-50de-4537-8434-827715426182/image00008.jpeg',position:'topd'},
-        {img:'https://ucarecdn.com/658f97dc-0a75-446c-9dda-ce16bfbc1bba/1st.jpg',position:'topd'},
+        {img:'https://livgood.com/cdn/shop/files/Banner_web_2.png?v=1706543152&width=1540',position:'centerd'},
+      
        
      ])
      const redir = () => {
@@ -70,13 +69,13 @@ const Preloader3 = ({res}:{res:any}) => {
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
-            maxWidth:'1200px',
+            maxWidth:'none',
             // maxWidth: 'lg',
-            minHeight:'400px',
-            maxHeight:{sm:'90vh',md:'500px',lg:'550px'},
+            minHeight:'300px',
+            maxHeight:{sm:'90vh',md:'400px',lg:'450px'},
             margin: '0 auto',
-            mt:1,
-            height : {xs:'600px',sm:'450px',md:'100%'},
+            // mt:1,
+            // height : {xs:'500px',sm:'450px',md:'100%'},
              
             display: {
                 xs: 'flex'
@@ -107,7 +106,7 @@ const Preloader3 = ({res}:{res:any}) => {
                                 height: '100%',
                             width:'100%'
                         }}>
-                        <Container className='auto' sx={{width:'100%'}} maxWidth='lg' disableGutters>
+                        {/* <Container className='auto' sx={{width:'100%'}} maxWidth='lg' disableGutters>
                             
                       
                             <Box sx={{pointerEvents:'none',top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.43}} className="absolute">
@@ -143,19 +142,13 @@ const Preloader3 = ({res}:{res:any}) => {
                                 {text('Shop Now', 'تسوق الآن')}
 
                                 </Btn>
-                                {/* <Btn 
-                                onClick={()=>{router.push('/about')}}
-                                
-                                v2 className='color2 borderColor2' sx={{ml:2,mt:3}}>
-                                {text('Discover', 'اكتشف')}
- 
-                                </Btn> */}
+                          
                                 </Box>
                             </Box>
-                            </Container>
+                            </Container> */}
                             <img
             
-                                className={`img  ${item?.position} 
+                                className={`img cover  ${item?.position} 
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}
