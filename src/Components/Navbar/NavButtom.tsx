@@ -50,37 +50,18 @@ COLLECTION
 </Typography>
 </Link>
 
-<Link  className='black decor-none ' href={`/flavored honey/products?type=Honey with Strawberry`}>
 
-<Typography 
-component='h1'
-className=' cursor center flex gap1 black decor-none captialize'
-id="button"
-sx={{width:'max-content',
-mx:'1em',
-alignItems: 'center',
-textTransform:'uppercase',
-
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Strawberry Honey
-</Typography>
-</Link>
-<Link  className='black decor-none ' href={`/flavored honey/products?type=Honey with Peanut`}>
-
-<Typography 
-component='h1'
-className=' cursor center flex gap1 black decor-none captialize'
-id="button"
-sx={{width:'max-content',
-mx:'1em',
-alignItems: 'center',
-textTransform:'uppercase',
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-Peanut Honey
-</Typography>
-</Link>
 {
-    ["Pure"].map(i=>{
+   [
+    'Labneh','Keshek',
+    'Beverages',
+    'Honey, Jams & Spreads',
+    'Mouneh',
+    'Olives & Olive Oil',
+    
+    'Sweets & Nuts',
+    'Zaatar',
+  ].map(i=>{
         return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 

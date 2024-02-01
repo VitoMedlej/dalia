@@ -26,7 +26,15 @@ import useLanguage from '@/Hooks/useLanguage';
 
 
 
-export const categories =  ["Pure", "Fruit", "Nut", "Spreads", "Herbal"];
+export const categories =   [
+    'Labneh','Keshek',
+    'Beverages',
+    'Honey, Jams & Spreads',
+    'Mouneh',
+    'Olives & Olive Oil',
+    'Sweets & Nuts',
+    'Zaatar',
+  ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
     const [openModal,
@@ -93,10 +101,14 @@ export default function Navbar() {
                 background:'white',
                     maxWidth:'xl',
                 px:'0 !important',
-                
+                mx:{xs:1},
                 flexWrap: 'wrap'
             }}> 
-            <Box className='flex items-center w100 center '> 
+            <Box 
+            sx={{
+                justifyContent: {xs:'space-between',md:'center'},
+            }}
+            className='flex wrap items-center w100  '> 
                   <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
 
 <Box className='flex'
@@ -104,7 +116,7 @@ export default function Navbar() {
     mx: {
         sm: '1em'
     },
-    width:{xs:'90px',sm: '90px'}
+    width:{xs:'90px',md: '100px'}
 }}>
     <img
         className='img'
@@ -113,13 +125,49 @@ export default function Navbar() {
 </Box>
 
 </Link>
+<Box>
 
+ <IconButton
+                            onClick={() => setOpen(!open)}
+                            size="large"
+                            edge="start"
+                            aria-label="menu"
+                            sx={{
+                                
+                            margin : '8px',padding:0,
+                            color: 'black',
+                            // margin: '0.1em',
+                            display: {
+                                md: 'none'
+                            }
+                        }}>
+                            <IoIosMenu color='black'/>
+                        </IconButton>
+
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+    className=' gap gap1'
+                            sx={{
+                                display:{xs:'flex',md:' none'},
+                                margin : '8px',
+                                
+                        }}>
+                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
+
+                                <CiShoppingCart color='black'/>
+                            {/* </Badge> */}
+                          
+                        </IconButton>
+
+                        </Box>
+                        
 
 <SearchInput/>
 <Btn
                             onClick={() => setCartOpen(!cartOpen)}
     className=' gap gap1'
                             sx={{
+                                display:{xs:'none',md:'flex'},
                                 margin : '8px',
                                 
                         }}>
@@ -132,6 +180,12 @@ export default function Navbar() {
                             </Typography>
                         </Btn>
 </Box>
+
+
+
+
+
+
 
                 <Box
                     sx={{
@@ -177,21 +231,7 @@ export default function Navbar() {
                           
                         </IconButton> */}
                    
-    <IconButton
-                            onClick={() => setOpen(!open)}
-                            size="large"
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            margin : '8px',padding:0,
-                            color: 'black',
-                            // margin: '0.1em',
-                            // display: {
-                            //     md: 'none'
-                            // }
-                        }}>
-                            <IoIosMenu color='black'/>
-                        </IconButton>
+   
                    
    {/* <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
 
@@ -225,7 +265,6 @@ mobile
                     flexWrap: 'wrap',
                     // justifyContent: {
                     //     xs: 'right',
-                    //     sm: 'end'
                     // },
                  
                 }}>

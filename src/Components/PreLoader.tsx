@@ -78,20 +78,22 @@ PreLoader = ({data,resImages}:any) => {
 
       </Grid>
 
-      <Container maxWidth='lg'>
+      <Container className='flex row wrap ' sx={{
+        justifyContent:{xs:'center',sm:'justify-between'},
+        my:{xs:8,sm:12}}} maxWidth='lg'>
 
       {
         [{
-          img:``,
-          title:''
+          img:`https://ucarecdn.com/7fea20d3-484f-40ce-a65a-a647258bf8d5/411045445_747027977349294_1663032584200259792_n.jpg`,
+          title:'Labneh'
         },
         {
-          img:``,
-          title:''
+          img:`https://ucarecdn.com/a983b4af-f02f-48bf-92ab-31ca70061d5c/418698985_1752566701907368_3211893865957316752_n.jpg`,
+          title:'Olives & Olive Oil'
         },
         {
-          img:``,
-          title:''
+          img:`https://ucarecdn.com/9d220db7-8eff-4a16-923a-1abd3be4d0d0/413446196_3774316836187782_3031473529925331693_n.jpg`,
+          title:'Keshek'
         }
       ].map(i=>{
         return <CategoryCard key={i} categoryName={i?.title} imageUrl={i?.img}/>
@@ -99,10 +101,10 @@ PreLoader = ({data,resImages}:any) => {
       })
     }
     </Container>
-      {/* <Perks/> */}
+      <Perks/>
 
 
-    <Grid  sx={{background:'#f9d40100',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
+    {/* <Grid  sx={{background:'#f9d40100',alignItems:'center',justifyContent:'center',width:'100%',py:8}} container>
 
     <Grid  maxWidth='lg' item xs={9} md={4}>
       <Box sx={{height:'400px',maxWidth:'350px'}} className='auto'>
@@ -123,46 +125,47 @@ PreLoader = ({data,resImages}:any) => {
         {text('At Mounet Dalia, we’re passionate about health and wellness. We believe in the power of nature, and that’s why we’ve created a range of natural supplements to help you live your best life. From ashwagandha to tongkat ali, we’ve got everything you need to feel your best.', 'في ترو ناشور بليند، نحن ملتزمون بالصحة والعافية. نحن نؤمن بقوة الطبيعة، وهذا هو السبب في أننا قمنا بإنشاء مجموعة من المكملات الطبيعية لمساعدتك على عيش حياتك بأفضل طريقة. من الأشواغاندا إلى تونجكات علي، لدينا كل ما تحتاجه لتشعر بأفضل حال.')}
 
         </Typography>
-        {/* <Btn 
-        onClick={()=>router.push('/about')}
-        
-        className=' auto center' sx={{width:'150px',color:'black',mt:2,px:0}}>
-        {text('Learn More')}
-
-        </Btn> */}
+      
     </Container>
 
     </Grid>
 
-    {/* <Grid  maxWidth='lg' item xs={12} sx={{mt:{xs:8,sm:12}}}>
-      <Typography  component='h1' sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:600}} className='center text-center auto color'>
-      {text('Why Choose Mounet Dalia?', 'لماذا تختار ترو ناشور بليند؟')}
+   
+    </Grid> */}
 
+
+    <Box sx={{padding:'0 !important',my:{xs:8,sm:12},height:'500px',overflow:'hidden',maxWidth:'none',
+    
+    width:'100%'}} className='relative flex center items-center'>
+      <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.45}}></Box>
+      <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
+        
+      <Typography component='h1' className='auto clr2 center' sx={{maxWidth:'900px',textTransform:'uppercase',fontSize:{xs:'1em',sm:'1.5em'},fontWeight:'300',color:'white'}}>
+
+      Together We Can Help The
       </Typography>
-      <Typography sx={{width:'100%',maxWidth:'800px',flex:1,fontSize:{xs:'.8em',sm:'.9em'},fontWeight:300,color:'#4d555e',pt:1.5}} className='center text-center auto'>
-      {text('Our supplements are made with only the finest natural ingredients, carefully selected for their purity and potency. Our products are free from harmful chemicals', 'مكملاتنا مصنوعة فقط من أرقى المكونات الطبيعية، تم اختيارها بعناية بسبب نقاوتها وفعاليتها. منتجاتنا خالية من المواد الكيميائية الضارة.')}
+        <Typography component='h1' className='auto center' sx={{maxWidth:'900px',textTransform:'uppercase',fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
+        {text('FAMILIES IN NEED', 'رسالتنا')}
+        </Typography>
+        <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'660px'}} className='center auto'>
+        {text('that values health, wellness, and sustainability. We’re about educating our customers on the importance of bees in our ecosystem and how our consumption choices impact their survival.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
 
         </Typography>
-    </Grid> */}
-    {/* <Grid  xs={12}  sx={{mt:4}}
-    >
-      <Container sx={{maxWidth:'lg'}} className='flex wrap row justify-between'>
+        <Btn
+            onClick={()=>router.push(`/collection/products?type=all`)}
 
-      {textsArray.map(i=>{
-        return <Box sx={{borderBottom:'1px solid white',width:{xs:'98%',sm:'200px',md:'48%'},maxWidth:'500px',mt:2.5}} key={i.id}>
-  
-          <Typography className='color2' sx={{fontSize:'1.4em',fontWeight:500}}>
-            {i.title}
-          </Typography>
-          <Typography sx={{color:'#4d555e',fontSize:'.8em',pb:.65,maxWidth:'350px'}}>
-            {i.desc}
-          </Typography>
-        </Box>
-      })}
-      </Container>
+                    
+                    sx={{border:'none',mx:'auto',mt:1}}>
+                    {text('SHOP NOW', 'تسوق الآن')}
 
-    </Grid> */}
-    </Grid>
+                    </Btn>
+      </Box>
+      <Box sx={{height:'100%',width:'100%'}}>
+      <img src="https://ucarecdn.com/bb34e045-ed68-4fe4-9fc2-1375a0dd1224/403981148_361472023081700_4605903573449148916_n.jpg" alt="" className="img" />
+ 
+      </Box>
+
+      </Box>   
     {/* <Box className='flex auto wrap ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
       {
         resImages?.categoryImage && resImages?.categoryImage.map((img:any)=>{
@@ -271,60 +274,6 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
       <Box/>
     
 
-        <Container sx={{pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
-                  <img src="https://ucarecdn.com/de6677d9-a5c9-4d36-8264-93901372dff5/image00006.jpeg" alt="" className="img" />
-                  <Box  className="absolute flex center auto items-center text-center col ">
-                    <Typography component='h1' className='center text-center' sx={{fontWeight:600,fontSize:'3em',textShadow:'1px 1px 3px #01010163',color:'white'}}>
-                    {text('Blossom Honey', 'الفطر الطبي')}
-
-                    </Typography>
-                    <Btn
-        onClick={()=>router.push(`/Fruit/products`)}
-
-                    
-                    sx={{border:'none',mx:'auto'}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
-
-                    </Btn>
-                  </Box>
-            </Box>
-            {/* <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
-                  <img src="https://dewarticles.com/wp-content/uploads/2021/06/natural-products.jpg" alt="Natural Supplements Image" className="img" />
-                  <Box  className="absolute flex center auto items-center text-center col ">
-                    <Typography className='center text-center' sx={{fontSize:'3em',textShadow:' #000000c',color:'white'}}>
-                    {text('Natural Supplements', 'المكملات الغذائية الطبيعية')}
-
-                    </Typography>
-                    <Btn
-        onClick={()=>router.push(`/natural supplements/products?type=all`)}
-                    
-                    sx={{border:'none',mx:'auto'}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
-
-                    </Btn>
-                  </Box>
-            </Box> */}
-      <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%',md:'49%'},height:{xs:'350px',sm:'350px',md:'450px',lg:'49vw'}}}>
-                  <img src="https://ucarecdn.com/3b04ade0-643d-4c22-92df-1c5126ce676d/image00003.jpeg" alt="" className="img" />
-                  <Box  className="absolute flex center auto items-center col text-center">
-                  <Typography component='h1' className='center text-center' sx={{fontWeight:600,fontSize:'3em',textShadow:'1px 1px 3px #01010163',color:'white'}}>
-
-                      
-                      {text('Al-JARDI HONEY', 'أعشاب عضوية')}
-</Typography>
-                    <Btn
-            onClick={()=>router.push(`/Nut/products?type=all`)}
-
-                    
-                    sx={{border:'none',mx:'auto'}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
-
-                    </Btn>
-                  </Box>
-            </Box>
-          
-      </Container>
 
       {/* <HomeProductCollection  products={data}/> */}
 
@@ -346,31 +295,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(10,18)}/> */}
     {/* <HomeProductsCarousel Collectiontitle={"Browse Our Collections"} delay={3000} data={data?.featuredProducts?.slice(18)}/> */}
 
-    <Container sx={{padding:'0 !important',my:8,height:'500px',overflow:'hidden'}} className='relative flex center items-center'>
-      <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.45}}></Box>
-      <Box sx={{maxWidth:'lg',px:1}} className="absolute center flex text-center col auto">
-        <Typography component='h1' className='auto center' sx={{maxWidth:'900px',textTransform:'uppercase',fontSize:{xs:'2.5em',sm:'3em'},fontWeight:'600',color:'white'}}>
-        {text('We’re about creating a community', 'رسالتنا')}
-        </Typography>
-        <Typography sx={{fontSize:{xs:'.74em',sm:'.9em'},color:'white',maxWidth:'660px'}} className='center auto'>
-        {text('that values health, wellness, and sustainability. We’re about educating our customers on the importance of bees in our ecosystem and how our consumption choices impact their survival.', 'مهمتنا في ترو ناشور بليند هي تقديم أعلى جودة من المكملات الطبيعية لدعم أهداف الصحة والعافية لعملائنا. نحن ملتزمون بالاستدامة ودعم البيئة، ونؤمن بقوة الطبيعة في مساعدتنا على عيش أفضل حياة.')}
-
-        </Typography>
-        <Btn
-            onClick={()=>router.push(`/collection/products?type=all`)}
-
-                    
-                    sx={{border:'none',mx:'auto',mt:1}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
-
-                    </Btn>
-      </Box>
-      <Box sx={{height:'100%',width:'100%'}}>
-      <img src="https://ucarecdn.com/6ce6563b-35b2-432c-9c62-51fbb4ffca8f/image00005.jpeg" alt="" className="img" />
- 
-      </Box>
-
-      </Container>        
+     
 
     {/* <Testimonials/> */}
 

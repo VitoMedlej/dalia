@@ -8,8 +8,8 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'Mounet Dalia | Premium Organic Honey from Lebanon',
-    description: `Discover the taste of pure, organic honey with Mounet Dalia. Experts in bee culture, we offer a range of honey products sourced sustainably from Lebanon’s rich flora.`,
+    title: 'Mounet Dalia - Traditional Lebanese Food Stand',
+    description: `Explore the rich flavors of Lebanon at Mounet Dalia. Our food stand crafts tradition with a modern twist, empowering women through flavor transformations. Indulge in creamy labneh, premium olives, and more.`,
     icons: {
         icon: `https://ucarecdn.com/a1106da8-d56a-4cef-a9ee-4b27e18ef36c/Beeorganiclogo1.png`
     }

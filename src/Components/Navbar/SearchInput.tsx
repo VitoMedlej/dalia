@@ -31,7 +31,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
         py:'.25em',
         mx:2,
         // my:'.25em',
-        mb: mobile ? '.25em' : '0',
+        mb: {xs:1,sm:0},
         px:'.5em',
         // mb:'.5em',
         flex:1,
