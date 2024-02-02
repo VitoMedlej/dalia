@@ -22,7 +22,7 @@ const FilterSection = ({sx,setProducts,setOptions,options,handleSubmit}:any) => 
       
             flexDirection: 'column',
             // pt:2,
-            px:1,
+            width:'100%',
             display: 'flex',
             ...sx,
            

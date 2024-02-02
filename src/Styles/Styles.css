@@ -2,15 +2,20 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Roboto Flex", sans-serif !important;
 }
 
-h1 {
-  font-family: "Oswald", sans-serif !important;
+* h1, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
+  font-family: "Roboto Flex", sans-serif !important;
 }
 
-*, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Open Sans", sans-serif !important;
+.emailinput {
+  min-width: 300px;
+  padding: 0 1em;
+  border: 1px solid #c0c0c0;
+}
+.emailinput:focus {
+  outline: none;
 }
 
 .w100 {

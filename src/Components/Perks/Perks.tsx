@@ -24,7 +24,7 @@ const Perks = () => {
                     <Box sx={{ml:.7}} className="flex col">
 
                     <Typography className='' sx={{fontStyle:'',fontSize:{xs:'1em',sm:'1.29em'},
-                    fontWeight:500}}  component={'h1'}>{i.title}</Typography>
+                    fontWeight:600}}  component={'h1'}>{i.title}</Typography>
                      <Typography className='' sx={{fontSize:{xs:'.95em',sm:'1em'},
                     fontWeight:300}}  component={'h1'}>{i.text}</Typography>
                     </Box>

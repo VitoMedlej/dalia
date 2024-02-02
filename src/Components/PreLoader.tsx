@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Box,  Container, Grid, Typography } from "@mui/material"
+import { Box,  Container, Grid, TextField, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
@@ -60,10 +60,10 @@ PreLoader = ({data,resImages}:any) => {
       <Grid className='bg center items-center ' container sx={{height:{md:'600px'},minHeight:{xs:'500px'}}}>
 
         <Grid sx={{py:{xs:8,sm:0},px:{xs:1,sm:4}}} xs={12} className='' sm={6}>
-            <Typography sx={{pb:1,color:'white',fontWeight:900,fontSize:{xs:'2em',sm:'3em',md:'3.5em'}}}>
+            <Typography sx={{pb:1,color:'white',fontWeight:900,fontSize:{xs:'2em',sm:'3em',md:'3.2em'}}}>
               About Our Products
             </Typography>
-            <Typography className='' sx={{color:'#d8d8d8',fontSize:'.91em',lineHeight:'1.75em'}}>
+            <Typography className='' sx={{color:'#d8d8d8',fontSize:'.85em',lineHeight:'1.75em'}}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat inventore officiis nulla culpa neque non sint. Fugiat explicabo autem excepturi expedita dolorum porro sequi omnis qui quo error quae commodi ullam, esse nisi id ea, reprehenderit sunt beatae a iure ut minima illum. Quo eligendi autem ullam itaque at sed!
             </Typography>
             <Btn className='bg3 white border3' sx={{mt:2}}>
@@ -156,12 +156,12 @@ PreLoader = ({data,resImages}:any) => {
 
                     
                     sx={{border:'none',mx:'auto',mt:1}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
+                    {text('Donate Now')}
 
                     </Btn>
       </Box>
       <Box sx={{height:'100%',width:'100%'}}>
-      <img src="https://ucarecdn.com/bb34e045-ed68-4fe4-9fc2-1375a0dd1224/403981148_361472023081700_4605903573449148916_n.jpg" alt="" className="img" />
+      <img src="https://madebynaturelb.com/wp-content/uploads/2023/08/Group-853.jpg?id=74371" alt="" className="img" />
  
       </Box>
 
@@ -299,7 +299,35 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
     {/* <Testimonials/> */}
 
-        
+        <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
+      ,py:4,background:'#f6f6f6 !important',
+      }} container>
+        <Container className='flex auto wrap row items-center' sx={{maxWidth:'lg'}}>
+          <Grid   item xs={12} sm={6}>
+            <Typography
+            className='clr'
+            sx={{color:'white',fontSize:'1.5em',fontWeight:600}}>Grab an extra 5% Discount</Typography>
+            <Typography
+            sx={{fontSize:'.8em',color:'#696969'}}
+            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda tenetur et reprehenderit possimus. Et rem sequi eos nesciunt sint debitis? Vel, reiciendis ipsum. Aut, totam.</Typography>
+          </Grid>
+          <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap " item xs={12} sm={6}>
+            <Box className="flex row wrap gap gap1" sx={{height:'40px',maxWidth:'500px'}}>
+
+            <input className='emailinput'  style={{backgroundColor:'white',color:'black',
+           borderRadius:'4px',
+          
+          }}
+            placeholder='Enter Email'
+            type='email' value=''/>
+            <Btn>
+              Submit
+            </Btn>
+            </Box>
+          </Grid>
+          </Container>
+
+        </Grid>
         {/* <ContactSection/> */}
   </Box>
   )

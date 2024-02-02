@@ -23,7 +23,7 @@ component={'h1'}
         sm: '1.4em'
     },
     padding:.5,
-    fontWeight: '300'
+    fontWeight: '500'
 }}>
  Our Products
 </Typography>

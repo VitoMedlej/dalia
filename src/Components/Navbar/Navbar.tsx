@@ -114,18 +114,20 @@ export default function Navbar() {
 <Box className='flex'
     sx={{
     mx: {
+        xs: '.15em',
         sm: '1em'
     },
+    my:1,
     width:{xs:'90px',md: '100px'}
 }}>
     <img
-        className='img'
-        src={`https://ucarecdn.com/a1106da8-d56a-4cef-a9ee-4b27e18ef36c/Beeorganiclogo1.png`}
-        alt="BeeOrganic logo"/>
+        className='img contain'
+        src={`https://ucarecdn.com/9304db51-1509-447d-b8e4-c87d0b8c11c2/408031158_664465732546685_227633461073843326_n.jpg`}
+        alt="Mounet Dalia logo"/>
 </Box>
 
 </Link>
-<Box>
+<Box className='flex'>
 
  <IconButton
                             onClick={() => setOpen(!open)}

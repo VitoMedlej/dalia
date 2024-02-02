@@ -45,7 +45,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.8em'}}}>
 COLLECTION
 </Typography>
 </Link>
@@ -71,7 +71,7 @@ COLLECTION
         sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
-        fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+        fontWeight:600,fontSize:{xs:'.86em',sm:'.8em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
@@ -87,7 +87,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:500,fontSize:{xs:'.86em',sm:'.8em'}}}>
 Organic Herbs
 </Typography>
 </Link>
@@ -100,7 +100,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:500,fontSize:{xs:'.86em',sm:'.8em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
@@ -116,7 +116,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:500,fontSize:{xs:'.86em',sm:'.8em'}}}>
 About Us
 </Typography>
 </Link> */}

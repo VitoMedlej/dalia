@@ -21,8 +21,8 @@ export default function FilterBar({setNewValue,newValue,handleSubmit}:{newValue:
       className='searchinput '
       sx={{
         py:'.25em',
-        mx:{xs:1,md:2},
         // my:'.25em',
+        width:'100%',
         mb: '.25em' ,
         px:'.5em',
         // mb:'.5em',
@@ -34,7 +34,9 @@ export default function FilterBar({setNewValue,newValue,handleSubmit}:{newValue:
         
         //  display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
          display:'flex',
-         alignItems: 'center',maxWidth:{xs:'90%',md:'400px',lg:'40%'}
+         alignItems: 'center',
+         
+         maxWidth:{xs:'90%',md:'200px',lg:'100%'}
        
         }}
     >

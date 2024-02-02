@@ -107,21 +107,31 @@ const Preloader2 = ({data,totalPages}:any) => {
     
   return (
     <Container sx={{mt:2}} disableGutters maxWidth='lg'>
+    <Box sx={{mb:2,width:'100%',py:2,background:'#f6f6f6'}}>
+        <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:700}} className='flex clr center  text-center' component='h1'>
+            {category}
+        </Typography>
+    </Box>
+
+    <Box className='flex row wrap'>
+
     <Box
     className='flex  items-center wrap'
         sx={{
         mb:4,
-        width: '100%',
+        mx:{xs:1,md:0},
+    width: {xs:'100%',md:'30%',lg:'25%'},
         minHeight: '100px'
     }}>
         <FilterBar handleSubmit={handleSubmit} setNewValue={setnewValue} newValue={newValue}/>
     <FilterSection handleSubmit={handleSubmit} options={options} setOptions={setOptions} setProducts={setProducts}/>
     </Box>
-    {/* <BreadCrumb></BreadCrumb> */}
+   
    
 
-    <Box className='flex wrap' sx={{
-        px: 1
+    <Box className='flex wrap col' sx={{
+        width:{xs:'100%',sm:'70%',lg:'75%'},
+        px: {xs:1,md:0}
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
@@ -137,11 +147,10 @@ const Preloader2 = ({data,totalPages}:any) => {
                 images={i.images}
                 category={i.category}/>
         })
-: <Typography>
-No products found, try a different category...
+: <Typography className='center text-center auto' >
+    We Could Not Find Products That Match Your Criteria!
 </Typography>}
-    </Box>
-    <Pagination
+<Pagination
         onChange={(e, val) => {
             fetchData(val)
     }}
@@ -152,8 +161,10 @@ No products found, try a different category...
         ? totalPages
         : 1}
         className='flex center '/>
+    </Box>
 
 
+</Box>
 </Container>
   )
 }

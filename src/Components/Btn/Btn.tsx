@@ -17,7 +17,7 @@ let style1 = {
  
   },
   display: 'flex',
-  padding: '11px 35px',
+  padding: '9px 45px',
   fontWeight: '600',
   fontSize: '12px',
   cursor: 'pointer',
@@ -37,7 +37,7 @@ let style2 = {
       transform: 'scale(1.05)',
   },
   display: 'flex',
-  padding: '6px 34px',
+  padding: '9px 45px',
   fontWeight: '600',
   fontSize: '12px',
   cursor: 'pointer',

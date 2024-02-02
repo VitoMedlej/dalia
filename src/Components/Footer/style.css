@@ -33,7 +33,7 @@ footer .site-footer__links ul li a {
 footer .site-footer__links ul .link-title {
   font-weight: 500;
   padding: 0 0 0.65em 0;
-  font-size: 1.1em;
+  font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
   font-weight: 600 !important;
 }

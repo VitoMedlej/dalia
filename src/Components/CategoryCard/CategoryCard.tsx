@@ -13,10 +13,10 @@ const CategoryCard = ({ imageUrl, categoryName } : any) => {
         alt={categoryName}
       />
       <CardContent sx={{boxShadow:'none',border:'none', borderRadius:'4px',bgcolor: '#f4f4f4' }}>
-        <Typography gutterBottom className='text-' sx={{fontWeight:600}} variant="h5" component="div">
+        <Typography gutterBottom className='text-' sx={{pb:1,fontWeight:600}} variant="h5" component="div">
           {categoryName}
         </Typography>
-        <Btn  className='w100'>
+        <Btn sx={{mt:1}}  className='w100'>
           Show More
         </Btn>
       </CardContent>
