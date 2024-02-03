@@ -17,7 +17,6 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
         console.log('insertReq.acknowledged: ', insertReq.acknowledged);
           // Update stock values for each product in the order
           for (const product of order?.products) {
-            console.log('product: ', product);
             const { _id, qty } = product;
             
             if (isNaN(Number(qty)) || Number(qty) <= 0) {
@@ -28,10 +27,7 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
             const updateStockReq = await client.db("DALIA").collection("Products").updateOne(
            
               { _id: new ObjectId(`${_id}`) },
-              [
-                { $set: { stock: { $toDouble: "$stock" } } }, // Convert the existing 'stock' to a double
-                { $set: { stock: { $subtract: ["$stock", qty] } } } // Subtract 'qty' from 'stock'
-              ]
+              { $inc: { stock: -Number(qty) } }
               );
     
             if (!updateStockReq.acknowledged) {
