@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('F5NX6214-HJN35I') || []
+            let localCart : ICartItem[] = loadState('prodNtX932ux') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +34,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('F5NX6214-HJN35I', state);
+        saveState('prodNtX932ux', state);
         setCartItems(state);
     }
     return (

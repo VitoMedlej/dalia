@@ -120,7 +120,7 @@ useEffect(()=>{
               </ListItem>
              })
           }
-
+{/* 
 <Accordion sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
@@ -177,7 +177,7 @@ key={i}>
 
 
   </AccordionDetails>
-</Accordion>
+</Accordion> */}
 
 
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>

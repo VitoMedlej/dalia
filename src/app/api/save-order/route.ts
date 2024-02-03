@@ -14,8 +14,10 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
     if (!order) return NextResponse.json({success:false})
        const insertReq = await client.db("DALIA").collection("Orders").insertOne(order);
        if (insertReq.acknowledged) {         
+        console.log('insertReq.acknowledged: ', insertReq.acknowledged);
           // Update stock values for each product in the order
           for (const product of order?.products) {
+            console.log('product: ', product);
             const { _id, qty } = product;
             
             if (isNaN(Number(qty)) || Number(qty) <= 0) {
@@ -24,9 +26,13 @@ export  async function POST(req: NextRequest, res: NextApiResponse) {
 
             // Assuming you have a collection named "Products" with stock information
             const updateStockReq = await client.db("DALIA").collection("Products").updateOne(
+           
               { _id: new ObjectId(`${_id}`) },
-              { $inc: { stock: -Number(qty) } } // Subtracting the ordered quantity from the stock
-            );
+              [
+                { $set: { stock: { $toDouble: "$stock" } } }, // Convert the existing 'stock' to a double
+                { $set: { stock: { $subtract: ["$stock", qty] } } } // Subtract 'qty' from 'stock'
+              ]
+              );
     
             if (!updateStockReq.acknowledged) {
               return NextResponse.json({ success: false, message: 'Failed to update stock values' });

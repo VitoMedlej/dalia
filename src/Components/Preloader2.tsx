@@ -121,7 +121,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         mb:4,
         mx:{xs:1,md:0},
     width: {xs:'100%',md:'30%',lg:'25%'},
-        minHeight: '100px'
+        minHeight: '100px',height:'fit-content',
     }}>
         <FilterBar handleSubmit={handleSubmit} setNewValue={setnewValue} newValue={newValue}/>
     <FilterSection handleSubmit={handleSubmit} options={options} setOptions={setOptions} setProducts={setProducts}/>

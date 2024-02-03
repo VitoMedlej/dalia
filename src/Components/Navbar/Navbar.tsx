@@ -48,7 +48,7 @@ export default function Navbar() {
     // const localCart = [1]
     useEffect(() => {
         const cart : any = []
-        // const cart = loadState('F5NX6214-HJN35I') || []
+        // const cart = loadState('prodNtX932ux') || []
         if (cart) {
 
             setLocalCart(cart)

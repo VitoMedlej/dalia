@@ -1,6 +1,6 @@
 "use client"
 // import {IProduct} from '@/Types/Types'
-import {Box, Typography} from '@mui/material'
+import {Box, Divider, Typography} from '@mui/material'
 import React from 'react'
 import Btn from '../Btn/Btn'
 // import {GrAdd} from 'react-icons/gr'
@@ -44,16 +44,17 @@ const ProductCard = ({
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
-    console.log('sizes: ', sizes);
+    console.log('sizes: ', stock);
     return (
         <Box
             className='  trans cardproduct center text-center'
             sx={{
-            // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
+            boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
             // border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
             my:1,
+            borderRadius: '5px',
             minWidth: {sm:'30%'},
             width: width
                 ? width
@@ -77,23 +78,27 @@ const ProductCard = ({
                     alt="Prdouct image"
                     className="img contain"/>
             </Box>
+            <Divider></Divider>
             
             <Box 
             sx={{
                 px: .95,
                 mt:1.5,
-            }}>  <Typography
-            className='limited cursor center text-center '
+            }}>  
+            <Typography
+            className='limited cursor  '
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                    fontSize: {xs:'1em',sm:'1.15em',md:'1.32em'},
-                    fontWeight: '600'
+                        pt:.5,
+                        textAlign:'left',
+                    fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
+                    fontWeight: '400'
                 }}>
                     {title}
                 </Typography>
         
-               <Box className='flex row'>
+               <Box className='flex col ' sx={{textAlign:'left'}}>
               
                { stock > 0 && inStock !== false ? 
                <>
@@ -102,7 +107,7 @@ const ProductCard = ({
     sx={{
         mb: 0.5,
         fontWeight: '700',
-        fontSize: { xs: '.99em', sm: '1em' },
+        fontSize: { xs: '.89em', sm: '.9em' },
     }}
 >
 {newPrice ? (
@@ -114,25 +119,27 @@ const ProductCard = ({
     )}
 </Typography>
 <Btn 
-            className='cursor black bg gap1'
+            className='cursor black clr  gap1'
                 
                      onClick={()=>
                         sizes &&  sizes?.length > 0 ? 
                         router.push(`/product/${_id}`)
                         :
-                        stock >= 1   && 
+                        Number(stock) >= 1   && 
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
                     v2
                     sx={{
+                        border:'1px solid transparent',
+                        ':hover':{background:'transparent',border:'1px solid '},
                         color:'black !important',
                         margin:'0 '
                     // borderRadius:'8',
                         ,
-                        ':hover':{color:'black !IMPORTANT',background:'#006430'}
+                       
                 }}>
                     <Box sx={{
                         
-                        color:'black !important',}} className="flex bg">
+                        color:'black !important',}} className="flex clr ">
 
                     {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD'}
                     <BiCartAdd fontSize='20px'/>

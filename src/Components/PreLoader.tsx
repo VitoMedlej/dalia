@@ -57,7 +57,7 @@ PreLoader = ({data,resImages}:any) => {
     <Box >
       <MainCarousel resImages={resImages}/>
       <HomeProductCollection  products={data}/>
-      <Grid className='bg center items-center ' container sx={{height:{md:'600px'},minHeight:{xs:'500px'}}}>
+      <Grid className=' center items-center ' container sx={{background:'#006231',height:{md:'600px'},minHeight:{xs:'500px'}}}>
 
         <Grid sx={{py:{xs:8,sm:0},px:{xs:1,sm:4}}} xs={12} className='' sm={6}>
             <Typography sx={{pb:1,color:'white',fontWeight:900,fontSize:{xs:'2em',sm:'3em',md:'3.2em'}}}>

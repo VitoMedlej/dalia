@@ -66,7 +66,7 @@ const Cart = () => {
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
     const {discountedPrice,isFirstOrder} = useDiscount(total)
-    let localCart : ICartItem[] = loadState('F5NX6214-HJN35I') || []
+    let localCart : ICartItem[] = loadState('prodNtX932ux') || []
     useEffect(() => {
         if (localCart) {
             
@@ -76,12 +76,12 @@ const Cart = () => {
     }, [])
     const refetchState = () => {
 
-        setCartItems(loadState('F5NX6214-HJN35I'))
+        setCartItems(loadState('prodNtX932ux'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('F5NX6214-HJN35I', state);
+         saveState('prodNtX932ux', state);
          setCartItems(state);
      }
     return (
