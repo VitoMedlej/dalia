@@ -3,6 +3,7 @@ export interface IProduct {
     price: number;
     _id: string;
     newPrice?:number;
+    stock:number;
     inStock ?: boolean;
     description: string;
     sizes ?: {

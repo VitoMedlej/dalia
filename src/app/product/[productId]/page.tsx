@@ -89,7 +89,7 @@ const Index = () => {
              <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'3em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
-           { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
+           { data?.product?.stock > 0 && data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
                In Stock
              </Typography>
             : 
@@ -97,7 +97,7 @@ const Index = () => {
                Out of stock
              </Typography>
             }
-          {data?.product?.inStock !== false &&   <Typography 
+          { data?.product?.stock > 0 && data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.55em'}}}>
                  ${
                  selectedSize?.price ||
@@ -109,7 +109,7 @@ const Index = () => {
    
       
          
-            {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
+            { data?.product?.stock > 0 &&data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:{xs:'max-content'}}}>
 
              <QuantityPicker 
@@ -125,7 +125,9 @@ const Index = () => {
               sizes={data?.product?.sizes ? data?.product?.sizes:  [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
      
              <Btn 
-                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedPrice:selectedSize?.price},true,true)}
+                     onClick={()=>
+                      data?.product?.stock >= selectedQuantity   && 
+                      addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedPrice:selectedSize?.price},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,

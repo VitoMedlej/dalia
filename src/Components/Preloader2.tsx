@@ -138,6 +138,8 @@ const Preloader2 = ({data,totalPages}:any) => {
             sizes={i?.sizes || null}
             width={{xs:'45%',sm:'32%'}}
             key={i?._id}
+            stock={i.stock}
+
             inStock={i?.inStock 
             }
                 _id={i._id}
