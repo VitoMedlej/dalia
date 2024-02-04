@@ -89,7 +89,8 @@ const Index = () => {
              <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'3em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
-           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
+           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false ? 
+           <Typography className='green' component={'h1'} sx={{fontSize:'1.05em',fontWeight:300}}>
                In Stock ({Number(data?.product?.stock)})
              </Typography>
             : 
@@ -98,7 +99,7 @@ const Index = () => {
              </Typography>
             }
           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false &&   <Typography 
-                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.55em'}}}>
+                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1.25em',sm:'1.55em'}}}>
                  ${
                  selectedSize?.price ||
                  data?.product?.price || 0}
@@ -112,10 +113,7 @@ const Index = () => {
             { Number(data?.product?.stock)> 0 &&data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:{xs:'max-content'}}}>
 
-             <QuantityPicker 
-                    onChange={(e:number)=>{setSelectedQuantity(e)}}
-                    
-                    min={1} max={10} value={selectedQuantity}/>
+       
               </Box>
             
      
@@ -124,37 +122,46 @@ const Index = () => {
               setselectedSize={setselectedSize}
               sizes={data?.product?.sizes ? data?.product?.sizes:  [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
      
+         
+            
+
+     <Box className='flex wrap ' sx={{mt:1,position:'relative'}}>
+              <Box className='flex row center items-center w100' sx={{width:{xs:'max-content',sm:'100%'}}}>
+             
+             <QuantityPicker 
+                    onChange={(e:number)=>{setSelectedQuantity(e)}}
+                    
+                    min={1} max={10} value={selectedQuantity}/>
+            
              <Btn 
-                     onClick={()=>
-                      data?.product?.stock >= selectedQuantity   && 
-                      addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedPrice:selectedSize?.price},true,true)}
+                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,
-             width:{xs:'95%',sm:'95%'}}}>
-                 <Typography component='h1'>
+             width:{xs:'100%',sm:'100%'}}}>
                  ADD TO CART
-
-                 </Typography>
-                 <AiOutlineShoppingCart  fontSize={'medium'}/>
+                
              </Btn>
+             </Box>
             
 
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',width:'95%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'100%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
 
 
 <Btn      sx={{gap:.5,
                 borderRadius:0,
                 mt:1,
-                border:'none',
-                background:'white',color:'green',
+                border:'1px solid black',
+                background:'white',color:'black',
              width:{xs:'100%'}}}>
-                 WHATSAPP 
-                 <BsWhatsapp fontSize={'medium'}/>
+                 BUY IT NOW 
              </Btn>
              </a>
+          
+
+             </Box>
           
 
              </Box>
@@ -203,8 +210,8 @@ const Index = () => {
             
          </Box>}
 
-           
-             <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
+            PRODUCT DESCRIPTION:
+             <Typography className='gray' sx={{pt:.5,whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
              </Typography>
          </Box>

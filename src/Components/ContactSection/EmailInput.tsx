@@ -43,7 +43,7 @@ const EmailInput = () => {
       />
       <IconButton
        
-      type="submit" className='searchIcon   trans' sx={{borderRadius:0,p: '5px' }} aria-label="search">
+      type="submit" className='searchIcon   trans' sx={{p: '5px' }} aria-label="search">
         <IoIosSearch />
       </IconButton>
      

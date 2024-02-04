@@ -42,7 +42,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
         
         //  display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
          display:'flex',
-         alignItems: 'center',maxWidth:{xs:'100%',md:'600px',lg:'60%'}
+         alignItems: 'center',maxWidth:{xs:'100%',md:'500px',lg:'50%'}
          ,...sx
         }}
     >
@@ -60,7 +60,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
       />
       <IconButton
        
-      type="submit" className='searchIcon   trans' sx={{borderRadius:0,p: '5px' }} aria-label="search">
+      type="submit" className='searchIcon   trans' sx={{p: '5px' }} aria-label="search">
         <IoIosSearch />
       </IconButton>
      

@@ -38,15 +38,15 @@ const NavButtom = () => {
                 </Link> */}
                 <Link className='black decor-none ' href={`/collection/products`}>
 
-<Typography 
-className=' cursor center flex gap1 black decor-none captialize'
-id="button"
-component='h1' sx={{width:'max-content',
-mx:'1em',
-alignItems: 'center',
-
-fontWeight:600,fontSize:{xs:'.86em',sm:'.8em'}}}>
-COLLECTION
+                <Typography 
+        component='h1'
+        className=' cursor center flex gap1 black decor-none captialize'
+        id="button"
+        sx={{width:'max-content',
+        mx:'1em',
+        alignItems: 'center',
+        fontWeight:600,fontSize:{xs:'.86em',sm:'.89em'}}}>
+Shop
 </Typography>
 </Link>
 
@@ -55,12 +55,9 @@ COLLECTION
    [
     'Labneh','Keshek',
     'Beverages',
-    'Honey, Jams & Spreads',
     'Mouneh',
     'Olives & Olive Oil',
-    
     'Sweets & Nuts',
-    'Zaatar',
   ].map(i=>{
         return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
@@ -71,8 +68,8 @@ COLLECTION
         sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
-        fontWeight:600,fontSize:{xs:'.86em',sm:'.8em'}}}>
-        {i.toUpperCase()}
+        fontWeight:600,fontSize:{xs:'.86em',sm:'.89em'}}}>
+        {i}
         </Typography>
         </Link>
     })

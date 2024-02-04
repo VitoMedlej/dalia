@@ -23,11 +23,11 @@ export default function App({images}:{images:string[] | []| undefined}) {
         autoplay={
           {delay:2000}
         }
-        navigation={true}
+        navigation={false}
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay]}
         className="mySwiper"
       >
 {

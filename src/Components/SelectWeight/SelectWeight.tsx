@@ -26,7 +26,7 @@ export default function ProductCard({ setselectedSize, selectedSize, sizes }: an
   };
 
   return (
-    <Box className='flex items-center' sx={{ minWidth: { xs: 120, lg: 200 } }}>
+    <Box className='flex items-center' sx={{ width: { xs: '100%' } }}>
       <FormControl fullWidth>
         <InputLabel id="weight-label">Sizes</InputLabel>
         <Select

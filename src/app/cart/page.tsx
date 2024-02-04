@@ -169,7 +169,7 @@ const Cart = () => {
                     className='decor-none bg'>
 
                     <Btn
-                    sx={{width:'100%',borderRadius:0,mt:2.5}}>Checkout Now</Btn>
+                    sx={{width:'100%',mt:2.5}}>Checkout Now</Btn>
                     </Link>
 
                     <Link href='/collection/products' className='decor-none'>

@@ -11,7 +11,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{my:4}} className='center auto'>
            
-           <Box className="flex justify-between auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
+           <Box className="flex justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
 
 <Typography
 component={'h1'}
@@ -20,23 +20,26 @@ component={'h1'}
  
     fontSize: {
         xs: '1.2em',
-        sm: '1.4em'
+        sm: '1.4em',
+        md:'1.5em'
     },
     padding:.5,
     fontWeight: '500'
 }}>
- Our Products
+ OUR PRODUCTS
 </Typography>
 
 <Btn 
-sx={{border:'none',color:'black',background:'white'}}
+sx={{border:'none',
+':hover':{background:'transparent'},
+color:'black',background:'white'}}
 onClick={()=>router.push('/collection/products')}
 >
    Explore More
 </Btn>
 </Box>
 
-              <Box sx={{mb:2,mt:4}} className='flex wrap gap1 justify-center'>
+              <Box sx={{mb:2,mt:0}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 
                       return <ProductCard 

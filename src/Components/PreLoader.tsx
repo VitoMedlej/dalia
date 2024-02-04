@@ -55,7 +55,7 @@ PreLoader = ({data,resImages}:any) => {
 
   return (
     <Box >
-      <MainCarousel resImages={resImages}/>
+      <MainCarousel/>
       <HomeProductCollection  products={data}/>
       <Grid className=' center items-center ' container sx={{background:'#006231',height:{md:'600px'},minHeight:{xs:'500px'}}}>
 

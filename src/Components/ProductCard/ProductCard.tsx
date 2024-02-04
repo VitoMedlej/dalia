@@ -49,7 +49,7 @@ const ProductCard = ({
         <Box
             className='  trans cardproduct center text-center'
             sx={{
-            boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
+            // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
             // border : '1px solid #000000a',
             py: 1,
             margin: '0em auto',
@@ -69,7 +69,7 @@ const ProductCard = ({
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'350px',sm:'350px',md:'400px'}
+                height: height || {xs:'350px',sm:'350px',md:'380px'}
             }}>
                 <img
                     src={images
@@ -78,27 +78,29 @@ const ProductCard = ({
                     alt="Prdouct image"
                     className="img contain"/>
             </Box>
-            <Divider></Divider>
             
             <Box 
             sx={{
                 px: .95,
-                mt:1.5,
+                mt:.5,
             }}>  
             <Typography
-            className='limited cursor  '
+            className='limited uppercase cursor auto  text-center center '
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
-                        pt:.5,
+                      
                         textAlign:'left',
+                        px:{xs:0,sm:2},
+                        pt:1,
+                        maxWidth:'300px',
                     fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
-                    fontWeight: '400'
+                    fontWeight: '500'
                 }}>
                     {title}
                 </Typography>
         
-               <Box className='flex col ' sx={{textAlign:'left'}}>
+               <Box className='flex col text-center center ' sx={{textAlign:'left'}}>
               
                { stock > 0 && inStock !== false ? 
                <>
@@ -106,16 +108,16 @@ const ProductCard = ({
                className="clr2"
     sx={{
         mb: 0.5,
-        fontWeight: '700',
-        fontSize: { xs: '.89em', sm: '.9em' },
+        fontWeight: '300',
+        fontSize: { xs: '.99em', sm: '1em' },
     }}
 >
 {newPrice ? (
         <>
-            <s>{price}$</s> {newPrice}$
+            <s>${price}</s> ${newPrice}
         </>
     ) : (
-        `${price}$`
+        `$${price}`
     )}
 </Typography>
 <Btn 
@@ -130,8 +132,9 @@ const ProductCard = ({
                     v2
                     sx={{
                         border:'1px solid transparent',
-                        ':hover':{background:'transparent',border:'1px solid '},
+                        ':hover':{background:'transparent',border:'1px solid transparent '},
                         color:'black !important',
+                        fontWeight:'900',
                         margin:'0 '
                     // borderRadius:'8',
                         ,
@@ -141,8 +144,7 @@ const ProductCard = ({
                         
                         color:'black !important',}} className="flex clr ">
 
-                    {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD'}
-                    <BiCartAdd fontSize='20px'/>
+                    {sizes && sizes?.length > 0 ? 'SELECT SIZE' :  'ADD TO CART'}
                     </Box>
                 </Btn>
                {/* <Typography

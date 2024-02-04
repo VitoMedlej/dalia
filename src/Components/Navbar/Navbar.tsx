@@ -129,7 +129,23 @@ export default function Navbar() {
 </Link>
 <Box className='flex'>
 
- <IconButton
+
+
+                        <IconButton
+                            onClick={() => setCartOpen(!cartOpen)}
+    className=' gap gap1'
+                            sx={{
+                                display:{xs:'flex',md:' none'},
+                                margin : '8px',
+                                
+                        }}>
+                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
+
+                                <CiShoppingCart color='black'/>
+                            {/* </Badge> */}
+                          
+                        </IconButton>
+                        <IconButton
                             onClick={() => setOpen(!open)}
                             size="large"
                             edge="start"
@@ -146,20 +162,7 @@ export default function Navbar() {
                             <IoIosMenu color='black'/>
                         </IconButton>
 
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-    className=' gap gap1'
-                            sx={{
-                                display:{xs:'flex',md:' none'},
-                                margin : '8px',
-                                
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
 
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                          
-                        </IconButton>
 
                         </Box>
                         
@@ -178,8 +181,8 @@ export default function Navbar() {
                                 <CiShoppingCart fontSize={'2em'} color='white'/>
                             {/* </Badge> */}
                             <Typography>
-                                $ 0.0 (0)
-                            </Typography>
+                                My Cart
+                                </Typography>
                         </Btn>
 </Box>
 
