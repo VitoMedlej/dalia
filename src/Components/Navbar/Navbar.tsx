@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import {IoIosMenu} from 'react-icons/io'
-// import {CiShoppingCart} from 'react-icons/ci'
+// import {IoIosCart} from 'react-icons/ci'
 
 import { useEffect, useState} from 'react';
 
@@ -15,7 +15,7 @@ import {Badge, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
 // import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
-import {CiSearch,CiShoppingCart} from 'react-icons/ci'
+import {CiSearch} from 'react-icons/ci'
 import {AiOutlineHome,AiOutlineShoppingCart} from 'react-icons/ai'
 import SearchInput from './SearchInput';
 
@@ -23,7 +23,7 @@ import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import Btn from '../Btn/Btn';
 import useLanguage from '@/Hooks/useLanguage';
-
+import { IoIosCart } from "react-icons/io";
 
 
 export const categories =   [
@@ -106,7 +106,8 @@ export default function Navbar() {
             }}> 
             <Box 
             sx={{
-                justifyContent: {xs:'space-between',md:'center'},
+                justifyContent: {xs:'space-between',md:'space-between'},
+                maxWidth:'1200px',
             }}
             className='flex wrap items-center w100  '> 
                   <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
@@ -141,7 +142,7 @@ export default function Navbar() {
                         }}>
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
 
-                                <CiShoppingCart color='black'/>
+                                <IoIosCart color='black'/>
                             {/* </Badge> */}
                           
                         </IconButton>
@@ -177,12 +178,10 @@ export default function Navbar() {
                                 
                         }}>
                             {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
+                            My Cart
 
-                                <CiShoppingCart fontSize={'2em'} color='white'/>
+                                <IoIosCart fontSize={'2em'} color='white'/>
                             {/* </Badge> */}
-                            <Typography>
-                                My Cart
-                                </Typography>
                         </Btn>
 </Box>
 

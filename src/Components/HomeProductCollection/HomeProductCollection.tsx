@@ -12,21 +12,19 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     <Box sx={{my:4}} className='center auto'>
            
            <Box className="flex justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
-
-<Typography
-component={'h1'}
-    className='sectionTitle   box'
-    sx={{
- 
-    fontSize: {
-        xs: '1.2em',
-        sm: '1.4em',
-        md:'1.5em'
-    },
-    padding:.5,
-    fontWeight: '500'
-}}>
- OUR PRODUCTS
+           <Typography
+            component='h1'
+                className='sectionTitle   box'
+                sx={{
+             
+                fontSize: {
+                    xs: '1.2em',
+                    sm: '1.4em'
+                },
+                padding:.5,
+                fontWeight: '300'
+            }}>
+Latest products
 </Typography>
 
 <Btn 

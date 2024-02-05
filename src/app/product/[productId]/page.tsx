@@ -86,12 +86,12 @@ const Index = () => {
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'3em'}}}>
+             <Typography component={'h1'} sx={{fontWeight:500,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'2.8em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
            { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false ? 
            <Typography className='green' component={'h1'} sx={{fontSize:'1.05em',fontWeight:300}}>
-               In Stock ({Number(data?.product?.stock)})
+               In Stock 
              </Typography>
             : 
             <Typography className='red' component={'h1'} sx={{color:'red',fontSize:'1.25em',fontWeight:300}}>
@@ -210,10 +210,15 @@ const Index = () => {
             
          </Box>}
 
-            PRODUCT DESCRIPTION:
-             <Typography className='gray' sx={{pt:.5,whiteSpace:'pre-wrap',maxWidth:'100%'}}>
+            {/* PRODUCT DESCRIPTION: */}
+             {/* <Typography className='gray' sx={{pt:.5,whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
-             </Typography>
+             </Typography> */}
+              <Typography 
+      className='gray' 
+      sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
+      dangerouslySetInnerHTML={{ __html: data?.product?.description }}
+    />
          </Box>
        </Grid>
          {/* <ProductReview/>  */}

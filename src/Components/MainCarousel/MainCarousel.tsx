@@ -44,6 +44,7 @@ const Preloader3 = () => {
     const router = useRouter()
 
     const [imgs,setImgs] = useState([
+        {img:`https://livgood.com/cdn/shop/files/Banner-web.png?v=1706543082&width=1540`},
         {img:'https://th.bing.com/th/id/R.7e46a87cc4b15fdbf0ba6e2c5c34f4bb?rik=OXGkoIf%2bI9kOLQ&riu=http%3a%2f%2fwww.alahlamsy.com%2fpicture%2fClipboard55.jpg&ehk=fOyHQknprh2tIYV%2f8VRFs63V9SiOETAdRejjPzEikTY%3d&risl=&pid=ImgRaw&r=0'},
         {img:'https://th.bing.com/th/id/R.8b01cb2dc0b885c8d5188e7ba9d2c4f1?rik=%2bYskn20HBuuadA&riu=http%3a%2f%2fwww.alahlamsy.com%2fpicture%2fClipboard44.jpg&ehk=qhCnyIBa2NFEu5wvsjf%2fJCKx12RWeFvesfLzbBNcVn4%3d&risl=&pid=ImgRaw&r=0',position:'centerd'},
       

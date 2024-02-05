@@ -12,6 +12,7 @@ import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
 import CategoryCard from './CategoryCard/CategoryCard'
+import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 const 
 PreLoader = ({data,resImages}:any) => {
@@ -77,6 +78,8 @@ PreLoader = ({data,resImages}:any) => {
         </Grid>
 
       </Grid>
+
+  <HomeProductsCarousel Collectiontitle={'Our Best Sellers'} delay={0} data={data}/>      
 
       <Container className='flex row wrap ' sx={{
         justifyContent:{xs:'center',sm:'justify-between'},
@@ -311,7 +314,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
             sx={{fontSize:'.8em',color:'#696969'}}
             >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda tenetur et reprehenderit possimus. Et rem sequi eos nesciunt sint debitis? Vel, reiciendis ipsum. Aut, totam.</Typography>
           </Grid>
-          <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap " item xs={12} sm={6}>
+          <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap "
+           item xs={12} sm={6}>
             <Box className="flex row wrap gap gap1" sx={{height:'40px',maxWidth:'500px'}}>
 
             <input className='emailinput'  style={{backgroundColor:'white',color:'black',
