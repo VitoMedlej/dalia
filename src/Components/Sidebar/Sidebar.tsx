@@ -105,7 +105,8 @@ useEffect(()=>{
             ].map(i=>{
               return    <ListItem
               key={i}
-              sx={{fontWeight:400}}
+              className='clr'
+              sx={{py:1,fontWeight:400}}
     
               onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
                disablePadding>
