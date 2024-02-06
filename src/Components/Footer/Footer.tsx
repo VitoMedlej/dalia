@@ -22,7 +22,10 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          Discover the essence of Lebanese tradition with Mounet Dalia, where the rich flavors of authentic mouneh take center stage. Our brand is more than just about food; it's a celebration of heritage, empowerment, and culinary innovation.
+          Discover the essence of Lebanese tradition with Mounet Dalia,
+           where the rich flavors of authentic mouneh take center stage.
+            Our brand is more than just about food; it&apos;s a celebration of heritage, 
+            empowerment, and culinary innovation.
           </Typography>
 
           {/* <ul className="site-footer__social-networks">

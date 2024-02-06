@@ -65,10 +65,12 @@ PreLoader = ({data,resImages}:any) => {
             <Typography 
             className='white'
             sx={{px:1,fontSize:{xs:'2em',sm:'3em'},fontWeight:700}}>
-              About Mounet Dalia's 
+              About Mounet Dalia&apos;s 
             </Typography>
             <Typography sx={{px:1}} className='white'>
-            Embark on a delicious journey with Mounet Dalia as we invite you to explore the vibrant flavors of Lebanon, whether you're indulging in our handmade preserves, savoring our aromatic spices, or delighting in our artisanal spreads.
+            Embark on a delicious journey with Mounet Dalia as we invite 
+            you to explore the vibrant flavors of Lebanon, whether you&apos;re
+             indulging in our handmade preserves, savoring our aromatic spices, or delighting in our artisanal spreads.
             </Typography>
             <Btn className='bg2' sx={{mt:2}}>
               Learn More
