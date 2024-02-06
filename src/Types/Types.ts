@@ -21,6 +21,7 @@ export interface IProduct {
     isFeatured?: boolean;
 }
 export interface ICartItem {
+    stock: number;
     title: string;
     _id: string;
     price: number;

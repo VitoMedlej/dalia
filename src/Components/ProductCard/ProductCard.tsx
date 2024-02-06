@@ -105,7 +105,7 @@ const ProductCard = ({
                { stock > 0 && inStock !== false ? 
                <>
                <Typography
-               className="clr2"
+               className="clr2 text-center center"
     sx={{
         mb: 0.5,
         fontWeight: '300',

@@ -131,7 +131,7 @@ const Index = () => {
              <QuantityPicker 
                     onChange={(e:number)=>{setSelectedQuantity(e)}}
                     
-                    min={1} max={10} value={selectedQuantity}/>
+                    min={1} max={data?.product?.stock ? Number(data?.product?.stock) : 10} value={selectedQuantity}/>
             
              <Btn 
                      onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
