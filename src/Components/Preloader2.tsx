@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import {Box, Container,  Pagination, Typography} from "@mui/material"
+import {Box, Container,  Divider,  Pagination, Typography} from "@mui/material"
 import { useParams, useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 import { server } from "@/Utils/Server"
@@ -54,7 +54,7 @@ const Preloader2 = ({data,totalPages}:any) => {
           price : [1,100000],
           sort : 'latest',
           type : 'All',
-          category : 'All',
+          category : category ? `${category}`?.charAt(0).toUpperCase() + `${category}`?.slice(1) : 'Collection',
           // query : '',
           
       })
@@ -119,8 +119,8 @@ const Preloader2 = ({data,totalPages}:any) => {
     className='flex  items-center wrap'
         sx={{
         mb:4,
-        mx:{xs:1,md:0},
-    width: {xs:'100%',md:'30%',lg:'25%'},
+        mx:{xs:1},
+    width: {xs:'100%',md:'30%',lg:'24%'},
         minHeight: '100px',height:'fit-content',
     }}>
         <FilterBar handleSubmit={handleSubmit} setNewValue={setnewValue} newValue={newValue}/>
@@ -129,14 +129,14 @@ const Preloader2 = ({data,totalPages}:any) => {
    
    
 
-    <Box className='flex wrap col' sx={{
-        width:{xs:'100%',sm:'70%',lg:'75%'},
+    <Box className='flex wrap row' sx={{
+        width:{xs:'100%',md:'68%',lg:'73%'},
         px: {xs:1,md:0}
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
             sizes={i?.sizes || null}
-            width={{xs:'45%',sm:'32%'}}
+            width={{xs:'45%',sm:'48%',md:'32%'}}
             key={i?._id}
             stock={i.stock}
 

@@ -7,13 +7,13 @@ import React from 'react'
 let style1 = {
   color: 'white',
   background: ' #006430',
-  border:'1px solid  #006430',
+  border:'1px solid  #006430 !important',
   borderRadius: '10px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#006430',
-      color:'white',
+      background: 'white',
+      color:'#286538',
  
   },
   display: 'flex',
@@ -33,7 +33,7 @@ let style2 = {
 
   ':hover': {
     color:'black',
-      background: '#006430',
+      background: '#1d1d1d',
       transform: 'scale(1.05)',
   },
   display: 'flex',

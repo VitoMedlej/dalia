@@ -165,10 +165,11 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
                  
                 
 return  <Box
-className='flex  center items-center'
+className='flex   items-center'
                     key={index}
                     sx={{
-                    
+                    width:'100%',
+                    mt:{xs:0,md:1},
                     boxShadow: 'none'
                 }}>
                 

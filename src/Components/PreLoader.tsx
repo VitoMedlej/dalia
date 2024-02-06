@@ -58,26 +58,29 @@ PreLoader = ({data,resImages}:any) => {
     <Box >
       <MainCarousel/>
       <HomeProductCollection  products={data}/>
-      <Grid className=' center items-center ' container sx={{background:'#006231',height:{md:'600px'},minHeight:{xs:'500px'}}}>
-
-        <Grid sx={{py:{xs:8,sm:0},px:{xs:1,sm:4}}} xs={12} className='' sm={6}>
-            <Typography sx={{pb:1,color:'white',fontWeight:900,fontSize:{xs:'2em',sm:'3em',md:'3.2em'}}}>
-              About Our Products
+  
+    <Grid sx={{mt:4}} container className='flex bg'>
+        <Grid  xs={12} sm={6} item className='bg flex col center text-center items-center' sx={{py:4}}>
+          <Box className="flex  col center text-center items-center">
+            <Typography 
+            className='white'
+            sx={{px:1,fontSize:{xs:'2em',sm:'3em'},fontWeight:700}}>
+              About Mounet Dalia's 
             </Typography>
-            <Typography className='' sx={{color:'#d8d8d8',fontSize:'.85em',lineHeight:'1.75em'}}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat inventore officiis nulla culpa neque non sint. Fugiat explicabo autem excepturi expedita dolorum porro sequi omnis qui quo error quae commodi ullam, esse nisi id ea, reprehenderit sunt beatae a iure ut minima illum. Quo eligendi autem ullam itaque at sed!
+            <Typography sx={{px:1}} className='white'>
+            Embark on a delicious journey with Mounet Dalia as we invite you to explore the vibrant flavors of Lebanon, whether you're indulging in our handmade preserves, savoring our aromatic spices, or delighting in our artisanal spreads.
             </Typography>
-            <Btn className='bg3 white border3' sx={{mt:2}}>
+            <Btn className='bg2' sx={{mt:2}}>
               Learn More
             </Btn>
-        </Grid>
-        <Grid sx={{height:'100%'}}xs={12} sm={6}>
-          <Box sx={{width:'100%',height:'100%'}}>
-            <img src="https://ucarecdn.com/82634fa8-05f1-430d-a158-825d71c9779c/403996132_328527179893172_6812557316622611387_n.jpg" alt="" className="img" />
           </Box>
         </Grid>
-
-      </Grid>
+        <Grid item xs={12} sm={6}>
+            <Box sx={{width:'100%',height:'100%'}}>
+              <img src="https://ucarecdn.com/1a95afe1-0e8e-41fb-a4fa-00ef857ef23a/418621867_1412854806328214_6415211719117463606_n.jpg" alt="" className="img" />
+            </Box>
+        </Grid>
+    </Grid>
 
   <HomeProductsCarousel Collectiontitle={'Our Best Sellers'} delay={0} data={data}/>      
 

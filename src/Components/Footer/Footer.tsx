@@ -22,7 +22,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
-          Welcome to Mounet Dalia, your one-stop destination for premium organic honey. As experts in bee culture, diseases, and treatments, we’re dedicated to providing you with the highest quality honey products.
+          Discover the essence of Lebanese tradition with Mounet Dalia, where the rich flavors of authentic mouneh take center stage. Our brand is more than just about food; it's a celebration of heritage, empowerment, and culinary innovation.
           </Typography>
 
           {/* <ul className="site-footer__social-networks">

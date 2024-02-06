@@ -75,7 +75,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('prodNtX932ux')
+      const products = loadState('prodNtX932ux23')
  
 
       const total = 10
@@ -91,7 +91,7 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,total}})
         });
   const content = await rawResponse.json();
-  saveState('prodNtX932ux',null)
+  saveState('prodNtX932ux23',null)
   saveState('Niozhh1io42',null)
   localStorage.setItem('isFirstOrder', 'false');
 }

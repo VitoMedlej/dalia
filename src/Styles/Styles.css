@@ -172,6 +172,10 @@ button[disabled] {
   color: #286538 !important;
 }
 
+.clr2 {
+  color: #1d1d1d !important;
+}
+
 .auto {
   margin: 0 auto;
 }

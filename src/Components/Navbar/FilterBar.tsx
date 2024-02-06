@@ -36,7 +36,11 @@ export default function FilterBar({setNewValue,newValue,handleSubmit}:{newValue:
          display:'flex',
          alignItems: 'center',
          
-         maxWidth:{xs:'90%',md:'200px',lg:'100%'}
+         maxWidth:{xs:'90%',
+         
+         lg:'100%'}
+
+
        
         }}
     >
