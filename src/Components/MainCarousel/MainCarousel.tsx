@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
-import { Autoplay } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 import useLanguage from '@/Hooks/useLanguage';
 
 
@@ -88,11 +88,12 @@ const Preloader3 = () => {
                 slidesPerView={1}
                 spaceBetween={0}
                 loop={true}
+                
                 autoplay={{
                 delay: 4800,
                 disableOnInteraction: true
             }}
-                modules={[Autoplay]}
+                modules={[Navigation,Autoplay]}
                 className="mySwiper swiper">
     
                 {imgs.map((item) => {
