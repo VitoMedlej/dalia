@@ -109,7 +109,10 @@ const Preloader2 = ({data,totalPages}:any) => {
     <Container sx={{mt:2}} disableGutters maxWidth='lg'>
     <Box sx={{mb:2,width:'100%',py:2,background:'#f6f6f6'}}>
         <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:700}} className='flex clr center  text-center' component='h1'>
-            {category}
+            {
+
+                decodeURIComponent(category)
+            }
         </Typography>
     </Box>
 

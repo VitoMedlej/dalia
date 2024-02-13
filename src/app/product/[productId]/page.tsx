@@ -118,9 +118,14 @@ const Index = () => {
             
      
               <SelectWeight
-              selectedSize={selectedSize  }
+              selectedSize={selectedSize}
               setselectedSize={setselectedSize}
-              sizes={data?.product?.sizes ? data?.product?.sizes:  [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/>
+              sizes={data?.product?.mutlisize && data?.product?.sizes && data?.product?.sizes?.length > 0 ?
+               data?.product?.sizes:  
+               [{price:Number(data?.product?.price)
+        
+               ,
+               size:parseFloat(data?.product?.size)}]}/>
      
          
             
