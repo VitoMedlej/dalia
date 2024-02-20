@@ -89,7 +89,8 @@ export default function Checkout() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({order:{info,products,total}})
-        });
+          });
+          console.log('{info,products,total}: ', {info,products,total});
   const content = await rawResponse.json();
   saveState('prodNtX932ux23',null)
   saveState('Niozhh1io42',null)

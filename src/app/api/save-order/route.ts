@@ -30,19 +30,26 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
             return NextResponse.json({ success: false, message: 'Invalid quantity for product' });
           }
           
-          // Retrieve the current soldQuantity from the database
+          // Retrieve the current soldQuantity and stock from the database
           const existingProduct = await client.db("DALIA")
-          .collection("Products")
-          .findOne({ _id: new ObjectId(_id) });
-          const currentSoldQuantity = existingProduct ? existingProduct?.soldQuantity || 0 : 0;
+            .collection("Products")
+            .findOne({ _id: new ObjectId(_id) });
+
+          const currentStock = parseInt(existingProduct?.stock); // Parse stock string to integer
+          const currentSoldQuantity = parseInt(existingProduct?.soldQuantity) || 0;
+
+          if (isNaN(currentStock)) {
+            return NextResponse.json({ success: false, message: 'Invalid stock value for product' });
+          }
           
-          // Calculate the new soldQuantity by adding the current and new quantity sold
+          // Calculate the new stock and soldQuantity
+          const newStock = currentStock - Number(qty);
           const newSoldQuantity = currentSoldQuantity + Number(qty);
           
           const updateStockReq = await client.db("DALIA").collection("Products").updateOne(
             { _id: new ObjectId(_id) },
             { 
-              $inc: { stock: -Number(qty), soldQuantity: newSoldQuantity - currentSoldQuantity } 
+              $set: { stock: newStock.toString(), soldQuantity: newSoldQuantity.toString() } 
             }
           );
           
@@ -59,3 +66,4 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
   
   return NextResponse.json({ success: false });
 }
+

@@ -8,7 +8,6 @@ const text = [
     `At Mounet Dalia, excellence is not just a goal; it's our way of life. We are committed to providing you with products that are not only effective but also safe. Our team of experts works tirelessly to source the purest and most potent ingredients from nature's bounty.`,
     `We believe that when you choose Mounet Dalia, you're choosing a partner on your path to a healthier and more vibrant life.`,
     `Our commitment extends beyond your well-being. We're equally dedicated to the well-being of our planet. That's why we use eco-friendly packaging and support sustainable farming practices. We believe that by preserving the environment, we can help ensure a healthier future for generations to come.`,
-  
 ]
 const Index = () => {
   return (
