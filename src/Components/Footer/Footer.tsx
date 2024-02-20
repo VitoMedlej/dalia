@@ -69,7 +69,7 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/BeeOrganic/" target="_blank" rel="noreferrer" >@BeeOrganic</a></li>
+            <li><a href="https://www.instagram.com/mounetdalia/" target="_blank" rel="noreferrer" >@mounetdalia</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
             <SMicons/>
