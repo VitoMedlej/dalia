@@ -12,6 +12,7 @@ import SearchInput from './Navbar/SearchInput'
 import FilterBar from './Navbar/FilterBar'
 
 const Preloader2 = ({data,totalPages}:any) => {
+    console.log('data: ', data);
    
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
@@ -138,6 +139,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <ProductCard
+
             sizes={i?.sizes || null}
             width={{xs:'45%',sm:'48%',md:'32%'}}
             key={i?._id}

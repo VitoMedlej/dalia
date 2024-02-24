@@ -27,9 +27,9 @@ const SwiperCarousel = ({data, delay} : {
             height: '100%'
         }}>
   <Swiper
-            pagination={{
-                clickable: true,
-              }}
+            // pagination={{
+            //     clickable: true,
+            //   }}
              
               autoplay={{
                 delay:  delay || 1000,
@@ -39,10 +39,10 @@ const SwiperCarousel = ({data, delay} : {
             spaceBetween={10}
             slidesPerView={1}
             slidesPerGroup={1}
-            modules={[FreeMode,Autoplay, Pagination]}
+            modules={[FreeMode,Autoplay]}
             breakpoints={{
                 200 : {
-                    slidesPerView:2,
+                    slidesPerView:1,
                 },
                 540: {
                     slidesPerView: 2,

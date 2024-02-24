@@ -12,7 +12,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
   const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
 
   const fetchUserAndList = async () => {
-    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+    const user = localStorage.getItem('24j1i2cj4io-n92nzv531')
     if (user) {
            let parsedUser = JSON.parse(user)
            if (!parsedUser) {return}
@@ -131,7 +131,7 @@ React.useEffect(()=>{
           />
           
         </Grid>
-      {/* <Grid item xs={12} sm={ 12}>
+        <Grid item xs={12} sm={ 12}>
       <FormControlLabel
         value={info.checkbox}
         onChange={handleChange}
@@ -144,8 +144,7 @@ React.useEffect(()=>{
         onChange={handleChange}
         name='checkbox2'
       required control={<Checkbox  />} label="I agree to receive emails understand that I can unsubscribe at any time by clicking the link in the email." />
-      </Grid> */}
-     
+      </Grid>
 
         
       </Grid>

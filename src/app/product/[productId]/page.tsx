@@ -17,6 +17,7 @@ import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
 import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 import SelectWeight from '@/Components/SelectWeight/SelectWeight'
+import ProductReview from '@/Components/ProductReview/ProductReview'
 
 const Index = () => {
     const {productId} = useParams()
@@ -89,7 +90,7 @@ const Index = () => {
              <Typography component={'h1'} sx={{fontWeight:500,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'2.8em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
-           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false ? 
+           { Number(data?.product?.stock) !== 0 && data?.product?.inStock !== false ? 
            <Typography className='green' component={'h1'} sx={{fontSize:'1.05em',fontWeight:300}}>
                In Stock 
              </Typography>
@@ -110,14 +111,14 @@ const Index = () => {
    
       
          
-            { Number(data?.product?.stock)> 0 &&data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
+            {  Number(data?.product?.stock)> 0 &&data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:{xs:'max-content'}}}>
 
        
               </Box>
             
      
-              <SelectWeight
+           {data?.product?.mutlisize &&   <SelectWeight
               selectedSize={selectedSize}
               setselectedSize={setselectedSize}
               sizes={data?.product?.mutlisize && data?.product?.sizes && data?.product?.sizes?.length > 0 ?
@@ -125,7 +126,7 @@ const Index = () => {
                [{price:Number(data?.product?.price)
         
                ,
-               size:parseFloat(data?.product?.size)}]}/>
+               size:parseFloat(data?.product?.size)}]}/>}
      
          
             
@@ -227,6 +228,7 @@ const Index = () => {
          </Box>
        </Grid>
          {/* <ProductReview/>  */}
+         <ProductReview data={data} setData={setData} reviews={data?.product?.reviews || null}/> 
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
    </Grid> : <Box className='flex auto center align-center' sx={{py:15}}>
 

@@ -143,6 +143,13 @@ body {
   align-items: center;
 }
 
+.button {
+  text-transform: uppercase !important;
+}
+.button p {
+  text-transform: uppercase !important;
+}
+
 .black {
   color: black;
 }

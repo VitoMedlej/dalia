@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import { Divider } from '@mui/material';
 import { loadState } from '@/Utils/LocalstorageFn';
 import totalCal from '@/Utils/totalCal';
-import useDiscount from '@/Hooks/useDiscount';
+import { useDiscountContext } from '@/context/Contexts';
 
 
 // const products = [
@@ -40,13 +40,17 @@ import useDiscount from '@/Hooks/useDiscount';
       // return 0
 // }  
 export default function Review({setActiveStep}:{setActiveStep:any}) {
+  const {discountedPrice} = useDiscountContext();
+  console.log('discountedPrice: ', discountedPrice);
 
+
+ 
+  
   const products = loadState('prodNtX932ux23')
  
   const info = loadState('Niozhh1io42')
   
-  const total = totalCal(products);
-  const {discountedPrice,isFirstOrder} = useDiscount(total)
+  const total =  discountedPrice ? discountedPrice : totalCal(products);
   if (!info) {
     setActiveStep(0)
   }
@@ -61,7 +65,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
         
           if (!product?._id) return;
          return <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
-             <ListItemText primary={`${product?.qty || '1'} x ${product?.title || 'Product Name'} - ${product?.productselectedSize ? product?.productselectedSize : ''}g`}  />
+             <ListItemText primary={`${product?.qty || '1'} x ${product?.title || 'Product Name'} - ${product?.selectedColor ? product?.selectedColor : ''}`}  />
             <Typography variant="body2">${product?.newPrice ? Number(product?.newPrice * Number(product?.qty || 1) ) : product?.price * Number(product?.qty || 1) }</Typography>
           </ListItem>
         })}
@@ -82,18 +86,12 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 </ListItem>} */}
         <ListItem sx={{ px: 0 }}>
 
-          <ListItemText primary="Total" />
+          <ListItemText primary={`Total ${discountedPrice !== 0 ? '(After discount)' : '' }`} />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+          ${Number(total)}
             {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
-            ${Number(discountedPrice)?.toFixed(2)}
           </Typography>
         </ListItem>
-        <Typography variant="subtitle1" sx={{color:'green', fontWeight: 400 }}>
-            {
-              
-              isFirstOrder ? `10% discount off your first order!` : ''
-            }
-            </Typography>
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>

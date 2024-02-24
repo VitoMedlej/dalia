@@ -8,6 +8,7 @@ import {useRouter} from 'next/navigation'
 import useCart from '@/Hooks/useCart'
 
 import {BiCartAdd} from 'react-icons/bi';
+import WishlistButton from './WhishlistButton'
 
 
 
@@ -24,7 +25,9 @@ const ProductCard = ({
     stock,
     inStock
     ,
-    newPrice
+    newPrice,
+    whishedItem,
+    onRemove
 
 } : {
     inStock?:boolean,
@@ -40,7 +43,9 @@ const ProductCard = ({
     images: string[],
     category: string,
     width?: string | number | any,
-    height?: string | number
+    height?: string | number,
+    whishedItem ?:boolean,
+    onRemove?: (_id: string) => void
 }) => {
     const router = useRouter()
     const {addToCart}= useCart()
@@ -72,9 +77,12 @@ const ProductCard = ({
                 height: height || {xs:'350px',sm:'350px',md:'380px'}
             }}>
                 <img
-                    src={images
-                    ? images[0]
-                    : ''}
+                    src={
+                        ''
+                        // images
+                    // ? `${images[0]}-/resize/200x200/`
+                    // : ''
+                }
                     alt="Prdouct image"
                     className="img contain"/>
             </Box>
@@ -102,7 +110,7 @@ const ProductCard = ({
         
                <Box className='flex col text-center center ' sx={{textAlign:'left'}}>
               
-               { stock > 0 && inStock !== false ? 
+               { Number(stock) !== 0 && inStock !== false ? 
                <>
                <Typography
                className="clr2 text-center center"
@@ -120,20 +128,23 @@ const ProductCard = ({
         `$${price}`
     )}
 </Typography>
+<Box className="flex center items-center">
+
 <Btn 
-            className='cursor black clr  gap1'
+            className='cursor    gap1'
                 
                      onClick={()=>
                         sizes &&  sizes?.length > 0 ? 
                         router.push(`/product/${_id}`)
                         :
-                        Number(stock) >= 1   && 
+                        Number(stock) !== 0   && 
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
-                    v2
+                    
                     sx={{
+                        width:'70%',
+                        color:'white',
                         border:'1px solid transparent',
-                        ':hover':{background:'transparent',border:'1px solid transparent '},
-                        color:'black !important',
+                        ':hover':{background:'transparent',color:'black',border:'1px solid transparent '},
                         fontWeight:'900',
                         margin:'0 '
                     // borderRadius:'8',
@@ -141,12 +152,14 @@ const ProductCard = ({
                        
                 }}>
                     <Box sx={{
-                        
-                        color:'black !important',}} className="flex clr ">
+                        fontSize:{xs:'.7em'},
+                        width:'max-content',
+                     }} className="  ">
 
                     {sizes && sizes?.length > 0 ? 'SELECT SIZE' :  'ADD TO CART'}
                     </Box>
                 </Btn>
+                
                {/* <Typography
                     sx={{
                     mb:.5,
@@ -156,6 +169,14 @@ const ProductCard = ({
                 }}>
                     {price}$
                 </Typography> */}
+                   <WishlistButton onRemove={onRemove} productId={_id} product={{ title,
+    price,
+    images,
+    category,
+    _id,
+    width,
+    height}}/>
+</Box>
               
                 
                </>

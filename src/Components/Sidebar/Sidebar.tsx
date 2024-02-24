@@ -22,7 +22,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
 
   const fetchUserAndList = async () => {
-    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+    const user = localStorage.getItem('24j1i2cj4io-n92nzv531')
     if (user) {
            let parsedUser = JSON.parse(user)
            if (!parsedUser) {return}
@@ -83,7 +83,9 @@ useEffect(()=>{
            disablePadding>
             <ListItemButton>
             
-                  <Typography component='h1' sx={{fontWeight:600}}>
+                  <Typography component='h1'
+                  className='clr'
+                  sx={{fontWeight:600}}>
               VIEW ALL
             </Typography>
             </ListItemButton>
@@ -106,7 +108,7 @@ useEffect(()=>{
               return    <ListItem
               key={i}
               className='clr'
-              sx={{py:1,fontWeight:400}}
+              sx={{py:.2,fontWeight:400}}
     
               onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
                disablePadding>
@@ -367,6 +369,21 @@ key={i}>
 </Accordion> */}
     
       </List>
+      <Link href='/about' className='decor-none' style={{color:'black',padding:' .25em 0'}}>
+        <ListItemButton>
+        
+        <Typography className='clr' sx={{ fontWeight:600}}>
+         ABOUT US
+            </Typography>
+            </ListItemButton>
+      </Link>
+      {!localUser &&   <Btn sx={{width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/account/login')}}>
+          Login
+        </Btn>}
+        <Btn sx={{color:'white',background:'red',border:'1px solid red',gap:.5,width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/profile')}}>
+         My Favorites
+         <AiOutlineHeart/>
+        </Btn>
         {/* <SMicons/> */}
      
     

@@ -109,9 +109,9 @@ export default function TemporaryDrawer() {
                        sx={{width:'100%',mx:1
                     ,
                     }}
-                       onClick={()=>{setCartOpen(false),router.push('/checkout')}}
-                       disabled={cartItems.length < 1}>
-                            Checkout
+                       onClick={()=>{setCartOpen(false),router.push('/cart')}}
+                      >
+                            View Cart
                        </Btn>
                         <Btn
                          
@@ -127,13 +127,7 @@ export default function TemporaryDrawer() {
                          >
                         Continue Shopping
                         </Btn>
-                        <Btn
-                        className='text-center auto'
-                        sx={{mx:1,color:'black',border:'none',':hover':{background:'white',color:'black'}}} 
-                        onClick={()=>{setCartOpen(false),router.push('/cart')}}
-                        v2={true} >
-                        View Cart Page
-                        </Btn>
+                 
                     </Box>
 
                 </Box>

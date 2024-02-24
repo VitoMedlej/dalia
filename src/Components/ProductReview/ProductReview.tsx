@@ -1,4 +1,5 @@
 "use client"
+
 import {Divider, Grid, Box, Typography, Rating, TextField} from '@mui/material'
 import React from 'react'
 import Btn from '../Btn/Btn';
@@ -9,7 +10,7 @@ import ReviewForm from './ReviewForm';
 
 
 
-const ProductReview = () => {
+const ProductReview = ({reviews,data,setData}:any) => {
 
     return (
         <Grid container sx={{py:4}}>
@@ -27,16 +28,20 @@ const ProductReview = () => {
                         pb: .25,
                         pt: 1.2
                     }}>
-                        Product Review:
+                        Product Reviews:
                     </Typography>
                     <Box>
-                   {false ?     <Typography className='gray' component={'p'}>
+                   {!reviews || reviews?.length < 1 ?     <Typography className='gray' component={'p'}>
                             No reviews yet
                         </Typography> :
 
                         <>
-                     
-                      <UserReview/>
+                        {
+                            reviews.map((review:any) =>{
+
+                            return    <UserReview key={review?.reviewText} review={review}/>
+                            })
+                        }
 
                         </>
 
@@ -48,7 +53,7 @@ const ProductReview = () => {
             <Grid sx={{
             mt: 4
         }} xs={12} sm={6} item>
-            <ReviewForm/>
+            <ReviewForm data={data} setData={setData}/>
               
             </Grid>
         </Grid>

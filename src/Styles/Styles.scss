@@ -122,6 +122,13 @@ $color3 : #84a545 !important;
 .items-center {
 align-items: center;
 }
+.button{
+    text-transform: uppercase !important;
+    p {
+    text-transform: uppercase !important;
+
+    }
+}
 .black {
     color: black;
 }
