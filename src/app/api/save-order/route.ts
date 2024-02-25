@@ -18,7 +18,7 @@ interface Product {
 
 const transporter = nodemailer.createTransport({
   host: "mail.smtp2go.com",
-  port: 8025,
+  port: 8465,
   secure: true,
   auth: {
       user: "contact@mounetdalia.com",
@@ -31,17 +31,18 @@ async function increaseUsageCountPromo(code:PromoType) {
   try{
   // Update usageCount in MongoDB
   const Codes = await client.db('DALIA').collection('Coupons');
-  const res =  await Codes.updateOne(
+  const result =  await Codes.updateOne(
       // { _id: new ObjectId(code._id) },
       { code },
       { $inc: { usageCount: 1 } }
       );
 
-      console.log('res: ', res);
- if( !res?.acknowledged) {
-     return 
+      console.log('res: ', result);
+ if( !result?.acknowledged) {
+     return false
  }
- console.log('res: ', res);
+ return true;
+ console.log('res: ', result);
   }
   catch(e){
       console.log('e: ', e);
@@ -289,7 +290,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
       const { order }: { order: any } = await req.json();
 
-      if (!order || !order.info || !order.info.email || !order.products) return res.json({ success: false });
+      if (!order || !order.info || !order.info.email || !order.products) return NextResponse.json({ success: false });
 
       let orderId = nanoid();
       orderId = `${orderId}`.replace(/[^a-zA-Z0-9]/g, '')?.slice(0, 6)?.toUpperCase();
@@ -308,7 +309,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
           const { _id, qty } = product;
 
           if (isNaN(Number(qty)) || Number(qty) <= 0) {
-            return res.json({ success: false, message: 'Invalid quantity for product' });
+            return NextResponse.json({ success: false, message: 'Invalid quantity for product' });
           }
 
           const existingProduct = await client.db("DALIA")
@@ -319,7 +320,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
           const currentSoldQuantity = parseInt(existingProduct?.soldQuantity) || 0;
 
           if (isNaN(currentStock)) {
-            return res.json({ success: false, message: 'Invalid stock value for product' });
+            return NextResponse.json({ success: false, message: 'Invalid stock value for product' });
           }
 
           const newStock = currentStock - Number(qty);
@@ -328,22 +329,26 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
           const updateStockReq = await client.db("DALIA").collection("Products").updateOne(
             { _id: new ObjectId(_id) },
             { $set: { stock: newStock.toString(), soldQuantity: newSoldQuantity.toString() } }
-          );
+            );
+            console.log('updateStockReq: ', updateStockReq);
 
           if (!updateStockReq.acknowledged) {
-            return res.json({ success: false, message: 'Failed to update stock values' });
+            return NextResponse.json({ success: false, message: 'Failed to update stock values' });
           }
-          await sendOrderConfirmationEmail(order.discountedPrice || 0, orderId, order.info.email, order.products);
+          const emailSent =  await sendOrderConfirmationEmail(order.discountedPrice || 0, orderId, order.info.email, order.products);
+          if (emailSent) {
+            return NextResponse.json({ success: true });
+          }
         }
-        return res.json({ success: true });
+        return NextResponse.json({ success: false });
       }
     }
   } catch (error) {
     console.error("Error processing order:", error);
-    return res.status(500).json({ success: false, error: "Internal Server Error" });
+    return NextResponse.json({ success: false, error: "Internal Server Error", status:500 });
   } finally {
     await client.close();
   }
-  return res.json({ success: false });
+  return NextResponse.json({ success: false });
 }
 

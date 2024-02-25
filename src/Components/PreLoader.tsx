@@ -13,6 +13,7 @@ import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
 import CategoryCard from './CategoryCard/CategoryCard'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
+import InstagramSection from './InstagramSection/InstagramSection'
 
 const 
 PreLoader = ({data,resImages}:any) => {
@@ -307,7 +308,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
      
 
     {/* <Testimonials/> */}
-
+        <InstagramSection/>
         <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
       ,py:4,background:'#f6f6f6 !important',
       }} container>
