@@ -44,9 +44,9 @@ const Preloader3 = () => {
     const router = useRouter()
 
     const [imgs,setImgs] = useState([
-        {img:`https://nomadparadise.com/wp-content/uploads/2020/08/lebanese-food-1.jpg`},
-        {img:'https://ucarecdn.com/8b1962c4-8df5-4dac-9bbf-300ae7988d79/R.7e46a87cc4b15fdbf0ba6e2c5c34f4bb'},
-        {img:'https://ucarecdn.com/e92ff920-7e4a-4d3e-bb54-ba01732edd82/55e0b493858f43c49db8a083a1efdd49.jpg',position:'centerd'},
+        {img:`https://ucarecdn.com/20a01b7d-aec2-4cf5-9e74-09cac757d069/pic1.PNG`},
+        // {img:'https://ucarecdn.com/8b1962c4-8df5-4dac-9bbf-300ae7988d79/R.7e46a87cc4b15fdbf0ba6e2c5c34f4bb'},
+        {img:'https://ucarecdn.com/4471d4e8-e247-4a18-a356-ea1022c88b94/pic2.PNG',position:'centerd'},
       
        
      ])
@@ -149,7 +149,7 @@ const Preloader3 = () => {
                             </Container> */}
                             <img
             
-                                className={`img cover  ${item?.position} 
+                                className={`img contain  ${item?.position} 
                                 `}
                                 // ${item?.className}
                                 src={`${item.img}`}

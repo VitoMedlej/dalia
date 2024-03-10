@@ -36,6 +36,10 @@ body {
      object-position: center;
 }
 
+h1 {
+  color: #286538 !important;
+}
+
 .img {
   -o-object-fit: cover;
      object-fit: cover;

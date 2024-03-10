@@ -12,7 +12,7 @@ const NavButtom = () => {
 
   return (
     <Box
-        className=' wrap  space-evenly'
+        className=' wrap  black space-evenly'
         sx={{
             flex:1,
             borderTop:'1px solid #00000026',
@@ -40,13 +40,14 @@ const NavButtom = () => {
 
                 <Typography 
         component='h1'
-        className=' cursor center flex gap1  decor-none captialize'
+        className=' cursor center  flex gap1  decor-none captialize'
         id="button"
         sx={{width:'max-content',
-        mx:'1em',
+        mx:'.75em',
         alignItems: 'center',
-        fontWeight:600,fontSize:{xs:'.86em',sm:'.99em'}}}>
-Shop
+        color:'black',
+        fontWeight:400,fontSize:{xs:'.86em',sm:'.99em'}}}>
+Collections
 </Typography>
 </Link>
 
@@ -59,16 +60,17 @@ Shop
     'Olives & Olive Oil',
     'Sweets & Nuts',
   ].map(i=>{
-        return <Link key={i} className=' clr decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
+        return <Link key={i} className=' clr decor-none black ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h1'
         className=' cursor center flex gap1  decor-none captialize'
         id="button"
         sx={{width:'max-content',
-        mx:'1em',
+        mx:'.75em',
         alignItems: 'center',
-        fontWeight:600,fontSize:{xs:'.86em',sm:'.99em'}}}>
+        color:'black',
+        fontWeight:400,fontSize:{xs:'.86em',sm:'.99em'}}}>
         {i}
         </Typography>
         </Link>

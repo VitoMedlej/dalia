@@ -60,7 +60,7 @@ export default function Navbar() {
     return ( <>
      <Box
      id='navy'
-    className='center auto relative   bg flex'
+    className='center auto relative    flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
@@ -82,7 +82,7 @@ export default function Navbar() {
                 boxShadow:'none',
 
                 background:'white',
-            // maxWidth: 'lg',
+            maxWidth: 'lg',
                 width:'100%',
             margin: '0 auto',
         }}>
@@ -91,6 +91,12 @@ export default function Navbar() {
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
             </Box> */}
+                 <Box className='center text-center' sx={{background:'white',width:'100%',py:.25}}>
+                <Typography className='' component='h1' sx={{color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
+            FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
+                </Typography>
+            </Box>
+            <Divider></Divider>
             <Toolbar
      id='navy3'
 
@@ -99,7 +105,7 @@ export default function Navbar() {
                 sx={{
                 
                 background:'white',
-                    maxWidth:'xl',
+                    maxWidth:'lg',
                 px:'0 !important',
                 mx:{xs:1},
                 flexWrap: 'wrap'
@@ -107,7 +113,7 @@ export default function Navbar() {
             <Box 
             sx={{
                 justifyContent: {xs:'space-between',md:'space-between'},
-                maxWidth:'1200px',
+                maxWidth:'lg',
             }}
             className='flex wrap items-center w100  '> 
                   <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
@@ -115,7 +121,7 @@ export default function Navbar() {
 <Box className='flex'
     sx={{
     mx: {
-        xs: '.15em',
+        xs: '.25em',
         sm: '1em'
     },
     my:1,
@@ -128,7 +134,7 @@ export default function Navbar() {
 </Box>
 
 </Link>
-<Box className='flex'>
+{/* <Box className='flex'>
 
 
 
@@ -140,10 +146,8 @@ export default function Navbar() {
                                 margin : '8px',
                                 
                         }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
 
                                 <IoIosCart color='black'/>
-                            {/* </Badge> */}
                           
                         </IconButton>
                         <IconButton
@@ -165,11 +169,50 @@ export default function Navbar() {
 
 
 
-                        </Box>
+                        </Box> */}
+<SearchInput />
                         
 
-<SearchInput/>
-<Btn
+    <Box sx={{width:'max-content'}} className="flex flex1 flex-end">
+
+       
+            <Box 
+    onClick={()=>setOpenModal(!openModal)}
+            
+            
+            className='cursor pointer flex center items-center' sx={{width:'22px'
+            ,padding:1
+            
+            }}>
+                <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="" className="img contain" />
+            </Box>
+       
+
+      
+            <Box
+                onClick={()=>setCartOpen(!cartOpen)}
+            className='cursor pointer flex center items-center' sx={{width:'22px'
+            ,padding:1
+            
+            }}>
+                <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img contain" />
+            </Box>
+
+
+      
+            <Box
+               onClick={()=>setOpen(!open)}
+            className='cursor pointer  center items-center' sx={{width:'22px',
+            padding:1,
+                // display: {xs:'flex',sm:'none'},
+        }}>
+                <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/10513/10513594.png" alt="" className="img contain" />
+            </Box>
+   
+        </Box>
+<SearchInput mobile={true}/>
+
+{/* <Btn
                             onClick={() => setCartOpen(!cartOpen)}
     className=' gap gap1'
                             sx={{
@@ -177,12 +220,10 @@ export default function Navbar() {
                                 margin : '8px',
                                 
                         }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
                             My Cart
 
                                 <IoIosCart fontSize={'2em'} color='white'/>
-                            {/* </Badge> */}
-                        </Btn>
+                        </Btn> */}
 </Box>
 
 
@@ -318,11 +359,11 @@ mobile
 <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
 <Divider></Divider>
 
-<NavButtom/>
              
             </Toolbar>
         </AppBar>
     </Box> 
+<NavButtom/>
 
     < Divider sx={{color : '#00000017'}} />
      </>

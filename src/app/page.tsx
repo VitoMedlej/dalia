@@ -27,7 +27,7 @@ const fetchData = async () => {
 
   }
 }
-export default async function Home() {
+export default  function Home() {
   // export default async function Home() {
 //   const [data,setData] = useState< {
 //     products: IProduct[] | never[] ; 
@@ -66,7 +66,7 @@ try {
       // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
       // let resImages : any = await  reqImages.json();
       let resImages : any ={}
-      const res = await fetchData()
+      const res : any=  fetchData()
       // let res = {data:{featuredProducts:null}}
       
       return (

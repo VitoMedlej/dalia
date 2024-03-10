@@ -36,6 +36,9 @@ $color3 : #84a545 !important;
     object-position: center;
 
 }
+h1 {
+    color: $color
+}
 .img {
     object-fit: cover;
     width:100%;
