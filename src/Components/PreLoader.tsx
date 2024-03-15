@@ -59,8 +59,38 @@ PreLoader = ({data,resImages}:any) => {
     <Box >
       <MainCarousel/>
       {/* <HomeProductCollection  products={data}/> */}
-      <HomeProductsCarousel Collectiontitle={'Our Best Sellers'} delay={0} data={data}/>      
-  
+     
+      <Container className='flex row wrap ' sx={{
+        px:{xs:1,md:2},
+        gap:1,
+        justifyContent:{xs:'center',sm:'justify-between'},
+        my:{xs:0,sm:4}}} maxWidth='lg'>
+
+      {
+        [{
+          img:`https://demo2.wpopal.com/ecolive/wp-content/uploads/2021/10/h2_banner-1.jpg`,
+          title:'Fresh Everyday'
+        },
+        {
+          img:`https://demo2.wpopal.com/ecolive/wp-content/uploads/2021/10/h2_banner-2.jpg`,
+          title:'Lowest Price'
+        },
+        {
+          img:`https://demo2.wpopal.com/ecolive/wp-content/uploads/2021/10/h2_banner-3.jpg`,
+          title:' Special Flavour '
+        }
+      ].map(i=>{
+        return <CategoryCard key={i} categoryName={i?.title} imageUrl={i?.img}/>
+        
+      })
+    }
+    </Container>
+
+
+    <HomeProductsCarousel Collectiontitle={'Featured Products'} delay={0} data={data}/>      
+
+
+
     <Grid sx={{mt:4}} container className='flex bg'>
         <Grid  xs={12} sm={6} item className='bg flex col center text-center items-center' sx={{py:4}}>
           <Box className="flex  col center text-center items-center">
@@ -86,31 +116,8 @@ PreLoader = ({data,resImages}:any) => {
         </Grid>
     </Grid>
 
-  <HomeProductsCarousel Collectiontitle={'Our Best Sellers'} delay={0} data={data}/>      
 
-      <Container className='flex row wrap ' sx={{
-        justifyContent:{xs:'center',sm:'justify-between'},
-        my:{xs:8,sm:12}}} maxWidth='lg'>
-
-      {
-        [{
-          img:`https://ucarecdn.com/7fea20d3-484f-40ce-a65a-a647258bf8d5/411045445_747027977349294_1663032584200259792_n.jpg`,
-          title:'Labneh'
-        },
-        {
-          img:`https://ucarecdn.com/a983b4af-f02f-48bf-92ab-31ca70061d5c/418698985_1752566701907368_3211893865957316752_n.jpg`,
-          title:'Olives & Olive Oil'
-        },
-        {
-          img:`https://ucarecdn.com/9d220db7-8eff-4a16-923a-1abd3be4d0d0/413446196_3774316836187782_3031473529925331693_n.jpg`,
-          title:'Keshek'
-        }
-      ].map(i=>{
-        return <CategoryCard key={i} categoryName={i?.title} imageUrl={i?.img}/>
-        
-      })
-    }
-    </Container>
+    
       <Perks/>
 
 
@@ -309,7 +316,9 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
 
     {/* <Testimonials/> */}
         <InstagramSection/>
-        <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
+
+
+        {/* <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
       ,py:4,background:'#f6f6f6 !important',
       }} container>
         <Container className='flex auto wrap row items-center' sx={{maxWidth:'lg'}}>
@@ -338,7 +347,8 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           </Grid>
           </Container>
 
-        </Grid>
+        </Grid> */}
+
         {/* <ContactSection/> */}
   </Box>
   )

@@ -31,6 +31,11 @@ body {
      object-position: top;
 }
 
+.leftd {
+  -o-object-position: left;
+     object-position: left;
+}
+
 .centerd {
   -o-object-position: center;
      object-position: center;
@@ -164,7 +169,7 @@ button[disabled] {
 }
 
 .swiper-button-next, .swiper-button-prev {
-  color: gray !important;
+  color: #286538 !important;
 }
 
 .justify-between {
@@ -197,6 +202,25 @@ button[disabled] {
 
 .relative {
   position: relative !important;
+}
+
+.catecard {
+  padding: 10% 2em;
+  color: white;
+  height: 100%;
+  display: flex;
+  padding-bottom: 0;
+  flex-direction: column;
+}
+
+.carditem {
+  overflow: hidden;
+}
+.carditem .cateimg {
+  transition: all 0.4s ease-in;
+}
+.carditem:hover .cateimg {
+  transform: scale(1.16);
 }
 
 .swiper {

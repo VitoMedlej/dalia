@@ -26,32 +26,31 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             width :'99%',
             margin: '0 auto',
             // my: '3em',
-            mt:'4em',
-            mb:'3em',
+            my:'7em',
             ...sx,
         }}>
-            <Box className="flex justify-between" sx={{width:'100%'}}>
+            <Box className="flex text-center center" sx={{width:'100%'}}>
 
             <Typography
             component='h1'
-                className='sectionTitle   box'
+                className='clr2 center text-center  box'
                 sx={{
              
                 fontSize: {
-                    xs: '1.2em',
-                    sm: '1.4em'
+                    xs: '1.52em',
+                    sm: '1.52em'
                 },
                 padding:.5,
-                fontWeight: '300'
+                fontWeight: '600'
             }}>
               {Collectiontitle}
             </Typography>
             
-            <Btn
+            {/* <Btn
             sx={{border:'1px solid #006430'}}
             onClick={()=>router.push('/collection/products')}>
                 Shop All
-            </Btn>
+            </Btn> */}
             </Box>
             
             <Box
