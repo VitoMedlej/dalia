@@ -87,7 +87,7 @@ PreLoader = ({data,resImages}:any) => {
     </Container>
 
 
-    <HomeProductsCarousel Collectiontitle={'Featured Products'} delay={0} data={data}/>      
+    <HomeProductsCarousel Collectiontitle={'Featured Products'} delay={5000} data={data}/>      
 
 
 

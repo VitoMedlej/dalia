@@ -36,24 +36,24 @@ const WishlistButton = ({ productId, product ,onRemove} : {onRemove?: (id:string
                    v2 
                     sx={{
                         fontWeight:300,
-                        color:'red !Important',
+                        // color:'red !Important',
                         ':hover':{
                             background:'transparent',
                         },
                         // width:{xs:'100%',sm:'30%'},
-                        width:'auto',
+                        width:'20px',
+                        height:'20px',
                         border:'none',
                         py:0,
                         fontSize:'1.5em',
                     borderRadius:0,
-                        height:'100%',
                  
                 }}>
                   {liked
                   ?
-                  <AiFillHeart color='red'/>
+                  <img style={{width:'20px',height:'20px'}} src="https://cdn-icons-png.flaticon.com/128/20/20119.png" alt="" className="img" />
                   :
-                  <AiOutlineHeart/>
+                  <img style={{width:'20px',height:'20px'}} src="https://cdn-icons-png.flaticon.com/128/3898/3898377.png" alt="" className="img" />
                   }                    
                 </Btn>
     );

@@ -11,13 +11,12 @@ import PreLoader from "@/Components/PreLoader"
 
 const fetchData = async () => {
   try{
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,
-    
-    {
-      
+    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`
+    // ,
+    // {
       // cache: 'no-store',
-    
-    next:{revalidate:100000} })
+    // next:{revalidate:100000} }
+    )
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
     let res = req &&  await req.json();
     return res || null
@@ -27,7 +26,7 @@ const fetchData = async () => {
 
   }
 }
-export default  function Home() {
+export default async function Home() {
   // export default async function Home() {
 //   const [data,setData] = useState< {
 //     products: IProduct[] | never[] ; 
@@ -66,7 +65,7 @@ try {
       // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
       // let resImages : any = await  reqImages.json();
       let resImages : any ={}
-      const res : any=  fetchData()
+      const res : any= await  fetchData()
       // let res = {data:{featuredProducts:null}}
       
       return (

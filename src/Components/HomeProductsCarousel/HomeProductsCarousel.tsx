@@ -1,11 +1,14 @@
 "use client"
 import {Box, Divider, Typography} from '@mui/material'
 import { Dispatch, SetStateAction } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { IProduct } from '@/Types/Types'
-import Btn from '../Btn/Btn'
+// import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+
+
+
 const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
@@ -16,7 +19,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         productId: null | string;
     }>>
 }) => {
-    
+    console.log('data: ', data);
     const router = useRouter()
 
     return (

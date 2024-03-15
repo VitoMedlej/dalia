@@ -32,7 +32,7 @@ const SwiperCarousel = ({data, delay} : {
             //   }}
              
               autoplay={{
-                delay:  delay || 1000,
+                delay:  delay || 4000,
                 disableOnInteraction: true,
               }}
               navigation={false}
@@ -46,6 +46,9 @@ const SwiperCarousel = ({data, delay} : {
                 },
                 540: {
                     slidesPerView: 2,
+                  },
+                  740: {
+                    slidesPerView: 3,
                   },
                   
                   1024: {
@@ -74,7 +77,7 @@ const SwiperCarousel = ({data, delay} : {
                 newPrice={item?.newPrice}
 
                         inStock={item?.inStock}
-                            height={'400px'}
+                            // height={'400px'}
                             width='100%'
                             title={item.title}
                             images={item.images}

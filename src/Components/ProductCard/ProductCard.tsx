@@ -55,17 +55,18 @@ const ProductCard = ({
             className='  trans cardproduct center text-center'
             sx={{
             // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
-            // border : '1px solid #000000a',
-            py: 1,
+            border : '1px solid #0000003b',
+            pt: 4,
+            height:'400px',
             margin: '0em auto',
             my:1,
-            borderRadius: '5px',
-            minWidth: {sm:'30%'},
+            borderRadius: '15px',
+            minWidth: {sm:'22%'},
             width: width
                 ? width
                 : {
-                    xs: '48%',
-                    sm: '32%',
+                    xs: '32%',
+                    sm: '22%',
                 }
             
         }}>
@@ -74,50 +75,51 @@ const ProductCard = ({
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'350px',sm:'350px',md:'380px'}
+                height: height || {xs:'300px',sm:'200px',md:'280px'}
             }}>
                 <img
                     src={
-                        ''
-                        // images
-                    // ? `${images[0]}-/resize/200x200/`
-                    // : ''
+                        images
+                    ? `${images[0]}-/resize/300x300/`
+                    : ''
                 }
                     alt="Prdouct image"
                     className="img contain"/>
             </Box>
             
-            <Box 
+            <Box
+            className=' ' 
             sx={{
+                mx:'auto',
                 px: .95,
-                mt:.5,
+                mt:2.5,
             }}>  
             <Typography
-            className='limited uppercase cursor auto  text-center center '
+            className='limited clr2 cursor  '
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                       
                         textAlign:'left',
-                        px:{xs:0,sm:2},
-                        pt:1,
-                        maxWidth:'300px',
+                        pt:4,
+                        maxWidth:'280px',
                     fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
                     fontWeight: '500'
                 }}>
                     {title}
                 </Typography>
         
-               <Box className='flex col text-center center ' sx={{textAlign:'left'}}>
+               <Box className='flex col  ' sx={{textAlign:'left'}}>
               
                { Number(stock) !== 0 && inStock !== false ? 
                <>
                <Typography
-               className="clr2 text-center center"
+               className=""
     sx={{
+        color:'black',
         mb: 0.5,
-        fontWeight: '300',
-        fontSize: { xs: '.99em', sm: '1em' },
+        fontWeight: '400',
+        fontSize: { xs: '.99em', sm: '1.1em' },
     }}
 >
 {newPrice ? (
@@ -128,10 +130,10 @@ const ProductCard = ({
         `$${price}`
     )}
 </Typography>
-<Box className="flex center items-center">
+<Box className="flex center items-center justify-center">
 
 <Btn 
-            className='cursor    gap1'
+            className='cursor white  bg2  gap1'
                 
                      onClick={()=>
                         sizes &&  sizes?.length > 0 ? 
@@ -141,22 +143,27 @@ const ProductCard = ({
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
                     
                     sx={{
-                        width:'70%',
+                        width:'60%',
                         color:'white',
                         border:'1px solid transparent',
+                        py:1,
+                        px:.5,
+                        
                         ':hover':{background:'transparent',color:'black',border:'1px solid transparent '},
-                        fontWeight:'900',
-                        margin:'0 '
+                        fontWeight:'700',
+                        margin:'0 ',
                     // borderRadius:'8',
-                        ,
                        
                 }}>
                     <Box sx={{
-                        fontSize:{xs:'.7em'},
+                        fontSize:{xs:'1.05em'},
                         width:'max-content',
-                     }} className="  ">
-
+                        gap:.5,
+                     }} className="items-center flex  ">
                     {sizes && sizes?.length > 0 ? 'SELECT SIZE' :  'ADD TO CART'}
+                        <img 
+                        style={{width:'20px',height:'20px',filter:'invert(1)'}}
+                        src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img" />
                     </Box>
                 </Btn>
                 
