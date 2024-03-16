@@ -8,9 +8,9 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer " style={{color:'black',background:'white'}}>
-    <div className="container " style={{color:'black',background:'white'}}>
-      <div className="site-footer__top ">
+  <footer className="site-footer bg2 " style={{color:'black',background:'white'}}>
+    <div className="container bg2" style={{color:'black',background:'white'}}>
+      <div className="site-footer__top bg2 ">
         <div className="site-footer__description">
           <div className='logos cursor'>
 
@@ -41,7 +41,7 @@ const Footer = () => (
         {/* <div>
         <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div> */}
-          <ul className=' ul-white'>
+          <ul className=' ul-white '>
             <li className='link-title'>
               <h1>
 
@@ -80,8 +80,8 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="site-footer__bottom " style={{color:'black',borderTop:"1px solid #0000001f"}}>
-      <div className="container " style={{color:'black'}}>
+    <div className="site-footer__bottom bg2" style={{color:'black',borderTop:"1px solid #0000001f"}}>
+      <div className="container bg2" style={{color:'black'}}>
         <p>Website Developed By{' '}
           <a style={{ color: 'black' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
       </div>

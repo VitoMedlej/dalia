@@ -91,8 +91,8 @@ export default function Navbar() {
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
             </Box> */}
-                 <Box className='center text-center' sx={{background:'white',width:'100%',py:.25,px:.75}}>
-                <Typography className='' component='h1' sx={{color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
+                 <Box className='center text-center' sx={{background:'white',py:.25}}>
+                <Typography className='' component='h1' sx={{px:.5,color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
             </Box>

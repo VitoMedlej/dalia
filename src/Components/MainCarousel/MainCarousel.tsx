@@ -1,13 +1,14 @@
 "use client"
 import { Box, Container, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {Swiper, SwiperSlide} from "swiper/react";
 // import {Navigation} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
 import { Autoplay, Navigation } from 'swiper';
-import useLanguage from '@/Hooks/useLanguage';
+// import useLanguage from '@/Hooks/useLanguage';
+import { gsap } from "gsap";
 
 
 
@@ -62,17 +63,26 @@ const Preloader3 = () => {
     //     setImgs(res?.MainCarousel)
     // }
     // }, [])
-    
+    const ref = useRef(null);
+
+    useEffect(() => {
+      gsap.to(ref.current, {
+        opacity: 1,
+        duration: .5,
+      });
+    }, []);
     return (
         <Box
+        className='op0'
+        ref={ref}
             sx={{
             // py: {xs:'.75em',sm:'2em',md:'3em'},
             // width: {xs:'98%',md:'74%',lg:'80%'},
             width:'100%',
-            maxWidth:'none',
-            // maxWidth: 'lg',
+            // maxWidth:'none',
+            maxWidth: 'xl',
             minHeight:'300px',
-            maxHeight:{sm:'90vh',md:'500px',lg:'550px'},
+            maxHeight:{sm:'90vh',md:'500px',lg:'550px',xl:'700px'},
             margin: '0 auto',
             // mt:1,
             // height : {xs:'500px',sm:'450px',md:'100%'},

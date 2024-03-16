@@ -9,7 +9,7 @@ const Perks = () => {
     { title: 'Fresh from the Source', text: 'Locally sourced ingredients', icon: 'https://cdn-icons-png.flaticon.com/128/4689/4689710.png' },
 ];
   return (
-    <Box  sx={{width:'100%'}}>
+    <Box  sx={{mt:20,pb:8,width:'100%'}}>
        {/* <Divider/> */}
         <Box sx={{py:4}} className='flex bg wrap gap auto row justify-between'>
 

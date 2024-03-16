@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
 import Btn from '../Btn/Btn';
 
-const CategoryCard = ({ imageUrl, categoryName } : any) => {
+const CategoryCard = ({ imageUrl, categoryName,className } : any) => {
   return (
     <Box 
-    className='relative carditem'
+    className={`relative op0 carditem ${className}`}
     sx={{boxShadow:'none',mt:2,borderRadius:'4px',border:'none', width: {xs:'100%',sm:'48%',md:'32%'},
     height: {xs:'240px',sm:'250px',md:'280px'} }}>
 
@@ -13,7 +13,7 @@ const CategoryCard = ({ imageUrl, categoryName } : any) => {
         <img style={{borderRadius:'10px'}} src={imageUrl} alt="" className="img" />
       </Box>
   
-      <Box sx={{background:'black',borderRadius:'10px',opacity:0.3}} className="absolute img">
+      <Box sx={{background:'black',borderRadius:'10px',opacity:0.25}} className="absolute img">
 
       </Box>
       <Box className="catecard relative">

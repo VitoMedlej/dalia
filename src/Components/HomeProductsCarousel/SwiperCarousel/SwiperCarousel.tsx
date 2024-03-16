@@ -5,6 +5,7 @@ import 'swiper/css';
 import {Box} from '@mui/material';
 import ProductCard from '@/Components/ProductCard/ProductCard';
 import {IProduct} from '@/Types/Types';
+import Product2 from '@/Components/ProductCard/Product2';
 
 const SwiperCarousel = ({data, delay} : {
     data: IProduct[],
@@ -27,9 +28,9 @@ const SwiperCarousel = ({data, delay} : {
             height: '100%'
         }}>
   <Swiper
-            // pagination={{
-            //     clickable: true,
-            //   }}
+            pagination={{
+                clickable: true,
+              }}
              
               autoplay={{
                 delay:  delay || 4000,
@@ -39,7 +40,7 @@ const SwiperCarousel = ({data, delay} : {
             spaceBetween={10}
             slidesPerView={1}
             slidesPerGroup={1}
-            modules={[FreeMode,Autoplay]}
+            modules={[FreeMode,Pagination,Autoplay]}
             breakpoints={{
                 200 : {
                     slidesPerView:1,
@@ -52,8 +53,9 @@ const SwiperCarousel = ({data, delay} : {
                   },
                   
                   1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                   },
+                 
                   1640: {
                     slidesPerView: 4,
                   },
@@ -71,7 +73,30 @@ const SwiperCarousel = ({data, delay} : {
                         marginRight: '0 !important'
                     }}
                         key={item._id}>
-                        <ProductCard
+                            <Product2 
+                               stock={Number(item.stock)}
+                               sizes={item?.sizes}
+                       newPrice={item?.newPrice}
+       
+                               inStock={item?.inStock}
+                                   // height={'400px'}
+                                //    width='100%'
+                                width={
+                                    {
+                                        xs: '95%',
+                                        sm: '90%',
+                                        md:'90%',
+                                        lg:'90%'
+                                    }
+                                }
+                                   title={item.title}
+                                   images={item.images}
+                                   price={item.price}
+                                   _id={item._id}
+                                   category={item.category}
+                            
+                            />
+                        {/* <ProductCard
                         stock={Number(item.stock)}
                         sizes={item?.sizes}
                 newPrice={item?.newPrice}
@@ -83,7 +108,7 @@ const SwiperCarousel = ({data, delay} : {
                             images={item.images}
                             price={item.price}
                             _id={item._id}
-                            category={item.category}/>
+                            category={item.category}/> */}
                     </SwiperSlide>
                     // return <SwiperSlide className='swiper-wrapper1'
                     // style={{width:'100%',height:'100%'}} key={item._id}>     {/* <HouseCard

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Box,  Container, Grid, TextField, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
@@ -14,45 +14,63 @@ import useLanguage from '@/Hooks/useLanguage'
 import CategoryCard from './CategoryCard/CategoryCard'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import InstagramSection from './InstagramSection/InstagramSection'
+// import ContactSection from './ContactSection/ContactSection'
+import { gsap } from "gsap";
+
+
 
 const 
 PreLoader = ({data,resImages}:any) => {
   const router= useRouter();
   const {text} = useLanguage()
-  const textsArray = [
-    {
-      id: 1,
-      title: text('100% Natural', '100٪ طبيعي'),
-      desc: text(
-        'Our honey is sourced from the purest natural environments, ensuring 100% natural goodness without any artificial additives or preservatives.',
-        'عسلنا يأتي من أجواء طبيعية نقية، مما يضمن لك الخير الطبيعي بنسبة 100٪ دون أي إضافات صناعية أو مواد حافظة.'
-      ),
-    },
-    {
-      id: 2,
-      title: text('Purity and Potency', 'النقاء والفعالية'),
-      desc: text(
-        'We carefully select our beehives in pristine locations, ensuring the purity and potency of our honey, so you experience the best benefits.',
-        'نحن نختار خلايانا بعناية في أماكن نقية، مما يضمن نقاء وفعالية عسلنا، لتجربة فوائد متميزة.'
-      ),
-    },
-    {
-      id: 3,
-      title: text('Expertly Formulated', 'صياغة خبيرة'),
-      desc: text(
-        'Our honey is expertly crafted by our team of experienced beekeepers, ensuring a premium product that delivers superior taste and quality.',
-        'تم تصنيع عسلنا بخبرة من قبل فريق من مربي النحل ذوي الخبرة، مما يضمن لك منتجًا ممتازًا يقدم طعمًا وجودة فائقين.'
-      ),
-    },
-    {
-      id: 4,
-      title: text('Great Value', 'قيمة عظيمة'),
-      desc: text(
-        'Mounet Dalia honey provides great value for your health, offering the highest quality honey at an affordable price for you and your family.',
-        'عسل بي أورجانيك يقدم قيمة عظيمة لصحتك، حيث يوفر عسل عالي الجودة بسعر معقول لك ولعائلتك.'
-      ),
-    },
-  ];
+  // const textsArray = [
+  //   {
+  //     id: 1,
+  //     title: text('100% Natural', '100٪ طبيعي'),
+  //     desc: text(
+  //       'Our honey is sourced from the purest natural environments, ensuring 100% natural goodness without any artificial additives or preservatives.',
+  //       'عسلنا يأتي من أجواء طبيعية نقية، مما يضمن لك الخير الطبيعي بنسبة 100٪ دون أي إضافات صناعية أو مواد حافظة.'
+  //     ),
+  //   },
+  //   {
+  //     id: 2,
+  //     title: text('Purity and Potency', 'النقاء والفعالية'),
+  //     desc: text(
+  //       'We carefully select our beehives in pristine locations, ensuring the purity and potency of our honey, so you experience the best benefits.',
+  //       'نحن نختار خلايانا بعناية في أماكن نقية، مما يضمن نقاء وفعالية عسلنا، لتجربة فوائد متميزة.'
+  //     ),
+  //   },
+  //   {
+  //     id: 3,
+  //     title: text('Expertly Formulated', 'صياغة خبيرة'),
+  //     desc: text(
+  //       'Our honey is expertly crafted by our team of experienced beekeepers, ensuring a premium product that delivers superior taste and quality.',
+  //       'تم تصنيع عسلنا بخبرة من قبل فريق من مربي النحل ذوي الخبرة، مما يضمن لك منتجًا ممتازًا يقدم طعمًا وجودة فائقين.'
+  //     ),
+  //   },
+  //   {
+  //     id: 4,
+  //     title: text('Great Value', 'قيمة عظيمة'),
+  //     desc: text(
+  //       'Mounet Dalia honey provides great value for your health, offering the highest quality honey at an affordable price for you and your family.',
+  //       'عسل بي أورجانيك يقدم قيمة عظيمة لصحتك، حيث يوفر عسل عالي الجودة بسعر معقول لك ولعائلتك.'
+  //     ),
+  //   },
+  // ];
+
+  useEffect(() => {
+    gsap.to(Array.from({length: 4}, (_, i) => `.cate-${i}`), {
+      opacity: 1,
+      duration: .5,
+      delay:.2,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger:'.cate-0',
+        markers:true,
+        start:'top 50% ' 
+      }
+    });
+  }, []);
   
 
   return (
@@ -60,7 +78,7 @@ PreLoader = ({data,resImages}:any) => {
       <MainCarousel/>
       {/* <HomeProductCollection  products={data}/> */}
      
-      <Container className='flex row wrap ' sx={{
+      <Container  className='flex row wrap ' sx={{
         px:{xs:1,md:2},
         gap:1,
         justifyContent:{xs:'center',sm:'justify-between'},
@@ -79,8 +97,8 @@ PreLoader = ({data,resImages}:any) => {
           img:`https://demo2.wpopal.com/ecolive/wp-content/uploads/2021/10/h2_banner-3.jpg`,
           title:' Special Flavour '
         }
-      ].map(i=>{
-        return <CategoryCard key={i} categoryName={i?.title} imageUrl={i?.img}/>
+      ].map((i,idx:number)=>{
+        return <CategoryCard className={`cate-${idx}`} key={i} categoryName={i?.title} imageUrl={i?.img}/>
         
       })
     }
@@ -91,31 +109,127 @@ PreLoader = ({data,resImages}:any) => {
 
 
 
-    <Grid sx={{mt:4}} container className='flex bg'>
-        <Grid  xs={12} sm={6} item className='bg flex col center text-center items-center' sx={{py:4}}>
-          <Box className="flex  col center text-center items-center">
-            <Typography 
-            className='white'
-            sx={{px:1,fontSize:{xs:'2em',sm:'3em'},fontWeight:700}}>
-              About Mounet Dalia&apos;s 
-            </Typography>
-            <Typography sx={{px:1}} className='white'>
-            Embark on a delicious journey with Mounet Dalia as we invite 
-            you to explore the vibrant flavors of Lebanon, whether you&apos;re
-             indulging in our handmade preserves, savoring our aromatic spices, or delighting in our artisanal spreads.
-            </Typography>
-            <Btn className='bg2' sx={{mt:2}}>
-              Learn More
-            </Btn>
-          </Box>
+    <Grid sx={{my:8,maxWidth:'lg',width:{xs:'96%',md:'95%'},mx:'auto',gap:{xs:'1em',md:'.25em'}}} className='   relative'  container>
+        <Grid  item xs={12} md={6.9}>
+        <Box 
+    className='relative  carditem'
+    
+    sx={{boxShadow:'none',borderRadius:'4px',border:'none'
+    ,
+    //  width: {xs:'100%',sm:'48%',md:'32%'},
+        height: {xs:'360px',sm:'250px',md:'100%'} 
+    }}>
+
+      <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
+        <img style={{borderRadius:'10px'}} src={`https://ucarecdn.com/c63d2d4c-81a5-49f1-a462-2f13b7316768/pi.PNG`} alt="" className="img" />
+      </Box>
+  
+      <Box sx={{background:'black',borderRadius:'10px',opacity:0.1}} className="absolute img">
+
+      </Box>
+       <Box className="catecard relative" sx={{ padding: '10% 2em' }}>
+  <Typography gutterBottom className='text- black' sx={{ fontWeight:600 }} variant="h4" component="div">
+    Organic<br />Superfood
+  </Typography>
+  <Typography gutterBottom className='text- black' sx={{ pb: 0.1, fontWeight: 300}} variant="h6" component="div">
+    Build your juicy life
+  </Typography>
+  <Btn className='bg2'  sx={{
+    ':hover':{
+      color:'black' ,
+      background:'transparent',
+      border:'1px solid transparent',
+    },
+    border:'1px solid transparent',
+
+    fontWeight:'300',
+    p:'.35em 1em !Important',
+    fontSize:'.8em',
+    width:'fit-content'
+  }}>
+    Shop Now
+  </Btn>
+</Box>
+</Box>
+
         </Grid>
-        <Grid item xs={12} sm={6}>
-            <Box sx={{width:'100%',height:'100%'}}>
-              <img src="https://ucarecdn.com/1a95afe1-0e8e-41fb-a4fa-00ef857ef23a/418621867_1412854806328214_6415211719117463606_n.jpg" alt="" className="img" />
-            </Box>
+
+        <Grid className=' gap4 flex col'   item   xs={12} md={4.95}>
+            <Grid  item xs={12}>
+            <Box 
+    className='relative  carditem'
+    
+    sx={{boxShadow:'none',borderRadius:'4px',border:'none'
+    ,
+    //  width: {xs:'100%',sm:'48%',md:'32%'},
+        height: {xs:'330px',sm:'300px',md:'200px'} 
+    }}>
+
+      <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
+        <img style={{borderRadius:'10px'}} src={`https://ucarecdn.com/a0d4d87a-d543-4560-9c8a-30b4d1b07d21/h1img7.jpg`} alt="" className="img" />
+      </Box>
+  
+      <Box sx={{background:'black',borderRadius:'10px',opacity:0.1}} className="absolute img">
+
+      </Box>
+      <Box className="catecard relative" sx={{ padding: '10% 2em' }}>
+  <Typography gutterBottom className='text- black' sx={{ fontWeight: 800, fontSize:{xs:'1.5em',md:'1.2em'} }} variant="h4" component="div">
+    
+Healthy Eating
+<br/>
+Starts Here!
+  </Typography>
+
+  <Btn className='bg2'  sx={{
+    ':hover':{
+      color:'black' ,
+      background:'transparent',
+      border:'1px solid transparent',
+    },
+    border:'1px solid transparent',
+
+    fontWeight:'300',
+    p:'.35em 1em !Important',
+    fontSize:'.8em',
+    width:'fit-content'
+  }}>
+    Shop Now
+  </Btn>
+</Box>
+        </Box>
+            </Grid>
+            <Grid  item xs={12}>
+            <Box 
+    className='relative  carditem '
+    
+    sx={{boxShadow:'none',borderRadius:'4px',border:'none'
+    ,
+    //  width: {xs:'100%',sm:'48%',md:'32%'},
+        height: {xs:'330px',sm:'300px',md:'200px'} 
+    }}>
+
+      <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
+        <img style={{borderRadius:'10px'}} src={`https://ucarecdn.com/3781b385-0f31-47b0-87b1-407a5dab2465/h1img6.jpg`} alt="" className="img" />
+      </Box>
+  
+      <Box sx={{background:'black',borderRadius:'10px',opacity:0.1}} className="absolute img">
+
+      </Box>
+      <Box className="catecard relative p0" >
+<Typography gutterBottom className='text-' sx={{pb:1,fontWeight:600}} variant="h5" component="div">
+
+</Typography>
+      <Typography gutterBottom className='text-' sx={{pb:.1,pt:.5,fontWeight:300}} variant="h6" component="div">
+</Typography>
+
+</Box>
+        </Box>
+            </Grid>
         </Grid>
+   
     </Grid>
 
+    <HomeProductCollection  products={data}/>
 
     
       <Perks/>
@@ -172,7 +286,9 @@ PreLoader = ({data,resImages}:any) => {
             onClick={()=>router.push(`/collection/products?type=all`)}
 
                     
-                    sx={{border:'none',mx:'auto',mt:1}}>
+                    sx={{border:'none',
+                    px:'1em !Important',
+                    mx:'auto',mt:1}}>
                     {text('Donate Now')}
 
                     </Btn>
@@ -292,7 +408,6 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
     
 
 
-      {/* <HomeProductCollection  products={data}/> */}
 
 
       {/* <Container  className='flex center wrap items-center row' sx={{py:5,my:8,mx:'auto',maxWidth:'lg',background:'#f4f8fd',}}>
@@ -318,21 +433,22 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
         <InstagramSection/>
 
 
-        {/* <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
+        <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
       ,py:4,background:'#f6f6f6 !important',
       }} container>
-        <Container className='flex auto wrap row items-center' sx={{maxWidth:'lg'}}>
+        <Container  className='flex auto wrap  items-center' sx={{
+          flexDirection:{xs:'column',sm:'row '}
+,          maxWidth:'lg'}}>
           <Grid   item xs={12} sm={6}>
             <Typography
             className='clr'
-            sx={{color:'white',fontSize:'1.5em',fontWeight:600}}>Grab an extra 5% Discount</Typography>
-            <Typography
-            sx={{fontSize:'.8em',color:'#696969'}}
-            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda tenetur et reprehenderit possimus. Et rem sequi eos nesciunt sint debitis? Vel, reiciendis ipsum. Aut, totam.</Typography>
+            sx={{color:'white',fontSize:'2em',fontWeight:600}}>
+            Sign up and get 20% discount on your next purchase</Typography>
+           
           </Grid>
           <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap "
            item xs={12} sm={6}>
-            <Box className="flex row wrap gap gap1" sx={{height:'40px',maxWidth:'500px'}}>
+            <Box className="flex row wrap gap gap1" sx={{minHeight:'40px',maxWidth:'500px'}}>
 
             <input className='emailinput'  style={{backgroundColor:'white',color:'black',
            borderRadius:'4px',
@@ -340,16 +456,17 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           }}
             placeholder='Enter Email'
             type='email' value=''/>
-            <Btn>
+            <Btn sx={{px:3,py:1}}>
               Submit
             </Btn>
             </Box>
           </Grid>
           </Container>
 
-        </Grid> */}
+        </Grid>
 
         {/* <ContactSection/> */}
+        
   </Box>
   )
 }

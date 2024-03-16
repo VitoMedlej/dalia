@@ -8,7 +8,7 @@ let style1 = {
   color: 'white',
   background: ' #006430',
   border:'1px solid  #006430 !important',
-  borderRadius: '10px', 
+  borderRadius: '4px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
@@ -17,7 +17,7 @@ let style1 = {
  
   },
   display: 'flex',
-  padding: '9px 45px',
+  padding: {xs:'12px 0px',md:'12px 0',lg:'12px 0'},
   fontWeight: '600',
   fontSize: '12px',
   cursor: 'pointer',
@@ -27,7 +27,7 @@ let style2 = {
   color: 'white',
   background: 'transparent',
   border: '1px solid  #006430',
-  borderRadius: '10px', 
+  borderRadius: '4px', 
   // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   transition: 'background 0.3s ease, transform 0.2s ease',
 

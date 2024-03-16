@@ -17,7 +17,15 @@ body {
         outline: none;
     }
 }
-
+.op0 {
+    opacity: 0;
+}
+.swiper-slide , .swiper-slide-active {
+    margin-right: 0 !important;
+}
+.h100 {
+    height: 100%;
+}
 .w100 {
     width:100%
 }
@@ -40,8 +48,8 @@ $color3 : #84a545 !important;
     object-position: center;
 
 }
-h1 {
-    color: $color
+.p0 {
+    padding: 0 !important;
 }
 .img {
     object-fit: cover;
@@ -117,6 +125,9 @@ h1 {
 }
 .gap1 {
     gap:.25em;
+}
+.gap4 {
+    gap:1em;
 
 }
 .absolute

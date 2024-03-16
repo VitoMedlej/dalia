@@ -57,16 +57,17 @@ const ProductCard = ({
             // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
             border : '1px solid #0000003b',
             pt: 4,
-            height:'400px',
+            height:{xs:'400px',md:"450px"},
             margin: '0em auto',
             my:1,
             borderRadius: '15px',
-            minWidth: {sm:'22%'},
+            minWidth: {sm:'32%',     lg:'22%'},
             width: width
                 ? width
                 : {
                     xs: '32%',
-                    sm: '22%',
+                    sm: '32%',
+                    lg:'22%'
                 }
             
         }}>
@@ -74,8 +75,9 @@ const ProductCard = ({
             className='cursor auto'
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
+                px:.5,
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'300px',sm:'200px',md:'280px'}
+                height: height || {xs:'200px',sm:'200px',md:'200px'}
             }}>
                 <img
                     src={
@@ -93,17 +95,18 @@ const ProductCard = ({
                 mx:'auto',
                 px: .95,
                 mt:2.5,
+                py:3,
             }}>  
             <Typography
-            className='limited clr2 cursor  '
+            className='limited  cursor  '
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
-                    sx={{
-                      
+                    sx={{   
+                        color:'black',
                         textAlign:'left',
-                        pt:4,
+                        pt:1,
                         maxWidth:'280px',
-                    fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
+                    fontSize: {xs:'1em',sm:'1em',md:'1em'},
                     fontWeight: '500'
                 }}>
                     {title}

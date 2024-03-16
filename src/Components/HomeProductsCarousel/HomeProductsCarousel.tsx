@@ -19,8 +19,6 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         productId: null | string;
     }>>
 }) => {
-    console.log('data: ', data);
-    const router = useRouter()
 
     return (
         <Box
@@ -57,6 +55,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Box>
             
             <Box
+            className='w100'
                 sx={{
                 display: {
                     xs: "flex",

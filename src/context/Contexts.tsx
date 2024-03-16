@@ -1,8 +1,8 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
-import NextNProgress from 'nextjs-progressbar';
 import { loadState, saveState } from "@/Utils/LocalstorageFn";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
 export const DrawerContext = createContext < any > ({});
 export const CartContext = createContext < any > ({});
@@ -16,6 +16,8 @@ export const PromoContext = createContext < any > (0);
         children: React.ReactNode;
       }
       ) => {
+
+
         const [discountedPrice, setDiscountedPrice] = useState(0);
         const [promoCode, setpromoCode] = useState(null);
         const [open,
@@ -27,7 +29,9 @@ export const PromoContext = createContext < any > (0);
                 const [lang,
                     setLang] = useState('en');
                         // Load language from localStorage on component mount
+                        gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
+
         const savedLang = loadState('NULLABLEVALUE');
         if (savedLang) {
             setLang(savedLang);

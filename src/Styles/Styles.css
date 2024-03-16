@@ -18,6 +18,18 @@ body {
   outline: none;
 }
 
+.op0 {
+  opacity: 0;
+}
+
+.swiper-slide, .swiper-slide-active {
+  margin-right: 0 !important;
+}
+
+.h100 {
+  height: 100%;
+}
+
 .w100 {
   width: 100%;
 }
@@ -41,8 +53,8 @@ body {
      object-position: center;
 }
 
-h1 {
-  color: #286538 !important;
+.p0 {
+  padding: 0 !important;
 }
 
 .img {
@@ -138,6 +150,10 @@ h1 {
 
 .gap1 {
   gap: 0.25em;
+}
+
+.gap4 {
+  gap: 1em;
 }
 
 .absolute {
