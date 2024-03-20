@@ -1,11 +1,12 @@
 "use client"
 import {Box, Divider, Typography} from '@mui/material'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useEffect } from 'react'
 // import Link from 'next/link'
 import { IProduct } from '@/Types/Types'
 // import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import { gsap } from "gsap";
 
 
 
@@ -19,6 +20,32 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         productId: null | string;
     }>>
 }) => {
+
+
+    useEffect(() => {
+        gsap.to('.title-0', {
+            opacity: 1,
+            duration: .5,
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger:'.title-0',
+              markers:false,
+              start:'top 50% ' 
+            }
+          });
+
+        gsap.to('.prods', {
+          opacity: 1,
+          duration: .5,
+          delay:.2,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger:'.title-0',
+            markers:false,
+            start:'bottom 50% ' 
+          }
+        });
+      }, []);
 
     return (
         <Box
@@ -34,7 +61,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
 
             <Typography
             component='h1'
-                className='clr2 center text-center  box'
+                className='clr2 title-0 op0 center text-center  box'
                 sx={{
              
                 fontSize: {
@@ -55,7 +82,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Box>
             
             <Box
-            className='w100'
+            className='w100 op0 prods'
                 sx={{
                 display: {
                     xs: "flex",

@@ -87,9 +87,10 @@ const Index = () => {
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:500,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'2.8em'}}}>
+             <Typography component={'h1'} sx={{fontWeight:500,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'2.2em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
+
            { Number(data?.product?.stock) !== 0 && data?.product?.inStock !== false ? 
            <Typography className='green' component={'h1'} sx={{fontSize:'1.05em',fontWeight:300}}>
                In Stock 
@@ -100,7 +101,7 @@ const Index = () => {
              </Typography>
             }
           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false &&   <Typography 
-                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1.25em',sm:'1.55em'}}}>
+                 component={'h1'} sx={{my:.25,fontWeight:600,color:'',fontSize:{xs:'1.25em',sm:'1.55em'}}}>
                  ${
                  selectedSize?.price ||
                  data?.product?.price || 0}
@@ -144,9 +145,12 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
+                ':hover':{background:'#84a545'},
              width:{xs:'100%',sm:'100%'}}}>
                  ADD TO CART
-                
+                  <img 
+                        style={{width:'20px',height:'20px',filter:'invert(1)'}}
+                        src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img" />
              </Btn>
              </Box>
             
@@ -160,6 +164,7 @@ const Index = () => {
                 borderRadius:0,
                 mt:1,
                 border:'1px solid black',
+                ':hover':{background:'#286538'},
                 background:'white',color:'black',
              width:{xs:'100%'}}}>
                  BUY IT NOW 

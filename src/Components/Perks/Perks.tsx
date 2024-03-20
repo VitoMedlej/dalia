@@ -1,6 +1,9 @@
 "use client"
 import { Box, Divider, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { gsap } from "gsap";
+
+
 
 const Perks = () => {
   const items = [
@@ -8,14 +11,27 @@ const Perks = () => {
     { title: 'Quality Assurance', text: 'Premium and fresh products', icon: 'https://cdn-icons-png.flaticon.com/128/1534/1534216.png' },
     { title: 'Fresh from the Source', text: 'Locally sourced ingredients', icon: 'https://cdn-icons-png.flaticon.com/128/4689/4689710.png' },
 ];
+useEffect(() => {
+  gsap.to(Array.from({length: 3}, (_, i) => `.item-${i}`), {
+    opacity: 1,
+    duration: .5,
+    delay:.2,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger:'.item-0',
+      markers:false,
+      start:'top 50% ' 
+    }
+  });
+}, []);
   return (
     <Box  sx={{mt:20,pb:8,width:'100%'}}>
        {/* <Divider/> */}
         <Box sx={{py:4}} className='flex bg wrap gap auto row justify-between'>
 
         {
-           items.map(i=>{
-                return <Box key={i.title} className='center white text-center items-center auto flex col' sx={{
+           items.map((i,idx:number)=>{
+                return <Box key={i.title} className={`center item-${idx} op0 white text-center items-center auto flex col`} sx={{
                     py:2,
                     width:{xs:'47%',sm:'30%',md:'22%'}}}>
                     <Box sx={{width:'50px'}}>

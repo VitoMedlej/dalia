@@ -10,6 +10,7 @@ try {
     const ProductsCollection = await client
         .db("DALIA")
         .collection("Products");
+        
     let featuredProducts : any = [];
     let products : any = []
 

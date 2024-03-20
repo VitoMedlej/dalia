@@ -6,19 +6,21 @@ import { useState, useEffect } from "react"
 import { server } from "@/Utils/Server"
 import FilterSection from './CollectionPage/FilterSection/FilterSection'
 import { IProduct } from '@/Types/Types'
-import BreadCrumb from './BreadCrumb/BreadCrumb'
-import ProductCard from './ProductCard/ProductCard'
-import SearchInput from './Navbar/SearchInput'
+// import BreadCrumb from './BreadCrumb/BreadCrumb'
+// import ProductCard from './ProductCard/ProductCard'
+// import SearchInput from './Navbar/SearchInput'
 import FilterBar from './Navbar/FilterBar'
+import Product2 from './ProductCard/Product2'
 
 const Preloader2 = ({data,totalPages}:any) => {
-    console.log('data: ', data);
+    // console.log('data: ', data);
    
     // const [pageNB,setPageNB] = useState(0)
     const router = useRouter()
     
     const [newValue,setnewValue] = useState<any>('')
     const [products,setProducts] = useState<any>()
+    console.log('products: ', products);
     useEffect(() => {
       
         // if (!products) {
@@ -112,7 +114,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         <Typography sx={{fontSize:{xs:'2em',sm:'3em'},fontWeight:700}} className='flex clr center  text-center' component='h1'>
             {
 
-                decodeURIComponent(category)
+                decodeURIComponent(`${category}`)
             }
         </Typography>
     </Box>
@@ -124,7 +126,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         sx={{
         mb:4,
         mx:{xs:1},
-    width: {xs:'100%',md:'30%',lg:'24%'},
+    width: {xs:'100%',md:'28%',lg:'24%'},
         minHeight: '100px',height:'fit-content',
     }}>
         <FilterBar handleSubmit={handleSubmit} setNewValue={setnewValue} newValue={newValue}/>
@@ -135,13 +137,14 @@ const Preloader2 = ({data,totalPages}:any) => {
 
     <Box className='flex wrap row' sx={{
         width:{xs:'100%',md:'68%',lg:'73%'},
-        px: {xs:1,md:0}
+        px: {xs:1,md:0},
+        justifyContent: 'space-between'
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
-            return <ProductCard
-
+            return <Product2
+            sx={{border:'none'}}
             sizes={i?.sizes || null}
-            width={{xs:'45%',sm:'48%',md:'32%'}}
+            width={{xs:'45%',sm:'48%',md:'28%'}}
             key={i?._id}
             stock={i.stock}
 
@@ -162,12 +165,15 @@ const Preloader2 = ({data,totalPages}:any) => {
             fetchData(val)
     }}
         sx={{
-        my: 3
+        my: 3,
+        flex:1,
+        width:'100%',
+        minWidth:'50vw'
     }}
         count={totalPages > 1 
         ? totalPages
         : 1}
-        className='flex center '/>
+        className='flex center center items-center  '/>
     </Box>
 
 

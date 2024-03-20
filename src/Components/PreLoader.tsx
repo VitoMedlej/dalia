@@ -21,8 +21,8 @@ import { gsap } from "gsap";
 
 const 
 PreLoader = ({data,resImages}:any) => {
+  console.log('data: ', data);
   const router= useRouter();
-  const {text} = useLanguage()
   // const textsArray = [
   //   {
   //     id: 1,
@@ -66,7 +66,21 @@ PreLoader = ({data,resImages}:any) => {
       stagger: 0.2,
       scrollTrigger: {
         trigger:'.cate-0',
-        markers:true,
+        markers:false,
+        start:'top 50% ' 
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.to(Array.from({length: 3}, (_, i) => `.sec-item-${i}`), {
+      opacity: 1,
+      duration: .5,
+      delay:.2,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger:'.sec-item-0',
+        markers:false,
         start:'top 50% ' 
       }
     });
@@ -110,7 +124,7 @@ PreLoader = ({data,resImages}:any) => {
 
 
     <Grid sx={{my:8,maxWidth:'lg',width:{xs:'96%',md:'95%'},mx:'auto',gap:{xs:'1em',md:'.25em'}}} className='   relative'  container>
-        <Grid  item xs={12} md={6.9}>
+        <Grid className='sec-item-0 op0'  item xs={12} md={6.9}>
         <Box 
     className='relative  carditem'
     
@@ -155,7 +169,7 @@ PreLoader = ({data,resImages}:any) => {
         </Grid>
 
         <Grid className=' gap4 flex col'   item   xs={12} md={4.95}>
-            <Grid  item xs={12}>
+            <Grid className='sec-item-1 op0'  item xs={12}>
             <Box 
     className='relative  carditem'
     
@@ -198,7 +212,7 @@ Starts Here!
 </Box>
         </Box>
             </Grid>
-            <Grid  item xs={12}>
+            <Grid className='sec-item-2 op0' item xs={12}>
             <Box 
     className='relative  carditem '
     
@@ -264,8 +278,10 @@ Starts Here!
    
     </Grid> */}
 
+    <InstagramSection/>
+    
 
-    <Box sx={{padding:'0 !important',my:{xs:8,sm:12},height:'500px',overflow:'hidden',maxWidth:'none',
+    {/* <Box sx={{padding:'0 !important',my:{xs:8,sm:12},height:'500px',overflow:'hidden',maxWidth:'none',
     
     width:'100%'}} className='relative flex center items-center'>
       <Box className="absolute" sx={{width:'100%',height:'100%',top:0,right:0,background:'black',opacity:.45}}></Box>
@@ -298,7 +314,7 @@ Starts Here!
  
       </Box>
 
-      </Box>   
+      </Box>    */}
     {/* <Box className='flex auto wrap ' sx={{justifyContent:'space-between',width:'100%',maxWidth:'xl'}}>
       {
         resImages?.categoryImage && resImages?.categoryImage.map((img:any)=>{
@@ -430,7 +446,6 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
      
 
     {/* <Testimonials/> */}
-        <InstagramSection/>
 
 
         <Grid className='flex  items-center auto' sx={{justifyContent:'space-between'
@@ -443,7 +458,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
             <Typography
             className='clr'
             sx={{color:'white',fontSize:'2em',fontWeight:600}}>
-            Sign up and get 20% discount on your next purchase</Typography>
+          Subscribe to our newsletter and never miss a discount!</Typography>
            
           </Grid>
           <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap "

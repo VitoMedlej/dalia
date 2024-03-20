@@ -12,10 +12,11 @@ import PreLoader from "@/Components/PreLoader"
 const fetchData = async () => {
   try{
     const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`
-    // ,
-    // {
-      // cache: 'no-store',
-    // next:{revalidate:100000} }
+    ,
+    {
+      cache: 'no-store',
+    // next:{revalidate:100}
+   }
     )
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
     let res = req &&  await req.json();

@@ -1,21 +1,48 @@
 "use client"
 import { Box, Typography } from '@mui/material'
-import React from 'react'
-import ProductCard from '../ProductCard/ProductCard'
+import React, { useEffect } from 'react'
+// import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
 import { useRouter } from 'next/navigation'
 import Product2 from '../ProductCard/Product2'
+import { gsap } from "gsap";
+
 
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
  const router = useRouter()
+
+ useEffect(() => {
+  gsap.to('.title-1', {
+      opacity: 1,
+      duration: .5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger:'.title-1',
+        markers:false,
+        start:'top 50% ' 
+      }
+    });
+
+  gsap.to('.prods2', {
+    opacity: 1,
+    duration: .5,
+    delay:.2,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger:'.title-1',
+      markers:false,
+      start:'bottom 50% ' 
+    }
+  });
+}, []);
   return (
     <Box sx={{ maxWidth:'lg',my:4}} className='center auto'>
            
-           <Box className="flex justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
+           <Box className="flex title-1 op0 justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
            <Typography
             component='h1'
-                className='clr2 center text-center  box'
+                className='clr2  center text-center  box'
                 sx={{
              
                 fontSize: {
@@ -42,11 +69,12 @@ onClick={()=>router.push('/collection/products')}
               mx:{xs:'auto',md:1}
               ,
               justifyContent:{xs:'center',sm:'space-between'}
-            }} className='flex wrap   '>
+            }} className='flex wrap  op0 prods2 '>
                   {products && products?.length > 0 && products?.slice(0,4).map(i=>{
 
                     return <Product2
                     sx={{my:1}}
+                    reviews={i?.reviews}
                     width={
                         {
                             xs: '95%',

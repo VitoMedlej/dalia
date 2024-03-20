@@ -54,9 +54,7 @@ export default function Navbar() {
             setLocalCart(cart)
         }
     }, [cartOpen])
-    const {text} = useLanguage()
 
-    const {lang,setLang} = useLangContext()
     return ( <>
      <Box
      id='navy'
@@ -177,7 +175,7 @@ export default function Navbar() {
 
        
             <Box 
-    onClick={()=>setOpenModal(!openModal)}
+    onClick={()=>router.push('/login')}
             
             
             className='cursor pointer flex center items-center' sx={{width:'22px'

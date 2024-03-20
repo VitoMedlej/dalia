@@ -6,6 +6,7 @@ export interface IProduct {
     stock:number;
     inStock ?: boolean;
     description: string;
+    reviews?: any[];
     sizes ?: {
         size: number;
         price: number;
@@ -33,4 +34,12 @@ export interface ICartItem {
     shortdesc ?: string;
     productselectedSize ?: string;
     productselectedPrice?:string;
+}
+export interface Review {
+    reviewStars: number;
+    reviewText: string;
+    reviewerDetails: {
+        name: string;
+        reviewerEmail: string;
+    };
 }

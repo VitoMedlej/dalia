@@ -4,7 +4,24 @@ import Btn from '../Btn/Btn'
 import WhishList2 from './WhishList2'
 import { useRouter } from 'next/navigation'
 import useCart from '@/Hooks/useCart'
+import { Review } from '@/Types/Types'
 
+
+
+
+
+function calculateAverageReview(reviews?: any[]): number {
+    if (!reviews || reviews?.length === 0) {
+        return 0;
+    }
+
+    let sum = 0;
+    for (let i = 0; i < reviews.length; i++) {
+        sum += reviews[i].reviewStars;
+    }
+
+    return sum / reviews.length;
+}
 const Product2 = (
     
     {
@@ -21,7 +38,8 @@ const Product2 = (
         inStock,
         newPrice,
         whishedItem,
-        onRemove
+        onRemove,
+        reviews
     
     } : {
         inStock?:boolean,
@@ -39,6 +57,7 @@ const Product2 = (
         width?: string | number | any,
         height?: string | number,
         whishedItem ?:boolean,
+        reviews?: any[] ;
         onRemove?: (_id: string) => void
     
     sx?:any}) => {
@@ -46,7 +65,8 @@ const Product2 = (
 
     const {addToCart}= useCart()
   
-
+        const reviewsSum = calculateAverageReview(reviews);
+        console.log('reviewsSum: ', reviewsSum);
   return (
     <Box sx={{
         // minWidth: {sm:'32%',     lg:'22%'},
@@ -65,32 +85,49 @@ const Product2 = (
                 lg:'22%'
             },
         // width: width && width,
-        border : '1px solid #0000003b',
+        // border : '1px solid #0000003b',
         px:{xs:2},
         borderRadius:'8px',
         py:2,
         ...sx
     }}>
-        <Box>
-            <img src={images && images[0]} alt="" className="img" />
+
+
+        <Box 
+        sx={{height:{xs:'200px',sm:'250px'}}}
+               onClick={() => router.push(`/product/${_id}`)}
+        
+        className='cursor pointer'
+        >
+            <img src={images && images[0]} alt="" className="img contain" />
         </Box>
+
+
         <Box sx={{pt:1}}>
             <Typography
+            className='limited cursor pointer'
+            sx={{fontSize:{xs:".75em",sm:'.8em',md:'1em'}}}
                     onClick={() => router.push(`/product/${_id}`)}
             
             >
 {title}
 
             </Typography>
-            <Rating sx={{fontSize:'1em',mb:.25}} readOnly value={5}></Rating>
-            <Typography sx={{fontSize:'1.1em'}}>
+            <Box className='flex row items-center'>
+            <Rating sx={{fontSize:'.8em',mb:.25}} readOnly value={reviewsSum || 0}></Rating>
+            <Typography sx={{fontSize:'.75em',color:'#616161',mb:.25}}>
+
+            {`(${reviews && reviews?.length > 0 ? reviews?.length : 0 })`}
+            </Typography>
+            </Box>
+            <Typography className='clr' sx={{fontWeight:700,fontSize:'1em'}}>
 
                 {newPrice ? (
         <>
-            <s>${price}</s> ${newPrice}
+            <s>${Number(price).toFixed(2)}</s> ${Number(newPrice).toFixed(2)}
         </>
     ) : (
-        `$${price}`
+        `$${Number(price).toFixed(2)}`
     )}
             </Typography>
         </Box>
@@ -109,11 +146,17 @@ const Product2 = (
                 Number(stock) !== 0   && 
                 addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
            
-            className='bg2 gap gap1' sx={{border:'1px solid transparent',flex:1}}>
-                    {sizes && sizes?.length > 0 ? 'View Product' :  'Add To Cart'}
+            className=' gap gap1' sx={{border:'1px solid black',flex:1,
+            ':hover':{color:'black'},
+            padding:'.5em !Important',
+            color:'black',
+            backgroundColor:'transparent',
+            }}>
+                    {sizes && sizes?.length > 0 ? 'View' :  'ADD'}
            
             <img 
-                        style={{width:'20px',height:'20px',filter:'invert(1)'}}
+            // ,filter:'invert(1)'
+                        style={{width:'20px',height:'20px'}}
                         src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img" />
             </Btn>
             <WhishList2

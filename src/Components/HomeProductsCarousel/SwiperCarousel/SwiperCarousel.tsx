@@ -74,6 +74,7 @@ const SwiperCarousel = ({data, delay} : {
                     }}
                         key={item._id}>
                             <Product2 
+                            reviews={item?.reviews}
                                stock={Number(item.stock)}
                                sizes={item?.sizes}
                        newPrice={item?.newPrice}
