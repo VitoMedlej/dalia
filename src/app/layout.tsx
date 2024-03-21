@@ -50,7 +50,7 @@ export default function RootLayout({children} : {
                     <Navbar/>
                     <Sidebar cates={undefined}/>
                     <QuickCart/>
-                    {/* <ScrollToTop/> */}
+                    <ScrollToTop/>
                     <CrispChat/>
                     <main >
 
