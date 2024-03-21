@@ -175,7 +175,7 @@ export default function Navbar() {
 
        
             <Box 
-    onClick={()=>router.push('/login')}
+    onClick={()=>router.push('/account/login')}
             
             
             className='cursor pointer flex center items-center' sx={{width:'22px'

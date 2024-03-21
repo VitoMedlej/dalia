@@ -20,7 +20,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     
     const [newValue,setnewValue] = useState<any>('')
     const [products,setProducts] = useState<any>()
-    console.log('products: ', products);
+    // console.log('products: ', products);
     useEffect(() => {
       
         // if (!products) {
@@ -137,14 +137,14 @@ const Preloader2 = ({data,totalPages}:any) => {
 
     <Box className='flex wrap row' sx={{
         width:{xs:'100%',md:'68%',lg:'73%'},
-        px: {xs:1,md:0},
-        justifyContent: 'space-between'
+        // px: {xs:1,md:0},
+        justifyContent: {xs:'space-evenly',sm:'space-between'}
     }}>
         {products && products?.length > 0 ? products.map((i:IProduct) => {
             return <Product2
-            sx={{border:'none'}}
+            sx={{border:'none',px:{xs:0,sm:2}}}
             sizes={i?.sizes || null}
-            width={{xs:'45%',sm:'48%',md:'28%'}}
+            width={{xs:'48%',sm:'48%',md:'28%'}}
             key={i?._id}
             stock={i.stock}
 
