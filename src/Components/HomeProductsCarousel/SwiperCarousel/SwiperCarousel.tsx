@@ -37,7 +37,7 @@ const SwiperCarousel = ({data, delay} : {
                 disableOnInteraction: true,
               }}
               navigation={false}
-            spaceBetween={10}
+            spaceBetween={0}
             slidesPerView={1}
             slidesPerGroup={1}
             modules={[FreeMode,Pagination,Autoplay]}
@@ -84,10 +84,10 @@ const SwiperCarousel = ({data, delay} : {
                                 //    width='100%'
                                 width={
                                     {
-                                        xs: '95%',
-                                        sm: '90%',
-                                        md:'90%',
-                                        lg:'90%'
+                                        xs: 'auto',
+                                        // sm: '90%',
+                                        // md:'90%',
+                                        // lg:'90%'
                                     }
                                 }
                                    title={item.title}

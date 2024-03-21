@@ -75,7 +75,7 @@ const InstagramPosts = () => {
       justifyContent:{xs:'center',sm:'space-between'},
       px:1}}>
       {posts && posts?.map((post:any,idx:number) => (
-        <Box   sx={{width:{xs:'98%',sm:'48%',md:'32%'}}} className={`op0 post-${idx}`} key={post}>
+        <Box   sx={{my:1,width:{xs:'98%',sm:'48%',md:'32%'}}} className={`op0 post-${idx}`} key={post}>
           <img className='img' src={`${post}`} alt={post} />
         </Box>
       ))}

@@ -145,6 +145,7 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
+                px:{xs:'1em'},
                 ':hover':{background:'#84a545'},
              width:{xs:'100%',sm:'100%'}}}>
                  ADD TO CART
