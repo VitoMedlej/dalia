@@ -30,37 +30,43 @@ const InstagramPosts = () => {
         }
       };
       
-    useEffect(() => {
+    // useEffect(() => {
       
     
       //  fetchDataAndSetImgs()
-    }, [])
+    // }, [])
 
-
-    useEffect(() => {
+    const animate = () => {
       gsap.to('.title-3', {
+        opacity: 1,
+        duration: .5,
+        stagger: 0.2,
+
+        scrollTrigger: {
+          trigger:'.title-3',
+          markers:false,
+          start:'top 50% ' 
+        }
+      });
+      for (let index = 0; index < 4; index++) {
+        gsap.to( `.post-${index}`, {
           opacity: 1,
           duration: .5,
+          delay:Number(index) * Number(0.1),
           stagger: 0.2,
           scrollTrigger: {
-            trigger:'.title-3',
+            trigger:`.post-${index}`,
             markers:false,
             start:'top 50% ' 
           }
         });
-        gsap.to(Array.from({length: posts?.length || 1}, (_, i) => `.post-${i}`), {
-          opacity: 1,
-          duration: .5,
-          delay:.2,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger:'.post-0',
-            markers:false,
-            start:'top 50% ' 
-          }
-        });
-      
-}, []);
+    }
+  }
+    useEffect(() => {
+      animate()
+    }, []);
+
+    
 
   return (
     <Box sx={{mb:16,pt:4}}>

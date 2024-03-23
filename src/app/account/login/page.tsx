@@ -126,7 +126,7 @@ className='bg'
                         m: 1,
                         // bgcolor: '#d42c2a'
                     }}>
-                        <img src="https://ucarecdn.com/9304db51-1509-447d-b8e4-c87d0b8c11c2/408031158_664465732546685_227633461073843326_n.jpg" alt="" className="img" />
+                        <img src="https://ucarecdn.com/0abc6c11-ea28-433b-a205-e289be0e95f8/WhatsAppImage20240203at1050571.jpeg" alt="" className="img" />
                         {/* <AiOutlineLock/> */}
                     </Avatar>
                     <Typography

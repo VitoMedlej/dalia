@@ -2,11 +2,11 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto Flex", sans-serif !important;
+  font-family: "Manrope", sans-serif !important;
 }
 
 * h1, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Roboto Flex", sans-serif !important;
+  font-family: "Manrope", sans-serif !important;
 }
 
 .emailinput {

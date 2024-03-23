@@ -28,7 +28,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
       component="form"
       className='searchinput '
       sx={{
-        py:'.25em',
+        py:'.45em',
         mx:2,
         // my:'.25em',
         mb: {xs:1,sm:0},
@@ -37,8 +37,9 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
         flex:1,
         flexBasis:'100%',
         boxShadow:'none',
-        border:'1px solid #00000036',
-        borderRadius:'15px',
+        // border:'1px solid #00000036',
+        border:'1px solid ',
+        borderRadius:'8px',
         
          display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
          alignItems: 'center',maxWidth:{xs:'100%',md:'500px',lg:'50%'}

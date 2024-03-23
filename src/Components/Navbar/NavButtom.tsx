@@ -12,7 +12,7 @@ const NavButtom = () => {
 
   return (
     <Box
-        className=' wrap  black space-evenly'
+        className=' wrap bg black space-evenly'
         sx={{
             flex:1,
             borderTop:'1px solid #00000026',
@@ -45,7 +45,7 @@ const NavButtom = () => {
         sx={{width:'max-content',
         mx:'.75em',
         alignItems: 'center',
-        color:'black',
+        color:'white',
         fontWeight:400,fontSize:{xs:'.86em',sm:'.99em'}}}>
 Collections
 </Typography>
@@ -69,7 +69,7 @@ Collections
         sx={{width:'max-content',
         mx:'.75em',
         alignItems: 'center',
-        color:'black',
+        color:'white',
         fontWeight:400,fontSize:{xs:'.86em',sm:'.99em'}}}>
         {i}
         </Typography>

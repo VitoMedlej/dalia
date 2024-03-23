@@ -68,9 +68,12 @@ const Preloader3 = () => {
     useEffect(() => {
       gsap.to(ref.current, {
         opacity: 1,
-        duration: .5,
+        delay:.5,
+        duration: .75,
       });
     }, []);
+
+
     return (
         <Box
         className='op0'

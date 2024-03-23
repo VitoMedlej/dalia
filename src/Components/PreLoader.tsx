@@ -58,34 +58,39 @@ PreLoader = ({data,resImages}:any) => {
   //   },
   // ];
 
-  useEffect(() => {
-    gsap.to(Array.from({length: 4}, (_, i) => `.cate-${i}`), {
+  const animate = () => {
+    for (let index = 0; index < 4; index++) {
+      gsap.to(`.cate-${index}`, {
+        opacity: 1,
+        duration: .5,
+        delay:Number(index) * Number(0.1),
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger:`.cate-${index}`,
+          markers:false,
+          start:'top 50% ' 
+        }
+      });
+
+    gsap.to( `.sec-item-${index}`, {
       opacity: 1,
       duration: .5,
-      delay:.2,
+      delay:Number(index) * Number(0.1),
+
       stagger: 0.2,
       scrollTrigger: {
-        trigger:'.cate-0',
+        trigger:`.sec-item-${index}`,
         markers:false,
         start:'top 50% ' 
       }
     });
+  }
+}
+  useEffect(() => {
+    animate()
   }, []);
 
-  useEffect(() => {
-    gsap.to(Array.from({length: 3}, (_, i) => `.sec-item-${i}`), {
-      opacity: 1,
-      duration: .5,
-      delay:.2,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger:'.sec-item-0',
-        markers:false,
-        start:'top 50% ' 
-      }
-    });
-  }, []);
-  
+
 
   return (
     <Box >
@@ -131,7 +136,7 @@ PreLoader = ({data,resImages}:any) => {
     sx={{boxShadow:'none',borderRadius:'4px',border:'none'
     ,
     //  width: {xs:'100%',sm:'48%',md:'32%'},
-        height: {xs:'360px',sm:'250px',md:'100%'} 
+        height: {xs:'270px',sm:'250px',md:'100%'} 
     }}>
 
       <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
@@ -176,7 +181,7 @@ PreLoader = ({data,resImages}:any) => {
     sx={{boxShadow:'none',borderRadius:'4px',border:'none'
     ,
     //  width: {xs:'100%',sm:'48%',md:'32%'},
-        height: {xs:'330px',sm:'300px',md:'200px'} 
+        height: {xs:'250px',sm:'300px',md:'200px'} 
     }}>
 
       <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
@@ -219,7 +224,7 @@ Starts Here!
     sx={{boxShadow:'none',borderRadius:'4px',border:'none'
     ,
     //  width: {xs:'100%',sm:'48%',md:'32%'},
-        height: {xs:'330px',sm:'300px',md:'200px'} 
+        height: {xs:'250px',sm:'300px',md:'200px'} 
     }}>
 
       <Box sx={{overflow:'hidden',width:'100%',height:'100%'}} className="absolute cateimg">
@@ -457,7 +462,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           <Grid   item xs={12} sm={6}>
             <Typography
             className='clr'
-            sx={{color:'white',fontSize:'2em',fontWeight:600}}>
+            sx={{color:'white',fontSize:'2em',fontWeight:'bold'}}>
           Subscribe to our newsletter and never miss a discount!</Typography>
            
           </Grid>
@@ -471,7 +476,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           }}
             placeholder='Enter Email'
             type='email' value=''/>
-            <Btn sx={{px:3,py:1}}>
+            <Btn sx={{padding:'.5em 1.1em  !Important',py:1}}>
               Submit
             </Btn>
             </Box>

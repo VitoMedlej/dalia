@@ -77,16 +77,16 @@ useEffect(()=>{
                                 </Box>
       <List>
       <ListItem
-          sx={{fontWeight:400}}
+          sx={{fontWeight:600}}
 
           onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
             <ListItemButton>
             
                   <Typography component='h1'
-                  className='clr'
-                  sx={{fontWeight:600}}>
-              VIEW ALL
+                  className='clr2'
+                  sx={{fontSize:'1em',fontWeight:600}}>
+              Collections
             </Typography>
             </ListItemButton>
   
@@ -107,15 +107,15 @@ useEffect(()=>{
             ].map(i=>{
               return    <ListItem
               key={i}
-              className='clr'
-              sx={{py:.2,fontWeight:400}}
+              className='clr2'
+              sx={{py:.2,fontSize:'.9em',fontWeight:600}}
     
               onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
                disablePadding>
                 <ListItemButton>
                 
                       <Typography component='h1' sx={{fontWeight:600}}>
-                     {i.toUpperCase()}
+                     {i}
                 </Typography>
                 </ListItemButton>
       
@@ -369,15 +369,17 @@ key={i}>
 </Accordion> */}
     
       </List>
-      <Link href='/about' className='decor-none' style={{color:'black',padding:' .25em 0'}}>
+      <Link href='/about' className='decor-none' style={{color:'black'
+      ,padding:' .25em 0'}}>
         <ListItemButton>
         
-        <Typography className='clr' sx={{ fontWeight:600}}>
+        <Typography className='clr2' sx={{ fontSize:'.9em',fontWeight:600}}>
          ABOUT US
             </Typography>
             </ListItemButton>
       </Link>
-      {!localUser &&   <Btn sx={{width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/account/login')}}>
+      {!localUser &&   <Btn 
+      sx={{width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/account/login')}}>
           Login
         </Btn>}
         <Btn sx={{color:'white',background:'red',border:'1px solid red',gap:.5,width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/profile')}}>

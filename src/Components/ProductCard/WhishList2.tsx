@@ -30,7 +30,10 @@ const WishlistButton = ({ productId, product ,onRemove} : {onRemove?: (id:string
 
 sx={{
     maxWidth:'50px',
-    border:'1px solid transparent',
+    padding:'.45em .5em ',
+    minWidth:'30px',
+    borderRadius:'8px',
+    border:'1px solid #286538',
     color:'black',
         background:'transparent',
     ":hover":{
@@ -40,9 +43,9 @@ sx={{
     }}>
         {liked
                   ?
-                  <img style={{width:'20px',height:'20px'}} src="https://cdn-icons-png.flaticon.com/128/20/20119.png" alt="" className="img" />
+                  <img style={{width:'20px'}} src="https://cdn-icons-png.flaticon.com/128/20/20119.png" alt="" className="img" />
                   :
-                  <img style={{width:'20px',height:'20px'}} src="https://cdn-icons-png.flaticon.com/128/3898/3898377.png" alt="" className="img" />
+                  <img style={{width:'20px'}} src="https://cdn-icons-png.flaticon.com/128/3898/3898377.png" alt="" className="img" />
                   }
   
 </Btn>

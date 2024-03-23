@@ -56,6 +56,15 @@ export default function Navbar() {
     }, [cartOpen])
 
     return ( <>
+          <Box className='center bg2 text-center' sx={{background:'white',py:.25}}>
+                <Typography className='white' component='h1' sx={{px:.65,
+                // ,color:'#0f0f0f'
+                fontWeight:600
+                ,py:.32,fontSize:{xs:'.65em',sm:'.75em'}}}>
+            FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
+                </Typography>
+            </Box>
+            <Divider></Divider>
      <Box
      id='navy'
     className='center auto relative    flex'
@@ -89,12 +98,7 @@ export default function Navbar() {
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
             </Box> */}
-                 <Box className='center text-center' sx={{background:'white',py:.25}}>
-                <Typography className='' component='h1' sx={{px:.5,color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
-            FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
-                </Typography>
-            </Box>
-            <Divider></Divider>
+           
             <Toolbar
      id='navy3'
 
@@ -127,7 +131,7 @@ export default function Navbar() {
 }}>
     <img
         className='img contain'
-        src={`https://ucarecdn.com/9304db51-1509-447d-b8e4-c87d0b8c11c2/408031158_664465732546685_227633461073843326_n.jpg`}
+        src={`https://ucarecdn.com/0abc6c11-ea28-433b-a205-e289be0e95f8/WhatsAppImage20240203at1050571.jpeg`}
         alt="Mounet Dalia logo"/>
 </Box>
 

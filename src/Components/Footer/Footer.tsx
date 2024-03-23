@@ -8,9 +8,9 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer bg2 " style={{color:'black',background:'white'}}>
-    <div className="container bg2" style={{color:'black',background:'white'}}>
-      <div className="site-footer__top bg2 ">
+  <footer className="site-footer  " style={{color:'black',background:'white'}}>
+    <div className="container " style={{color:'black',background:'white'}}>
+      <div className="site-footer__top  ">
         <div className="site-footer__description">
           <div className='logos cursor'>
 
@@ -18,7 +18,7 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/9304db51-1509-447d-b8e4-c87d0b8c11c2/408031158_664465732546685_227633461073843326_n.jpg' alt="Pets Town Lebanon Logo" />
+            <img className='img ' src='https://ucarecdn.com/0abc6c11-ea28-433b-a205-e289be0e95f8/WhatsAppImage20240203at1050571.jpeg' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.95em',color:"2b2b2b" }}  className='footer-p '>
@@ -80,8 +80,8 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="site-footer__bottom bg2" style={{color:'black',borderTop:"1px solid #0000001f"}}>
-      <div className="container bg2" style={{color:'black'}}>
+    <div className="site-footer__bottom " style={{color:'black',borderTop:"1px solid #0000001f"}}>
+      <div className="container " style={{color:'black'}}>
         <p>Website Developed By{' '}
           <a style={{ color: 'black' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
       </div>

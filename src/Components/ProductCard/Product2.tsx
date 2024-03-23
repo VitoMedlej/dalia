@@ -146,19 +146,26 @@ const Product2 = (
                 Number(stock) !== 0   && 
                 addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
            
-            className=' gap gap1' sx={{border:'1px solid black',flex:1,
-            ':hover':{color:'black'},
-            padding:'.5em !Important',
-            color:'black',
+            className=' gap gap1 bg2' sx={{border:'1px solid transparent',flex:1,
+            ':hover':{color:'white'},
+            padding:'.45em .5em !Important',
+            color:'white',
+            textTransform:'none',
+            fontSize:'.8em',
+    borderRadius:'8px',
+
+            fontWeight:800,
             backgroundColor:'transparent',
             }}>
-                    {sizes && sizes?.length > 0 ? 'View' :  'ADD'}
            
             <img 
-            // ,filter:'invert(1)'
-                        style={{width:'20px',height:'20px'}}
-                        src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img" />
+                        style={{
+                            filter:'invert(1)'
+                            ,width:'17px'}}
+                            src="https://cdn-icons-png.flaticon.com/128/2636/2636890.png" alt="" className="img" />
+                            {sizes && sizes?.length > 0 ? 'View' :  'Add to cart'}
             </Btn>
+
             <WhishList2
             onRemove={onRemove} productId={_id} product={{ title,
                 price,
