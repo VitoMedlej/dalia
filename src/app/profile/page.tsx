@@ -79,11 +79,11 @@ const Index = () => {
                             if (!item?._id) return;
                             return <Product2
                                 key={item?._id}
-                                inStock={item?.inStock}
+                                inStock={item?.inStock !== false ? item?.inStock : false }
                                 onRemove={() => handleRemoveFromWishlist(item._id)}
                                 whishedItem={true} _id={item?._id} title={item?.title} price={item?.newPrice ? item?.newPrice : item?.price} images={[`${item?.img}`]} 
                                 category={item?.category}
-                                 stock={item?.stock} sizes={item?.sizes}/>
+                                 stock={Number(item?.stock)} sizes={item?.sizes}/>
                         })
                         :
                         <Box className='flex col center auto'>
