@@ -40,6 +40,7 @@ const InstagramPosts = () => {
       gsap.to('.title-3', {
         opacity: 1,
         duration: .5,
+        y:0,
         stagger: 0.2,
 
         scrollTrigger: {
@@ -52,6 +53,7 @@ const InstagramPosts = () => {
         gsap.to( `.post-${index}`, {
           opacity: 1,
           duration: .5,
+          y:0,
           delay:Number(index) * Number(0.1),
           stagger: 0.2,
           scrollTrigger: {
@@ -71,7 +73,7 @@ const InstagramPosts = () => {
   return (
     <Box sx={{mb:16,pt:4}}>
     
-    <Typography  sx={{fontSize:'1.5em',fontWeight:600,py:4}} className='center title-3 op0 auto text-center' >
+    <Typography  sx={{fontSize:'1.5em',fontWeight:600,py:4}} className='center title-3 op0 y1 auto text-center' >
       Follow Us On Instagram <span className='underline'>
       @mounetdalia
       </span>
@@ -81,7 +83,7 @@ const InstagramPosts = () => {
       justifyContent:{xs:'center',sm:'space-between'},
       px:1}}>
       {posts && posts?.map((post:any,idx:number) => (
-        <Box   sx={{my:1,width:{xs:'98%',sm:'48%',md:'32%'}}} className={`op0 post-${idx}`} key={post}>
+        <Box   sx={{my:1,width:{xs:'98%',sm:'48%',md:'32%'}}} className={`op0 y1 post-${idx}`} key={post}>
           <img className='img' src={`${post}`} alt={post} />
         </Box>
       ))}

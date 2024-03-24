@@ -15,6 +15,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
  useEffect(() => {
   gsap.to('.title-1', {
       opacity: 1,
+      y:0,
       duration: .5,
       stagger: 0.2,
       scrollTrigger: {
@@ -28,6 +29,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     opacity: 1,
     duration: .5,
     delay:.2,
+    y:0,
     stagger: 0.2,
     scrollTrigger: {
       trigger:'.title-1',
@@ -39,7 +41,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{ maxWidth:'lg',my:4}} className='center auto'>
            
-           <Box className="flex title-1 op0 justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
+           <Box className="flex title-1 op0 y1 justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
            <Typography
             component='h1'
                 className='clr2  center text-center  box'
@@ -69,7 +71,7 @@ onClick={()=>router.push('/collection/products')}
               mx:{xs:'auto',md:1}
               ,
               justifyContent:{xs:'center',sm:'space-between'}
-            }} className='flex wrap  op0 prods2 '>
+            }} className='flex wrap  op0 y1 prods2 '>
                   {products && products?.length > 0 && products?.slice(0,4).map(i=>{
 
                     return <Product2

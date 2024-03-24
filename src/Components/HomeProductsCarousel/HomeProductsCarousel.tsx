@@ -25,6 +25,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     useEffect(() => {
         gsap.to('.title-0', {
             opacity: 1,
+            y:0,
             duration: .5,
             stagger: 0.2,
             scrollTrigger: {
@@ -36,6 +37,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
 
         gsap.to('.prods', {
           opacity: 1,
+          y:0,
           duration: .5,
           delay:.2,
           stagger: 0.2,
@@ -61,7 +63,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
 
             <Typography
             component='h1'
-                className='clr2 title-0 op0 center text-center  box'
+                className='clr2 title-0 op0 y1 center text-center  box'
                 sx={{
              
                 fontSize: {
@@ -82,7 +84,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             </Box>
             
             <Box
-            className='w100 op0 prods'
+            className='w100 op0 y1 prods'
                 sx={{
                 display: {
                     xs: "flex",

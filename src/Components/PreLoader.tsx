@@ -62,7 +62,8 @@ PreLoader = ({data,resImages}:any) => {
     for (let index = 0; index < 4; index++) {
       gsap.to(`.cate-${index}`, {
         opacity: 1,
-        duration: .5,
+        duration: .75,
+        y:0,
         delay:Number(index) * Number(0.1),
         stagger: 0.2,
         scrollTrigger: {
@@ -74,7 +75,9 @@ PreLoader = ({data,resImages}:any) => {
 
     gsap.to( `.sec-item-${index}`, {
       opacity: 1,
-      duration: .5,
+      y:0,
+
+      duration: .75,
       delay:Number(index) * Number(0.05),
 
       stagger: 0.2,
@@ -129,7 +132,7 @@ PreLoader = ({data,resImages}:any) => {
 
 
     <Grid sx={{my:8,maxWidth:'lg',width:{xs:'96%',md:'95%'},mx:'auto',gap:{xs:'1em',md:'.25em'}}} className='   relative'  container>
-        <Grid className='sec-item-0 op0'  item xs={12} md={6.9}>
+        <Grid className='sec-item-0 op0 y1'  item xs={12} md={6.9}>
         <Box 
     className='relative  carditem'
     
@@ -177,7 +180,7 @@ PreLoader = ({data,resImages}:any) => {
         </Grid>
 
         <Grid className=' gap4 flex col'   item   xs={12} md={4.95}>
-            <Grid className='sec-item-1 op0'  item xs={12}>
+            <Grid className='sec-item-1 op0 y1'  item xs={12}>
             <Box 
     className='relative  carditem'
     
@@ -223,7 +226,7 @@ Starts Here!
 </Box>
         </Box>
             </Grid>
-            <Grid className='sec-item-2 op0' item xs={12}>
+            <Grid className='sec-item-2 op0 y1' item xs={12}>
             <Box 
     className='relative  carditem '
     

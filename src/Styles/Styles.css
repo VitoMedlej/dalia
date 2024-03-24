@@ -22,6 +22,10 @@ body {
   opacity: 0;
 }
 
+.y1 {
+  transform: translateY(8px);
+}
+
 .swiper-slide, .swiper-slide-active {
   margin-right: 0 !important;
 }
