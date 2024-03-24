@@ -153,7 +153,10 @@ PreLoader = ({data,resImages}:any) => {
   <Typography gutterBottom className='text- black' sx={{ pb: 0.1, fontWeight: 300}} variant="h6" component="div">
     Build your juicy life
   </Typography>
-  <Btn className='bg2'  sx={{
+  <Btn
+                        onClick={()=>router.push('/collection/products')}
+
+  className='bg2'  sx={{
     ':hover':{
       color:'black' ,
       background:'transparent',
@@ -199,7 +202,10 @@ Healthy Eating
 Starts Here!
   </Typography>
 
-  <Btn className='bg2'  sx={{
+  <Btn 
+                        onClick={()=>router.push('/collection/products')}
+  
+  className='bg2'  sx={{
     ':hover':{
       color:'black' ,
       background:'transparent',
