@@ -477,7 +477,7 @@ onClick={()=>router.push(`${'circut machines'.replace(/ /g, '-').toLocaleLowerCa
           </Grid>
           <Grid sx={{mt:{xs:2,sm:0}}} className="flex center items-center row wrap "
            item xs={12} sm={6}>
-            <Box className="flex row wrap gap gap1" sx={{minHeight:'40px',maxWidth:'500px'}}>
+            <Box className="flex row wrap gap gap1" sx={{minHeight:'40px',maxWidth:{xs:"90%",md:'500px'}}}>
 
             <input className='emailinput'  style={{backgroundColor:'white',color:'black',
            borderRadius:'4px',
