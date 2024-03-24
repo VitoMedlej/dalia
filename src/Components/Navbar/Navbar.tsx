@@ -3,8 +3,8 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import {IoIosMenu} from 'react-icons/io'
+// import IconButton from '@mui/material/IconButton';
+// import {IoIosMenu} from 'react-icons/io'
 // import {IoIosCart} from 'react-icons/ci'
 
 import { useEffect, useState} from 'react';
@@ -15,15 +15,15 @@ import {Badge, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
 // import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
-import {CiSearch} from 'react-icons/ci'
-import {AiOutlineHome,AiOutlineShoppingCart} from 'react-icons/ai'
+// import {CiSearch} from 'react-icons/ci'
+// import {AiOutlineHome,AiOutlineShoppingCart} from 'react-icons/ai'
 import SearchInput from './SearchInput';
 
 import NavButtom from './NavButtom';
 import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
-import Btn from '../Btn/Btn';
-import useLanguage from '@/Hooks/useLanguage';
-import { IoIosCart } from "react-icons/io";
+// import Btn from '../Btn/Btn';
+// import useLanguage from '@/Hooks/useLanguage';
+// import { IoIosCart } from "react-icons/io";
 
 
 export const categories =   [
@@ -205,13 +205,25 @@ export default function Navbar() {
             <Box
                onClick={()=>setOpen(!open)}
             className='cursor pointer  center items-center' sx={{width:'22px',
+            
             padding:1,
-                // display: {xs:'flex',sm:'none'},
+                display: {xs:'flex',md:'none'},
         }}>
                 <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/10513/10513594.png" alt="" className="img contain" />
             </Box>
+
+            <Box
+               onClick={()=>router.push('/profile')}
+            className='cursor pointer  center items-center' sx={{width:'22px',
+            
+            padding:1,
+                display: {xs:'none',md:'flex'},
+        }}>
+                <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/11230/11230790.png" alt="" className="img contain" />
+            </Box>
    
         </Box>
+
 <SearchInput mobile={true}/>
 
 {/* <Btn
