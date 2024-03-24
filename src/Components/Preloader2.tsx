@@ -13,6 +13,7 @@ import FilterBar from './Navbar/FilterBar'
 import Product2 from './ProductCard/Product2'
 
 const Preloader2 = ({data,totalPages}:any) => {
+    console.log('data: ', data);
     // console.log('data: ', data);
    
     // const [pageNB,setPageNB] = useState(0)
@@ -32,7 +33,7 @@ const Preloader2 = ({data,totalPages}:any) => {
     const {category} = useParams() 
     const searchParams = useSearchParams();
     const type =  searchParams.get('type')
-    const subCategory   =  searchParams.get('subCategory')
+    // const subCategory   =  searchParams.get('subCategory')
 
 
 
