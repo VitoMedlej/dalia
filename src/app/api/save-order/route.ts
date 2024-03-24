@@ -196,7 +196,7 @@ async function sendOrderConfirmationEmail(discountedPrice: number | undefined,or
               </header>
       
               <div class="buttons">
-                  <a href="https://wa.me/+96103874743" class="button">Reach Us</a>
+                  <a href="https://wa.me/+96171521926" class="button">Reach Us</a>
                   <a href="https://mounetdalia.com/" class="button">Visit Our Website</a>
               </div>
       
@@ -255,7 +255,7 @@ async function sendOrderConfirmationEmail(discountedPrice: number | undefined,or
       <br />
       <div style='text-align:center;align-items:center;margin:0 auto;'>
       <p><a href="mailto:contact@mounetdalia.com">contact@mounetdalia.com</a></p>
-      <p style='padding-top:2px;padding-bottom:2px;'>+961 1234567</p>
+      <p style='padding-top:2px;padding-bottom:2px;'>+961 71 521 926</p>
       <p><a href="https://mounetdalia.com/unsubscribe">unsubscribe</a></p>
       </div>
     </footer>

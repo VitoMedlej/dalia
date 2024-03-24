@@ -10,7 +10,7 @@ const sm = [
         Icon:'https://cdn-icons-png.flaticon.com/128/3670/3670274.png',
         href:'https://www.instagram.com/mounetdalia/'
     },
-    {Icon:'https://cdn-icons-png.flaticon.com/128/1384/1384023.png',href:'https://wa.me/+9611234567'},
+    {Icon:'https://cdn-icons-png.flaticon.com/128/1384/1384023.png',href:'https://wa.me/+96171521926'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {

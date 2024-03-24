@@ -75,7 +75,7 @@ PreLoader = ({data,resImages}:any) => {
     gsap.to( `.sec-item-${index}`, {
       opacity: 1,
       duration: .5,
-      delay:Number(index) * Number(0.1),
+      delay:Number(index) * Number(0.05),
 
       stagger: 0.2,
       scrollTrigger: {
