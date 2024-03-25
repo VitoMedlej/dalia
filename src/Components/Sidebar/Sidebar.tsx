@@ -374,11 +374,51 @@ key={i}>
       sx={{width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/account/login')}}>
           Login
         </Btn>}
-        <Btn sx={{color:'white',background:'red',border:'1px solid red',gap:.5,width:'90%',mt:1,mx:'auto'}} className='' onClick={()=>{setOpen(false);router.push('/profile')}}>
+        <Btn sx={{color:'white',
+        ':hover':{color:'red !Important'}
+        ,background:'red',border:'1px solid red',gap:.5,width:'90%',mt:1,mx:'auto'}} 
+        className='' 
+        onClick={()=>{setOpen(false);router.push('/profile')}}>
          My Favorites
          <AiOutlineHeart/>
         </Btn>
-        {/* <SMicons/> */}
+        <Box sx={{width:'100px',py:2}} className="flex justify-evenly space-evenly auto items-center">
+
+      <a style={{textDecoration:'none',borderRadius:'2000px',background:'transparent'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
+    
+    <Btn sx={{ border:'1px solid transparent',
+    borderRadius:25,
+    minWidth:'30px',
+    background:'transparent',
+    padding:0,':hover':{background:'transparent'}}}>
+      <Box className='center flex align-center' sx={{width:'30px',ml:0}}>
+      <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="Whatsapp Icon" className="img" />
+      </Box>
+      
+     
+   
+    </Btn>
+    </a>
+    <a style={{textDecoration:'none',marginTop:3,borderRadius:'2000px',background:'transparent'}} 
+    
+    href={'https://www.instagram.com/mounetdalia/'} target='_blank' rel='noopener'>
+    
+    <Btn sx={{ border:'1px solid transparent',
+    borderRadius:25,
+    background:'transparent',
+    minWidth:'30px',
+
+    padding:0,':hover':{background:'transparent'}}}>
+      <Box className='center flex align-center' sx={{width:'30px',ml:0}}>
+      <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Whatsapp Icon" className="img" />
+      </Box>
+      
+       
+   
+    </Btn>
+    </a>
+    </Box>
+
      
     
       <Divider />

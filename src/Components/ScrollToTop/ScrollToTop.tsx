@@ -34,7 +34,7 @@ const ScrollUp = () => {
     </IconButton>
 </Paper>
     </Box> */}
-    <a style={{textDecoration:'none',borderRadius:'2000px',background:'transparent'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
+    {/* <a style={{textDecoration:'none',borderRadius:'2000px',background:'transparent'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
     
     <Btn sx={{ border:'1px solid transparent',
     borderRadius:25,
@@ -48,7 +48,7 @@ const ScrollUp = () => {
      
    
     </Btn>
-    </a>
+    </a> */}
     {/* <a style={{textDecoration:'none',marginTop:3,borderRadius:'2000px',background:'transparent'}} 
     
     href={'https://www.instagram.com/mounetdalia/'} target='_blank' rel='noopener'>

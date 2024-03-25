@@ -18,7 +18,8 @@ const SMicons = ({sx,color}:{color?:string,sx?:any}) => {
     <Box className='row flex' sx={{zIndex:1234567,...sx}}>
 
     {sm.map((item)=>{
-      return <Box  key={item.href} className='relative  flex center items-center justify-center space-between' sx={{borderRadius:'50%',width:'30px',mx:.35,mt:1,height:'30px'}}>
+      return <Box  key={item.href} className='relative  flex center items-center justify-center space-between' 
+      sx={{borderRadius:'50%',width:'30px',mx:.35,mt:1,height:'30px'}}>
       <a   style={{width:'80%',height:'80%'}} className='img absolute' href={`${item.href}`} target='_blank' rel={'noneferrer'}>
           
             <img src={item.Icon} alt="" className="img contain " />
