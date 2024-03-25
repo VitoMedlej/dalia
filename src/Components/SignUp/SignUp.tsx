@@ -1,3 +1,4 @@
+"use client"
 import { Container,Grid, Typography, Box } from '@mui/material'
 import React from 'react'
 import Btn from '../Btn/Btn'
