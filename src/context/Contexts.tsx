@@ -20,8 +20,10 @@ export const PromoContext = createContext < any > (0);
 
         const [discountedPrice, setDiscountedPrice] = useState(0);
         const [promoCode, setpromoCode] = useState(null);
+        
         const [open,
             setOpen] = useState(false);
+
         const [cartOpen,
             setCartOpen] = useState(false);
             const [cates,

@@ -1,19 +1,26 @@
 "use client"
 import { Box, IconButton, Paper, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Btn from '../Btn/Btn'
 import {GrFormClose} from 'react-icons/gr'
 
 import {BsArrowUpShort} from 'react-icons/bs'
 const ScrollUp = () => {
     
-  const [open,setOpen] = useState(true)
+  // const [open,setOpen] = useState(true)
+  useEffect(() => {
+    
+  if (window) {
+    window && window.scrollTo(0, 0)
+  }
+  }, [])
+  
   return (
     <Box className='flex col center flex align-center'
     
     sx={{position:'fixed',
     transform:'translateY(50%)',
-    zIndex:4124,bottom:'50%',left:'2%'}}>
+    zIndex:4124,bottom:'15%',right:'4%'}}>
     {/* <Box>
 
 <Paper  className=' row' sx={{mb:1,padding:1,maxWidth:'200px',display:open?'flex' : 'none'}} elevation={0} >
@@ -31,21 +38,18 @@ const ScrollUp = () => {
     
     <Btn sx={{ border:'1px solid transparent',
     borderRadius:25,
-    minWidth:'30px',
+    minWidth:'52px',
     background:'transparent',
-    // boxShadow:`rgba(0, 0, 0, 0.24) 0px 3px 8px`,
     padding:0,':hover':{background:'transparent'}}}>
-      <Box className='center flex align-center' sx={{width:'30px',ml:0}}>
+      <Box className='center flex align-center' sx={{width:'52px',ml:0}}>
       <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="Whatsapp Icon" className="img" />
       </Box>
       
-         {/* <Box sx={{mr:1,background:'white',py:1,px:2,borderRadius:25,color:'black'}}>
-         +961 71 521 926
-      </Box> */}
+     
    
     </Btn>
     </a>
-    <a style={{textDecoration:'none',marginTop:3,borderRadius:'2000px',background:'transparent'}} 
+    {/* <a style={{textDecoration:'none',marginTop:3,borderRadius:'2000px',background:'transparent'}} 
     
     href={'https://www.instagram.com/mounetdalia/'} target='_blank' rel='noopener'>
     
@@ -54,18 +58,15 @@ const ScrollUp = () => {
     background:'transparent',
     minWidth:'30px',
 
-    // boxShadow:`rgba(0, 0, 0, 0.24) 0px 3px 8px`,
     padding:0,':hover':{background:'transparent'}}}>
       <Box className='center flex align-center' sx={{width:'30px',ml:0}}>
       <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Whatsapp Icon" className="img" />
       </Box>
       
-         {/* <Box sx={{mr:1,background:'white',py:1,px:2,borderRadius:25,color:'black'}}>
-         +961 71 521 926
-      </Box> */}
+       
    
     </Btn>
-    </a>
+    </a> */}
 
     </Box>
   )

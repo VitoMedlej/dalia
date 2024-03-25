@@ -145,7 +145,7 @@ const Preloader2 = ({data,totalPages}:any) => {
             return <Product2
             sx={{border:'none',px:{xs:0,sm:2}}}
             sizes={i?.sizes || null}
-            width={{xs:'48%',sm:'48%',md:'28%'}}
+            width={{xs:products && products?.length > 1 ? '48%' :'98%',sm:'43%',md:'28%'}}
             key={i?._id}
             stock={i.stock}
 
@@ -161,6 +161,7 @@ const Preloader2 = ({data,totalPages}:any) => {
 : <Typography className='center text-center auto' >
     We Could Not Find Products That Match Your Criteria!
 </Typography>}
+
 <Pagination
         onChange={(e, val) => {
             fetchData(val)
@@ -169,7 +170,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         my: 3,
         flex:1,
         width:'100%',
-        minWidth:'50vw'
+        minWidth:{xs:'100%',md:'68%',lg:'73%'},
     }}
         count={totalPages > 1 
         ? totalPages

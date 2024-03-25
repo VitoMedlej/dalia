@@ -37,6 +37,7 @@ export const categories =   [
   ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
+    console.log('open: ', open);
     const [openModal,
         setOpenModal] = useState(false);
     
@@ -177,12 +178,24 @@ export default function Navbar() {
 
     <Box sx={{width:'max-content'}} className="flex flex1 flex-end">
 
-       
+    <Box 
+    onClick={()=>router.push('/account/login')}
+            
+                    
+            className='cursor pointer  center items-center' sx={{width:'22px',minWidth:'20px'
+            ,padding:1,
+            display:{xs:'flex',md:'none'}
+            
+            }}>
+                <img style={{filter:'invert(0)'}} src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="" className="img contain" />
+            </Box>
+
+
             <Box 
     onClick={()=>router.push('/account/login')}
             
             
-            className='cursor pointer flex center items-center' sx={{width:'22px'
+            className='cursor pointer flex center items-center' sx={{width:'22px',minWidth:'20px'
             ,padding:1
             
             }}>
@@ -193,7 +206,7 @@ export default function Navbar() {
       
             <Box
                 onClick={()=>setCartOpen(!cartOpen)}
-            className='cursor pointer flex center items-center' sx={{width:'22px'
+            className='cursor pointer flex center items-center' sx={{width:'22px',minWidth:'20px'
             ,padding:1
             
             }}>
@@ -204,7 +217,7 @@ export default function Navbar() {
       
             <Box
                onClick={()=>setOpen(!open)}
-            className='cursor pointer  center items-center' sx={{width:'22px',
+            className='cursor pointer  center items-center' sx={{width:'22px',minWidth:'20px',
             
             padding:1,
                 display: {xs:'flex',md:'none'},
@@ -214,7 +227,7 @@ export default function Navbar() {
 
             <Box
                onClick={()=>router.push('/profile')}
-            className='cursor pointer  center items-center' sx={{width:'22px',
+            className='cursor pointer  center items-center' sx={{width:'22px',minWidth:'20px',
             
             padding:1,
                 display: {xs:'none',md:'flex'},
@@ -224,7 +237,7 @@ export default function Navbar() {
    
         </Box>
 
-<SearchInput mobile={true}/>
+{/* <SearchInput mobile={true}/> */}
 
 {/* <Btn
                             onClick={() => setCartOpen(!cartOpen)}

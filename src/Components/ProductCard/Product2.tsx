@@ -66,7 +66,6 @@ const Product2 = (
     const {addToCart}= useCart()
   
         const reviewsSum = calculateAverageReview(reviews);
-        console.log('reviewsSum: ', reviewsSum);
   return (
     <Box sx={{
         // minWidth: {sm:'32%',     lg:'22%'},
@@ -151,7 +150,7 @@ const Product2 = (
             padding:'.45em .5em !Important',
             color:'white',
             textTransform:'none',
-            fontSize:'.8em',
+            fontSize:{xs:'.7em',sm:'.8em'},
     borderRadius:'8px',
 
             fontWeight:800,

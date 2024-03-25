@@ -34,26 +34,16 @@ useEffect(()=>{
 
 },[])
   const router = useRouter();
-  const toggleDrawer =
-    ( open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
-
-      setOpen(open);
-    };
+  const toggleDrawer = (state:any) => {
+    setOpen((prevOpen:any) => state ? state : !prevOpen); // Toggle the open state
+  };
 
   const Lista = () => (
     <Box
       sx={{ width:  '300px',py:1 }}
       role="presentation"
       // onClick={toggleDrawer( false)}
-      onKeyDown={toggleDrawer( false)}
+      onKeyDown={()=>toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
       sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
@@ -67,7 +57,7 @@ useEffect(()=>{
 
               <IconButton 
         
-        onClick={toggleDrawer(false)}>
+        onClick={()=>toggleDrawer(false)}>
                         <GrFormClose
                                 color='red'
                                 />
@@ -371,10 +361,12 @@ key={i}>
       </List>
       <Link href='/about' className='decor-none' style={{color:'black'
       ,padding:' .25em 0'}}>
-        <ListItemButton>
+        <ListItemButton
+        onClick={()=>toggleDrawer(false)}
+        >
         
         <Typography className='clr2' sx={{ fontSize:'.9em',fontWeight:600}}>
-         ABOUT US
+         About Us
             </Typography>
             </ListItemButton>
       </Link>
@@ -400,7 +392,7 @@ key={i}>
           <Drawer
             anchor={'right'}
             open={open}
-            onClose={toggleDrawer(false)}
+            onClose={()=>toggleDrawer(false)}
           >
 
   <Lista/>

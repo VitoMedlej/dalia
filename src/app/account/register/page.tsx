@@ -22,6 +22,7 @@ import Link from 'next/link'
 import { useState} from 'react';
 import {AiOutlineEye,AiOutlineLock,AiOutlineEyeInvisible} from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import SignUp from '@/Components/SignUp/SignUp';
 
 // import LoginHook from '../../../src/Hooks/accountHooks/LoginHook';
 // import {VisibilityOff, Visibility} from '@mui/icons-material';
@@ -224,15 +225,14 @@ className='bg'
                                 label="Password"/>
                         </FormControl>
 
-                        <FormControlLabel
-                            control={< Checkbox value = "remember" color = "primary" />}
-                            label="Remember me"/>
-                        <Grid item xs={12} sm={ 12}>
+                      
+                        <Grid sx={{fontSize:'.9em',mt:2}} item xs={12} sm={ 12}>
         <FormControlLabel
          value={checkbox}
          onChange={(e : any)=>setCheckbox(e?.target?.checked)}
 
          name='checkbox'
+        sx={{fontSize:'.9em'}}
         required control={<Checkbox  />} label="I agree to the Terms and conditions." />
         </Grid>
         <Grid item xs={12} sm={ 12}>
@@ -240,7 +240,7 @@ className='bg'
          value={checkbox2}
          onChange={(e : any)=>setCheckbox2(e?.target?.checked)}
          name='checkbox2'
-        required control={<Checkbox  />} label="I agree to receive emails understand that I can unsubscribe at any time by clicking the link in the email." />
+        required control={<Checkbox  />} label="I agree to receive emails." />
         </Grid>
                         <Button
     className='bg'
@@ -288,6 +288,7 @@ disabled={isLoading || !checkbox || !checkbox2}
         </Typography>
           </Box>
             </Container>
+            <SignUp/>
         </ThemeProvider>
     );
 }

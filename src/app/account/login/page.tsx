@@ -21,6 +21,7 @@ import Link from 'next/link'
 import { useState} from 'react';
 import {AiOutlineEye,AiOutlineLock,AiOutlineEyeInvisible} from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import SignUp from '@/Components/SignUp/SignUp';
 
 
 
@@ -103,6 +104,7 @@ const [checkbox2, setCheckbox2] = useState(false);
     }
 
     return (
+        <>
             <Container component="main" maxWidth='sm' sx={{
                 width: '100%',mt:6,maxWidth:'400px'
             }}>
@@ -131,13 +133,13 @@ className='bg'
                     </Avatar>
                     <Typography
                         sx={{
-                        fontSize: "1em",
-                        textAlign: 'center'
-                    }}
+                            fontSize: "1em",
+                            textAlign: 'center'
+                        }}
                         color={error
-                        ? 'red'
-                        : 'black'}
-                        component="h1">
+                            ? 'red'
+                            : 'black'}
+                            component="h1">
                         {error?.length > 1
                             ? error
                             : 'Sign in'}
@@ -147,8 +149,8 @@ className='bg'
                         onSubmit={handleSubmit}
                         noValidate
                         sx={{
-                        mt: 1
-                    }}>
+                            mt: 1
+                        }}>
                         <TextField
                             margin="normal"
                             required
@@ -164,9 +166,9 @@ className='bg'
 
                         <FormControl
                             sx={{
-                            mt: 1,
-                            width: '100%'
-                        }}
+                                mt: 1,
+                                width: '100%'
+                            }}
                             variant="outlined">
 
                             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
@@ -177,8 +179,8 @@ className='bg'
                             
                             value={creds.password}
                             onChange={(e)=>setCreds({...creds,password:e.target.value})}
-                                id="outlined-adornment-password"
-                                type={showPassword
+                            id="outlined-adornment-password"
+                            type={showPassword
                                 ? 'text'
                                 : 'password'}
                                 endAdornment={< InputAdornment position = "end" > <IconButton
@@ -194,43 +196,41 @@ className='bg'
                                 label="Password"/>
                         </FormControl>
                                     
-                        <FormControlLabel
-                            control={< Checkbox value = "remember" color = "primary" />}
-                            label="Remember me"/>
-                                <Grid item xs={12} sm={ 12}>
+                     
+                                <Grid sx={{mt:1}} item xs={12} sm={ 12}>
         <FormControlLabel
          value={checkbox}
          onChange={(e : any)=>setCheckbox(e?.target?.checked)}
-
+         
          name='checkbox'
-        required control={<Checkbox  />} label="I agree to the Terms and conditions." />
+         required control={<Checkbox  />} label="I agree to the Terms and conditions." />
         </Grid>
         <Grid item xs={12} sm={ 12}>
         <FormControlLabel
          value={checkbox2}
          onChange={(e : any)=>setCheckbox2(e?.target?.checked)}
          name='checkbox2'
-        required control={<Checkbox  />} label="I agree to receive emails understand that I can unsubscribe at any time by clicking the link in the email." />
+        required control={<Checkbox  />} label="I agree to receive emails." />
         </Grid>
                         <Button
     className='bg'
     disabled={isLoading || !checkbox || !checkbox2}
-
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            sx={{
-                            mt: 3,
-                            border: !isLoading
-                                ? "1px solid "
-                                : 'none',
-                            mb: 2,
-                            ":hover": {
-                                color:'black',
-                                background: 'white !important',
-                                border: "1px solid black"
-                            }
-                        }}>
+    
+    type="submit"
+    fullWidth
+    variant="contained"
+    sx={{
+        mt: 3,
+        border: !isLoading
+        ? "1px solid "
+        : 'none',
+        mb: 2,
+        ":hover": {
+            color:'black',
+            background: 'white !important',
+            border: "1px solid black"
+        }
+    }}>
                             Sign In
                         </Button>
                     
@@ -252,7 +252,7 @@ className='bg'
             variant="body2"
             color="text.secondary"
             align="center"
-          >
+            >
             {'Copyright © '}
             <a target='_blank' href="https://onbeirut.com">
                 OnBeirut Agency
@@ -262,6 +262,9 @@ className='bg'
         </Box>
 
             </Container>
+            <SignUp/>
+              
+              </>
     );
 }
 export default LoginForm
