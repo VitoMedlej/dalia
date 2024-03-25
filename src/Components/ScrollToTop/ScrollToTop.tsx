@@ -20,7 +20,7 @@ const ScrollUp = () => {
     
     sx={{position:'fixed',
     transform:'translateY(50%)',
-    zIndex:4124,bottom:{xs:'15%',sm:'17%'},right:{xs:'5%',sm:'4%'}}}>
+    zIndex:4124,bottom:{xs:'12%',sm:'17%'},right:{xs:'4%',sm:'4%'}}}>
     {/* <Box>
 
 <Paper  className=' row' sx={{mb:1,padding:1,maxWidth:'200px',display:open?'flex' : 'none'}} elevation={0} >
