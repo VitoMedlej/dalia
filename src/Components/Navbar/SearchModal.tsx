@@ -40,7 +40,8 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
             Search By name, type or category...
         </Typography>
         <SearchInput
-        sx={{width:'100%',mx:'auto',mt:1}}
+        mobile
+        sx={{width:'auto',mx:'auto',mt:1}}
          />
         </Box>
         {/* 

@@ -121,14 +121,34 @@ textarea {
 .limited {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   /* number of lines to show */
-  line-clamp: 2;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 
 .space-evenly {
   justify-content: space-evenly;
+}
+
+.carthover:hover {
+  background: #286538 !important;
+}
+
+.carthover2:hover {
+  background: #84a545 !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.hovereffect h1 {
+  transition: 0.3s all;
+  border-bottom: 2px solid transparent;
+}
+.hovereffect h1:hover {
+  border-bottom: 2px solid #84a545 !important;
 }
 
 .hover-shadow:hover {

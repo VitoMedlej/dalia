@@ -44,7 +44,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
            <Box className="flex title-1 op0 y1 justify-between auto" sx={{px:1,py:8,maxWidth:'lg'}}>
            <Typography
             component='h1'
-                className='clr2  center text-center  box'
+                className='clr2   center text-center  box'
                 sx={{
              
                 fontSize: {
@@ -52,18 +52,23 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
                     sm: '1.52em'
                 },
                 padding:.5,
-                fontWeight: '600'
+                fontWeight: '800'
             }}>
             Our Best Sellers
             </Typography>
 
 <Btn 
+className='center items-center  gap gap1 justify-center'
 sx={{border:'none',
 ':hover':{background:'transparent'},
 color:'black',background:'white'}}
 onClick={()=>router.push('/collection/products')}
 >
-   Explore More
+   Explore More 
+   <Box className='center items-center flex' sx={{width:'15px'}}>
+
+   <img src="https://cdn-icons-png.flaticon.com/128/10309/10309571.png" alt="" className="img" />
+   </Box>
 </Btn>
 </Box>
 

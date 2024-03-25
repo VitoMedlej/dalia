@@ -32,17 +32,20 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
         mx:2,
         // my:'.25em',
         mb: {xs:1,sm:0},
-        px:'.5em',
+        px:{xs:'.25em',sm:'.5em'},
         // mb:'.5em',
         flex:1,
-        flexBasis:'100%',
+        // flexBasis:'100%',
         boxShadow:'none',
         // border:'1px solid #00000036',
         border:'1px solid ',
         borderRadius:'8px',
-        
+        width:'auto !Important',
          display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
-         alignItems: 'center',maxWidth:{xs:'100%',md:'500px',lg:'50%'}
+         alignItems: 'center'
+         
+         ,
+         maxWidth:{xs:'100%',md:'500px',lg:'50%'}
          ,...sx
         }}
     >

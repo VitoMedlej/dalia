@@ -36,11 +36,11 @@ const NavButtom = () => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className=' decor-none clr ' href={`/collection/products`}>
+                <Link className=' hovereffect clr ' href={`/collection/products`}>
 
                 <Typography 
         component='h1'
-        className=' cursor center  flex gap1  decor-none captialize'
+        className=' cursor center  flex gap1   captialize'
         id="button"
         sx={{width:'max-content',
         mx:'.75em',
@@ -60,11 +60,14 @@ Collections
     'Olives & Olive Oil',
     'Sweets & Nuts',
   ].map(i=>{
-        return <Link key={i} className=' clr decor-none black ' href={`/${i.toLocaleLowerCase()}/products`}>
+        return <Link
+        
+        
+        key={i} className=' clr hovereffect  black ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h1'
-        className=' cursor center flex gap1  decor-none captialize'
+        className=' cursor center flex gap1   captialize'
         id="button"
         sx={{width:'max-content',
         mx:'.75em',

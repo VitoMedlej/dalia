@@ -37,7 +37,7 @@ export const categories =   [
   ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
-    console.log('open: ', open);
+    // console.log('open: ', open);
     const [openModal,
         setOpenModal] = useState(false);
     
@@ -179,7 +179,7 @@ export default function Navbar() {
     <Box sx={{width:'max-content'}} className="flex flex1 flex-end">
 
     <Box 
-    onClick={()=>router.push('/account/login')}
+    onClick={()=>setOpenModal(true)}
             
                     
             className='cursor pointer  center items-center' sx={{width:'22px',minWidth:'20px'

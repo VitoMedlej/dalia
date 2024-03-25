@@ -145,7 +145,7 @@ const Product2 = (
                 Number(stock) !== 0   && 
                 addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
            
-            className=' gap gap1 bg2' sx={{border:'1px solid transparent',flex:1,
+            className=' gap gap1 carthover bg2' sx={{border:'1px solid transparent',flex:1,
             ':hover':{color:'white'},
             padding:'.45em .5em !Important',
             color:'white',

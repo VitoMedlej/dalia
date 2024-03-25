@@ -27,7 +27,7 @@ const WishlistButton = ({ productId, product ,onRemove} : {onRemove?: (id:string
     };
     return (<Btn 
             onClick={handleWishlistToggle}
-
+className='carthover2'
 sx={{
     maxWidth:'50px',
     padding:'.45em .5em ',
