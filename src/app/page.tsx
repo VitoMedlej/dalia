@@ -8,7 +8,13 @@ import PreLoader from "@/Components/PreLoader"
 // import { useEffect, useState } from "react"
 // https://www..com/view_video.php?viewkey=ph637450f5f16fd
 
-
+const fetchDataAndSetImgs = async () => {
+  const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images`,
+  {cache: 'no-store',next:{revalidate:0} })
+  let res = req &&  await req.json();
+  if (res?.success && res?.data?.Images) return res
+  return null;
+}
 const fetchData = async () => {
   try{
     const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`
@@ -65,12 +71,13 @@ try {
       // console.log('res: ', res);
       // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
       // let resImages : any = await  reqImages.json();
-      let resImages : any ={}
+  const imgs = await fetchDataAndSetImgs()
+
       const res : any= await  fetchData()
       // let res = {data:{featuredProducts:null}}
       
       return (
-        <PreLoader resImages={resImages || null} data={res?.data?.featuredProducts}/>
+        <PreLoader resImages={imgs || null} data={res?.data?.featuredProducts}/>
        )
 }
 catch (e) {

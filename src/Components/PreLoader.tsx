@@ -21,7 +21,6 @@ import { gsap } from "gsap";
 
 const 
 PreLoader = ({data,resImages}:any) => {
-  console.log('data: ', data);
   const router= useRouter();
   // const textsArray = [
   //   {
@@ -78,9 +77,8 @@ PreLoader = ({data,resImages}:any) => {
       y:0,
 
       duration: .75,
-      delay:Number(index) * Number(0.05),
+      delay:Number(index + 1) * Number(0.05),
 
-      stagger: 0.2,
       scrollTrigger: {
         trigger:`.sec-item-${index}`,
         markers:false,
@@ -97,7 +95,7 @@ PreLoader = ({data,resImages}:any) => {
 
   return (
     <Box >
-      <MainCarousel/>
+      <MainCarousel res={resImages?.data?.Images[0]?.imagesArray}/>
       {/* <HomeProductCollection  products={data}/> */}
      
       <Container  className='flex row wrap ' sx={{

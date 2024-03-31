@@ -39,8 +39,8 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
           opacity: 1,
           y:0,
           duration: .5,
-          delay:.2,
-          stagger: 0.2,
+          delay: .5,
+          stagger: 0.3,
           scrollTrigger: {
             trigger:'.title-0',
             markers:false,

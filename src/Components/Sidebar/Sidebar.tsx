@@ -11,7 +11,7 @@ import {AiOutlineArrowUp} from 'react-icons/ai';
 import { DrawerContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
-import { categories } from '../Navbar/Navbar';
+// import { categories } from '../Navbar/Navbar';
 import Btn from '../Btn/Btn';
 import Link from 'next/link';
 

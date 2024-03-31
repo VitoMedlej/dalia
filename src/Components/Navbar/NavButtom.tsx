@@ -2,13 +2,14 @@
 import { Box, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
+import MenuHover from './MenuHover'
 // import MenuHover from './MenuHover'
 
 
 
 
 
-const NavButtom = () => {
+const NavButtom = ({categories}:any) => {
 
   return (
     <Box
@@ -52,18 +53,20 @@ Collections
 </Link>
 
 
+
+
 {
-   [
-    'Labneh','Keshek',
-    'Beverages',
-    'Mouneh',
-    'Olives & Olive Oil',
-    'Sweets & Nuts',
-  ].map(i=>{
-        return <Link
+  categories && categories.map((cate:any)=>{
+    return cate?.cateArray.map((item:any, index:number)=>{
+  
+      if (item?.subcategories?.length === 0){ 
+    
+    return    <Link
         
         
-        key={i} className=' clr hovereffect  black ' href={`/${i.toLocaleLowerCase()}/products`}>
+        key={item?.categoryName} 
+        href={`/${item?.categoryName?.toLocaleLowerCase()}/products`}
+        className=' clr hovereffect  black '>
 
         <Typography 
         component='h1'
@@ -74,11 +77,22 @@ Collections
         alignItems: 'center',
         color:'white',
         fontWeight:400,fontSize:{xs:'.86em',sm:'.99em'}}}>
-        {i}
+                 {`${item?.categoryName}`}
+
         </Typography>
         </Link>
+
+      } else {
+        return <MenuHover key={item?.categoryName}
+        img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'}
+        category={`${item?.categoryName}`} subcategories={item?.subcategories && item?.subcategories?.length > 0 ? item?.subcategories : []} />
+      }
     })
+  })
+  
 }
+
+
 
 {/* <Link className='black decor-none ' href={`/organic herbs/products`}>
 

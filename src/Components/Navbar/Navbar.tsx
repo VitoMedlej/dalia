@@ -20,21 +20,21 @@ import {useRouter} from 'next/navigation';
 import SearchInput from './SearchInput';
 
 import NavButtom from './NavButtom';
-import { useCartContext, useDrawerContext, useLangContext } from '@/context/Contexts';
+import { useCartContext, useCategoriesContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 // import Btn from '../Btn/Btn';
 // import useLanguage from '@/Hooks/useLanguage';
 // import { IoIosCart } from "react-icons/io";
 
 
-export const categories =   [
-    'Labneh','Keshek',
-    'Beverages',
-    'Honey, Jams & Spreads',
-    'Mouneh',
-    'Olives & Olive Oil',
-    'Sweets & Nuts',
-    'Zaatar',
-  ]
+// export const categories =   [
+//     'Labneh','Keshek',
+//     'Beverages',
+//     'Honey, Jams & Spreads',
+//     'Mouneh',
+//     'Olives & Olive Oil',
+//     'Sweets & Nuts',
+//     'Zaatar',
+//   ]
 export default function Navbar() {
     const {open, setOpen} = useDrawerContext();
     // console.log('open: ', open);
@@ -43,6 +43,11 @@ export default function Navbar() {
     
     const [localCart,
         setLocalCart] = useState([]);
+
+        
+        const {categories} = useCategoriesContext();
+        console.log('categories: ', categories);
+
 
     const {cartOpen, setCartOpen} = useCartContext();
     const router = useRouter()
@@ -390,7 +395,7 @@ mobile
             </Toolbar>
         </AppBar>
     </Box> 
-<NavButtom/>
+<NavButtom categories={categories}/>
 
     < Divider sx={{color : '#00000017'}} />
      </>
