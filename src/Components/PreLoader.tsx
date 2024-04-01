@@ -68,7 +68,7 @@ PreLoader = ({data,resImages}:any) => {
         scrollTrigger: {
           trigger:`.cate-${index}`,
           markers:false,
-          start:'top 50% ' 
+          start:'top 70% ' 
         }
       });
 
@@ -82,7 +82,7 @@ PreLoader = ({data,resImages}:any) => {
       scrollTrigger: {
         trigger:`.sec-item-${index}`,
         markers:false,
-        start:'top 50% ' 
+        start:'top 80% ' 
       }
     });
   }

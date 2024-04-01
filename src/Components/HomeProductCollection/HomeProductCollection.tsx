@@ -21,7 +21,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
       scrollTrigger: {
         trigger:'.title-1',
         markers:false,
-        start:'top 50% ' 
+        start:'top 80% ' 
       }
     });
 
@@ -34,7 +34,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     scrollTrigger: {
       trigger:'.title-1',
       markers:false,
-      start:'bottom 50% ' 
+      start:'top 80% ' 
     }
   });
 }, []);

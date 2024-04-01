@@ -5,7 +5,7 @@ import Btn from '../Btn/Btn';
 const CategoryCard = ({ imageUrl, categoryName,className } : any) => {
   return (
     <Box 
-    className={`relative op0 carditem ${className}`}
+    className={`relative op0 y1 carditem ${className}`}
     sx={{boxShadow:'none',mt:2,borderRadius:'4px',border:'none', width: {xs:'100%',sm:'48%',md:'32%'},
     height: {xs:'240px',sm:'250px',md:'280px'} }}>
 
