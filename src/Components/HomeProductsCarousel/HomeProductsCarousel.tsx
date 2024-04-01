@@ -30,8 +30,8 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             stagger: 0.2,
             scrollTrigger: {
               trigger:'.title-0',
-              markers:true,
-              start:'top 80% ' 
+              markers:false,
+              start:'top 85% ' 
             }
           });
 
@@ -44,7 +44,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
           scrollTrigger: {
             trigger:'.title-0',
             markers:false,
-            start:'top 80% ' 
+            start:'top 85% ' 
           }
         });
       }, []);

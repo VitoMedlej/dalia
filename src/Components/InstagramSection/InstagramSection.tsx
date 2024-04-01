@@ -46,7 +46,7 @@ const InstagramPosts = () => {
         scrollTrigger: {
           trigger:'.title-3',
           markers:false,
-          start:'top 80% ' 
+          start:'top 85% ' 
         }
       });
       for (let index = 0; index < 4; index++) {
@@ -59,7 +59,7 @@ const InstagramPosts = () => {
           scrollTrigger: {
             trigger:`.post-${index}`,
             markers:false,
-            start:'top 80% ' 
+            start:'top 85% ' 
           }
         });
     }

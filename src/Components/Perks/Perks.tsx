@@ -20,7 +20,7 @@ useEffect(() => {
     scrollTrigger: {
       trigger:'.item-0',
       markers:false,
-      start:'top 80% ' 
+      start:'top 85% ' 
     }
   });
 }, []);

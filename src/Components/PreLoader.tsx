@@ -63,12 +63,12 @@ PreLoader = ({data,resImages}:any) => {
         opacity: 1,
         duration: .75,
         y:0,
-        delay:Number(index) * Number(0.1),
+        delay:Number(index) * Number(0.05),
         stagger: 0.2,
         scrollTrigger: {
           trigger:`.cate-${index}`,
           markers:false,
-          start:'top 70% ' 
+          start:'top 85% ' 
         }
       });
 
@@ -82,7 +82,7 @@ PreLoader = ({data,resImages}:any) => {
       scrollTrigger: {
         trigger:`.sec-item-${index}`,
         markers:false,
-        start:'top 80% ' 
+        start:'top 85% ' 
       }
     });
   }

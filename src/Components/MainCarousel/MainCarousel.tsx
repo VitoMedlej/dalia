@@ -71,7 +71,7 @@ const Preloader3 = ({res}:any) => {
     useEffect(() => {
       gsap.to(ref.current, {
         opacity: 1,
-        delay:.45,
+        // delay:.45,
         y:0,
         duration: 1,
       });
