@@ -91,7 +91,6 @@ useEffect(()=>{
               'Honey, Jams & Spreads',
               'Mouneh',
               'Olives & Olive Oil',
-              
               'Sweets & Nuts',
               'Zaatar',
             ].map(i=>{
