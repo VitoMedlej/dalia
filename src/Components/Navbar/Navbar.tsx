@@ -62,7 +62,7 @@ export default function Navbar() {
     }, [cartOpen])
 
     return ( <>
-          <Box className='center bg2 text-center' sx={{background:'white',py:.25}}>
+          <Box className='center bg2 text-center' sx={{zIndex:'12345678',background:'white',py:.25}}>
                 <Typography className='white' component='h1' sx={{px:.65,
                 // ,color:'#0f0f0f'
                 fontWeight:600
@@ -75,7 +75,7 @@ export default function Navbar() {
      id='navy'
     className='center auto relative    flex'
         sx={{
-            zIndex:12,
+            zIndex:122222222222,
         flexWrap: 'wrap',
                 width:'100%',
                 boxShadow:'none',
