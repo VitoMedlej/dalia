@@ -40,13 +40,13 @@ useEffect(()=>{
 
   const Lista = () => (
     <Box
-      sx={{ width:  '300px',py:1 }}
+      sx={{ zIndex:150, width:  '300px',py:1 }}
       role="presentation"
       // onClick={toggleDrawer( false)}
       onKeyDown={()=>toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
-      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
+      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',  zIndex:150,  justifyContent: 'flex-end'}}
       
       >
         <Box>
