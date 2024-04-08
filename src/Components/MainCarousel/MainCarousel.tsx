@@ -172,10 +172,10 @@ const Preloader3 = ({res}:any) => {
                             </Container> */}
                             <img
                                
-                                className={`img cover  ${item?.position}d
+                                className={`img contain  ${item?.position}d
                                 `}
                                 // ${item?.className}
-                                src={`${item.img}`}
+                                src={`${item?.img}`}
                                 alt="Main Carousel Image"/>
            
                         </Box>
