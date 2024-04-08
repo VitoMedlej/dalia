@@ -20,8 +20,8 @@ const fetchData = async () => {
     const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`
     ,
     {
-      // cache: 'no-store',
-    next:{revalidate:100}
+      cache: 'no-store',
+    next:{revalidate:0}
    }
     )
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
