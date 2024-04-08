@@ -25,7 +25,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
   return (
     <Box className='' sx={{
       margin:'0 1em ',
-      zIndex:2222222222,
+      zIndex:1,
       maxHeight:'400px',
 
       position:'relative',
@@ -54,7 +54,6 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           id="menu"
           sx={{
             border:'1px solid black',
-            zIndex:12345678,
       boxShadow: '1px 1px 3px #00000017',
             position:'absolute',
             // width: '100%',

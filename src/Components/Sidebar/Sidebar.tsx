@@ -1,28 +1,30 @@
 "use client";
 import {useContext, useEffect, useState} from 'react';
-import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography, Accordion, AccordionDetails, AccordionSummary} from '@mui/material';
-import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
+import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography, Accordion, AccordionDetails, AccordionSummary, Link} from '@mui/material';
+// import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
-import {AiOutlineHeart} from 'react-icons/ai'
+// import {AiOutlineHeart} from 'react-icons/ai'
 
 import { useRouter } from 'next/navigation';
-import {AiOutlineArrowUp} from 'react-icons/ai';
+import {AiOutlineArrowUp, AiOutlineHeart} from 'react-icons/ai';
 
-import { DrawerContext } from '@/context/Contexts';
+import { DrawerContext, useCategoriesContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
-import SMicons from '../SMicons/SMicons';
-// import { categories } from '../Navbar/Navbar';
 import Btn from '../Btn/Btn';
-import Link from 'next/link';
+// import SMicons from '../SMicons/SMicons';
+// import { categories } from '../Navbar/Navbar';
+// import Btn from '../Btn/Btn';
+// import Link from 'next/link';
 
 
-export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
+export default function TemporaryDrawer() {
   
   const {open, setOpen} = useContext(DrawerContext);
   const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+  const {categories} = useCategoriesContext();
 
   const fetchUserAndList = async () => {
-    const user = localStorage.getItem('24j1i2cj4io-n92nzv531')
+    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
     if (user) {
            let parsedUser = JSON.parse(user)
            if (!parsedUser) {return}
@@ -34,19 +36,29 @@ useEffect(()=>{
 
 },[])
   const router = useRouter();
-  const toggleDrawer = (state:any) => {
-    setOpen((prevOpen:any) => state ? state : !prevOpen); // Toggle the open state
-  };
+  const toggleDrawer =
+    ( open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+
+      setOpen(open);
+    };
 
   const Lista = () => (
     <Box
-      sx={{ zIndex:150, width:  '300px',py:1 }}
+      sx={{ width:  '300px',py:1 }}
       role="presentation"
       // onClick={toggleDrawer( false)}
-      onKeyDown={()=>toggleDrawer( false)}
+      onKeyDown={toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
-      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',  zIndex:150,  justifyContent: 'flex-end'}}
+      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
       
       >
         <Box>
@@ -57,7 +69,7 @@ useEffect(()=>{
 
               <IconButton 
         
-        onClick={()=>toggleDrawer(false)}>
+        onClick={toggleDrawer(false)}>
                         <GrFormClose
                                 color='red'
                                 />
@@ -67,53 +79,21 @@ useEffect(()=>{
                                 </Box>
       <List>
       <ListItem
-          sx={{fontWeight:600}}
+          sx={{fontWeight:400}}
 
           onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
            disablePadding>
             <ListItemButton>
             
-                  <Typography component='h1'
-                  className='clr2'
-                  sx={{fontSize:'1em',fontWeight:600}}>
-              Collections
+                  <Typography component='h1' sx={{fontWeight:600}}>
+                  Collection
             </Typography>
             </ListItemButton>
   
 
           </ListItem>
-       
-    
-          {
-            [
-              'Labneh','Keshek',
-              'Beverages',
-              'Honey, Jams & Spreads',
-              'Mouneh',
-              'Olives & Olive Oil',
-              'Sweets & Nuts',
-              'Zaatar',
-            ].map(i=>{
-              return    <ListItem
-              key={i}
-              className='clr2'
-              sx={{py:.2,fontSize:'.9em',fontWeight:600}}
-    
-              onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
-               disablePadding>
-                <ListItemButton>
-                
-                      <Typography component='h1' sx={{fontWeight:600}}>
-                     {i}
-                </Typography>
-                </ListItemButton>
-      
-    
-              </ListItem>
-             })
-          }
-{/* 
-<Accordion sx={{border:'none',boxShadow:'none',}}>
+
+          {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
     expandIcon={<AiOutlineArrowUp />}
@@ -121,7 +101,7 @@ useEffect(()=>{
     id="panel1a-header"
   >
  <Typography component='h1' sx={{fontWeight:600}}>
-         FLAVORED HONEY
+ Gadgets
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -134,7 +114,7 @@ useEffect(()=>{
 
 onClick={()=>
 {setOpen(false);
-router.push(`/flavored honey/products`)}}
+router.push(`/Gadgets/products`)}}
 
 >
 
@@ -146,13 +126,17 @@ router.push(`/flavored honey/products`)}}
 </ListItemButton>
 </ListItem>
 
-{[`Honey with Peanut`,
-`Honey with Strawberry`
+{[
+`Cases`,
+`Chargers`,
+`Cables`,
+`Headphones`,
+`Power Banks`
 ].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/flavored honey/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
+router.push(`/Gadgets/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
 
 key={i}>
 
@@ -170,6 +154,149 @@ key={i}>
 
   </AccordionDetails>
 </Accordion> */}
+
+
+{categories && categories[0] && categories[0].cateArray && categories[0]?.cateArray?.map((category:any) => (
+  <Accordion key={`${category?.categoryName}`} sx={{border:'none',boxShadow:'none'}}>
+    <AccordionSummary
+      expandIcon={<AiOutlineArrowUp />}
+      aria-controls="panel1a-content"
+      id="panel1a-header"
+    >
+      <Typography component='h1' sx={{
+        textTransform:'capitalize',
+        fontWeight:600
+      }}>
+        {`${category?.categoryName}`}
+      </Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <List disablePadding>
+        <ListItem sx={{padding:0,width:'100%'}}
+          onClick={()=>{
+            setOpen(false);
+            router.push(`/${encodeURIComponent(category?.categoryName)}/products`)
+          }}
+        >
+          <ListItemButton>
+            <Typography sx={{fontWeight:300}}>
+              View All
+            </Typography>
+          </ListItemButton>
+        </ListItem>
+        {category?.subcategories?.length > 0 && category?.subcategories.map((subcategory:any) => (
+          <ListItem
+          
+          sx={{padding:0,width:'100%'}}
+            onClick={()=>{
+              setOpen(false);
+              router.push(`/${encodeURIComponent(category?.categoryName)}/products?type=${encodeURIComponent(subcategory?.name).toLocaleLowerCase()}`)
+            }}
+            key={subcategory?.id}
+          >
+            <ListItemButton>
+              <Typography sx={{fontWeight:300}}>
+                {subcategory?.name}
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </AccordionDetails>
+  </Accordion>
+))}
+
+
+{/* <Accordion sx={{border:'none',boxShadow:'none',}}>
+            
+            <AccordionSummary
+    expandIcon={<AiOutlineArrowUp />}
+    aria-controls="panel1a-content"
+    id="panel1a-header"
+  >
+ <Typography component='h1' sx={{
+  textTransform:'capitalize',
+  fontWeight:600}}>
+ Networking
+      </Typography>
+  </AccordionSummary>
+  <AccordionDetails>
+  <List
+
+
+  
+     disablePadding>
+<ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/Networking/products`)}}
+
+>
+
+
+<ListItemButton >
+      <Typography sx={{fontWeight:300}}>
+  View All
+</Typography>
+</ListItemButton>
+</ListItem>
+
+{[  "SEALER BRIHTNER",
+`Routers`,
+`Switches`,
+`Modems`,
+`Network Security`,
+`Wireless Solutions`,
+].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+
+onClick={()=>
+{setOpen(false);
+router.push(`/Networking/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
+
+key={i}>
+
+
+<ListItemButton >
+            <Typography sx={{fontWeight:300}}>
+        {i}
+      </Typography>
+      </ListItemButton>
+</ListItem>
+      
+      })}
+    </List>
+
+
+  </AccordionDetails>
+</Accordion> */}
+
+{/* {
+       [   
+        // `Craft Supplies`,
+      //  `DIY Kits`,
+      //  'MATERIELS',
+       `Communication`,
+      
+       ].map(i=>{
+              return    <ListItem
+              key={i}
+              sx={{fontWeight:400}}
+    
+              onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+               disablePadding>
+                <ListItemButton>
+                
+                      <Typography component='h1' sx={{fontWeight:600}}>
+                     {i}
+                </Typography>
+                </ListItemButton>
+      
+    
+              </ListItem>
+             })
+          } */}
+
 
 
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>
@@ -358,7 +485,9 @@ key={i}>
 </Accordion> */}
     
       </List>
-      <Link href='/about' className='decor-none' style={{color:'black'
+        {/* <SMicons/> */}
+     
+        <Link href='/about' className='decor-none' style={{color:'black'
       ,padding:' .25em 0'}}>
         <ListItemButton
         onClick={()=>toggleDrawer(false)}
@@ -417,9 +546,6 @@ key={i}>
     </Btn>
     </a>
     </Box>
-
-     
-    
       <Divider />
       
     </Box>
@@ -431,7 +557,7 @@ key={i}>
           <Drawer
             anchor={'right'}
             open={open}
-            onClose={()=>toggleDrawer(false)}
+            onClose={toggleDrawer(false)}
           >
 
   <Lista/>

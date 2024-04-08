@@ -26,9 +26,10 @@ const NavButtom = ({categories}:any) => {
         <Container
             className='flex   '
             sx={{
+              overflow:'visible',
             justifyContent: 'flex-start',
             maxWidth: 'lg',
-            overflow:'hidden',
+            // overflow:'hidden',
             py:2.5,
 
         }}>

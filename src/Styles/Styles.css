@@ -143,9 +143,13 @@ textarea {
   font-style: italic;
 }
 
+.hovereffect {
+  text-decoration: none;
+}
 .hovereffect h1 {
   transition: 0.3s all;
   border-bottom: 2px solid transparent;
+  text-decoration: none;
 }
 .hovereffect h1:hover {
   border-bottom: 2px solid #84a545 !important;

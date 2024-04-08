@@ -127,9 +127,11 @@ $color3: #84a545 !important;
     font-style: italic;
 }
 .hovereffect {
+    text-decoration: none;
     h1 {
         transition: .3s all;
         border-bottom :2px solid transparent;
+        text-decoration: none;
 
         &:hover {
             
