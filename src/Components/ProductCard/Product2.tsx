@@ -93,7 +93,7 @@ const Product2 = (
 
 
         <Box 
-        sx={{height:{xs:'200px',sm:'250px'}}}
+        sx={{height:{xs:'300px',sm:'350px'}}}
                onClick={() => router.push(`/product/${_id}`)}
         
         className='cursor pointer'
