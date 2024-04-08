@@ -47,7 +47,7 @@ export default function RootLayout({children} : {
 
                 <ContextWrapper>
                     <Navbar/>
-                    <Sidebar cates={undefined}/>
+                    <Sidebar />
                     <QuickCart/>
                     <ScrollToTop/>
                     <CrispChat/>
