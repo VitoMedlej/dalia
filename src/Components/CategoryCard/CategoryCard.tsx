@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
 import Btn from '../Btn/Btn';
+import { useRouter } from 'next/navigation';
 
 const CategoryCard = ({ imageUrl, categoryName,className } : any) => {
+  const router = useRouter()
   return (
     <Box 
     className={`relative op0 y1 carditem ${className}`}
@@ -23,7 +25,10 @@ const CategoryCard = ({ imageUrl, categoryName,className } : any) => {
 <Typography gutterBottom className='text-' sx={{pb:1,fontWeight:600}} variant="h4" component="div">
   {categoryName}
 </Typography>
-<Btn v2 sx={{
+<Btn
+
+onClick={()=>router.push('/collection/category')}
+v2 sx={{
   padding:0,
   justifyContent:'left',
   textDecoration:'underline',

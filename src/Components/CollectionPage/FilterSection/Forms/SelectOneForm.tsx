@@ -25,7 +25,7 @@ export default function SelectSmall({value,setValue,title,List,sx}:{title:string
       >
        {/* <List/> */}
        {/* {List} */}
-      {List.map(item=>{
+      {List && List?.map(item=>{
 
        return <MenuItem key={item} sx={{textTransform:'capitalize'}} value={item}>
               {item}

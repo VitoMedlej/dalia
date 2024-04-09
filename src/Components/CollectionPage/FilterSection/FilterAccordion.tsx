@@ -15,7 +15,10 @@ import { useCategoriesContext } from '@/context/Contexts';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
     const {categories} = useCategoriesContext();
-    let categoryArray = categories && categories?.map((category:any) => category?.categoryName);
+    console.log('categories: ', categories);
+    let categoryArray = categories && categories[0] && categories[0]?.cateArray
+     && categories[0]?.cateArray?.map((category:any) => category?.categoryName);
+    console.log('categoryArray: ', categoryArray);
    
     const handleChange = (val: string) => {
         // setValue(();
