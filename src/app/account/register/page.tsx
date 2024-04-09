@@ -5,7 +5,6 @@ import {
     Typography,
     Grid,
     Container,
-    CssBaseline,
     Box,
     Avatar,
     TextField,
@@ -124,7 +123,6 @@ const router= useRouter()
             <Container component="main" maxWidth='sm' sx={{
                 width: '100%',my:4,maxWidth:'400px'
             }}>
-                <CssBaseline/>
                 <Box
                     sx={{
                     boxShadow: 'rgb(0 0 0 / 15%) 0px 8px 24px',

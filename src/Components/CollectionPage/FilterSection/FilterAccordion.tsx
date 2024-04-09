@@ -11,8 +11,11 @@ import * as React from 'react';
 import SelectOneForm from './Forms/SelectOneForm';
 import { Box, MenuItem } from '@mui/material';
 import Btn from '@/Components/Btn/Btn';
+import { useCategoriesContext } from '@/context/Contexts';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
+    const {categories} = useCategoriesContext();
+    let categoryArray = categories && categories?.map((category:any) => category?.categoryName);
    
     const handleChange = (val: string) => {
         // setValue(();
@@ -47,18 +50,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              title= 'Category'
             List={
             
-                [
-                    'Collection',
-                    'Labneh',
-                    'Keshek',
-                    'Beverages',
-                    'Honey, Jams & Spreads',
-                    'Mouneh',
-                    'Olives & Olive Oil',
-                    
-                    'Sweets & Nuts',
-                    'Zaatar',
-                  ]
+                categoryArray
              
            }
             value={options.category}

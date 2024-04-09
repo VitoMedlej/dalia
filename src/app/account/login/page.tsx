@@ -4,7 +4,6 @@ import {
     Typography,
     Grid,
     Container,
-    CssBaseline,
     Box,
     Avatar,
     TextField,
@@ -108,7 +107,6 @@ const [checkbox2, setCheckbox2] = useState(false);
             <Container component="main" maxWidth='sm' sx={{
                 width: '100%',mt:6,maxWidth:'400px'
             }}>
-                <CssBaseline/>
                 <Box
                     sx={{
                         mt:4,
