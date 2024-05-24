@@ -6,7 +6,6 @@ import PreLoader from "@/Components/PreLoader"
 // import { server } from "@/Utils/Server"
 // import { Box,  Container, Typography } from "@mui/material"
 // import { useEffect, useState } from "react"
-// https://www..com/view_video.php?viewkey=ph637450f5f16fd
 
 const fetchDataAndSetImgs = async () => {
   const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images`,

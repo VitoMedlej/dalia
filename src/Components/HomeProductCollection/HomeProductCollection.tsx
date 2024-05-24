@@ -90,7 +90,7 @@ onClick={()=>router.push('/collection/products')}
                             lg:'21%'
                         }
                     }
-                    stock={i.stock}
+                    stock={i?.stock}
 
                     newPrice={i?.newPrice}
                     sizes={i?.sizes ? i?.sizes : null}

@@ -100,6 +100,9 @@ const Index = () => {
                Out of stock
              </Typography>
             }
+
+
+
           { Number(data?.product?.stock) > 0 && data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{my:.25,fontWeight:600,color:'',fontSize:{xs:'1.25em',sm:'1.55em'}}}>
                  ${
@@ -112,7 +115,7 @@ const Index = () => {
    
       
          
-            {  Number(data?.product?.stock)> 0 &&data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
+            {  Number(data?.product?.stock)> 0 && data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:{xs:'max-content'}}}>
 
        
