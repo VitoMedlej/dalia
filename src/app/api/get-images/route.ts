@@ -33,3 +33,5 @@ catch (error) {
 
 }
 }
+
+export const dynamic = 'force-dynamic'
