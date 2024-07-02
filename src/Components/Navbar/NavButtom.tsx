@@ -66,7 +66,7 @@ Collections
         
         
         key={item?.categoryName} 
-        href={`/${item?.categoryName?.toLocaleLowerCase()}/products`}
+        href={`/${encodeURIComponent(item?.categoryName?.toLocaleLowerCase())}/products`}
         className=' clr hovereffect  black '>
 
         <Typography 

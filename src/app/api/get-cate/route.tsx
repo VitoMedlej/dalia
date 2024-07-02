@@ -23,7 +23,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     const pageSize = 12; // Number of items per page
     
     // const req = await fetch(`${server}/api/fetch-all?page=${pageNB}&category=${category
-    //     ? `${category}`.replace(/-/g, ' ')
+    //     ? `${category}`
     //     : 'collection'}`, { cache: 'no-store' })
     // const res = await req.json()
     
@@ -38,7 +38,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
     
         
-        let filterByCate = !category || category === 'collection' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'category' ? null : decodeURIComponent(`${category}`.toLocaleLowerCase())
         let filterByType = !type || type === null || type == 'null'  ? null : decodeURIComponent(type).toLocaleLowerCase()
         let filterBySearch = search  && search != 'null' && search != null && search?.length > 1; 
         
@@ -65,13 +65,13 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
   if (filterByCate && filterByType) {
     return { category: {
       $regex: new RegExp(
-          `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+          `^${filterByCate?.toLocaleLowerCase()}$`,
           'i'
         ),
       },
       type : {
         $regex: new RegExp(
-          `^${filterByType?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+          `^${decodeURIComponent(filterByType)?.toLocaleLowerCase()}$`,
           'i'
         ),
       }}
@@ -80,7 +80,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         return  {
           category: {
             $regex: new RegExp(
-              `^${filterByCate?.toLocaleLowerCase().replace(/-/g, ' ')}$`,
+              `^${filterByCate?.toLocaleLowerCase()}$`,
               'i'
               ),
       }}

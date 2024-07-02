@@ -98,7 +98,7 @@ const Product2 = (
         
         className='cursor pointer'
         >
-            <img src={images && images[0]} alt="" className="img contain" />
+            <img src={`${images && images[0]}-/resize/600/`} alt="" className="img contain" />
         </Box>
 
 

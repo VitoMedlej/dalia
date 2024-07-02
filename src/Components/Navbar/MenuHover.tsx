@@ -68,20 +68,20 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           }}
           onMouseLeave={handleMouseLeave}
         >
-          <ul style={{width:'100%',padding:0}}>
-          {/* <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
+          <ul className='decor-none' style={{width:'100%',padding:0}}>
+          <Link className=' decor-none uppercase' key={category} href={`/${encodeURIComponent(category)?.toLocaleLowerCase()}/products`}>
 
-            <li>
+            <li className='decor-none' style={{padding:' .25em 1em '}}>
             <Typography onClick={()=>setShowMenu(false)}  component='p' 
             sx={{color:'black',width:'max-content',fontWeight:900,fontSize:{xs:'.86em',sm:'1.125em'}}}>
                 {category}
      </Typography>
             </li>
-          </Link> */}
+          </Link>
             {subcategories && subcategories.map((subcategory) => (
               <li style={{padding:' .25em 1em '}} className='' key={subcategory?.id}>
               <Link  className='black decor-none uppercase'
-                href={`/${category?.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ encodeURIComponent(`${subcategory?.name}`)?.toLocaleLowerCase()}`}>
+                href={`/${encodeURIComponent(category.toLocaleLowerCase())}/products?type=${encodeURIComponent(`${subcategory?.name}`)?.toLocaleLowerCase()}`}>
                 
      <Typography onClick={()=>setShowMenu(false)} 
       component='p' sx={{width:'max-content',fontWeight:600,py:.15,fontSize:{xs:'.87em',sm:'.95em'}}}>
